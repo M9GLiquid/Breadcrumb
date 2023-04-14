@@ -1,7 +1,9 @@
-package eu.kingconquest;
+package eu.kingconquest.UI;
+
+import eu.kingconquest.Core.Sokoban;
 
 public class MenuActionHandler implements MenuObserver {
-    private Sokoban game;
+    private final Sokoban game;
 
     public MenuActionHandler(Sokoban game) {
         this.game = game;

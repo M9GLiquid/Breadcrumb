@@ -1,6 +1,6 @@
-package eu.kingconquest;
+package eu.kingconquest.Core;
 
-public class SokobanBoard extends GameBoard{
+public class SokobanBoard extends GameBoard {
 
     public SokobanBoard(int numRows, int numCols) {
         super(numRows, numCols);

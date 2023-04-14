@@ -1,27 +1,35 @@
-package eu.kingconquest;
+package eu.kingconquest.Core;
+
+import eu.kingconquest.Utils.Location;
 
 import java.awt.*;
 
-public class Player implements Element{
-    private static final Image icon = GameController.loadImage("player.png");
+public abstract class Entity{
     private final Location location;
+    private Image icon;
 
-    public Player(int x, int y){
+    public Entity(int x, int y, String imagePath) {
         location = new Location(x, y);
+        setIcon(imagePath);
     }
 
-    @Override
     public Location getLocation() {
         return location;
     }
 
-    @Override
     public void setLocation(int x, int y) {
         location.setX(x);
         location.setY(y);
     }
 
-    @Override
+    public Image getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String imagePath) {
+        this.icon = GameController.loadImage(imagePath);
+    }
+
     public void draw(Graphics g) {
         g.drawImage(icon, location.getX() * Tile.TILE_SIZE, location.getY() * Tile.TILE_SIZE, Tile.TILE_SIZE, Tile.TILE_SIZE, null);
     }

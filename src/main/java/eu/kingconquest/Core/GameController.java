@@ -1,4 +1,4 @@
-package eu.kingconquest;
+package eu.kingconquest.Core;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -15,7 +15,7 @@ public class GameController {
         this.game = game;
         observers = new ArrayList<>();
     }
-    static Image loadImage(String imageName) {
+    public static Image loadImage(String imageName) {
         URL imageURL = GameController.class.getClassLoader().getResource(imageName);
         try {
             assert imageURL != null;

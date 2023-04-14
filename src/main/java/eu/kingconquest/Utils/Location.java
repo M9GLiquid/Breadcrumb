@@ -1,4 +1,4 @@
-package eu.kingconquest;
+package eu.kingconquest.Utils;
 
 import java.util.Objects;
 

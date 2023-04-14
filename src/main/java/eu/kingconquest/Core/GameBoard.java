@@ -1,4 +1,4 @@
-package eu.kingconquest;
+package eu.kingconquest.Core;
 
 public abstract class GameBoard {
     protected int[][] grid;

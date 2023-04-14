@@ -1,4 +1,4 @@
-package eu.kingconquest;
+package eu.kingconquest.UI;
 
 public interface MenuObserver {
     void onMenuAction(String action);

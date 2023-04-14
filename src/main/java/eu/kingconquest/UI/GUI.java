@@ -1,4 +1,8 @@
-package eu.kingconquest;
+package eu.kingconquest.UI;
+
+import eu.kingconquest.Core.Game;
+import eu.kingconquest.Core.GameObserver;
+import eu.kingconquest.Core.Sokoban;
 
 import javax.swing.*;
 import java.awt.*;

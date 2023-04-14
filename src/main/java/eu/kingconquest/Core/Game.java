@@ -1,4 +1,4 @@
-package eu.kingconquest;
+package eu.kingconquest.Core;
 
 public interface Game {
     void initiate();

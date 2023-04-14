@@ -1,6 +1,8 @@
-package eu.kingconquest;
+package eu.kingconquest.Core;
 
-public class Sokoban implements Game{
+import eu.kingconquest.UI.GUI;
+
+public class Sokoban implements Game {
     private SokobanBoard board;
     private GameController controller;
     private GameState state;

@@ -1,9 +1,10 @@
 package eu.kingconquest.Entities;
 
 import eu.kingconquest.Core.Tile;
+import eu.kingconquest.Utils.Location;
 
 public class Wall extends Tile {
-    public Wall(int x, int y) {
-        super(x, y, "wall.png", false);
+    public Wall(Location location) {
+        super(location, "wall.png", false);
     }
 }

@@ -1,19 +1,20 @@
 package eu.kingconquest.Entities;
 
-import eu.kingconquest.Core.Entity;
+import eu.kingconquest.Utils.Location;
 
 public class Crate extends Entity {
-    private boolean isMarked = false;
+    private boolean isMarked;
 
-    public Crate(int x, int y){
-        super(x, y, "Crate");
+    public Crate(Location location, boolean isMarked) {
+        super(location, "crate.png");
+        this.isMarked = isMarked;
     }
 
-    public boolean isMarked(){
+    public boolean isMarked() {
         return isMarked;
     }
 
-    public void toggleIcon(){
+    public void toggleIcon() {
         if (isMarked)
             setIcon("crate.png");
         else

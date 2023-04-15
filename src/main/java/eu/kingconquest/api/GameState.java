@@ -1,4 +1,4 @@
-package eu.kingconquest.Core;
+package eu.kingconquest.api;
 
 public enum GameState {
     INITIATING,

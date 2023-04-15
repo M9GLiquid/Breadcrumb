@@ -1,15 +1,17 @@
-package eu.kingconquest.Core;
+package eu.kingconquest.Entities;
 
+import eu.kingconquest.Core.GameController;
+import eu.kingconquest.Core.Tile;
 import eu.kingconquest.Utils.Location;
 
 import java.awt.*;
 
 public abstract class Entity{
-    private final Location location;
+    private Location location;
     private Image icon;
 
-    public Entity(int x, int y, String imagePath) {
-        location = new Location(x, y);
+    public Entity(Location location, String imagePath) {
+        this.location = location;
         setIcon(imagePath);
     }
 
@@ -20,6 +22,9 @@ public abstract class Entity{
     public void setLocation(int x, int y) {
         location.setX(x);
         location.setY(y);
+    }
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public Image getIcon() {

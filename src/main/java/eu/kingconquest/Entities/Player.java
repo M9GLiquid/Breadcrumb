@@ -1,9 +1,9 @@
 package eu.kingconquest.Entities;
 
-import eu.kingconquest.Core.Entity;
+import eu.kingconquest.Utils.Location;
 
 public class Player extends Entity {
-    public Player(int x, int y){
-        super(x, y, "player.png");
+    public Player(Location location){
+        super(location, "player.png");
     }
 }

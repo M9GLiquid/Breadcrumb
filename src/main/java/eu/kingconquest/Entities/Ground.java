@@ -1,12 +1,13 @@
 package eu.kingconquest.Entities;
 
 import eu.kingconquest.Core.Tile;
+import eu.kingconquest.Utils.Location;
 
 public class Ground extends Tile {
     private boolean isMarked = false;
 
-    public Ground(int x, int y){
-        super(x, y, "player.png", true);
+    public Ground(Location location){
+        super(location, "ground.png", true);
     }
 
     public boolean isMarked(){
@@ -15,9 +16,9 @@ public class Ground extends Tile {
 
     public void toggleIcon(){
         if (isMarked)
-            setIcon("crate.png");
+            setIcon("ground.png");
         else
-            setIcon("crate-marked.png");
+            setIcon("ground-marked.png");
         isMarked = !isMarked;
     }
 }

@@ -74,8 +74,7 @@ public class StartMenu extends JPanel implements MenuStrategy {
     }
 
     private void notifyObservers(String action) {
-        for (MenuObserver observer : observers) {
+        for (MenuObserver observer : observers)
             observer.onMenuAction(action);
-        }
     }
 }

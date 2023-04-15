@@ -1,25 +1,32 @@
 package eu.kingconquest.Core;
 
+import eu.kingconquest.Utils.Location;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
-import java.net.URL;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameController {
-    private final Game game;
+public class GameController extends KeyAdapter {
+    private final Sokoban game;
     private final List<GameObserver> observers;
 
-    public GameController(Game game) {
+    public GameController(Sokoban game) {
         this.game = game;
         observers = new ArrayList<>();
     }
+
     public static Image loadImage(String imageName) {
-        URL imageURL = GameController.class.getClassLoader().getResource(imageName);
-        try {
-            assert imageURL != null;
-            return ImageIO.read(imageURL);
+        try (InputStream inputStream = GameController.class.getClassLoader().getResourceAsStream(imageName)) {
+            if (inputStream == null) {
+                System.err.println("Image not found: " + imageName);
+                return null;
+            }
+            return ImageIO.read(inputStream);
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -34,5 +41,18 @@ public class GameController {
         observers.remove(observer);
     }
 
-    // Implement game control methods, e.g. moving pieces and notifying observers
+    @Override
+    public void keyPressed(KeyEvent e) {
+        Location location = new Location(0, 0);
+
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_UP, KeyEvent.VK_W -> location.setY(-1);
+            case KeyEvent.VK_DOWN, KeyEvent.VK_S -> location.setY(1);
+            case KeyEvent.VK_LEFT, KeyEvent.VK_A -> location.setX(-1);
+            case KeyEvent.VK_RIGHT, KeyEvent.VK_D -> location.setX(1);
+        }
+
+        if (location.getX() != 0 || location.getY() != 0)
+            game.getBoard().makeMove(location);
+    }
 }

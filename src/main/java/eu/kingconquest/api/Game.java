@@ -1,4 +1,6 @@
-package eu.kingconquest.Core;
+package eu.kingconquest.api;
+
+import eu.kingconquest.Core.GameObserver;
 
 public interface Game {
     void initiate();

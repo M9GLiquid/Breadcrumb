@@ -1,21 +1,19 @@
 package eu.kingconquest.UI;
 
+import eu.kingconquest.Core.GamePanel;
 import eu.kingconquest.Core.Sokoban;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
-public class StartMenu extends JPanel implements MenuStrategy {
-    private final List<MenuObserver> observers;
+public class StartMenu extends JPanel{
 
-    public StartMenu() {
-        observers = new ArrayList<>();
+    public StartMenu(Sokoban game, GamePanel panel) {
+        createMenu(game, panel);
     }
 
-    @Override
-    public JPanel createMenu(Sokoban game) {
+    public void createMenu(Sokoban game, GamePanel panel) {
+        JFrame frame = panel.frame;
         setLayout(new GridBagLayout());
         setBackground(new Color(128, 128, 128, 200));
         GridBagConstraints gbc = new GridBagConstraints();
@@ -41,40 +39,27 @@ public class StartMenu extends JPanel implements MenuStrategy {
 
         JButton startButton = new JButton("Start Game");
         startButton.addActionListener(e -> {
-            notifyObservers("start");
-            setVisible(false);
+            game.start();
+            frame.getContentPane().removeAll();
+            frame.add(panel, BorderLayout.CENTER);
+            frame.revalidate();
+            frame.repaint();
+            panel.requestFocusInWindow();
         });
         gbc.gridx = 0;
         gbc.gridy = 2;
         add(startButton, gbc);
 
         JButton exitButton = new JButton("Exit Game");
-        exitButton.addActionListener(e -> notifyObservers("exit"));
+        exitButton.addActionListener(e -> System.exit(0));
         gbc.gridx = 0;
         gbc.gridy = 3;
         add(exitButton, gbc);
 
         JButton resetButton = new JButton("Restart Game");
-        resetButton.addActionListener(e -> notifyObservers("restart"));
+        resetButton.addActionListener(e -> game.reset());
         gbc.gridx = 0;
         gbc.gridy = 4;
         add(resetButton, gbc);
-
-        return this;
-    }
-
-    @Override
-    public void registerObserver(MenuObserver observer) {
-        observers.add(observer);
-    }
-
-    @Override
-    public void removeObserver(MenuObserver observer) {
-        observers.remove(observer);
-    }
-
-    private void notifyObservers(String action) {
-        for (MenuObserver observer : observers)
-            observer.onMenuAction(action);
     }
 }

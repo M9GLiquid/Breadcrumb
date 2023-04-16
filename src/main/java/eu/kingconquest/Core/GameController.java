@@ -2,35 +2,18 @@ package eu.kingconquest.Core;
 
 import eu.kingconquest.Utils.Location;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameController extends KeyAdapter {
+public class GameController extends KeyAdapter implements GameStrategy{
     private final Sokoban game;
     private final List<GameObserver> observers;
 
     public GameController(Sokoban game) {
         this.game = game;
         observers = new ArrayList<>();
-    }
-
-    public static Image loadImage(String imageName) {
-        try (InputStream inputStream = GameController.class.getClassLoader().getResourceAsStream(imageName)) {
-            if (inputStream == null) {
-                System.err.println("Image not found: " + imageName);
-                return null;
-            }
-            return ImageIO.read(inputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
     }
 
     public void addObserver(GameObserver observer) {
@@ -41,6 +24,10 @@ public class GameController extends KeyAdapter {
         observers.remove(observer);
     }
 
+    public void notifyObservers() {
+        for (GameObserver observer: observers)
+            observer.update(game);
+    }
     @Override
     public void keyPressed(KeyEvent e) {
         Location location = new Location(0, 0);

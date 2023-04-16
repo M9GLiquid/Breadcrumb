@@ -1,6 +1,6 @@
 package eu.kingconquest.Entities;
 
-import eu.kingconquest.Core.GameController;
+import eu.kingconquest.Core.EntityType;
 import eu.kingconquest.Core.Tile;
 import eu.kingconquest.Utils.Location;
 
@@ -8,34 +8,29 @@ import java.awt.*;
 
 public abstract class Entity{
     private Location location;
-    private Image icon;
+    private EntityType entityType;
 
-    public Entity(Location location, String imagePath) {
+    public Entity(Location location, EntityType entityType) {
         this.location = location;
-        setIcon(imagePath);
+        this.entityType = entityType;
     }
 
     public Location getLocation() {
         return location;
     }
-
-    public void setLocation(int x, int y) {
-        location.setX(x);
-        location.setY(y);
-    }
     public void setLocation(Location location) {
         this.location = location;
     }
 
-    public Image getIcon() {
-        return icon;
+    public EntityType getEntityType(){
+        return entityType;
     }
 
-    public void setIcon(String imagePath) {
-        this.icon = GameController.loadImage(imagePath);
+    public void setEntityType(EntityType entityType){
+        this.entityType = entityType;
     }
 
     public void draw(Graphics g) {
-        g.drawImage(icon, location.getX() * Tile.TILE_SIZE, location.getY() * Tile.TILE_SIZE, Tile.TILE_SIZE, Tile.TILE_SIZE, null);
+        g.drawImage(entityType.getIcon(), location.getX() * Tile.TILE_SIZE, location.getY() * Tile.TILE_SIZE, Tile.TILE_SIZE, Tile.TILE_SIZE, null);
     }
 }

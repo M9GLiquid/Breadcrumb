@@ -4,6 +4,7 @@ import eu.kingconquest.Entities.Crate;
 import eu.kingconquest.Entities.Player;
 import eu.kingconquest.Utils.Location;
 import eu.kingconquest.api.GameBoard;
+import eu.kingconquest.api.GameState;
 
 public class SokobanBoard extends GameBoard {
     private final Sokoban game;
@@ -28,7 +29,7 @@ public class SokobanBoard extends GameBoard {
      * @return true if there is a crate, otherwise false.
      */
     private boolean isCrateAtLocation(Location location) {
-        return game.crates.stream().anyMatch(crate -> crate.getLocation().equals(location));
+        return game.getCrates().stream().anyMatch(crate -> crate.getLocation().equals(location));
     }
 
     /**
@@ -37,7 +38,8 @@ public class SokobanBoard extends GameBoard {
      */
     @Override
     public void makeMove(Location location) {
-        Player player = game.player;
+        Player player = game.getPlayer();
+        SokobanBoard board = game.getBoard();
         Location newPlayerLocation = player.getLocation().add(location);
 
         if (isMoveValid(newPlayerLocation)) return;
@@ -49,16 +51,35 @@ public class SokobanBoard extends GameBoard {
             if (isCrateAtLocation(newCrateLocation) || isMoveValid(newCrateLocation)) return;
 
             crate.setLocation(newCrateLocation);
+
+            // Check if crate is in position
+            if (board.grid[crate.getLocation().getX()][crate.getLocation().getY()].getEntityType().equals(EntityType.GROUND_MARKED))
+                crate.setEntityType(EntityType.CRATE_MARKED);
         }
 
         player.setLocation(newPlayerLocation);
-        game.gamePanel.repaint();
+
+
+
+        // Level Win Condition
+        if (isLevelComplete()) {
+            game.setState(GameState.WIN);
+        }
+
+        game.getGamePanel().repaint();
     }
 
     private Crate findCrateAtLocation(Location location) {
-        for (Crate crate : game.crates)
+        for (Crate crate : game.getCrates())
             if (crate.getLocation().equals(location))
                 return crate;
         return null;
+    }
+
+    private boolean isLevelComplete(){
+        for(Crate crate : game.getCrates())
+            if (crate.getEntityType().equals(EntityType.CRATE_MARKED))
+                return true;
+        return false;
     }
 }

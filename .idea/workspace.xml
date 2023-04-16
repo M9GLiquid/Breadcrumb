@@ -5,24 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Version 0.1 Demo Working&#10;Added:&#10; * Character Movement and Crate movement&#10;Improvements:&#10; * Usage of Location&#10; * Readability of code&#10; * Re-structured the code packages">
+      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/EntityType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/GameStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/UI/GameOverUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/UI/MenuUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/api/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/api/GameBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/GameObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/GameObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/api/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/Sokoban.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/Sokoban.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/SokobanBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/SokobanBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/Tile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Entities/Crate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Entities/Crate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Entities/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Entities/Ground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Entities/Ground.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Entities/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Entities/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Entities/Wall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/UI/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/UI/MenuActionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/UI/MenuActionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/UI/MenuActionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/UI/MenuObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/UI/MenuStrategy.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/UI/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/UI/StartMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Utils/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/Utils/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/api/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/api/GameState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,12 +101,16 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="eu.kingconquest.UI" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\thoma\IdeaProjects\Sokoban\src\main\resources" />
     </key>
@@ -129,7 +137,8 @@
       <workItem from="1681410456246" duration="2446000" />
       <workItem from="1681459407906" duration="10069000" />
       <workItem from="1681571496179" duration="7905000" />
-      <workItem from="1681587679930" duration="425000" />
+      <workItem from="1681587679930" duration="494000" />
+      <workItem from="1681677645093" duration="8726000" />
     </task>
     <task id="LOCAL−00001" summary="Added the main Framework for Game Handling and Menu Handling">
       <created>1681461977142</created>
@@ -137,7 +146,13 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1681461977142</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="Version 0.1 Demo Working&#10;Added:&#10; * Character Movement and Crate movement&#10;Improvements:&#10; * Usage of Location&#10; * Readability of code&#10; * Re-structured the code packages">
+      <created>1681588151628</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1681588151628</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,5 +173,16 @@
     <MESSAGE value="Added the main Framework for Game Handling and Menu Handling" />
     <MESSAGE value="Version 0.1 Demo Working&#10;Added:&#10; * Character Movement and Crate movement&#10;Improvements:&#10; * Usage of Location&#10; * Readability of code&#10; * Re-structured the code packages" />
     <option name="LAST_COMMIT_MESSAGE" value="Version 0.1 Demo Working&#10;Added:&#10; * Character Movement and Crate movement&#10;Improvements:&#10; * Usage of Location&#10; * Readability of code&#10; * Re-structured the code packages" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/eu/kingconquest/Core/SokobanBoard.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,18 +1,22 @@
-package eu.kingconquest.UI;
+package eu.kingconquest.sokoban.ui;
 
-import eu.kingconquest.Core.GamePanel;
-import eu.kingconquest.Core.Sokoban;
+import eu.kingconquest.framework.Game;
+import eu.kingconquest.framework.GamePanel;
+import eu.kingconquest.framework.ui.Menu;
+import eu.kingconquest.sokoban.core.StateObserver;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class StartMenu extends JPanel{
+public class StartMenu extends Menu {
 
-    public StartMenu(Sokoban game, GamePanel panel) {
-        createMenu(game, panel);
+    public StartMenu(Game game, GamePanel panel) {
+        super(game, panel);
+        game.registerObserver(new StateObserver(game));
     }
 
-    public void createMenu(Sokoban game, GamePanel panel) {
+    @Override
+    public void createMenu() {
         JFrame frame = panel.frame;
         setLayout(new GridBagLayout());
         setBackground(new Color(128, 128, 128, 200));
@@ -20,7 +24,7 @@ public class StartMenu extends JPanel{
         gbc.insets = new Insets(10, 10, 10, 10);
 
         JTextArea title = new JTextArea("Sokoban");
-        title.setBackground(new Color(0,0,0,0));
+        title.setBackground(new Color(0, 0, 0, 0));
         title.setFont(new Font(null, Font.BOLD, 48));
         title.setFocusable(false);
         gbc.gridx = 0;
@@ -31,14 +35,14 @@ public class StartMenu extends JPanel{
         subTitle.setForeground(Color.LIGHT_GRAY);
         subTitle.setFocusable(false);
         subTitle.setIgnoreRepaint(true);
-        subTitle.setBackground(new Color(0,0,0,0));
+        subTitle.setBackground(new Color(0, 0, 0, 0));
         subTitle.setFont(new Font(null, Font.ITALIC, 24));
         gbc.gridx = 0;
         gbc.gridy = 1;
         add(subTitle, gbc);
 
         JButton startButton = new JButton("Start Game");
-        startButton.addActionListener(e -> {
+        startButton.addActionListener(event -> {
             game.start();
             frame.getContentPane().removeAll();
             frame.add(panel, BorderLayout.CENTER);
@@ -51,15 +55,9 @@ public class StartMenu extends JPanel{
         add(startButton, gbc);
 
         JButton exitButton = new JButton("Exit Game");
-        exitButton.addActionListener(e -> System.exit(0));
+        exitButton.addActionListener(event -> System.exit(0));
         gbc.gridx = 0;
         gbc.gridy = 3;
         add(exitButton, gbc);
-
-        JButton resetButton = new JButton("Restart Game");
-        resetButton.addActionListener(e -> game.reset());
-        gbc.gridx = 0;
-        gbc.gridy = 4;
-        add(resetButton, gbc);
     }
 }

@@ -1,4 +1,4 @@
-package eu.kingconquest.Utils;
+package eu.kingconquest.framework.utils;
 
 public class Location {
     private int x;

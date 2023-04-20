@@ -6,8 +6,6 @@ import eu.kingconquest.framework.utils.Location;
  * The GameBoard class is an abstract base class for various game board implementations.
  * Each GameBoard contains a grid of Tiles, the number of rows, and the number of columns.
  * It provides methods for creating a GameBoard, checking if a move is valid, and making a move.
- *
- * @author Thomas Lundqvist
  */
 public abstract class GameBoard {
     public static int ROWS = 30;

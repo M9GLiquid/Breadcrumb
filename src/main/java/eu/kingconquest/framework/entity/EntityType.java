@@ -11,7 +11,6 @@ import java.io.InputStream;
  * <p>
  * Subclasses should provide the image path and any additional attributes specific to the entity type.
  * </p>
- * @author Thomas Lundqvist
  */
 public abstract class EntityType {
     private final Image icon;

@@ -4,8 +4,6 @@ package eu.kingconquest.framework.utils;
  * The Location class represents a 2D coordinate in the game world.
  * It provides methods for getting and setting the x and y coordinates,
  * modifying the location, calculating the distance between locations, and comparing locations.
- *
- * @author Thomas Lundqvist
  */
 public class Location {
     private int x;

@@ -9,8 +9,6 @@ import eu.kingconquest.framework.entity.Entity;
  * Implementations of this interface should define how the audio should be handled
  * when the update method is called.
  * </p>
- * @author Thomas Lundqvist
- * @version 1.0
  */
 public interface AudioObserver {
 

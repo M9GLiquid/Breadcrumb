@@ -10,14 +10,13 @@ import java.util.List;
  * Each Game contains a GameBoard, GameController, GameState, GamePanel, and a list of entities.
  * It provides methods for initiating, starting, resetting, and generating levels for the game,
  * as well as checking if the game is finished and accessing game components.
- *
- * @author Thomas Lundqvist
  */
 public abstract class Game {
     protected GameBoard board;
     protected GameState state;
     protected GameController controller;
     protected GamePanel gamePanel;
+
     protected List<Entity> entities = new ArrayList<>();
 
     /**

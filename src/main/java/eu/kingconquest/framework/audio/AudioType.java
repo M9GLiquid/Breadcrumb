@@ -18,11 +18,9 @@ import java.io.InputStream;
  *     Clip clip = myAudio.getAudioClip();
  *     float volume = myAudio.getAudioVolume();
  * </pre>
- *
- * @author Thomas Lundqvist
- * @version 1.0
  */
 public class AudioType {
+
     private Clip audioClip;
     private final float audioVolume;
 
@@ -50,7 +48,7 @@ public class AudioType {
      * @return An AudioInputStream containing the loaded audio, or null if an error occurs.
      * @throws UnsupportedAudioFileException If the audio file format is not supported.
      */
-    protected AudioInputStream loadAudio(String fileName) throws UnsupportedAudioFileException {
+    public AudioInputStream loadAudio(String fileName) throws UnsupportedAudioFileException {
         InputStream inputStream = AudioType.class.getClassLoader().getResourceAsStream("audio/" + fileName);
         if (inputStream == null) {
             System.err.println("Audio not found: " + fileName);
@@ -103,4 +101,5 @@ public class AudioType {
         float gain = (range * volume) + gainControl.getMinimum();
         gainControl.setValue(gain);
     }
+
 }

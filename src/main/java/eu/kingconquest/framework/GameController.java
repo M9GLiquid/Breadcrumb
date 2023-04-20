@@ -12,8 +12,6 @@ import java.util.List;
 /**
  * The GameController class handles user input and game updates for a specified game.
  * It also manages a list of observers to be notified of game changes and audio updates.
- *
- * @author Thomas Lundqvist
  */
 public class GameController extends KeyAdapter implements GameStrategy {
     private final Game game;
@@ -27,6 +25,7 @@ public class GameController extends KeyAdapter implements GameStrategy {
      */
     public GameController(Game game) {
         this.game = game;
+        game.controller = this;
     }
 
     public void addAudioObserver(AudioObserver observer) {

@@ -9,8 +9,6 @@ import java.awt.*;
  * Represents an abstract Entity class that serves as a base for various game objects.
  * This class is responsible for managing the location and type of the entity, as well as
  * drawing the entity on the screen.
- *
- * @author Thomas Lundqvist
  */
 public abstract class Entity {
     private Location location;
@@ -25,6 +23,10 @@ public abstract class Entity {
     public Entity(Location location, EntityType entityType) {
         setLocation(location);
         setEntityType(entityType);
+    }
+
+    public Entity() {
+
     }
 
     /**

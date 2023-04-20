@@ -2,8 +2,6 @@ package eu.kingconquest.framework;
 
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.ui.Menu;
-import eu.kingconquest.sokoban.core.Sokoban;
-import eu.kingconquest.sokoban.core.SokobanBoard;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,8 +9,6 @@ import java.awt.*;
 /**
  * The GamePanel class is a JPanel that displays the game's graphics and user interface.
  * It initializes and configures the game's UI components and handles adding menus and drawing entities.
- *
- * @author Thomas Lundqvist
  */
 public class GamePanel extends JPanel {
     public JFrame frame;
@@ -27,12 +23,8 @@ public class GamePanel extends JPanel {
      * @param game the game to create the GamePanel for
      */
     public GamePanel(Game game) {
-        // Make sure we play the right game ;)
-        if (!(game instanceof Sokoban)) {
-            System.err.println("This is not Sokoban!");
-            return;
-        }
         this.game = game;
+        game.gamePanel = this;
         initializeUI();
     }
 
@@ -70,7 +62,7 @@ public class GamePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        SokobanBoard board = (SokobanBoard) game.getBoard();
+        GameBoard board = game.getBoard();
 
         // Draw the playing field
         for (int row = 0; row < GameBoard.ROWS; row++)

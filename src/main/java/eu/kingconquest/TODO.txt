@@ -1,0 +1,4 @@
+ *  Add functionality of keyboard and/or mouse(buttons)
+ *  A facility to save and load the current game state, preferably by using Java serialization
+ *  Add, 2048 game using the framework
+ *  Add JUnit testings

@@ -6,8 +6,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Represents an abstract EntityType class that serves as a base for different entity types.
- * Each EntityType contains an icon represented by an Image object.
+ * The EntityType class represents an abstract base class for different types of game entities.
+ * It provides functionality to load an image icon for the entity and retrieve it for rendering purposes.
+ * <p>
+ * Subclasses should provide the image path and any additional attributes specific to the entity type.
+ * </p>
+ * @author Thomas Lundqvist
  */
 public abstract class EntityType {
     private final Image icon;
@@ -37,7 +41,7 @@ public abstract class EntityType {
      * @return the loaded Image object, or null if the image could not be found or loaded
      */
     private static Image loadImage(String imageName) {
-        try (InputStream inputStream = EntityType.class.getClassLoader().getResourceAsStream(imageName)) {
+        try (InputStream inputStream = EntityType.class.getClassLoader().getResourceAsStream("images/" + imageName)) {
             if (inputStream == null) {
                 System.err.println("Image not found: " + imageName);
                 return null;

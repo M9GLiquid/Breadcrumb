@@ -6,8 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Represents an abstract Game class that serves as a base for different game implementations.
- * Each Game contains a GameBoard, GameController, and a GameState.
+ * The Game class is an abstract base class for various game implementations.
+ * Each Game contains a GameBoard, GameController, GameState, GamePanel, and a list of entities.
+ * It provides methods for initiating, starting, resetting, and generating levels for the game,
+ * as well as checking if the game is finished and accessing game components.
+ *
+ * @author Thomas Lundqvist
  */
 public abstract class Game {
     protected GameBoard board;
@@ -43,24 +47,6 @@ public abstract class Game {
      */
     public boolean isFinished() {
         return (state != GameState.GAME_OVER);
-    }
-
-    /**
-     * Registers an observer to receive updates from the GameController.
-     *
-     * @param observer the GameObserver to be registered
-     */
-    public void registerObserver(GameObserver observer) {
-        controller.addObserver(observer);
-    }
-
-    /**
-     * Removes an observer from the GameController's list of observers.
-     *
-     * @param observer the GameObserver to be removed
-     */
-    public void removeObserver(GameObserver observer) {
-        controller.removeObserver(observer);
     }
 
     /**

@@ -8,11 +8,24 @@ import eu.kingconquest.sokoban.core.SokobanBoard;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * The GamePanel class is a JPanel that displays the game's graphics and user interface.
+ * It initializes and configures the game's UI components and handles adding menus and drawing entities.
+ *
+ * @author Thomas Lundqvist
+ */
 public class GamePanel extends JPanel {
     public JFrame frame;
 
     Game game;
 
+    /**
+     * Constructs a GamePanel for the specified game. This panel is responsible
+     * for drawing the game board and managing the UI components associated with the game.
+     * Note that this constructor specifically checks for a Sokoban game instance before initializing the UI.
+     *
+     * @param game the game to create the GamePanel for
+     */
     public GamePanel(Game game) {
         // Make sure we play the right game ;)
         if (!(game instanceof Sokoban)) {
@@ -23,6 +36,9 @@ public class GamePanel extends JPanel {
         initializeUI();
     }
 
+    /**
+     * Initializes and configures the game's UI components.
+     */
     private void initializeUI() {
         frame = new JFrame("Sokoban Game");
         frame.setSize(game.getFrameWidth(), game.getFrameHeight());
@@ -33,6 +49,11 @@ public class GamePanel extends JPanel {
         frame.setVisible(true);
     }
 
+    /**
+     * Adds a menu to the GamePanel.
+     *
+     * @param menu the menu to be added
+     */
     public void addMenu(Menu menu) {
         frame.add(this, BorderLayout.CENTER);
         frame.add(menu, BorderLayout.CENTER);
@@ -41,7 +62,11 @@ public class GamePanel extends JPanel {
         requestFocusInWindow();
     }
 
-
+    /**
+     * Overrides the paintComponent method of JPanel to draw the game's graphics.
+     *
+     * @param g the Graphics context to draw the game components on
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

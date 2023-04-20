@@ -2,6 +2,7 @@ package eu.kingconquest.sokoban.core;
 
 import eu.kingconquest.framework.*;
 import eu.kingconquest.framework.utils.Location;
+import eu.kingconquest.sokoban.audio.SokobanAudioObserver;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Ground;
 import eu.kingconquest.sokoban.entities.Player;
@@ -17,13 +18,14 @@ public class Sokoban extends Game {
 
 
     public Sokoban() {
-        super();
         state = GameState.INITIATING;
         controller = new GameController(this);
 
         board = new SokobanBoard(this, null, null);
 
         gamePanel = new GamePanel(this);
+        controller.addObserver(new StateObserver(this));
+        controller.addAudioObserver(new SokobanAudioObserver());
         gamePanel.addMenu(new StartMenu(this, gamePanel));
         controller.notifyObservers();
         gamePanel.addKeyListener(controller);

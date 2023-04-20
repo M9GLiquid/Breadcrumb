@@ -3,7 +3,6 @@ package eu.kingconquest.sokoban.ui;
 import eu.kingconquest.framework.Game;
 import eu.kingconquest.framework.GamePanel;
 import eu.kingconquest.framework.ui.Menu;
-import eu.kingconquest.sokoban.core.StateObserver;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +11,6 @@ public class StartMenu extends Menu {
 
     public StartMenu(Game game, GamePanel panel) {
         super(game, panel);
-        game.registerObserver(new StateObserver(game));
     }
 
     @Override

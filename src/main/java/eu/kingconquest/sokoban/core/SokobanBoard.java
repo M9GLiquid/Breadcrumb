@@ -79,7 +79,10 @@ public class SokobanBoard extends GameBoard {
 
             // Check if crate is in position
             updateCrateEntityType(board, crate);
+
+            game.getController().notifyAudioObservers(crate);
         }
+        game.getController().notifyAudioObservers(game.getPlayer());
         player.setLocation(newPlayerLocation);
 
         // Level Win Condition

@@ -1,5 +1,3 @@
-package eu.kingconquest;
-
 import eu.kingconquest.sokoban.core.Sokoban;
 
 public class Main {

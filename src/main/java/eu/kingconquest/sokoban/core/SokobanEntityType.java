@@ -2,15 +2,40 @@ package eu.kingconquest.sokoban.core;
 
 import eu.kingconquest.framework.entity.EntityType;
 
-public class SokobanEntityType extends EntityType {
-    public static final SokobanEntityType WALL = new SokobanEntityType("wall.png");
-    public static final SokobanEntityType PLAYER = new SokobanEntityType("player.png");
-    public static final SokobanEntityType GROUND = new SokobanEntityType("ground.png");
-    public static final SokobanEntityType GROUND_MARKED = new SokobanEntityType("ground-marked.png");
-    public static final SokobanEntityType CRATE = new SokobanEntityType("crate.png");
-    public static final SokobanEntityType CRATE_MARKED = new SokobanEntityType("crate-marked.png");
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.io.IOException;
+import java.io.InputStream;
 
-    private SokobanEntityType(String imagePath) {
-        super(imagePath);
+public enum SokobanEntityType implements EntityType {
+    WALL("wall.png"),
+    PLAYER("player.png"),
+    GROUND("ground.png"),
+    GROUND_MARKED("ground-marked.png"),
+    CRATE("crate.png"),
+    CRATE_MARKED("crate-marked.png");
+
+    private final Image icon;
+
+    SokobanEntityType(String imagePath) {
+        this.icon = loadImage(imagePath);
+    }
+
+    @Override
+    public Image getIcon() {
+        return icon;
+    }
+
+    private static Image loadImage(String imageName) {
+        try (InputStream inputStream = EntityType.class.getClassLoader().getResourceAsStream("images/" + imageName)) {
+            if (inputStream == null) {
+                System.err.println("Image not found: " + imageName);
+                return null;
+            }
+            return ImageIO.read(inputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

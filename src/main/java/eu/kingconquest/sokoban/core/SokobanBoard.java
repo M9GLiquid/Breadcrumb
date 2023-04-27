@@ -33,17 +33,7 @@ public class SokobanBoard extends GameBoard {
      */
     @Override
     public boolean isMoveValid(Location location) {
-        return (!isWithinBorder(location) && !grid[location.getX()][location.getY()].isWalkable());
-    }
-
-    /**
-     * Checks if the given location is within the board's borders.
-     *
-     * @param location The location to check.
-     * @return true if the location is within the borders, false otherwise.
-     */
-    private boolean isWithinBorder(Location location) {
-        return location.getX() >= 0 && location.getY() >= 0 && location.getX() < GameBoard.ROWS && location.getY() < GameBoard.COLS;
+        return !(grid[location.getY()][location.getX()].isWalkable());
     }
 
     /**
@@ -66,7 +56,6 @@ public class SokobanBoard extends GameBoard {
         Player player = game.getPlayer();
         SokobanBoard board = (SokobanBoard) game.getBoard();
         Location newPlayerLocation = player.getLocation().add(direction);
-
         if (isMoveValid(newPlayerLocation)) return;
 
         Crate crate = findCrateAtLocation(newPlayerLocation);
@@ -90,7 +79,7 @@ public class SokobanBoard extends GameBoard {
             game.setState(GameState.LEVEL_COMPLETE);
 
         game.getController().notifyObservers();
-        game.getGamePanel().repaint();
+        game.getGameFrame().view.repaint();
     }
 
     /**
@@ -100,7 +89,7 @@ public class SokobanBoard extends GameBoard {
      * @param crate The Crate to update.
      */
     private void updateCrateEntityType(SokobanBoard board, Crate crate) {
-        EntityType entityType = board.grid[crate.getLocation().getX()][crate.getLocation().getY()].getEntityType();
+        EntityType entityType = board.grid[crate.getLocation().getY()][crate.getLocation().getX()].getEntityType();
 
         if (entityType.equals(SokobanEntityType.GROUND_MARKED)) {
             crate.setEntityType(SokobanEntityType.CRATE_MARKED);

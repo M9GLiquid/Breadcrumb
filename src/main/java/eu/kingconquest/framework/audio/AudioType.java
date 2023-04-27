@@ -27,7 +27,7 @@ public class AudioType {
     /**
      * Constructs a new AudioType instance with the given audio file path and volume.
      *
-     * @param audioPath The path to the audio file within the resources folder.
+     * @param audioPath The path to the audio file within the resources' folder.
      * @param audioVolume The volume at which the audio should be played, ranging from 0.0f (silent) to 1.0f (maximum volume).
      */
     public AudioType(String audioPath, float audioVolume) {

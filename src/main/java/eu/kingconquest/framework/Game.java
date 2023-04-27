@@ -1,6 +1,7 @@
 package eu.kingconquest.framework;
 
 import eu.kingconquest.framework.entity.Entity;
+import eu.kingconquest.framework.ui.GameFrame;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,12 +13,17 @@ import java.util.List;
  * as well as checking if the game is finished and accessing game components.
  */
 public abstract class Game {
+    private String title;
     protected GameBoard board;
     protected GameState state;
     protected GameController controller;
-    protected GamePanel gamePanel;
+    protected GameFrame gameFrame;
 
     protected List<Entity> entities = new ArrayList<>();
+
+    protected Game(String title) {
+        this.title = title;
+    }
 
     /**
      * Initializes the game by setting up necessary objects and configurations.
@@ -56,31 +62,70 @@ public abstract class Game {
     public GameBoard getBoard() {
         return board;
     }
+
+    /**
+     * Gets the Entities associated with the game.
+     *
+     * @return List of Entities
+     */
     public List<Entity> getEntities(){
         return entities;
     }
 
+    /**
+     * Add entity to list of entities
+     */
+    public void addEntity(Entity entity){
+        entities.add(entity);
+    }
+
+    /**
+     * Gets the GameState of the game.
+     *
+     * @return A GameState Object
+     */
     public GameState getState(){
         return state;
     }
+
+    /**
+     * Sets the Game State of the game.
+     */
     public void setState(GameState state){
         this.state = state;
     }
 
+    /**
+     * Gets the GameController of the game.
+     *
+     * @return A GameController Object
+     */
     public GameController getController() {
         return controller;
     }
 
-    public GamePanel getGamePanel() {
-        return gamePanel;
+    /**
+     * Gets the Title of the game.
+     *
+     * @return A String with the title
+     */
+    public String getTitle() {
+        return title;
     }
 
-
-    public int getFrameWidth() {
-        return (GameBoard.ROWS * Tile.TILE_SIZE) + 16;
+    /**
+     * Sets the Title of the game.
+     */
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public int getFrameHeight() {
-        return (GameBoard.COLS * Tile.TILE_SIZE) + 39;
+    /**
+     * Gets the GameFrame of the game.
+     *
+     * @return A GameFrame Object
+     */
+    public GameFrame getGameFrame() {
+        return gameFrame;
     }
 }

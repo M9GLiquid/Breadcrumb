@@ -11,5 +11,6 @@ public enum GameState {
     GAME_OVER,
     LEVEL_COMPLETE,
     RESETTING,
+    PAUSED,
     RUNNING
 }

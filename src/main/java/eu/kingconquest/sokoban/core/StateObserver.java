@@ -5,7 +5,6 @@ import eu.kingconquest.framework.GameObserver;
 public class StateObserver implements GameObserver {
     private final Sokoban game;
 
-
     public StateObserver(Sokoban game){
         this.game = game;
     }

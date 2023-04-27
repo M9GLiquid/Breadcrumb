@@ -3,6 +3,7 @@ package eu.kingconquest.framework;
 import eu.kingconquest.framework.audio.AudioObserver;
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.utils.Location;
+import eu.kingconquest.sokoban.ui.PauseMenu;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -85,9 +86,13 @@ public class GameController extends KeyAdapter implements GameStrategy {
             case KeyEvent.VK_DOWN, KeyEvent.VK_S -> location.setY(1);
             case KeyEvent.VK_LEFT, KeyEvent.VK_A -> location.setX(-1);
             case KeyEvent.VK_RIGHT, KeyEvent.VK_D -> location.setX(1);
+            case KeyEvent.VK_ESCAPE -> {
+                if (game.getState().equals(GameState.RUNNING))
+                    game.getGameFrame().addView(new PauseMenu(game), 30, 20);
+            }
         }
 
-        if (location.getX() != 0 || location.getY() != 0)
+        if (location.getX() != 0 || location.getY() != 0 && game.getState().equals(GameState.RUNNING))
             game.getBoard().makeMove(location);
     }
 }

@@ -1,4 +1,4 @@
-package eu.kingconquest.framework;
+package eu.kingconquest.framework.core;
 
 /**
  * The GameObserver interface defines an update method for objects that need to be notified

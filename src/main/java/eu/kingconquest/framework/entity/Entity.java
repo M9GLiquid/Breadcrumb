@@ -1,16 +1,17 @@
 package eu.kingconquest.framework.entity;
 
-import eu.kingconquest.framework.Tile;
+import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.utils.Location;
 
 import java.awt.*;
+import java.io.Serializable;
 
 /**
  * Represents an abstract Entity class that serves as a base for various game objects.
  * This class is responsible for managing the location and type of the entity, as well as
  * drawing the entity on the screen.
  */
-public abstract class Entity {
+public abstract class Entity implements Serializable {
     private Location location;
     private EntityType entityType;
 

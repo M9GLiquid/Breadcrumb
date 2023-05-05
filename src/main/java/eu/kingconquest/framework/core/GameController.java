@@ -1,4 +1,4 @@
-package eu.kingconquest.framework;
+package eu.kingconquest.framework.core;
 
 import eu.kingconquest.framework.audio.AudioObserver;
 import eu.kingconquest.framework.entity.Entity;
@@ -65,9 +65,8 @@ public class GameController extends KeyAdapter implements GameStrategy {
 
     @Override
     public void notifyAudioObservers(Entity entity) {
-        for (AudioObserver observer : audioObservers) {
+        for (AudioObserver observer : audioObservers)
             observer.update(entity);
-        }
     }
 
 

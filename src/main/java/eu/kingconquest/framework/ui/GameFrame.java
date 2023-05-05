@@ -1,7 +1,7 @@
 package eu.kingconquest.framework.ui;
 
-import eu.kingconquest.framework.Game;
-import eu.kingconquest.framework.Tile;
+import eu.kingconquest.framework.core.Game;
+import eu.kingconquest.framework.utils.Tile;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,7 +22,7 @@ public class GameFrame extends JFrame {
 
 
     /**
-     * Adds a menu to the GamePanel.
+     * Adds a menu to the game frame.
      *
      * @param view the menu to be added
      */

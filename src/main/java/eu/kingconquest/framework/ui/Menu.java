@@ -1,6 +1,6 @@
 package eu.kingconquest.framework.ui;
 
-import eu.kingconquest.framework.Game;
+import eu.kingconquest.framework.core.Game;
 
 public abstract class Menu extends View {
 

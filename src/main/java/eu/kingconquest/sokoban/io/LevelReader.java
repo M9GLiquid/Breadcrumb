@@ -1,7 +1,7 @@
 package eu.kingconquest.sokoban.io;
 
-import eu.kingconquest.framework.Game;
-import eu.kingconquest.framework.Tile;
+import eu.kingconquest.framework.core.Game;
+import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.sokoban.core.SokobanEntityType;
 import eu.kingconquest.sokoban.entities.Crate;
@@ -42,9 +42,8 @@ public class LevelReader {
                     numCols = 0;
                 }
             } else if (readingLevel) {
-                if (line.isEmpty()) {
+                if (line.isEmpty())
                     break;
-                }
 
                 numRows++;
                 numCols = Math.max(numCols, line.length());
@@ -52,6 +51,10 @@ public class LevelReader {
         }
 
         game.getBoard().grid = new Tile[numRows][numCols];
+        game.getGameFrame().changeSize(numCols, numRows);
+        game.getBoard().COLS = numCols;
+        game.getBoard().ROWS = numRows;
+
 
         // Reset the scanner
         sc.close();
@@ -72,9 +75,8 @@ public class LevelReader {
                 currentLevel = Integer.parseInt(line.substring(6).replace(":", ""));
                 readingLevel = currentLevel == targetLevel;
             } else if (readingLevel) {
-                if (line.isEmpty()) {
+                if (line.isEmpty())
                     break;
-                }
 
                 processLine(game, line, row);
                 row++;

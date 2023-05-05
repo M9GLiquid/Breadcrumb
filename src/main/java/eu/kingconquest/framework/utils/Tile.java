@@ -1,17 +1,14 @@
-package eu.kingconquest.framework;
+package eu.kingconquest.framework.utils;
 
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.entity.EntityType;
-import eu.kingconquest.framework.utils.Location;
-
-import java.io.Serializable;
 
 /**
  * Represents a Tile on the game board, which is a subclass of Entity.
  * A Tile has a specific location on the game board, an EntityType to describe its appearance and behavior,
  * and a flag indicating if it is walkable or not. The Tile class also stores a static size value for all Tile instances.
  */
-public class Tile extends Entity implements Serializable {
+public class Tile extends Entity {
     public static int TILE_SIZE = 32;
     private final boolean isWalkable;
 

@@ -1,11 +1,13 @@
 package eu.kingconquest.framework.utils;
 
+import java.io.Serializable;
+
 /**
  * The Location class represents a 2D coordinate in the game world.
  * It provides methods for getting and setting the x and y coordinates,
  * modifying the location, calculating the distance between locations, and comparing locations.
  */
-public class Location {
+public class Location implements Serializable {
     private int x;
     private int y;
 

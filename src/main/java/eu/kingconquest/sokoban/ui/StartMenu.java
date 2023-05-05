@@ -1,9 +1,9 @@
 package eu.kingconquest.sokoban.ui;
 
-import eu.kingconquest.framework.Game;
-import eu.kingconquest.framework.io.DataReader;
-import eu.kingconquest.framework.ui.GameView;
+import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.ui.Menu;
+import eu.kingconquest.sokoban.Listener.MenuItem;
+import eu.kingconquest.sokoban.Listener.MenuListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -40,25 +40,17 @@ public class StartMenu extends Menu {
         add(subTitle, gbc);
 
         JButton startButton = new JButton("Start Game");
-        startButton.addActionListener(event -> {
-            game.start();
-            GameView gameView = new GameView(game);
-            game.getGameFrame().addView(gameView, game.getBoard().COLS, game.getBoard().ROWS);
-            gameFrame.view = gameView;
-        });
+        startButton.addActionListener(new MenuListener(game, this, MenuItem.START));
         gbc.gridy++;
         add(startButton, gbc);
 
         JButton loadButton = new JButton("Load Game");
-        loadButton.addActionListener(event -> {
-            game.start();
-            DataReader.read(game);
-        });
+        loadButton.addActionListener(new MenuListener(game,this, MenuItem.LOAD));
         gbc.gridy++;
         add(loadButton, gbc);
 
         JButton exitButton = new JButton("Exit Game");
-        exitButton.addActionListener(event -> System.exit(0));
+        exitButton.addActionListener(new MenuListener(game,this, MenuItem.EXIT));
         gbc.gridy++;
         add(exitButton, gbc);
     }

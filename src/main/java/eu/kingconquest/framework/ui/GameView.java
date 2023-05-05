@@ -1,7 +1,7 @@
 package eu.kingconquest.framework.ui;
 
-import eu.kingconquest.framework.Game;
-import eu.kingconquest.framework.GameBoard;
+import eu.kingconquest.framework.core.Game;
+import eu.kingconquest.framework.core.GameBoard;
 import eu.kingconquest.framework.entity.Entity;
 
 import java.awt.*;

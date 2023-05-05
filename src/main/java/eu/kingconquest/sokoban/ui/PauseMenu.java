@@ -1,9 +1,10 @@
 package eu.kingconquest.sokoban.ui;
 
-import eu.kingconquest.framework.Game;
-import eu.kingconquest.framework.GameState;
-import eu.kingconquest.framework.io.DataReader;
+import eu.kingconquest.framework.core.Game;
+import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.ui.Menu;
+import eu.kingconquest.sokoban.Listener.MenuItem;
+import eu.kingconquest.sokoban.Listener.MenuListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,25 +31,29 @@ public class PauseMenu extends Menu {
         add(title, gbc);
 
         JButton startButton = new JButton("Resume Game");
-        startButton.addActionListener(event -> {
-            gameFrame.remove(this);
-            game.setState(GameState.RUNNING);
-            gameFrame.addView(gameFrame.view, game.getBoard().COLS, game.getBoard().ROWS);
-
-        });
+        startButton.addActionListener(new MenuListener(game, this, MenuItem.RESUME));
         gbc.gridy++;
         add(startButton, gbc);
 
         JButton loadButton = new JButton("Load Game");
-        loadButton.addActionListener(event -> {
-            game.start();
-            DataReader.read(game);
-        });
+        loadButton.addActionListener(new MenuListener(game,this, MenuItem.LOAD));
         gbc.gridy++;
         add(loadButton, gbc);
 
+        JButton saveButton = new JButton("Save Game");
+        saveButton.addActionListener(new MenuListener(game, this, MenuItem.SAVE));
+        gbc.gridy++;
+        add(saveButton, gbc);
+
+        // TODO:
+        // Add a main screen for Game menu choosing (Platform)
+        JButton gameMenuButton = new JButton("Return to game menu");
+        gameMenuButton.addActionListener(new MenuListener(game, this, MenuItem.RETURN));
+        gbc.gridy++;
+        add(gameMenuButton, gbc);
+
         JButton exitButton = new JButton("Exit Game");
-        exitButton.addActionListener(event -> System.exit(0));
+        exitButton.addActionListener(new MenuListener(game,this, MenuItem.EXIT));
         gbc.gridy++;
         add(exitButton, gbc);
 

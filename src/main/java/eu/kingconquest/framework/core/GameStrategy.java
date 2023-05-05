@@ -1,4 +1,4 @@
-package eu.kingconquest.framework;
+package eu.kingconquest.framework.core;
 
 import eu.kingconquest.framework.audio.AudioObserver;
 import eu.kingconquest.framework.entity.Entity;

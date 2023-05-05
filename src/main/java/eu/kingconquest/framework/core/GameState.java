@@ -1,4 +1,4 @@
-package eu.kingconquest.framework;
+package eu.kingconquest.framework.core;
 
 /**
  * Represents the various game states for a game implementation. The game states

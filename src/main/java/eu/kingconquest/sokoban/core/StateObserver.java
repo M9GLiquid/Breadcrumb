@@ -1,17 +1,17 @@
 package eu.kingconquest.sokoban.core;
 
-import eu.kingconquest.framework.GameObserver;
+import eu.kingconquest.framework.core.Game;
+import eu.kingconquest.framework.core.GameObserver;
 
 public class StateObserver implements GameObserver {
-    private final Sokoban game;
+    private final Game game;
 
-    public StateObserver(Sokoban game){
+    public StateObserver(Game game){
         this.game = game;
     }
 
     @Override
     public void update() {
-
         switch (game.getState()) {
             case WIN, GAME_OVER -> game.gameOver();
             case INITIATING -> game.initiate();

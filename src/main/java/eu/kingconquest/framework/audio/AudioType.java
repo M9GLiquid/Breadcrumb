@@ -21,16 +21,23 @@ import java.io.InputStream;
  */
 public class AudioType {
 
-    private Clip audioClip;
-    private final float audioVolume;
+    protected Clip audioClip;
+
+    protected float audioVolume;
 
     /**
      * Constructs a new AudioType instance with the given audio file path and volume.
      *
-     * @param audioPath The path to the audio file within the resources' folder.
+     * @param audioPath   The path to the audio file within the resources' folder.
      * @param audioVolume The volume at which the audio should be played, ranging from 0.0f (silent) to 1.0f (maximum volume).
      */
     public AudioType(String audioPath, float audioVolume) {
+        // Volume should not be greater than 100%
+        if (audioVolume > 1)
+            audioVolume = 1;
+        else if (audioVolume < 0)
+            audioVolume = 0;
+
         this.audioVolume = audioVolume;
         try {
             audioClip = AudioSystem.getClip();
@@ -46,9 +53,8 @@ public class AudioType {
      *
      * @param fileName The name of the audio file to load from the resources' folder.
      * @return An AudioInputStream containing the loaded audio, or null if an error occurs.
-     * @throws UnsupportedAudioFileException If the audio file format is not supported.
      */
-    public AudioInputStream loadAudio(String fileName) throws UnsupportedAudioFileException {
+    private AudioInputStream loadAudio(String fileName){
         InputStream inputStream = AudioType.class.getClassLoader().getResourceAsStream("audio/" + fileName);
         if (inputStream == null) {
             System.err.println("Audio not found: " + fileName);
@@ -60,7 +66,7 @@ public class AudioType {
 
         try {
             audioInputStream = AudioSystem.getAudioInputStream(bufferedInputStream);
-        } catch (IOException e) {
+        } catch (IOException | UnsupportedAudioFileException e) {
             e.printStackTrace();
             try {
                 inputStream.close();
@@ -69,7 +75,6 @@ public class AudioType {
             }
             return null;
         }
-
         return audioInputStream;
     }
 
@@ -78,23 +83,23 @@ public class AudioType {
      * This method sets the frame position to the beginning, adjusts the volume, and starts the clip.
      */
     public void play() {
-        if (audioClip != null && !audioClip.isRunning()) {
-            audioClip.setFramePosition(0);
-            setClipVolume(audioClip, audioVolume);
-            audioClip.start();
-        }
+        if (audioClip == null || audioClip.isRunning())
+            return;
+
+        audioClip.setFramePosition(0);
+        setClipVolume(audioClip, audioVolume);
+        audioClip.start();
     }
 
     /**
      * Sets the volume of the specified clip.
      *
-     * @param clip The Clip instance whose volume should be adjusted.
+     * @param clip   The Clip instance whose volume should be adjusted.
      * @param volume The desired volume, ranging from 0.0f (silent) to 1.0f (maximum volume).
      */
-    private void setClipVolume(Clip clip, float volume) {
+    public void setClipVolume(Clip clip, float volume) {
         if (clip == null || !clip.isOpen())
             return;
-
 
         FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
         float range = gainControl.getMaximum() - gainControl.getMinimum();
@@ -102,4 +107,11 @@ public class AudioType {
         gainControl.setValue(gain);
     }
 
+    public Clip getAudioClip() {
+        return audioClip;
+    }
+
+    public float getAudioVolume() {
+        return audioVolume;
+    }
 }

@@ -1,10 +1,10 @@
-package eu.kingconquest.framework;
+package eu.kingconquest.framework.core;
 
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.ui.GameFrame;
+import eu.kingconquest.sokoban.io.GameData;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The Game class is an abstract base class for various game implementations.
@@ -19,7 +19,8 @@ public abstract class Game {
     protected GameController controller;
     protected GameFrame gameFrame;
 
-    protected List<Entity> entities = new ArrayList<>();
+    protected ArrayList<Entity> entities = new ArrayList<>();
+    protected GameData gameData;
 
     protected Game(String title) {
         this.title = title;
@@ -28,8 +29,9 @@ public abstract class Game {
     /**
      * Initializes the game by setting up necessary objects and configurations.
      */
-    protected abstract void initiate();
+    public abstract void initiate();
 
+    public abstract void gameOver();
     /**
      * Starts the game, handling game logic and progression.
      */
@@ -38,12 +40,10 @@ public abstract class Game {
     /**
      * Resets the game to its initial state.
      */
-    protected abstract void reset();
+    public abstract void reset();
 
-    /**
-     * Generates a new level for the game.
-     */
-    protected abstract void generateLevel();
+    public abstract void save();
+    public abstract void load();
 
     /**
      * Checks if the game is finished.
@@ -68,8 +68,15 @@ public abstract class Game {
      *
      * @return List of Entities
      */
-    public List<Entity> getEntities(){
+    public ArrayList<Entity> getEntities(){
         return entities;
+    }
+
+    /**
+     * Gets the Entities associated with the game.
+     */
+    public void setEntities(ArrayList<Entity> entities){
+        this.entities = entities;
     }
 
     /**
@@ -127,5 +134,13 @@ public abstract class Game {
      */
     public GameFrame getGameFrame() {
         return gameFrame;
+    }
+
+    public GameData getGameData() {
+        return gameData;
+    }
+
+    public void setGameData(GameData gameData) {
+        this.gameData = gameData;
     }
 }

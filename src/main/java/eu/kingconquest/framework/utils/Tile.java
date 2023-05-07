@@ -41,7 +41,7 @@ public class Tile extends Entity {
      *
      * @param size the new size for the Tile
      */
-    public void setTileSize(int size){
+    public static void setTileSize(int size){
         TILE_SIZE = size;
     }
 

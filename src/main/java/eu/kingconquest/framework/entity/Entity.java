@@ -79,10 +79,10 @@ public abstract class Entity implements Serializable {
      */
     public void draw(Graphics g) {
         g.drawImage(entityType.getIcon(),
-                location.getX() * Tile.TILE_SIZE,
-                location.getY() * Tile.TILE_SIZE,
-                Tile.TILE_SIZE,
-                Tile.TILE_SIZE,
+                location.getX() * Tile.getTileSize(),
+                location.getY() * Tile.getTileSize(),
+                Tile.getTileSize(),
+                Tile.getTileSize(),
                 null);
     }
 }

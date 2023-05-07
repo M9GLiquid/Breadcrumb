@@ -9,7 +9,7 @@ import eu.kingconquest.framework.entity.EntityType;
  * and a flag indicating if it is walkable or not. The Tile class also stores a static size value for all Tile instances.
  */
 public class Tile extends Entity {
-    public static int TILE_SIZE = 32;
+    private static int TILE_SIZE = 32;
     private final boolean isWalkable;
 
     /**
@@ -43,5 +43,9 @@ public class Tile extends Entity {
      */
     public void setTileSize(int size){
         TILE_SIZE = size;
+    }
+
+    public static int getTileSize() {
+        return TILE_SIZE;
     }
 }

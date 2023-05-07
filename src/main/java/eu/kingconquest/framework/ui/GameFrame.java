@@ -7,11 +7,13 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GameFrame extends JFrame {
-    public View view;
+
+    private View view;
     public GameFrame(Game game) {
         super(game.getTitle());
         setFocusable(true);
-        setResizable(true);
+        setResizable(false);
+        setUndecorated(true);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
@@ -41,10 +43,18 @@ public class GameFrame extends JFrame {
     }
 
     public int getFrameWidth(int cols) {
-        return (cols * Tile.TILE_SIZE) + 16;
+        return (cols * Tile.getTileSize());
     }
 
     public int getFrameHeight(int rows) {
-        return (rows * Tile.TILE_SIZE) + 39;
+        return (rows * Tile.getTileSize());
+    }
+
+    public View getView() {
+        return view;
+    }
+
+    public void setView(View view) {
+        this.view = view;
     }
 }

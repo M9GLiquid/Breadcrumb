@@ -78,7 +78,7 @@ public class SokobanBoard extends GameBoard {
         if (isLevelComplete())
             game.setState(GameState.LEVEL_COMPLETE);
 
-        game.getGameFrame().view.repaint();
+        game.getGameFrame().getView().repaint();
     }
 
     /**

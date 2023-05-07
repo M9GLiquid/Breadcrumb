@@ -60,8 +60,8 @@ public class Sokoban extends Game {
             entities.clear();
             LevelReader.loadLevel("levels.txt", this, ++level);
         }
-        getGameFrame().view = new GameView(this);
-        getGameFrame().addView(getGameFrame().view, getBoard().COLS, getBoard().ROWS);
+        getGameFrame().setView(new GameView(this));
+        getGameFrame().addView(getGameFrame().getView(), getBoard().COLS, getBoard().ROWS);
         gameFrame.revalidate();
         gameFrame.repaint();
         gameFrame.requestFocusInWindow();

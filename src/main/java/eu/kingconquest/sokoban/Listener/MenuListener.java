@@ -48,7 +48,7 @@ public class MenuListener implements ActionListener {
         game.getController().notifyObservers();
         GameView gameView = new GameView(game);
         game.getGameFrame().addView(gameView, game.getBoard().COLS, game.getBoard().ROWS);
-        game.getGameFrame().view = gameView;
+        game.getGameFrame().setView(gameView);
 
         game.start();
     }
@@ -63,7 +63,7 @@ public class MenuListener implements ActionListener {
         GameFrame gameFrame = game.getGameFrame();
         gameFrame.remove(view);
         game.setState(GameState.RUNNING);
-        gameFrame.addView(gameFrame.view, game.getBoard().COLS, game.getBoard().ROWS);
+        gameFrame.addView(gameFrame.getView(), game.getBoard().COLS, game.getBoard().ROWS);
     }
 
     private void exit(){

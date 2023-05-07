@@ -22,7 +22,8 @@ public abstract class Game {
     protected ArrayList<Entity> entities = new ArrayList<>();
     protected GameData gameData;
 
-    protected Game(String title) {
+    protected Game(GameFrame gameFrame, String title) {
+        this.gameFrame = gameFrame;
         this.title = title;
     }
 

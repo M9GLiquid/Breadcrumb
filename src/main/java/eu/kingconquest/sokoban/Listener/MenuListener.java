@@ -5,6 +5,7 @@ import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.ui.GameFrame;
 import eu.kingconquest.framework.ui.GameView;
 import eu.kingconquest.framework.ui.View;
+import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.sokoban.ui.StartMenu;
 
 import java.awt.event.ActionEvent;
@@ -47,7 +48,9 @@ public class MenuListener implements ActionListener {
         game.setState(GameState.INITIATING);
         game.getController().notifyObservers();
         GameView gameView = new GameView(game);
-        game.getGameFrame().addView(gameView, game.getBoard().COLS, game.getBoard().ROWS);
+        game.getGameFrame().addView(gameView,
+                game.getBoard().COLS * Tile.getTileSize(),
+                game.getBoard().ROWS * Tile.getTileSize());
         game.getGameFrame().setView(gameView);
 
         game.start();
@@ -56,14 +59,16 @@ public class MenuListener implements ActionListener {
 
     private void back() {
         game.getGameFrame().remove(view);
-        game.getGameFrame().addView(new StartMenu(game), 30, 20);
+        game.getGameFrame().addView(new StartMenu(game), 970, 640);
     }
 
     private void resume(){
         GameFrame gameFrame = game.getGameFrame();
         gameFrame.remove(view);
         game.setState(GameState.RUNNING);
-        gameFrame.addView(gameFrame.getView(), game.getBoard().COLS, game.getBoard().ROWS);
+        gameFrame.addView(gameFrame.getView(),
+                game.getBoard().COLS * Tile.getTileSize(),
+                game.getBoard().ROWS * Tile.getTileSize());
     }
 
     private void exit(){

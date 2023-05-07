@@ -1,28 +1,28 @@
 Level 0:
 ############
-#OPOOOOOOOO#
-#OCXOOOOOOO#
+#-P--------#
+#-CX-------#
 ############
 
 Level 1:
 ##############################
-#POOOOOOOOOOOOOOOOOOOOOOOOOOO#
-#OCXOOOOOOOOOOOOOOOOOOOOOOOOO#
-#OCXOOOOOOOOOOOOOCXOOOOOOOOOO#
-#OOOOOOOOOOOOOOOOOOOOOOOOOOOO#
-#OOOOOOOOOOOOOOOOOOOOOOOOOOOO#
-#OOOOOOOOCOOOOOOOOOOOXOOOOOOO#
-#OOOOOOOOOOOOOOOOOOOOOOOOOOOO#
-#OOOOOOOOOOOOOOOOOOOOOOOOOOOO#
+#P---------------------------#
+#-CX-------------------------#
+#-CX-------------CX----------#
+#----------------------------#
+#----------------------------#
+#--------C-----------X-------#
+#----------------------------#
+#----------------------------#
 ##############################
 
 Level 2:
 ##################
-#OOOOOOOPOOOOOOOO#
-#OOOOOOOOOOOOOOOO#
-#OOOOOOOOOOOOOOOO#
-#OOOOOCOOOOOOOOOO#
-#OOOOOOOOOOOOOOOO#
-#OOOOOOOOOOOOOOOO#
-#OOOOOOOOOOOOOOOO#
+#-------P--------#
+#----------------#
+#----------------#
+#-----C----------#
+#----------------#
+#----------------#
+#----------------#
 ##################

@@ -5,9 +5,10 @@ import eu.kingconquest.framework.core.GameController;
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.io.DataReader;
 import eu.kingconquest.framework.io.DataWriter;
-import eu.kingconquest.framework.ui.Notification;
 import eu.kingconquest.framework.ui.GameFrame;
 import eu.kingconquest.framework.ui.GameView;
+import eu.kingconquest.framework.ui.Notification;
+import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.sokoban.audio.SokobanAudioObserver;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
@@ -16,25 +17,32 @@ import eu.kingconquest.sokoban.io.LevelReader;
 import eu.kingconquest.sokoban.ui.GameOverScreen;
 import eu.kingconquest.sokoban.ui.StartMenu;
 
+import java.awt.event.KeyListener;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Sokoban extends Game {
     public int level;
 
-    public Sokoban() {
-        super("Sokoban");
+    public Sokoban(GameFrame gameFrame) {
+        super(gameFrame,"Sokoban");
         state = GameState.INITIATING;
 
         // Game Controller setup
-        new GameController(this);
-
-        // Game View setup
-        gameFrame = new GameFrame(this);
-        gameFrame.addView(new StartMenu(this), 30, 20);
+        controller = new GameController(this);
 
         // Game Board setup
         board = new SokobanBoard(this, null, null);
+
+        // Key Listener setup
+        // Remove all listeners if there already is a keylistener
+        for (KeyListener keyListener : getGameFrame().getKeyListeners())
+            getGameFrame().removeKeyListener(keyListener);
+
+        getGameFrame().addKeyListener(getController());
+
+        // Game View setup
+        getGameFrame().addView(new StartMenu(this), 970, 640);
 
         // Game Audio setup
         controller.addAudioObserver(new SokobanAudioObserver());
@@ -61,7 +69,9 @@ public class Sokoban extends Game {
             LevelReader.loadLevel("levels.txt", this, ++level);
         }
         getGameFrame().setView(new GameView(this));
-        getGameFrame().addView(getGameFrame().getView(), getBoard().COLS, getBoard().ROWS);
+        getGameFrame().addView(getGameFrame().getView(),
+                getBoard().COLS * Tile.getTileSize(),
+                getBoard().ROWS * Tile.getTileSize());
         gameFrame.revalidate();
         gameFrame.repaint();
         gameFrame.requestFocusInWindow();

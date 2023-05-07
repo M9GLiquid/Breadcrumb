@@ -51,7 +51,6 @@ public class LevelReader {
         }
 
         game.getBoard().grid = new Tile[numRows][numCols];
-        game.getGameFrame().changeSize(numCols, numRows);
         game.getBoard().COLS = numCols;
         game.getBoard().ROWS = numRows;
 
@@ -103,7 +102,7 @@ public class LevelReader {
                     game.addEntity(new Crate(location));
                     game.getBoard().grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);
                 }
-                case 'O' -> game.getBoard().grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);
+                case '-' -> game.getBoard().grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);
             }
         }
     }

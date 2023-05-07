@@ -9,9 +9,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class StartMenu extends Menu {
+    private final Game game;
 
     public StartMenu(Game game) {
-        super(game);
+        this.game = game;
+        createMenu();
     }
 
     @Override

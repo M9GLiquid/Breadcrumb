@@ -10,6 +10,7 @@ import java.awt.*;
  * The GameView class is a JPanel by extension of the View class that displays the game's main graphics.
  */
 public class GameView extends View {
+    private final Game game;
 
     /**
      * Constructs a GameView for the specified game. This panel is responsible
@@ -18,7 +19,7 @@ public class GameView extends View {
      * @param game       the game to create the GamePanel for
      */
     public GameView(Game game) {
-        super(game);
+        this.game = game;
     }
 
     /**

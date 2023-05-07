@@ -10,8 +10,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PauseMenu extends Menu {
+    private final Game game;
     public PauseMenu(Game game){
-        super(game);
+        this.game = game;
+        createMenu();
     }
     @Override
     protected void createMenu() {

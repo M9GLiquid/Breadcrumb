@@ -1,16 +1,12 @@
 package eu.kingconquest.framework.ui;
 
-import eu.kingconquest.framework.core.Game;
-import eu.kingconquest.framework.utils.Tile;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class GameFrame extends JFrame {
 
     private View view;
-    public GameFrame(Game game) {
-        super(game.getTitle());
+    public GameFrame() {
         setFocusable(true);
         setResizable(false);
         setUndecorated(true);
@@ -18,7 +14,6 @@ public class GameFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         setVisible(true);
-        addKeyListener(game.getController());
     }
 
 
@@ -39,15 +34,7 @@ public class GameFrame extends JFrame {
     }
 
     public void changeSize(int width, int height){
-        setSize(getFrameWidth(width), getFrameHeight(height));
-    }
-
-    public int getFrameWidth(int cols) {
-        return (cols * Tile.getTileSize());
-    }
-
-    public int getFrameHeight(int rows) {
-        return (rows * Tile.getTileSize());
+        setSize(width, height);
     }
 
     public View getView() {

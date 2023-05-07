@@ -26,7 +26,6 @@ public class GameController extends KeyAdapter implements GameStrategy {
      */
     public GameController(Game game) {
         this.game = game;
-        game.controller = this;
     }
 
     public void addAudioObserver(AudioObserver observer) {
@@ -78,21 +77,21 @@ public class GameController extends KeyAdapter implements GameStrategy {
      */
     @Override
     public void keyPressed(KeyEvent event) {
-        Location location = new Location(0, 0);
+        Location direction = new Location(0, 0);
 
         switch (event.getKeyCode()) {
-            case KeyEvent.VK_UP, KeyEvent.VK_W -> location.setY(-1);
-            case KeyEvent.VK_DOWN, KeyEvent.VK_S -> location.setY(1);
-            case KeyEvent.VK_LEFT, KeyEvent.VK_A -> location.setX(-1);
-            case KeyEvent.VK_RIGHT, KeyEvent.VK_D -> location.setX(1);
+            case KeyEvent.VK_UP, KeyEvent.VK_W -> direction.setY(-1);
+            case KeyEvent.VK_DOWN, KeyEvent.VK_S -> direction.setY(1);
+            case KeyEvent.VK_LEFT, KeyEvent.VK_A -> direction.setX(-1);
+            case KeyEvent.VK_RIGHT, KeyEvent.VK_D -> direction.setX(1);
             case KeyEvent.VK_ESCAPE -> {
                 if (game.getState().equals(GameState.RUNNING))
-                    game.getGameFrame().addView(new PauseMenu(game), 30, 20);
+                    game.getGameFrame().addView(new PauseMenu(game), 970, 640);
             }
         }
 
-        if (location.getX() != 0 || location.getY() != 0 && game.getState().equals(GameState.RUNNING))
-            game.getBoard().makeMove(location);
+        if (direction.getX() != 0 || direction.getY() != 0 && game.getState().equals(GameState.RUNNING))
+            game.getBoard().makeMove(direction);
         notifyObservers();
     }
 }

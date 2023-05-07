@@ -18,7 +18,7 @@ public enum SokobanEntityType implements EntityType {
     private final Image icon;
 
     SokobanEntityType(String imagePath) {
-        this.icon = loadImage(imagePath);
+        icon = loadImage(imagePath);
     }
 
     @Override

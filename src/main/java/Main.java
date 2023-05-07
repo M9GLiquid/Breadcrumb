@@ -1,7 +1,7 @@
-import eu.kingconquest.sokoban.core.Sokoban;
+import eu.kingconquest.platform.Platform;
 
 public class Main {
     public static void main(String[] args) {
-        new Sokoban();
+        new Platform();
     }
 }

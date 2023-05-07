@@ -93,5 +93,6 @@ public class GameController extends KeyAdapter implements GameStrategy {
 
         if (location.getX() != 0 || location.getY() != 0 && game.getState().equals(GameState.RUNNING))
             game.getBoard().makeMove(location);
+        notifyObservers();
     }
 }

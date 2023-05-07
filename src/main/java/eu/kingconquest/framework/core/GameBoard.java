@@ -26,12 +26,12 @@ public abstract class GameBoard {
     }
 
     /**
-     * Checks if a move to the specified location is valid.
+     * Checks if a move to the specified location is invalid.
      *
      * @param location the location to be checked
      * @return true if the move is valid, false otherwise
      */
-    protected abstract boolean isMoveValid(Location location);
+    protected abstract boolean isMoveInvalid(Location location);
 
     /**
      * Makes a move on the game board in the specified direction.

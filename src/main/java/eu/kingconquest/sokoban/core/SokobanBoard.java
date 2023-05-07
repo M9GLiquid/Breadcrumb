@@ -32,7 +32,7 @@ public class SokobanBoard extends GameBoard {
      * @return true if the move is valid, false otherwise.
      */
     @Override
-    public boolean isMoveValid(Location location) {
+    public boolean isMoveInvalid(Location location) {
         return !(grid[location.getY()][location.getX()].isWalkable());
     }
 
@@ -56,13 +56,13 @@ public class SokobanBoard extends GameBoard {
         Player player = game.getPlayer();
         SokobanBoard board = (SokobanBoard) game.getBoard();
         Location newPlayerLocation = player.getLocation().add(direction);
-        if (isMoveValid(newPlayerLocation)) return;
+        if (isMoveInvalid(newPlayerLocation)) return;
 
         Crate crate = findCrateAtLocation(newPlayerLocation);
 
         if (crate != null) {
             Location newCrateLocation = crate.getLocation().add(direction);
-            if (isCrateAtLocation(newCrateLocation) || isMoveValid(newCrateLocation)) return;
+            if (isCrateAtLocation(newCrateLocation) || isMoveInvalid(newCrateLocation)) return;
 
             crate.setLocation(newCrateLocation);
 

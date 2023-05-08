@@ -1,4 +1,4 @@
-package eu.kingconquest.framework.views;
+package eu.kingconquest.framework.ui;
 
 import eu.kingconquest.framework.core.Game;
 

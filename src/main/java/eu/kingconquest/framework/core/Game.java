@@ -1,7 +1,9 @@
 package eu.kingconquest.framework.core;
 
+import eu.kingconquest.framework.controllers.GameController;
 import eu.kingconquest.framework.io.GameData;
-import eu.kingconquest.framework.views.GameFrame;
+import eu.kingconquest.framework.models.GameBoard;
+import eu.kingconquest.framework.ui.GameFrame;
 
 /**
  * The Game class is an abstract base class for various game implementations.

@@ -1,15 +1,15 @@
 package eu.kingconquest.sokoban.core;
 
 import eu.kingconquest.framework.core.Game;
-import eu.kingconquest.framework.core.GameController;
+import eu.kingconquest.framework.controllers.GameController;
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.core.StateObserver;
 import eu.kingconquest.framework.io.DataReader;
 import eu.kingconquest.framework.io.DataWriter;
 import eu.kingconquest.framework.io.GameData;
-import eu.kingconquest.framework.views.GameFrame;
+import eu.kingconquest.framework.ui.GameFrame;
 import eu.kingconquest.framework.views.GameView;
-import eu.kingconquest.framework.views.Notification;
+import eu.kingconquest.framework.ui.Notification;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.sokoban.audio.SokobanAudioObserver;
 import eu.kingconquest.sokoban.entities.Crate;

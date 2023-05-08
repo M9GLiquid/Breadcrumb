@@ -1,11 +1,12 @@
-package eu.kingconquest.twozerofoureight;
+package eu.kingconquest.twozerofoureight.core;
 
 import eu.kingconquest.framework.core.Game;
+import eu.kingconquest.framework.ui.GameFrame;
 
 public class Game2048 extends Game {
 
-    protected Game2048(String title) {
-        super(title);
+    public Game2048(GameFrame gameFrame) {
+        super(gameFrame, "2048");
     }
 
     @Override

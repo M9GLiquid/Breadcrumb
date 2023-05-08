@@ -1,6 +1,6 @@
 package eu.kingconquest.framework.views;
 
-import eu.kingconquest.framework.core.GameBoard;
+import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.entity.Entity;
 
 import javax.swing.*;

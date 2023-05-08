@@ -2,7 +2,7 @@ package eu.kingconquest.sokoban.Listener;
 
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameState;
-import eu.kingconquest.framework.views.GameFrame;
+import eu.kingconquest.framework.ui.GameFrame;
 import eu.kingconquest.framework.views.GameView;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.platform.PlatformMenu;

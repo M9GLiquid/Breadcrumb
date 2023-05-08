@@ -1,4 +1,4 @@
-package eu.kingconquest.framework.core;
+package eu.kingconquest.framework.models;
 
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.utils.Location;

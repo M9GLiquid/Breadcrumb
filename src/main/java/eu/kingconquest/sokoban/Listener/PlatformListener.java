@@ -1,6 +1,6 @@
 package eu.kingconquest.sokoban.Listener;
 
-import eu.kingconquest.framework.views.GameFrame;
+import eu.kingconquest.framework.ui.GameFrame;
 import eu.kingconquest.sokoban.core.Sokoban;
 import eu.kingconquest.twozerofoureight.core.Game2048;
 

@@ -1,7 +1,7 @@
 package eu.kingconquest.platform;
 
-import eu.kingconquest.framework.views.GameFrame;
-import eu.kingconquest.framework.views.Menu;
+import eu.kingconquest.framework.ui.GameFrame;
+import eu.kingconquest.framework.ui.Menu;
 import eu.kingconquest.sokoban.Listener.MenuItem;
 import eu.kingconquest.sokoban.Listener.PlatformListener;
 

@@ -1,9 +1,13 @@
-package eu.kingconquest.framework.core;
+package eu.kingconquest.framework.controllers;
 
 import eu.kingconquest.framework.audio.AudioObserver;
+import eu.kingconquest.framework.core.Game;
+import eu.kingconquest.framework.core.GameObserver;
+import eu.kingconquest.framework.core.GameState;
+import eu.kingconquest.framework.core.GameStrategy;
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.utils.Location;
-import eu.kingconquest.framework.views.PauseMenu;
+import eu.kingconquest.framework.ui.PauseMenu;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;

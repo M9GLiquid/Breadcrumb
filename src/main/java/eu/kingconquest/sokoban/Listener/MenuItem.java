@@ -6,5 +6,6 @@ public enum MenuItem {
     LOAD,
     SAVE,
     EXIT,
-    RETURN
+    PLATFORM,
+    SOKOBAN, GAME2048, RETURN
 }

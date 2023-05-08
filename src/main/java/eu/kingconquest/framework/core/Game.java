@@ -1,10 +1,7 @@
 package eu.kingconquest.framework.core;
 
-import eu.kingconquest.framework.entity.Entity;
+import eu.kingconquest.framework.io.GameData;
 import eu.kingconquest.framework.ui.GameFrame;
-import eu.kingconquest.sokoban.io.GameData;
-
-import java.util.ArrayList;
 
 /**
  * The Game class is an abstract base class for various game implementations.
@@ -13,13 +10,12 @@ import java.util.ArrayList;
  * as well as checking if the game is finished and accessing game components.
  */
 public abstract class Game {
-    private String title;
+    private final String title;
     protected GameBoard board;
     protected GameState state;
     protected GameController controller;
     protected GameFrame gameFrame;
 
-    protected ArrayList<Entity> entities = new ArrayList<>();
     protected GameData gameData;
 
     protected Game(GameFrame gameFrame, String title) {
@@ -64,28 +60,6 @@ public abstract class Game {
         return board;
     }
 
-    /**
-     * Gets the Entities associated with the game.
-     *
-     * @return List of Entities
-     */
-    public ArrayList<Entity> getEntities(){
-        return entities;
-    }
-
-    /**
-     * Gets the Entities associated with the game.
-     */
-    public void setEntities(ArrayList<Entity> entities){
-        this.entities = entities;
-    }
-
-    /**
-     * Add entity to list of entities
-     */
-    public void addEntity(Entity entity){
-        entities.add(entity);
-    }
 
     /**
      * Gets the GameState of the game.
@@ -119,13 +93,6 @@ public abstract class Game {
      */
     public String getTitle() {
         return title;
-    }
-
-    /**
-     * Sets the Title of the game.
-     */
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     /**

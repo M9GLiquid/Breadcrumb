@@ -93,13 +93,13 @@ public class LevelReader {
 
             switch (c) {
                 case 'P' -> {
-                    game.addEntity(new Player(location));
+                    game.getBoard().addEntity(new Player(location));
                     game.getBoard().grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);
                 }
                 case '#' -> game.getBoard().grid[row][col] = new Tile(location, SokobanEntityType.WALL, false);
                 case 'X' -> game.getBoard().grid[row][col] = new Tile(location, SokobanEntityType.GROUND_MARKED, true);
                 case 'C' -> {
-                    game.addEntity(new Crate(location));
+                    game.getBoard().addEntity(new Crate(location));
                     game.getBoard().grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);
                 }
                 case '-' -> game.getBoard().grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);

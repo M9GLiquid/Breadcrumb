@@ -1,7 +1,10 @@
 package eu.kingconquest.framework.core;
 
+import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.framework.utils.Tile;
+
+import java.util.ArrayList;
 
 /**
  * The GameBoard class is an abstract base class for various game board implementations.
@@ -11,6 +14,8 @@ import eu.kingconquest.framework.utils.Tile;
 public abstract class GameBoard {
     public int COLS = 30;
     public int ROWS = 20;
+
+    public ArrayList<Entity> entities = new ArrayList<>();
     public Tile[][] grid;
 
     /**
@@ -23,6 +28,28 @@ public abstract class GameBoard {
             COLS = numCols;
 
         grid = new Tile[COLS][ROWS];
+    }
+    /**
+     * Add entity to list of entities
+     */
+    public void addEntity(Entity entity){
+        entities.add(entity);
+    }
+
+    /**
+     * Gets the Entities associated with the game.
+     */
+    public void setEntities(ArrayList<Entity> entities){
+        this.entities = entities;
+    }
+
+    /**
+     * Gets the Entities associated with the game.
+     *
+     * @return List of Entities
+     */
+    public ArrayList<Entity> getEntities(){
+        return entities;
     }
 
     /**

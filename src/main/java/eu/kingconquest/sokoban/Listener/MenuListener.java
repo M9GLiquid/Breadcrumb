@@ -6,33 +6,43 @@ import eu.kingconquest.framework.ui.GameFrame;
 import eu.kingconquest.framework.ui.GameView;
 import eu.kingconquest.framework.ui.View;
 import eu.kingconquest.framework.utils.Tile;
+import eu.kingconquest.platform.PlatformMenu;
 import eu.kingconquest.sokoban.ui.StartMenu;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MenuListener implements ActionListener {
+public class MenuListener extends PlatformListener implements ActionListener {
     private final Game game;
     private final View view;
 
-    private final MenuItem item;
+    private final MenuItem menuItem;
 
-    public MenuListener(Game game, View view, MenuItem item){
+    public MenuListener(Game game, View view, MenuItem menuItem){
+        super(game.getGameFrame(), view, menuItem);
         this.game = game;
         this.view = view;
-        this.item = item;
+        this.menuItem = menuItem;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch(item){
+        switch(menuItem){
             case SAVE -> save();
             case LOAD -> load();
             case START -> start();
             case RETURN -> back();
+            case PLATFORM -> platform();
             case RESUME -> resume();
             case EXIT -> exit();
         }
+    }
+
+    /**
+     * Go back to the Game Selector
+     */
+    private void platform() {
+        game.getGameFrame().addView(new PlatformMenu(game.getGameFrame()), 970, 640);
     }
 
 
@@ -71,7 +81,4 @@ public class MenuListener implements ActionListener {
                 game.getBoard().ROWS * Tile.getTileSize());
     }
 
-    private void exit(){
-        System.exit(0);
-    }
 }

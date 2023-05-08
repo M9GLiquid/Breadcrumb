@@ -1,7 +1,6 @@
 package eu.kingconquest.framework.io;
 
 import eu.kingconquest.framework.core.Game;
-import eu.kingconquest.sokoban.io.GameData;
 
 import java.io.FileInputStream;
 import java.io.IOException;

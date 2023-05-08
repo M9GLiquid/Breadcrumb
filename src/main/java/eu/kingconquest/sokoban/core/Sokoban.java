@@ -3,8 +3,10 @@ package eu.kingconquest.sokoban.core;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameController;
 import eu.kingconquest.framework.core.GameState;
+import eu.kingconquest.framework.core.StateObserver;
 import eu.kingconquest.framework.io.DataReader;
 import eu.kingconquest.framework.io.DataWriter;
+import eu.kingconquest.framework.io.GameData;
 import eu.kingconquest.framework.ui.GameFrame;
 import eu.kingconquest.framework.ui.GameView;
 import eu.kingconquest.framework.ui.Notification;
@@ -12,7 +14,6 @@ import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.sokoban.audio.SokobanAudioObserver;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
-import eu.kingconquest.sokoban.io.GameData;
 import eu.kingconquest.sokoban.io.LevelReader;
 import eu.kingconquest.sokoban.ui.GameOverScreen;
 import eu.kingconquest.sokoban.ui.StartMenu;
@@ -35,7 +36,7 @@ public class Sokoban extends Game {
         board = new SokobanBoard(this, null, null);
 
         // Key Listener setup
-        // Remove all listeners if there already is a keylistener
+        // Remove all listeners if there already is a key listener
         for (KeyListener keyListener : getGameFrame().getKeyListeners())
             getGameFrame().removeKeyListener(keyListener);
 
@@ -65,7 +66,7 @@ public class Sokoban extends Game {
 
     public void nextLevel() {
         if (getState().equals(GameState.LEVEL_COMPLETE) || getState().equals(GameState.INITIATING)) {
-            entities.clear();
+            getBoard().entities.clear();
             LevelReader.loadLevel("levels.txt", this, ++level);
         }
         getGameFrame().setView(new GameView(this));
@@ -87,7 +88,7 @@ public class Sokoban extends Game {
 
     @Override
     public void save() {
-        setGameData(new GameData(getBoard().grid, getEntities(), level));
+        setGameData(new GameData(getBoard().grid, getBoard().getEntities(), level));
         String message = DataWriter.save(this);
         Notification.showNotification(this, message); // Show notification
     }
@@ -110,20 +111,20 @@ public class Sokoban extends Game {
     private void setData() {
         level = getGameData().level;
         getBoard().grid = getGameData().grid;
-        entities = getGameData().entities;
+        getBoard().entities = getGameData().entities;
         getBoard().COLS = getBoard().grid[0].length;
         getBoard().ROWS = getBoard().grid.length;
     }
 
     public List<Crate> getCrates() {
-        return entities.stream()
+        return getBoard().entities.stream()
                 .filter(entity -> entity instanceof Crate)
                 .map(entity -> (Crate) entity)
                 .collect(Collectors.toList());
     }
 
     public Player getPlayer() {
-        return (Player) entities.stream()
+        return (Player) getBoard().entities.stream()
                 .filter(entity -> entity instanceof Player)
                 .findFirst()
                 .orElse(null);

@@ -1,11 +1,11 @@
 package eu.kingconquest.sokoban.core;
 
 import eu.kingconquest.framework.entity.EntityType;
-import eu.kingconquest.sokoban.entities.Crate;
-import eu.kingconquest.sokoban.entities.Player;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.framework.core.GameBoard;
 import eu.kingconquest.framework.core.GameState;
+import eu.kingconquest.sokoban.entities.Crate;
+import eu.kingconquest.sokoban.entities.Player;
 
 /**
  * Class representing a Sokoban game board.

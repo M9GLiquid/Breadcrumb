@@ -1,4 +1,4 @@
-package eu.kingconquest.sokoban.io;
+package eu.kingconquest.framework.io;
 
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.utils.Tile;

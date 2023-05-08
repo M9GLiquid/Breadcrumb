@@ -38,7 +38,7 @@ public class GameView extends View {
                 board.grid[row][col].draw(g);
 
         // Draw the entities on the playing field
-        for (Entity entity : game.getEntities())
+        for (Entity entity : game.getBoard().getEntities())
             entity.draw(g);
     }
 }

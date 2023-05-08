@@ -1,7 +1,4 @@
-package eu.kingconquest.sokoban.core;
-
-import eu.kingconquest.framework.core.Game;
-import eu.kingconquest.framework.core.GameObserver;
+package eu.kingconquest.framework.core;
 
 public class StateObserver implements GameObserver {
     private final Game game;

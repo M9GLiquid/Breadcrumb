@@ -3,7 +3,7 @@ package eu.kingconquest.framework.core;
 import eu.kingconquest.framework.audio.AudioObserver;
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.utils.Location;
-import eu.kingconquest.sokoban.ui.PauseMenu;
+import eu.kingconquest.framework.ui.PauseMenu;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;

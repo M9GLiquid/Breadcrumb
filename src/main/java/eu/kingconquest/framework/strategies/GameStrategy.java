@@ -1,6 +1,7 @@
-package eu.kingconquest.framework.core;
+package eu.kingconquest.framework.strategies;
 
 import eu.kingconquest.framework.audio.AudioObserver;
+import eu.kingconquest.framework.core.GameObserver;
 import eu.kingconquest.framework.entity.Entity;
 
 /**

@@ -38,4 +38,9 @@ public class Game2048 extends Game {
     public void load() {
 
     }
+
+    @Override
+    public void pause() {
+
+    }
 }

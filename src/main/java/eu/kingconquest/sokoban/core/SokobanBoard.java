@@ -78,11 +78,11 @@ public class SokobanBoard extends GameBoard {
 
         // Level Win Condition
         if (isLevelComplete())
-            game.setState(GameState.LEVEL_COMPLETE);
+            game.getBoard().setState(GameState.LEVEL_COMPLETE);
 
         // Game Over Condition
         if (isGameOver())
-            game.setState(GameState.GAME_OVER);
+            game.getBoard().setState(GameState.GAME_OVER);
 
         game.getGameFrame().repaint();
     }

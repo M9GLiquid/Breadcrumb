@@ -14,7 +14,6 @@ import eu.kingconquest.framework.ui.GameFrame;
 public abstract class Game {
     private final String title;
     protected GameBoard board;
-    protected GameState state;
     protected GameController controller;
     protected GameFrame gameFrame;
 
@@ -45,15 +44,6 @@ public abstract class Game {
     public abstract void load();
 
     /**
-     * Checks if the game is finished.
-     *
-     * @return true if the game is not in the GAME_OVER state, false otherwise
-     */
-    public boolean isFinished() {
-        return (state != GameState.GAME_OVER);
-    }
-
-    /**
      * Gets the GameBoard associated with the game.
      *
      * @return the GameBoard object
@@ -62,22 +52,6 @@ public abstract class Game {
         return board;
     }
 
-
-    /**
-     * Gets the GameState of the game.
-     *
-     * @return A GameState Object
-     */
-    public GameState getState(){
-        return state;
-    }
-
-    /**
-     * Sets the Game State of the game.
-     */
-    public void setState(GameState state){
-        this.state = state;
-    }
 
     /**
      * Gets the GameController of the game.
@@ -113,4 +87,6 @@ public abstract class Game {
     public void setGameData(GameData gameData) {
         this.gameData = gameData;
     }
+
+    public abstract void pause();
 }

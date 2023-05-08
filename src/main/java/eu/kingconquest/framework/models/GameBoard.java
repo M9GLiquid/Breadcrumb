@@ -1,5 +1,6 @@
 package eu.kingconquest.framework.models;
 
+import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.framework.utils.Tile;
@@ -17,6 +18,8 @@ public abstract class GameBoard {
 
     public ArrayList<Entity> entities = new ArrayList<>();
     public Tile[][] grid;
+
+    protected GameState state;
 
     /**
      * Creates a GameBoard with the specified number of rows and columns.
@@ -38,13 +41,6 @@ public abstract class GameBoard {
 
     /**
      * Gets the Entities associated with the game.
-     */
-    public void setEntities(ArrayList<Entity> entities){
-        this.entities = entities;
-    }
-
-    /**
-     * Gets the Entities associated with the game.
      *
      * @return List of Entities
      */
@@ -59,6 +55,23 @@ public abstract class GameBoard {
      * @return true if the move is valid, false otherwise
      */
     protected abstract boolean isMoveInvalid(Location location);
+
+
+    /**
+     * Gets the GameState of the game.
+     *
+     * @return A GameState Object
+     */
+    public GameState getState(){
+        return state;
+    }
+
+    /**
+     * Sets the Game State of the game.
+     */
+    public void setState(GameState state){
+        this.state = state;
+    }
 
     /**
      * Makes a move on the game board in the specified direction.

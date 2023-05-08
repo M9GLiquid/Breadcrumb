@@ -1,7 +1,6 @@
 package eu.kingconquest.framework.ui;
 
 import eu.kingconquest.framework.core.Game;
-import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.sokoban.Listener.MenuItem;
 import eu.kingconquest.sokoban.Listener.MenuListener;
 
@@ -12,7 +11,6 @@ public class PauseMenu extends Menu {
 
     public PauseMenu(Game game){
         this.game = game;
-        game.setState(GameState.PAUSED);
         createMenu();
     }
 

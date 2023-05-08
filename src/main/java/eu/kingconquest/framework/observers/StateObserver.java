@@ -1,4 +1,8 @@
-package eu.kingconquest.framework.core;
+package eu.kingconquest.framework.observers;
+
+import eu.kingconquest.framework.core.Game;
+import eu.kingconquest.framework.core.GameObserver;
+import eu.kingconquest.framework.models.GameBoard;
 
 public class StateObserver implements GameObserver {
     private final Game game;
@@ -9,12 +13,14 @@ public class StateObserver implements GameObserver {
 
     @Override
     public void update() {
-        switch (game.getState()) {
+        GameBoard board = game.getBoard();
+        switch (board.getState()) {
             case WIN, GAME_OVER -> game.gameOver();
             case INITIATING -> game.initiate();
             case LEVEL_COMPLETE -> game.start();
             case RUNNING -> {}
             case RESETTING -> game.reset();
+            case PAUSED -> game.pause();
         }
     }
 }

@@ -3,11 +3,12 @@ package eu.kingconquest.sokoban.core;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.controllers.GameController;
 import eu.kingconquest.framework.core.GameState;
-import eu.kingconquest.framework.core.StateObserver;
+import eu.kingconquest.framework.observers.StateObserver;
 import eu.kingconquest.framework.io.DataReader;
 import eu.kingconquest.framework.io.DataWriter;
 import eu.kingconquest.framework.io.GameData;
 import eu.kingconquest.framework.ui.GameFrame;
+import eu.kingconquest.framework.ui.PauseMenu;
 import eu.kingconquest.framework.views.GameView;
 import eu.kingconquest.framework.ui.Notification;
 import eu.kingconquest.framework.utils.Tile;
@@ -27,12 +28,12 @@ public class Sokoban extends Game {
 
     public Sokoban(GameFrame gameFrame) {
         super(gameFrame,"Sokoban");
-        state = GameState.INITIATING;
-        // Game Controller setup
-        controller = new GameController(this);
 
         // Game Board setup
         board = new SokobanBoard(this, null, null);
+        board.setState(GameState.INITIATING);
+        // Game Controller setup
+        controller = new GameController(board);
 
         // Key Listener setup
         // Remove all listeners if there already is a key listener
@@ -60,11 +61,11 @@ public class Sokoban extends Game {
     @Override
     public void start() {
         nextLevel();
-        setState(GameState.RUNNING);
+        getBoard().setState(GameState.RUNNING);
     }
 
     public void nextLevel() {
-        if (getState().equals(GameState.LEVEL_COMPLETE) || getState().equals(GameState.INITIATING)) {
+        if (getBoard().getState().equals(GameState.LEVEL_COMPLETE) || getBoard().getState().equals(GameState.INITIATING)) {
             getBoard().entities.clear();
             LevelReader.loadLevel("levels.txt", this, ++level);
         }
@@ -80,7 +81,7 @@ public class Sokoban extends Game {
 
     @Override
     public void reset() {
-        state = GameState.RESETTING;
+        getBoard().setState(GameState.RESETTING);
         level--;
         nextLevel();
     }
@@ -103,7 +104,7 @@ public class Sokoban extends Game {
             message = "GameData not loaded!";
 
         Notification.showNotification(this, message); // Show notification
-        setState(GameState.RUNNING);
+        getBoard().setState(GameState.RUNNING);
         start();
     }
 
@@ -129,12 +130,9 @@ public class Sokoban extends Game {
                 .orElse(null);
     }
 
-    public void setState(GameState state) {
-        this.state = state;
-    }
-
-    public GameState getState() {
-        return state;
+    @Override
+    public void pause() {
+        getGameFrame().addView(new PauseMenu(this), 970, 640);
     }
 
     public void gameOver() {

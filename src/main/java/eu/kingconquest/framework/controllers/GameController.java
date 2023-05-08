@@ -1,13 +1,12 @@
 package eu.kingconquest.framework.controllers;
 
 import eu.kingconquest.framework.audio.AudioObserver;
-import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameObserver;
 import eu.kingconquest.framework.core.GameState;
-import eu.kingconquest.framework.core.GameStrategy;
 import eu.kingconquest.framework.entity.Entity;
+import eu.kingconquest.framework.models.GameBoard;
+import eu.kingconquest.framework.strategies.GameStrategy;
 import eu.kingconquest.framework.utils.Location;
-import eu.kingconquest.framework.ui.PauseMenu;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -19,17 +18,17 @@ import java.util.List;
  * It also manages a list of observers to be notified of game changes and audio updates.
  */
 public class GameController extends KeyAdapter implements GameStrategy {
-    private final Game game;
+    private final GameBoard gameBoard;
     private final List<GameObserver> observers = new ArrayList<>();
     private final List<AudioObserver> audioObservers = new ArrayList<>();
 
     /**
      * Creates a GameController for the specified game.
      *
-     * @param game the game to be controlled
+     * @param gameBoard the game to be controlled
      */
-    public GameController(Game game) {
-        this.game = game;
+    public GameController(GameBoard gameBoard) {
+        this.gameBoard = gameBoard;
     }
 
     public void addAudioObserver(AudioObserver observer) {
@@ -88,14 +87,11 @@ public class GameController extends KeyAdapter implements GameStrategy {
             case KeyEvent.VK_DOWN, KeyEvent.VK_S -> direction.setY(1);
             case KeyEvent.VK_LEFT, KeyEvent.VK_A -> direction.setX(-1);
             case KeyEvent.VK_RIGHT, KeyEvent.VK_D -> direction.setX(1);
-            case KeyEvent.VK_ESCAPE -> {
-                if (game.getState().equals(GameState.RUNNING))
-                    game.getGameFrame().addView(new PauseMenu(game), 970, 640);
-            }
+            case KeyEvent.VK_ESCAPE -> gameBoard.setState(GameState.PAUSED);
         }
 
-        if (direction.getX() != 0 || direction.getY() != 0 && game.getState().equals(GameState.RUNNING))
-            game.getBoard().makeMove(direction);
+        if (direction.getX() != 0 || direction.getY() != 0 && gameBoard.getState().equals(GameState.RUNNING))
+            gameBoard.makeMove(direction);
 
         notifyObservers();
     }

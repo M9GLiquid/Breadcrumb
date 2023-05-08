@@ -55,7 +55,7 @@ public class MenuListener extends PlatformListener implements ActionListener {
     }
 
     private void start(){
-        game.setState(GameState.INITIATING);
+        game.getBoard().setState(GameState.INITIATING);
         game.getController().notifyObservers();
         GameView gameView = new GameView(game.getBoard());
         game.getGameFrame().addView(gameView,
@@ -75,7 +75,7 @@ public class MenuListener extends PlatformListener implements ActionListener {
     private void resume(){
         GameFrame gameFrame = game.getGameFrame();
         gameFrame.remove(view);
-        game.setState(GameState.RUNNING);
+        game.getBoard().setState(GameState.RUNNING);
         gameFrame.addView(gameFrame.getView(),
                 game.getBoard().COLS * Tile.getTileSize(),
                 game.getBoard().ROWS * Tile.getTileSize());

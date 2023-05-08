@@ -66,7 +66,7 @@ public class Sokoban extends Game {
 
     public void nextLevel() {
         if (getBoard().getState().equals(GameState.LEVEL_COMPLETE) || getBoard().getState().equals(GameState.INITIATING)) {
-            getBoard().entities.clear();
+            getBoard().getEntities().clear();
             LevelReader.loadLevel("levels.txt", this, ++level);
         }
         getGameFrame().setView(new GameView(getBoard()));
@@ -113,20 +113,20 @@ public class Sokoban extends Game {
     private void setData() {
         level = getGameData().level;
         getBoard().grid = getGameData().grid;
-        getBoard().entities = getGameData().entities;
+        getBoard().setEntities(getGameData().entities);
         getBoard().COLS = getBoard().grid[0].length;
         getBoard().ROWS = getBoard().grid.length;
     }
 
     public List<Crate> getCrates() {
-        return getBoard().entities.stream()
+        return getBoard().getEntities().stream()
                 .filter(entity -> entity instanceof Crate)
                 .map(entity -> (Crate) entity)
                 .collect(Collectors.toList());
     }
 
     public Player getPlayer() {
-        return (Player) getBoard().entities.stream()
+        return (Player) getBoard().getEntities().stream()
                 .filter(entity -> entity instanceof Player)
                 .findFirst()
                 .orElse(null);

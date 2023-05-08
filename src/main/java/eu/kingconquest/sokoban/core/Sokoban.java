@@ -12,12 +12,12 @@ import eu.kingconquest.framework.ui.PauseMenu;
 import eu.kingconquest.framework.views.GameView;
 import eu.kingconquest.framework.ui.Notification;
 import eu.kingconquest.framework.utils.Tile;
+import eu.kingconquest.framework.ui.StartMenu;
 import eu.kingconquest.sokoban.audio.SokobanAudioObserver;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
 import eu.kingconquest.sokoban.io.LevelReader;
 import eu.kingconquest.sokoban.ui.GameOverScreen;
-import eu.kingconquest.sokoban.ui.StartMenu;
 
 import java.awt.event.KeyListener;
 import java.util.List;
@@ -60,6 +60,15 @@ public class Sokoban extends Game {
 
     @Override
     public void start() {
+        getBoard().setState(GameState.INITIATING);
+        getController().notifyObservers();
+        GameView gameView = new GameView(getBoard());
+        getGameFrame().addView(gameView,
+                getBoard().COLS * Tile.getTileSize(),
+                getBoard().ROWS * Tile.getTileSize());
+        getGameFrame().setView(gameView);
+
+
         nextLevel();
         getBoard().setState(GameState.RUNNING);
     }
@@ -90,7 +99,9 @@ public class Sokoban extends Game {
     public void save() {
         setGameData(new GameData(getBoard().grid, getBoard().getEntities(), level));
         String message = DataWriter.save(this);
-        Notification.showNotification(this, message); // Show notification
+
+        // Show notification
+        Notification.showNotification(this, message);
     }
 
     @Override

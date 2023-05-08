@@ -1,12 +1,12 @@
-package eu.kingconquest.sokoban.Listener;
+package eu.kingconquest.framework.Listener;
 
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.ui.GameFrame;
-import eu.kingconquest.framework.views.GameView;
 import eu.kingconquest.framework.utils.Tile;
+import eu.kingconquest.framework.ui.StartMenu;
 import eu.kingconquest.platform.PlatformMenu;
-import eu.kingconquest.sokoban.ui.StartMenu;
+import eu.kingconquest.platform.listeners.PlatformListener;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -55,14 +55,6 @@ public class MenuListener extends PlatformListener implements ActionListener {
     }
 
     private void start(){
-        game.getBoard().setState(GameState.INITIATING);
-        game.getController().notifyObservers();
-        GameView gameView = new GameView(game.getBoard());
-        game.getGameFrame().addView(gameView,
-                game.getBoard().COLS * Tile.getTileSize(),
-                game.getBoard().ROWS * Tile.getTileSize());
-        game.getGameFrame().setView(gameView);
-
         game.start();
     }
 

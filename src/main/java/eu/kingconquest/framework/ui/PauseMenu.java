@@ -1,8 +1,8 @@
 package eu.kingconquest.framework.ui;
 
 import eu.kingconquest.framework.core.Game;
-import eu.kingconquest.sokoban.Listener.MenuItem;
-import eu.kingconquest.sokoban.Listener.MenuListener;
+import eu.kingconquest.framework.Listener.MenuItem;
+import eu.kingconquest.framework.Listener.MenuListener;
 
 import java.awt.*;
 
@@ -37,16 +37,16 @@ public class PauseMenu extends Menu {
         gbc.gridy++;
         add(buttonComponent("Main Menu",
                 new MenuListener(game, this, MenuItem.RETURN)), gbc);
+        // Button for save game
+        gbc.gridy++;
+        add(buttonComponent("Save Game",
+                new MenuListener(game, this, MenuItem.SAVE)), gbc);
 
         // Button for load game
         gbc.gridy++;
         add(buttonComponent("Load Game",
                 new MenuListener(game, this, MenuItem.LOAD)), gbc);
 
-        // Button for save game
-        gbc.gridy++;
-        add(buttonComponent("Save Game",
-                new MenuListener(game, this, MenuItem.SAVE)), gbc);
 
         // Button for return to Game Selector
         gbc.gridy++;

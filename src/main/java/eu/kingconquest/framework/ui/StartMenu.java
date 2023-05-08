@@ -1,9 +1,8 @@
-package eu.kingconquest.sokoban.ui;
+package eu.kingconquest.framework.ui;
 
+import eu.kingconquest.framework.Listener.MenuItem;
+import eu.kingconquest.framework.Listener.MenuListener;
 import eu.kingconquest.framework.core.Game;
-import eu.kingconquest.framework.ui.Menu;
-import eu.kingconquest.sokoban.Listener.MenuItem;
-import eu.kingconquest.sokoban.Listener.MenuListener;
 
 import java.awt.*;
 

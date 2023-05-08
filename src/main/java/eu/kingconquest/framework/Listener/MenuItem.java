@@ -1,4 +1,4 @@
-package eu.kingconquest.sokoban.Listener;
+package eu.kingconquest.framework.Listener;
 
 public enum MenuItem {
     RESUME,
@@ -7,5 +7,7 @@ public enum MenuItem {
     SAVE,
     EXIT,
     PLATFORM,
-    SOKOBAN, GAME2048, RETURN
+    SOKOBAN,
+    GAME2048,
+    RETURN
 }

@@ -1,6 +1,6 @@
 package eu.kingconquest.platform;
 
-import eu.kingconquest.framework.ui.GameFrame;
+import eu.kingconquest.framework.views.GameFrame;
 
 public class Platform {
 

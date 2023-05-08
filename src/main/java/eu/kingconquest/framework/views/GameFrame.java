@@ -1,11 +1,11 @@
-package eu.kingconquest.framework.ui;
+package eu.kingconquest.framework.views;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class GameFrame extends JFrame {
 
-    private View view;
+    private JPanel view;
     public GameFrame() {
         setFocusable(true);
         setResizable(false);
@@ -23,7 +23,7 @@ public class GameFrame extends JFrame {
      *
      * @param view the menu to be added
      */
-    public void addView(View view, int width, int height) {
+    public void addView(JPanel view, int width, int height) {
         changeSize(width, height);
         setLocationRelativeTo(null);
         getContentPane().removeAll();
@@ -37,11 +37,11 @@ public class GameFrame extends JFrame {
         setSize(width, height);
     }
 
-    public View getView() {
+    public JPanel getView() {
         return view;
     }
 
-    public void setView(View view) {
+    public void setView(JPanel view) {
         this.view = view;
     }
 }

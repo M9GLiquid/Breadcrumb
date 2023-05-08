@@ -7,9 +7,9 @@ import eu.kingconquest.framework.core.StateObserver;
 import eu.kingconquest.framework.io.DataReader;
 import eu.kingconquest.framework.io.DataWriter;
 import eu.kingconquest.framework.io.GameData;
-import eu.kingconquest.framework.ui.GameFrame;
-import eu.kingconquest.framework.ui.GameView;
-import eu.kingconquest.framework.ui.Notification;
+import eu.kingconquest.framework.views.GameFrame;
+import eu.kingconquest.framework.views.GameView;
+import eu.kingconquest.framework.views.Notification;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.sokoban.audio.SokobanAudioObserver;
 import eu.kingconquest.sokoban.entities.Crate;
@@ -28,7 +28,6 @@ public class Sokoban extends Game {
     public Sokoban(GameFrame gameFrame) {
         super(gameFrame,"Sokoban");
         state = GameState.INITIATING;
-
         // Game Controller setup
         controller = new GameController(this);
 
@@ -69,7 +68,7 @@ public class Sokoban extends Game {
             getBoard().entities.clear();
             LevelReader.loadLevel("levels.txt", this, ++level);
         }
-        getGameFrame().setView(new GameView(this));
+        getGameFrame().setView(new GameView(getBoard()));
         getGameFrame().addView(getGameFrame().getView(),
                 getBoard().COLS * Tile.getTileSize(),
                 getBoard().ROWS * Tile.getTileSize());
@@ -139,6 +138,6 @@ public class Sokoban extends Game {
     }
 
     public void gameOver() {
-        new GameOverScreen(this);
+        getGameFrame().addView(new GameOverScreen(this), 970, 640);
     }
 }

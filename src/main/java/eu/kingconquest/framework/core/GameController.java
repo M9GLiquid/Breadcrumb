@@ -3,7 +3,7 @@ package eu.kingconquest.framework.core;
 import eu.kingconquest.framework.audio.AudioObserver;
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.utils.Location;
-import eu.kingconquest.framework.ui.PauseMenu;
+import eu.kingconquest.framework.views.PauseMenu;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -92,6 +92,7 @@ public class GameController extends KeyAdapter implements GameStrategy {
 
         if (direction.getX() != 0 || direction.getY() != 0 && game.getState().equals(GameState.RUNNING))
             game.getBoard().makeMove(direction);
+
         notifyObservers();
     }
 }

@@ -1,21 +1,21 @@
 package eu.kingconquest.sokoban.Listener;
 
-import eu.kingconquest.framework.ui.GameFrame;
-import eu.kingconquest.framework.ui.View;
+import eu.kingconquest.framework.views.GameFrame;
 import eu.kingconquest.sokoban.core.Sokoban;
 import eu.kingconquest.twozerofoureight.core.Game2048;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PlatformListener implements ActionListener {
 
     private final GameFrame gameFrame;
-    private final View view;
+    private final JPanel view;
     private final MenuItem menuItem;
 
 
-    public PlatformListener(GameFrame gameFrame, View view, MenuItem menuItem) {
+    public PlatformListener(GameFrame gameFrame, JPanel view, MenuItem menuItem) {
         this.gameFrame = gameFrame;
         this.menuItem = menuItem;
         this.view = view;

@@ -2,23 +2,23 @@ package eu.kingconquest.sokoban.Listener;
 
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameState;
-import eu.kingconquest.framework.ui.GameFrame;
-import eu.kingconquest.framework.ui.GameView;
-import eu.kingconquest.framework.ui.View;
+import eu.kingconquest.framework.views.GameFrame;
+import eu.kingconquest.framework.views.GameView;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.platform.PlatformMenu;
 import eu.kingconquest.sokoban.ui.StartMenu;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MenuListener extends PlatformListener implements ActionListener {
     private final Game game;
-    private final View view;
+    private final JPanel view;
 
     private final MenuItem menuItem;
 
-    public MenuListener(Game game, View view, MenuItem menuItem){
+    public MenuListener(Game game, JPanel view, MenuItem menuItem){
         super(game.getGameFrame(), view, menuItem);
         this.game = game;
         this.view = view;
@@ -57,7 +57,7 @@ public class MenuListener extends PlatformListener implements ActionListener {
     private void start(){
         game.setState(GameState.INITIATING);
         game.getController().notifyObservers();
-        GameView gameView = new GameView(game);
+        GameView gameView = new GameView(game.getBoard());
         game.getGameFrame().addView(gameView,
                 game.getBoard().COLS * Tile.getTileSize(),
                 game.getBoard().ROWS * Tile.getTileSize());

@@ -1,7 +1,7 @@
 package eu.kingconquest.sokoban.ui;
 
 import eu.kingconquest.framework.core.Game;
-import eu.kingconquest.framework.ui.Menu;
+import eu.kingconquest.framework.views.Menu;
 import eu.kingconquest.sokoban.Listener.MenuItem;
 import eu.kingconquest.sokoban.Listener.MenuListener;
 
@@ -23,7 +23,9 @@ public class StartMenu extends Menu {
         gbc.insets = new Insets(10, 10, 10, 10);
 
 
-        add(textComponent(game.getTitle(), 24, false), gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        add(textComponent(game.getTitle(), 48, false), gbc);
 
         gbc.gridx = 0;
         gbc.gridy++;

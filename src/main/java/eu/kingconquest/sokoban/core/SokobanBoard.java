@@ -1,9 +1,9 @@
 package eu.kingconquest.sokoban.core;
 
-import eu.kingconquest.framework.entity.EntityType;
-import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.framework.core.GameBoard;
 import eu.kingconquest.framework.core.GameState;
+import eu.kingconquest.framework.entity.EntityType;
+import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
 
@@ -53,6 +53,7 @@ public class SokobanBoard extends GameBoard {
      */
     @Override
     public void makeMove(Location direction) {
+
         Player player = game.getPlayer();
         SokobanBoard board = (SokobanBoard) game.getBoard();
         Location newPlayerLocation = player.getLocation().add(direction);
@@ -60,6 +61,7 @@ public class SokobanBoard extends GameBoard {
 
         Crate crate = findCrateAtLocation(newPlayerLocation);
 
+        // Crate in location in
         if (crate != null) {
             Location newCrateLocation = crate.getLocation().add(direction);
             if (isCrateAtLocation(newCrateLocation) || isMoveInvalid(newCrateLocation)) return;
@@ -78,7 +80,11 @@ public class SokobanBoard extends GameBoard {
         if (isLevelComplete())
             game.setState(GameState.LEVEL_COMPLETE);
 
-        game.getGameFrame().getView().repaint();
+        // Game Over Condition
+        if (isGameOver())
+            game.setState(GameState.GAME_OVER);
+
+        game.getGameFrame().repaint();
     }
 
     /**
@@ -99,6 +105,29 @@ public class SokobanBoard extends GameBoard {
             crate.setEntityType(SokobanEntityType.CRATE);
 
     }
+
+    /**
+     * Checks if the game is over, meaning the player cannot move any of the crates to their designated storage locations.
+     *
+     * @return true if the game is over, false otherwise.
+     */
+    private boolean isGameOver() {
+        for (Crate crate : game.getCrates()) {
+
+            // Check if crate is blocked
+            Location crateLocation = crate.getLocation();
+            boolean up = (isMoveInvalid(crateLocation.add(new Location(-1, 0))) || isCrateAtLocation(crateLocation.add(new Location(-1, 0))));
+            boolean down = (isMoveInvalid(crateLocation.add(new Location(1, 0))) || isCrateAtLocation(crateLocation.add(new Location(1, 0))));
+            boolean left = (isMoveInvalid(crateLocation.add(new Location(0, 1))) || isCrateAtLocation(crateLocation.add(new Location(0, 1))));
+            boolean right = (isMoveInvalid(crateLocation.add(new Location(0, -1))) || isCrateAtLocation(crateLocation.add(new Location(0, -1))));
+
+            if ((up || down) && (right ||left))
+                return true;
+
+        }
+        return false;
+    }
+
 
     /**
      * Finds a crate at the given location, if present.

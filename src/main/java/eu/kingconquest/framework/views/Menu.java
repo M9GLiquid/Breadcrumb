@@ -1,10 +1,10 @@
-package eu.kingconquest.framework.ui;
+package eu.kingconquest.framework.views;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public abstract class Menu extends View {
+public abstract class Menu extends JPanel {
     protected abstract void createMenu();
 
     protected JComponent textComponent(String string, int fontSize, boolean isSubTitle){

@@ -13,11 +13,11 @@ public class Game2048 extends Game {
         super(gameframe,"2048");
 
         // Game Board setup
-        board = new Board2048(this, null, null);
-        board.setState(GameState.RUNNING);
+        setBoard(new Board2048(this, null, null));
+        getBoard().setState(GameState.RUNNING);
 
         // Game Controller setup
-        controller = new GameController(board);
+        setController(new GameController(getBoard()));
 
         // Key Listener setup
         getGameFrame().addKeyListener(getController());
@@ -26,8 +26,8 @@ public class Game2048 extends Game {
         getGameFrame().addView(new StartMenu(this), 970, 640);
 
         // Game Observers Setup
-        controller.addObserver(new StateObserver(this));
-        controller.notifyObservers();
+        getController().addObserver(new StateObserver(this));
+        getController().notifyObservers();
 
         Tile.setTileSize(64);
     }

@@ -13,11 +13,11 @@ import eu.kingconquest.framework.ui.GameFrame;
  */
 public abstract class Game {
     private final String title;
-    protected GameBoard board;
-    protected GameController controller;
-    protected GameFrame gameFrame;
+    private GameBoard board;
+    private GameController controller;
+    private final GameFrame gameFrame;
 
-    protected GameData gameData;
+    private GameData gameData;
 
     protected Game(GameFrame gameFrame, String title) {
         this.gameFrame = gameFrame;
@@ -89,4 +89,13 @@ public abstract class Game {
     }
 
     public abstract void pause();
+
+    public void setBoard(GameBoard board) {
+        this.board = board;
+    }
+
+    public void setController(GameController controller) {
+        this.controller = controller;
+    }
+
 }

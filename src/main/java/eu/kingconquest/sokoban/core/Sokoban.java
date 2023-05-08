@@ -30,10 +30,10 @@ public class Sokoban extends Game {
         super(gameFrame,"Sokoban");
 
         // Game Board setup
-        board = new SokobanBoard(this, null, null);
-        board.setState(GameState.INITIATING);
+        setBoard(new SokobanBoard(this, null, null));
+        getBoard().setState(GameState.INITIATING);
         // Game Controller setup
-        controller = new GameController(board);
+        setController(new GameController(getBoard()));
 
         // Key Listener setup
         // Remove all listeners if there already is a key listener
@@ -46,11 +46,11 @@ public class Sokoban extends Game {
         getGameFrame().addView(new StartMenu(this), 970, 640);
 
         // Game Audio setup
-        controller.addAudioObserver(new SokobanAudioObserver());
+        getController().addAudioObserver(new SokobanAudioObserver());
 
         // Game Observers Setup
-        controller.addObserver(new StateObserver(this));
-        controller.notifyObservers();
+        getController().addObserver(new StateObserver(this));
+        getController().notifyObservers();
     }
 
     @Override
@@ -73,9 +73,9 @@ public class Sokoban extends Game {
         getGameFrame().addView(getGameFrame().getView(),
                 getBoard().COLS * Tile.getTileSize(),
                 getBoard().ROWS * Tile.getTileSize());
-        gameFrame.revalidate();
-        gameFrame.repaint();
-        gameFrame.requestFocusInWindow();
+        getGameFrame().revalidate();
+        getGameFrame().repaint();
+        getGameFrame().requestFocusInWindow();
     }
 
 

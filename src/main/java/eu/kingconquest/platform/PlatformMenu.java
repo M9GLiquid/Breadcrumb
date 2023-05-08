@@ -35,7 +35,7 @@ public class PlatformMenu extends Menu {
         gbc.gridx = 0;
         gbc.gridy = 1;
         add(buttonComponent("Sokoban",
-                        new PlatformListener(gameFrame, this, MenuItem.SOKOBAN)),
+                        new PlatformListener(gameFrame, this, MenuItem.GAME_SOKOBAN)),
                 gbc);
 
         gbc.weightx = 1; // Add this line
@@ -44,7 +44,7 @@ public class PlatformMenu extends Menu {
         gbc.gridx = 1;
         gbc.gridy = 1;
         add(buttonComponent("2048",
-                        new PlatformListener(gameFrame, this, MenuItem.GAME2048)),
+                        new PlatformListener(gameFrame, this, MenuItem.GAME_2048)),
                 gbc);
 
         gbc.weightx = 0; // Add this line

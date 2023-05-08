@@ -7,7 +7,7 @@ public enum MenuItem {
     SAVE,
     EXIT,
     PLATFORM,
-    SOKOBAN,
-    GAME2048,
+    GAME_SOKOBAN,
+    GAME_2048,
     RETURN
 }

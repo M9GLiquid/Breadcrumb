@@ -27,8 +27,8 @@ public class PlatformListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (menuItem) {
-            case SOKOBAN -> sokoban();
-            case GAME2048 -> game2048();
+            case GAME_SOKOBAN -> sokoban();
+            case GAME_2048 -> game2048();
         }
     }
 

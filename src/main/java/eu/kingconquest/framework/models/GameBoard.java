@@ -16,7 +16,7 @@ public abstract class GameBoard {
     public int COLS = 30;
     public int ROWS = 20;
 
-    public ArrayList<Entity> entities = new ArrayList<>();
+    private ArrayList<Entity> entities = new ArrayList<>();
     public Tile[][] grid;
 
     protected GameState state;
@@ -46,6 +46,9 @@ public abstract class GameBoard {
      */
     public ArrayList<Entity> getEntities(){
         return entities;
+    }
+    public void setEntities(ArrayList<Entity> entities){
+        this.entities = entities;
     }
 
     /**

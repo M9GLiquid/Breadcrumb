@@ -60,15 +60,6 @@ public class Sokoban extends Game {
 
     @Override
     public void start() {
-        getBoard().setState(GameState.INITIATING);
-        getController().notifyObservers();
-        GameView gameView = new GameView(getBoard());
-        getGameFrame().addView(gameView,
-                getBoard().COLS * Tile.getTileSize(),
-                getBoard().ROWS * Tile.getTileSize());
-        getGameFrame().setView(gameView);
-
-
         nextLevel();
         getBoard().setState(GameState.RUNNING);
     }

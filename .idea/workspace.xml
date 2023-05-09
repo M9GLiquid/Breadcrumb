@@ -4,37 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Add audio handling and improve documentation&#10;&#10;In this commit, I've added audio handling to the game and implemented two new sounds. The sounds are triggered by specific events in the game, such as when the player completes a level or loses a life. This should make the game more engaging and immersive for players.&#10;&#10;I've also edited and added detailed JavaDocs to the framework. This will make it easier for other developers to understand the purpose and functionality of the code, and to extend and modify it in the future.&#10;&#10;Overall, these changes should improve the quality and usability of the codebase, and make it easier to maintain and build upon over time.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/audio/AudioObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/audio/AudioType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/audio/SokobanAudioObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/audio/SokobanAudioType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/ui/GameOverScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/ui/PauseMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/audio/crate_move.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/audio/player_move.wav" afterDir="false" />
+    <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Implemented view for 2048 game&#10;&#10;This commit includes the implementation of the game view for the 2048 game. The view is responsible for rendering the game board and displaying the current state of the game.&#10;&#10;The implementation includes the necessary components, such as a game board grid and numbered tiles.&#10;&#10;With this implementation in place, further work can be done to add user input and game logic to create a fully functional 2048 game.">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/entities/Block.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/GameObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/GameObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/GameStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/GameStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/entity/EntityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/entity/EntityType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/utils/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/utils/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/Sokoban.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/Sokoban.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/SokobanBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/SokobanBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/StateObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/StateObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/ui/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/ui/StartMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crate-marked.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/crate-marked.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crate.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/crate.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ground-marked.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/ground-marked.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ground.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/ground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/player.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/player.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/wall.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/wall.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +40,6 @@
     </favorite-branches>
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
@@ -98,6 +70,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2ON6krevO8p7ERBOfjKnhpf6SCC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -112,10 +91,15 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;ChangesTree.GroupingKeys&quot;: [
@@ -130,6 +114,8 @@
       <recent name="eu.kingconquest.UI" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hieut\Downloads\AOP\Lab_3\Sokoban\src\main\resources\images\Game2048" />
+      <recent name="C:\Users\hieut\Downloads\AOP\Lab_3\Sokoban\src\main\resources\images2048" />
       <recent name="C:\Users\thoma\IdeaProjects\Sokoban\src\main\resources\audio" />
       <recent name="C:\Users\thoma\IdeaProjects\Sokoban\src\main\resources\images" />
       <recent name="C:\Users\thoma\IdeaProjects\Sokoban\src\main\resources" />
@@ -137,7 +123,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Default" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="eu.kingconquest.Main" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Sokoban" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,6 +151,8 @@
       <workItem from="1681805939286" duration="11474000" />
       <workItem from="1681920536430" duration="16482000" />
       <workItem from="1681977534485" duration="6646000" />
+      <workItem from="1683452035505" duration="24224000" />
+      <workItem from="1683624637780" duration="8598000" />
     </task>
     <task id="LOCAL−00001" summary="Added the main Framework for Game Handling and Menu Handling">
       <created>1681461977142</created>
@@ -190,7 +178,19 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1681937831605</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="Started implementing the game 2048 and so far only the start menu.&#10;&#10;Using our created Framework.">
+      <created>1683551294238</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1683551294238</updated>
+    </task>
+    <task id="LOCAL−00006" summary="Implemented view for 2048 game&#10;&#10;This commit includes the implementation of the game view for the 2048 game. The view is responsible for rendering the game board and displaying the current state of the game.&#10;&#10;The implementation includes the necessary components, such as a game board grid and numbered tiles.&#10;&#10;With this implementation in place, further work can be done to add user input and game logic to create a fully functional 2048 game.">
+      <created>1683633203158</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1683633203158</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +201,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/twozerofoureight" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -213,6 +225,8 @@
     <MESSAGE value="Version 0.2 Functionality&#10;&#10;Added:&#10; * EntityType.java to simplify&#10; * Game States functionality&#10; * GameStrategy.java for added functionality and untangled code&#10; * Start of Level's&#10; &#10;Improvements:&#10; * Entity.java&#10; &#10;Removed:&#10; * MenuActionHandler.java as it's purpose is no longer needed&#10; * MenuObserver.java as it's purpose is no longer needed&#10; * MenuStrategy.java as it's purpose is no longer needed" />
     <MESSAGE value="Refactor codebase into framework pattern&#10;&#10;For the purpose of with ease be able to add new features." />
     <MESSAGE value="Add audio handling and improve documentation&#10;&#10;In this commit, I've added audio handling to the game and implemented two new sounds. The sounds are triggered by specific events in the game, such as when the player completes a level or loses a life. This should make the game more engaging and immersive for players.&#10;&#10;I've also edited and added detailed JavaDocs to the framework. This will make it easier for other developers to understand the purpose and functionality of the code, and to extend and modify it in the future.&#10;&#10;Overall, these changes should improve the quality and usability of the codebase, and make it easier to maintain and build upon over time." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add audio handling and improve documentation&#10;&#10;In this commit, I've added audio handling to the game and implemented two new sounds. The sounds are triggered by specific events in the game, such as when the player completes a level or loses a life. This should make the game more engaging and immersive for players.&#10;&#10;I've also edited and added detailed JavaDocs to the framework. This will make it easier for other developers to understand the purpose and functionality of the code, and to extend and modify it in the future.&#10;&#10;Overall, these changes should improve the quality and usability of the codebase, and make it easier to maintain and build upon over time." />
+    <MESSAGE value="Started implementing the game 2048 and so far only the start menu.&#10;&#10;Using our created Framework." />
+    <MESSAGE value="Implemented view for 2048 game&#10;&#10;This commit includes the implementation of the game view for the 2048 game. The view is responsible for rendering the game board and displaying the current state of the game.&#10;&#10;The implementation includes the necessary components, such as a game board grid and numbered tiles.&#10;&#10;With this implementation in place, further work can be done to add user input and game logic to create a fully functional 2048 game." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented view for 2048 game&#10;&#10;This commit includes the implementation of the game view for the 2048 game. The view is responsible for rendering the game board and displaying the current state of the game.&#10;&#10;The implementation includes the necessary components, such as a game board grid and numbered tiles.&#10;&#10;With this implementation in place, further work can be done to add user input and game logic to create a fully functional 2048 game." />
   </component>
 </project>

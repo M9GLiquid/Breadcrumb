@@ -2,6 +2,7 @@ package eu.kingconquest.framework.Listener;
 
 public enum MenuItem {
     RESUME,
+    RESTART,
     START,
     LOAD,
     SAVE,
@@ -9,5 +10,6 @@ public enum MenuItem {
     PLATFORM,
     GAME_SOKOBAN,
     GAME_2048,
+    MAIN_MENU,
     RETURN
 }

@@ -18,7 +18,7 @@ public class StateObserver implements GameStateObserver {
             case INITIATING -> game.initiate();
             case LEVEL_COMPLETE -> game.start();
             case RUNNING -> {}
-            case RESETTING -> game.reset();
+            case RESETTING -> game.restart();
             case PAUSED -> game.pause();
         }
     }

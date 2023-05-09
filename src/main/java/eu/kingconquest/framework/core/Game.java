@@ -40,7 +40,7 @@ public abstract class Game {
     /**
      * Resets the game to its initial state.
      */
-    public abstract void reset();
+    public abstract void restart();
 
     public abstract void save();
     public abstract void load();

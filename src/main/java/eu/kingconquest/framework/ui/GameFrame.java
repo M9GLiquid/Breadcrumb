@@ -6,6 +6,7 @@ import java.awt.*;
 public class GameFrame extends JFrame {
 
     private JPanel view;
+    private JPanel previousView;
     public GameFrame() {
         setFocusable(true);
         setResizable(false);
@@ -26,6 +27,7 @@ public class GameFrame extends JFrame {
         setLocationRelativeTo(null);
         getContentPane().removeAll();
         add(panel, BorderLayout.CENTER);
+        previousView = view;
         view = panel;
         revalidate();
         repaint();
@@ -38,5 +40,8 @@ public class GameFrame extends JFrame {
 
     public JPanel getView() {
         return view;
+    }
+    public JPanel getPreviousView() {
+        return previousView;
     }
 }

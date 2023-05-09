@@ -28,6 +28,11 @@ public class PauseMenu extends Menu {
         gbc.gridy = 0;
         add(textComponent("Pause Menu", 48, false), gbc);
 
+        // Button to restart the game
+        gbc.gridy++;
+        add(buttonComponent("Restart Game",
+                new MenuListener(game, this, MenuItem.RESTART)), gbc);
+
         // Button to resume the game
         gbc.gridy++;
         add(buttonComponent("Resume Game",
@@ -36,7 +41,7 @@ public class PauseMenu extends Menu {
         // Button for return to Main Menu
         gbc.gridy++;
         add(buttonComponent("Main Menu",
-                new MenuListener(game, this, MenuItem.RETURN)), gbc);
+                new MenuListener(game, this, MenuItem.MAIN_MENU)), gbc);
         // Button for save game
         gbc.gridy++;
         add(buttonComponent("Save Game",

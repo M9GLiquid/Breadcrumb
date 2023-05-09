@@ -1,13 +1,10 @@
 package eu.kingconquest.framework.Listener;
 
-import eu.kingconquest.framework.controllers.GuiController;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameState;
-import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.ui.GameFrame;
 import eu.kingconquest.framework.ui.StartMenu;
 import eu.kingconquest.framework.utils.Tile;
-import eu.kingconquest.framework.views.FloatingButtonsView;
 import eu.kingconquest.platform.PlatformMenu;
 import eu.kingconquest.platform.listeners.PlatformListener;
 
@@ -34,11 +31,16 @@ public class MenuListener extends PlatformListener implements ActionListener {
             case SAVE -> save();
             case LOAD -> load();
             case START -> start();
-            case RETURN -> back();
+            case MAIN_MENU -> back();
             case PLATFORM -> platform();
             case RESUME -> resume();
+            case RESTART -> restart();
             case EXIT -> exit();
         }
+    }
+
+    private void restart() {
+        game.restart();
     }
 
     /**
@@ -63,26 +65,22 @@ public class MenuListener extends PlatformListener implements ActionListener {
     }
 
     private void start(){
-        GameBoard board = game.getBoard();
-        board.setState(GameState.INITIATING);
-
         game.start();
-
-        if (game.getController() instanceof GuiController)
-            new FloatingButtonsView(game.getGameFrame(), game.getController());
     }
 
 
     private void back() {
+        game.getBoard().setState(GameState.INITIATING);
         game.getGameFrame().remove(view);
         game.getGameFrame().addView(new StartMenu(game), 970, 640);
+        game.getController().notifyStateObservers();
     }
 
     private void resume(){
         GameFrame gameFrame = game.getGameFrame();
         gameFrame.remove(view);
         game.getBoard().setState(GameState.RUNNING);
-        gameFrame.addView(gameFrame.getView(),
+        gameFrame.addView(gameFrame.getPreviousView(),
                 game.getBoard().COLS * Tile.getTileSize(),
                 game.getBoard().ROWS * Tile.getTileSize());
     }

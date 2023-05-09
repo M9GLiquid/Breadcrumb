@@ -1,8 +1,25 @@
- Requirements left
- *  Add, 2048 game using the framework
- *  Add JUnit testings
+Framework
+  - Requirements left
+   *  Add JUnit testings
+  - Bugs
 
-Wants
- *  Restructure the code for AudioObserver to go with GameObserver, Look into Strategy part of the pattern for this.
- *  LevelReader very inefficient as it loads from the file each level pass
-    - Should keep a few levels in memory instead for increased performance.
+  - Future
+   *  Restructure the code for AudioObserver to go with GameObserver, Look into Strategy part of the pattern for this.
+   *  LevelReader very inefficient as it loads from the file each level pass
+      - Should keep a few levels in memory instead for increased performance.
+Sokoban
+  - Requirements left
+   *  Add JUnit testings
+
+  - Bugs
+   * Fix Tilesize when switching from
+
+2048
+
+  - Requirements left
+   *  Add, 2048 game using the framework
+   *  Add JUnit testings
+  - Bugs
+
+
+

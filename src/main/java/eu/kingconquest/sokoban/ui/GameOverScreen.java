@@ -27,6 +27,11 @@ public class GameOverScreen extends Menu {
         gbc.gridy = 0;
         add(textComponent("Game Over", 48, false), gbc);
 
+        // Button to return to the platform menu
+        gbc.gridy++;
+        add(buttonComponent("Game Selector",
+                        new MenuListener(game, this, MenuItem.PLATFORM)),
+                gbc);
 
         // Button to exit the game
         gbc.gridy++;

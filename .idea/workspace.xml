@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Implemented view for 2048 game&#10;&#10;This commit includes the implementation of the game view for the 2048 game. The view is responsible for rendering the game board and displaying the current state of the game.&#10;&#10;The implementation includes the necessary components, such as a game board grid and numbered tiles.&#10;&#10;With this implementation in place, further work can be done to add user input and game logic to create a fully functional 2048 game.">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/entities/Block.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Board2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/models/Board2048.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Game2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Game2048.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +153,7 @@
       <workItem from="1681920536430" duration="16482000" />
       <workItem from="1681977534485" duration="6646000" />
       <workItem from="1683452035505" duration="24224000" />
-      <workItem from="1683624637780" duration="8598000" />
+      <workItem from="1683624637780" duration="15556000" />
     </task>
     <task id="LOCAL−00001" summary="Added the main Framework for Game Handling and Menu Handling">
       <created>1681461977142</created>
@@ -190,7 +191,13 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1683633203158</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="Implemented view for 2048 game&#10;&#10;This commit includes the implementation of the game view for the 2048 game. The view is responsible for rendering the game board and displaying the current state of the game.&#10;&#10;The implementation includes the necessary components, such as a game board grid and numbered tiles.&#10;&#10;With this implementation in place, further work can be done to add user input and game logic to create a fully functional 2048 game.">
+      <created>1683633321904</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1683633321904</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

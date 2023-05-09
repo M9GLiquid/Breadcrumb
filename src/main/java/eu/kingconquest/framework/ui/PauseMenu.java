@@ -48,11 +48,6 @@ public class PauseMenu extends Menu {
                 new MenuListener(game, this, MenuItem.LOAD)), gbc);
 
 
-        // Button for return to Game Selector
-        gbc.gridy++;
-        add(buttonComponent("Game Selector",
-                new MenuListener(game, this, MenuItem.PLATFORM)), gbc);
-
         // Button to exit the game
         gbc.gridy++;
         add(buttonComponent("Exit Game",

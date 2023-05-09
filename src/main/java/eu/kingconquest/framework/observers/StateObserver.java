@@ -1,10 +1,9 @@
 package eu.kingconquest.framework.observers;
 
 import eu.kingconquest.framework.core.Game;
-import eu.kingconquest.framework.core.GameObserver;
 import eu.kingconquest.framework.models.GameBoard;
 
-public class StateObserver implements GameObserver {
+public class StateObserver implements GameStateObserver {
     private final Game game;
 
     public StateObserver(Game game){

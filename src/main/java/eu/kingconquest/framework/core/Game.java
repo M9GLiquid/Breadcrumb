@@ -1,9 +1,11 @@
 package eu.kingconquest.framework.core;
 
-import eu.kingconquest.framework.controllers.GameController;
 import eu.kingconquest.framework.io.GameData;
 import eu.kingconquest.framework.models.GameBoard;
+import eu.kingconquest.framework.strategies.GameStrategy;
 import eu.kingconquest.framework.ui.GameFrame;
+
+import java.awt.event.KeyListener;
 
 /**
  * The Game class is an abstract base class for various game implementations.
@@ -14,7 +16,7 @@ import eu.kingconquest.framework.ui.GameFrame;
 public abstract class Game {
     private final String title;
     private GameBoard board;
-    private GameController controller;
+    private GameStrategy controller;
     private final GameFrame gameFrame;
 
     private GameData gameData;
@@ -53,12 +55,13 @@ public abstract class Game {
     }
 
 
+
     /**
      * Gets the GameController of the game.
      *
      * @return A GameController Object
      */
-    public GameController getController() {
+    public GameStrategy getController() {
         return controller;
     }
 
@@ -94,8 +97,16 @@ public abstract class Game {
         this.board = board;
     }
 
-    public void setController(GameController controller) {
+    public void setController(GameStrategy controller) {
         this.controller = controller;
     }
 
+    protected void setDesiredController(GameStrategy controller) {
+        // Remove all listeners if there are any
+        for (KeyListener keyListener : getGameFrame().getKeyListeners())
+            getGameFrame().removeKeyListener(keyListener);
+
+        setController(controller);
+        getGameFrame().addKeyListener(getController());
+    }
 }

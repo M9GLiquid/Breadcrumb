@@ -1,7 +1,7 @@
 package eu.kingconquest.sokoban.audio;
 
-import eu.kingconquest.framework.audio.AudioObserver;
 import eu.kingconquest.framework.entity.Entity;
+import eu.kingconquest.framework.observers.AudioObserver;
 import eu.kingconquest.sokoban.core.SokobanEntityType;
 
 public class SokobanAudioObserver implements AudioObserver {

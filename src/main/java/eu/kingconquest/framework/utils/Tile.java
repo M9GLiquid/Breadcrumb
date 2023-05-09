@@ -48,4 +48,8 @@ public class Tile extends Entity {
     public static int getTileSize() {
         return TILE_SIZE;
     }
+
+    public String toString(){
+        return getEntityType().toString();
+    }
 }

@@ -1,13 +1,8 @@
- *  Add functionality of mouse(buttons)
- *  Load Capability
- *  Save Capability
+ Requirements left
  *  Add, 2048 game using the framework
+ *  Add JUnit testings
+
+Wants
+ *  Restructure the code for AudioObserver to go with GameObserver, Look into Strategy part of the pattern for this.
  *  LevelReader very inefficient as it loads from the file each level pass
     - Should keep a few levels in memory instead for increased performance.
- *  Add JUnit testings
- *  Restructure the code for AudioObserver to go with GameObserver, Look into Strategy part of the pattern for this.
-
-Bugs
- *  Load works different from StartMenu and PauseMenu?
-    Even if no file is found will load you into a position?
-    - Event due to level is incrementing on load!

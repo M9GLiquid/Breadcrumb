@@ -1,14 +1,15 @@
 package eu.kingconquest.framework.controllers;
 
-import eu.kingconquest.framework.audio.AudioObserver;
-import eu.kingconquest.framework.core.GameObserver;
+import eu.kingconquest.framework.observers.AudioObserver;
 import eu.kingconquest.framework.core.GameState;
+import eu.kingconquest.framework.observers.GameStateObserver;
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.strategies.GameStrategy;
 import eu.kingconquest.framework.utils.Location;
+import eu.kingconquest.framework.observers.GameViewObserver;
 
-import java.awt.event.KeyAdapter;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +18,10 @@ import java.util.List;
  * The GameController class handles user input and game updates for a specified game.
  * It also manages a list of observers to be notified of game changes and audio updates.
  */
-public class GameController extends KeyAdapter implements GameStrategy {
+public class KeyBoardController implements GameStrategy {
     private final GameBoard gameBoard;
-    private final List<GameObserver> observers = new ArrayList<>();
+    private final List<GameStateObserver> stateObservers = new ArrayList<>();
+    private final List<GameViewObserver> viewObservers = new ArrayList<>();
     private final List<AudioObserver> audioObservers = new ArrayList<>();
 
     /**
@@ -27,7 +29,7 @@ public class GameController extends KeyAdapter implements GameStrategy {
      *
      * @param gameBoard the game to be controlled
      */
-    public GameController(GameBoard gameBoard) {
+    public KeyBoardController(GameBoard gameBoard) {
         this.gameBoard = gameBoard;
     }
 
@@ -35,33 +37,31 @@ public class GameController extends KeyAdapter implements GameStrategy {
         audioObservers.add(observer);
     }
 
-    public void removeAudioObserver(AudioObserver observer) {
-        audioObservers.remove(observer);
-    }
-
     /**
      * Adds a GameObserver to the list of observers.
      *
      * @param observer the GameObserver to be added
      */
-    public void addObserver(GameObserver observer) {
-        observers.add(observer);
+    public void addStateObserver(GameStateObserver observer) {
+        stateObservers.add(observer);
     }
 
-    /**
-     * Removes a GameObserver from the list of observers.
-     *
-     * @param observer the GameObserver to be removed
-     */
-    public void removeObserver(GameObserver observer) {
-        observers.remove(observer);
+    @Override
+    public void addViewObserver(GameViewObserver observer) {
+        viewObservers.add(observer);
     }
 
     /**
      * Notifies all registered observers of a change in the game state.
      */
-    public void notifyObservers() {
-        for (GameObserver observer: observers)
+    public void notifyStateObservers() {
+        for (GameStateObserver observer: stateObservers)
+            observer.update();
+    }
+
+    @Override
+    public void notifyViewObservers() {
+        for (GameViewObserver observer: viewObservers)
             observer.update();
     }
 
@@ -71,6 +71,25 @@ public class GameController extends KeyAdapter implements GameStrategy {
             observer.update(entity);
     }
 
+    @Override
+    public void removeStateObservers() {
+        stateObservers.clear();
+    }
+
+    @Override
+    public void removeAudioObservers() {
+        audioObservers.clear();
+    }
+
+    @Override
+    public void removeGameViewObservers() {
+        viewObservers.clear();
+    }
+
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+    }
 
     /**
      * Handles user key input and updates the game accordingly.
@@ -93,6 +112,15 @@ public class GameController extends KeyAdapter implements GameStrategy {
         if (direction.getX() != 0 || direction.getY() != 0 && gameBoard.getState().equals(GameState.RUNNING))
             gameBoard.makeMove(direction);
 
-        notifyObservers();
+        notifyStateObservers();
+        notifyViewObservers();
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
     }
 }

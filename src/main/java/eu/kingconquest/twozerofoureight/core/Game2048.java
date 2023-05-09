@@ -1,6 +1,6 @@
 package eu.kingconquest.twozerofoureight.core;
 
-import eu.kingconquest.framework.controllers.GameController;
+import eu.kingconquest.framework.controllers.KeyBoardController;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.observers.StateObserver;
@@ -17,17 +17,16 @@ public class Game2048 extends Game {
         getBoard().setState(GameState.RUNNING);
 
         // Game Controller setup
-        setController(new GameController(getBoard()));
+        setController(new KeyBoardController(getBoard()));
 
         // Key Listener setup
-        getGameFrame().addKeyListener(getController());
 
         // Game View setup
         getGameFrame().addView(new StartMenu(this), 970, 640);
 
         // Game Observers Setup
-        getController().addObserver(new StateObserver(this));
-        getController().notifyObservers();
+        getController().addStateObserver(new StateObserver(this));
+        getController().notifyStateObservers();
 
         Tile.setTileSize(64);
     }

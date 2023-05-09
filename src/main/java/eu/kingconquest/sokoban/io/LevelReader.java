@@ -1,6 +1,7 @@
 package eu.kingconquest.sokoban.io;
 
 import eu.kingconquest.framework.core.Game;
+import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.sokoban.core.SokobanEntityType;
@@ -34,7 +35,7 @@ public class LevelReader {
         while (sc.hasNextLine()) {
             String line = sc.nextLine().trim();
 
-            if (line.startsWith("Level ")) {
+            if (line.toLowerCase().startsWith("level ")) {
                 currentLevel = Integer.parseInt(line.substring(6).replace(":", ""));
                 readingLevel = currentLevel == targetLevel;
                 if (readingLevel) {
@@ -70,14 +71,14 @@ public class LevelReader {
         while (sc.hasNextLine()) {
             String line = sc.nextLine().trim();
 
-            if (line.startsWith("Level ")) {
+            if (line.toLowerCase().startsWith("level ")) {
                 currentLevel = Integer.parseInt(line.substring(6).replace(":", ""));
                 readingLevel = currentLevel == targetLevel;
             } else if (readingLevel) {
                 if (line.isEmpty())
                     break;
 
-                processLine(game, line, row);
+                processLine(game.getBoard(), line, row);
                 row++;
             }
         }
@@ -86,23 +87,27 @@ public class LevelReader {
 
 
 
-    private static void processLine(Game game, String line, int row) {
+    private static void processLine(GameBoard board, String line, int row) {
         for (int col = 0; col < line.length(); col++) {
             char c = line.charAt(col);
             Location location = new Location(col, row);
 
             switch (c) {
                 case 'P' -> {
-                    game.getBoard().addEntity(new Player(location));
-                    game.getBoard().grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);
+                    board.addEntity(new Player(location));
+                    board.grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);
                 }
-                case '#' -> game.getBoard().grid[row][col] = new Tile(location, SokobanEntityType.WALL, false);
-                case 'X' -> game.getBoard().grid[row][col] = new Tile(location, SokobanEntityType.GROUND_MARKED, true);
+                case '#' -> board.grid[row][col] = new Tile(location, SokobanEntityType.WALL, false);
+                case 'X' -> {
+                    Tile tile = new Tile(location, SokobanEntityType.GROUND_MARKED, true);
+                    board.grid[row][col] = tile;
+                    board.addEntity(tile);
+                }
                 case 'C' -> {
-                    game.getBoard().addEntity(new Crate(location));
-                    game.getBoard().grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);
+                    board.addEntity(new Crate(location));
+                    board.grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);
                 }
-                case '-' -> game.getBoard().grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);
+                case '-' -> board.grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);
             }
         }
     }

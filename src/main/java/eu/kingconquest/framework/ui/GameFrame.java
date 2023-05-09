@@ -19,15 +19,15 @@ public class GameFrame extends JFrame {
 
 
     /**
-     * Adds a menu to the game frame.
+     * Adds a Component to the game frame.
      *
-     * @param view the menu to be added
+     * @param panel the Component to be added
      */
-    public void addView(JPanel view, int width, int height) {
+    public void addView(JPanel panel, int width, int height) {
         changeSize(width, height);
         setLocationRelativeTo(null);
         getContentPane().removeAll();
-        add(view, BorderLayout.CENTER);
+        add(panel, BorderLayout.CENTER);
         revalidate();
         repaint();
         requestFocusInWindow();

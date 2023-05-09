@@ -19,7 +19,7 @@ public abstract class GameBoard {
     private ArrayList<Entity> entities = new ArrayList<>();
     public Tile[][] grid;
 
-    protected GameState state;
+    private GameState state;
 
     /**
      * Creates a GameBoard with the specified number of rows and columns.
@@ -32,10 +32,11 @@ public abstract class GameBoard {
 
         grid = new Tile[COLS][ROWS];
     }
+
     /**
      * Add entity to list of entities
      */
-    public void addEntity(Entity entity){
+    public void addEntity(Entity entity) {
         entities.add(entity);
     }
 
@@ -44,10 +45,11 @@ public abstract class GameBoard {
      *
      * @return List of Entities
      */
-    public ArrayList<Entity> getEntities(){
+    public ArrayList<Entity> getEntities() {
         return entities;
     }
-    public void setEntities(ArrayList<Entity> entities){
+
+    public void setEntities(ArrayList<Entity> entities) {
         this.entities = entities;
     }
 
@@ -65,14 +67,14 @@ public abstract class GameBoard {
      *
      * @return A GameState Object
      */
-    public GameState getState(){
+    public GameState getState() {
         return state;
     }
 
     /**
      * Sets the Game State of the game.
      */
-    public void setState(GameState state){
+    public void setState(GameState state) {
         this.state = state;
     }
 
@@ -84,6 +86,25 @@ public abstract class GameBoard {
      */
     public abstract void makeMove(Location direction);
 
+    public String toString() {
+        StringBuilder string = new StringBuilder();
+        for (int col = 0; col < COLS; col++) {
+            for (int row = 0; row < ROWS; row++) {
+                string.append(grid[col][row]);
+            }
+            string.append("\n");
+        }
+
+        // Replace the corresponding grid[][] with entity
+        entities.forEach(entity -> {
+            int row = entity.getLocation().getY();
+            int col = entity.getLocation().getX();
+            int index = row * (COLS + 1) + col;
+            string.setCharAt(index, entity.getEntityType().toString().charAt(0));
+        });
+
+        return string.toString();
+    }
 }
 
 

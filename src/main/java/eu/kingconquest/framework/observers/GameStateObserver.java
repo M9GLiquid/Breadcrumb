@@ -1,10 +1,10 @@
-package eu.kingconquest.framework.core;
+package eu.kingconquest.framework.observers;
 
 /**
  * The GameObserver interface defines an update method for objects that need to be notified
  * of changes in the game state.
  */
-public interface GameObserver{
+public interface GameStateObserver {
 
     /**
      * Updates the observer with the current state of the game.

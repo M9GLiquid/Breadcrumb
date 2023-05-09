@@ -29,6 +29,7 @@ public class PlatformListener implements ActionListener {
         switch (menuItem) {
             case GAME_SOKOBAN -> sokoban();
             case GAME_2048 -> game2048();
+            case EXIT -> exit();
         }
     }
 

@@ -1,22 +1,33 @@
 package eu.kingconquest.framework.strategies;
 
-import eu.kingconquest.framework.audio.AudioObserver;
-import eu.kingconquest.framework.core.GameObserver;
+import eu.kingconquest.framework.observers.AudioObserver;
+import eu.kingconquest.framework.observers.GameStateObserver;
 import eu.kingconquest.framework.entity.Entity;
+import eu.kingconquest.framework.observers.GameViewObserver;
+
+import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
 
 /**
  * Interface for game strategies that handle observer registration, removal, and notifications.
  * This interface defines methods for managing GameObserver and AudioObserver instances
  * to be notified of changes in the game state and audio events.
  */
-public interface GameStrategy {
+public interface GameStrategy extends ActionListener, KeyListener{
 
     /**
      * Adds a GameObserver to the list of observers.
      *
      * @param observer the GameObserver to be added
      */
-    void addObserver(GameObserver observer);
+    void addStateObserver(GameStateObserver observer);
+
+    /**
+     * Adds a GameViewObserver to the list of observers.
+     *
+     * @param observer the GameViewObserver to be added
+     */
+    void addViewObserver(GameViewObserver observer);
 
     /**
      * Adds an AudioObserver to the list of audio observers.
@@ -26,27 +37,13 @@ public interface GameStrategy {
     void addAudioObserver(AudioObserver observer);
 
     /**
-     * Removes a GameObserver from the list of observers.
-     *
-     * @param observer the GameObserver to be removed
-     */
-    void removeObserver(GameObserver observer);
-
-    /**
-     * Removes an AudioObserver from the list of audio observers.
-     *
-     * @param observer the AudioObserver to be removed
-     */
-    void removeAudioObserver(AudioObserver observer);
-
-    /**
      * <p>
-     * Notifies all registered GameObservers of a change in the game state.
+     * Notifies all registered GameStateObservers of a change in the game state.
      * This method is typically called when there is a significant update in the game,
      * such as player or crate movement, level completion, or game reset.
      * </p>
      * <p>
-     * The registered GameObservers will be responsible for updating the game's state
+     * The registered GameStateObservers will be responsible for updating the game's state
      * and triggering appropriate actions based on the current state.
      * </p>
      * <p>
@@ -55,7 +52,25 @@ public interface GameStrategy {
      * accordingly (e.g., setting the game state to LEVEL_COMPLETE if the level is complete).
      * </p>
      */
-    void notifyObservers();
+    void notifyStateObservers();
+
+    /**
+     * <p>
+     * Notifies all registered GameViewObservers of a change in the game state.
+     * This method is typically called when there is a significant update in the game,
+     * such as player or crate movement, level completion, or game reset.
+     * </p>
+     * <p>
+     * The registered GameViewObservers will be responsible for updating the game's state
+     * and triggering appropriate actions based on the current state.
+     * </p>
+     * <p>
+     * For example, in the Sokoban game, when the player moves, the controller calls
+     * this method to notify the ViewObserver, which then updates the game views
+     * accordingly (e.g., repainting GUI's or writing to console).
+     * </p>
+     */
+    void notifyViewObservers();
 
     /**
      * <p>
@@ -70,4 +85,8 @@ public interface GameStrategy {
      * @param entity the Entity instance for which the update occurred, such as a moved player or crate
      */
     void notifyAudioObservers(Entity entity);
+
+    void removeStateObservers();
+    void removeAudioObservers();
+    void removeGameViewObservers();
 }

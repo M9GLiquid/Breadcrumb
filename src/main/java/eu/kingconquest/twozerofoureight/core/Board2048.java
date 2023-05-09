@@ -29,4 +29,8 @@ public class Board2048 extends GameBoard {
             game.getBoard().setState(GameState.GAME_OVER);
 
     }
+
+    public boolean isGameOver(){
+        return true;
+    }
 }

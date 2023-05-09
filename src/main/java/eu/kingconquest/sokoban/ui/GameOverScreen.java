@@ -1,12 +1,12 @@
 package eu.kingconquest.sokoban.ui;
 
-import eu.kingconquest.framework.Listener.MenuItem;
 import eu.kingconquest.framework.Listener.MenuListener;
+import eu.kingconquest.framework.Listener.MenuItem;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.ui.Menu;
 
-import java.awt.*;
 
+import java.awt.*;
 
 public class GameOverScreen extends Menu {
     private final Game game;

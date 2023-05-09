@@ -22,11 +22,12 @@ public enum EntityType2048 implements EntityType {
     E4096("tile_12.png"),
     E8192("tile_13.png"),
     E16384("tile_14.png"),
-    WALL("wall.png");
+    WALL("wall.png"),
+    GROUND("ground.png");
     private final Image icon;
 
     EntityType2048(String imagePath) {
-        icon = loadImage(imagePath);
+        icon = loadImage("Game2048/" + imagePath);
     }
 
     @Override

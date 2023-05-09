@@ -16,8 +16,6 @@ public class GameFrame extends JFrame {
         setVisible(true);
     }
 
-
-
     /**
      * Adds a Component to the game frame.
      *
@@ -28,6 +26,7 @@ public class GameFrame extends JFrame {
         setLocationRelativeTo(null);
         getContentPane().removeAll();
         add(panel, BorderLayout.CENTER);
+        view = panel;
         revalidate();
         repaint();
         requestFocusInWindow();
@@ -39,9 +38,5 @@ public class GameFrame extends JFrame {
 
     public JPanel getView() {
         return view;
-    }
-
-    public void setView(JPanel view) {
-        this.view = view;
     }
 }

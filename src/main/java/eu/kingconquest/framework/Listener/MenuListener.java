@@ -5,10 +5,9 @@ import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.ui.GameFrame;
-import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.ui.StartMenu;
+import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.views.FloatingButtonsView;
-import eu.kingconquest.framework.views.GameGuiView;
 import eu.kingconquest.platform.PlatformMenu;
 import eu.kingconquest.platform.listeners.PlatformListener;
 
@@ -47,9 +46,11 @@ public class MenuListener extends PlatformListener implements ActionListener {
      */
     private void platform() {
         game.getGameFrame().addView(new PlatformMenu(game.getGameFrame()), 970, 640);
-        // Remove all the observers.
-        game.getController().removeStateObservers();
-        game.getController().removeAudioObservers();
+
+        // Clear all the observers.
+        game.getController().clearStateObservers();
+        game.getController().clearAudioObservers();
+        game.getController().clearViewObservers();
     }
 
 
@@ -64,17 +65,11 @@ public class MenuListener extends PlatformListener implements ActionListener {
     private void start(){
         GameBoard board = game.getBoard();
         board.setState(GameState.INITIATING);
-        game.getController().notifyStateObservers();
-        GameGuiView gameGuiView = new GameGuiView(board);
-        game.getController().addViewObserver(gameGuiView);
-        game.getGameFrame().addView(gameGuiView,
-                board.COLS * Tile.getTileSize(),
-                board.ROWS * Tile.getTileSize());
-        game.getGameFrame().setView(gameGuiView);
+
+        game.start();
 
         if (game.getController() instanceof GuiController)
             new FloatingButtonsView(game.getGameFrame(), game.getController());
-        game.start();
     }
 
 

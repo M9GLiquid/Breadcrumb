@@ -85,8 +85,6 @@ public class SokobanBoard extends GameBoard {
         // Game Over Condition
         if (isGameOver())
             game.getBoard().setState(GameState.GAME_OVER);
-
-        game.getGameFrame().getView().repaint();
     }
 
     /**
@@ -105,7 +103,6 @@ public class SokobanBoard extends GameBoard {
 
         if (crate.getEntityType().equals(SokobanEntityType.CRATE_MARKED))
             crate.setEntityType(SokobanEntityType.CRATE);
-
     }
 
     /**

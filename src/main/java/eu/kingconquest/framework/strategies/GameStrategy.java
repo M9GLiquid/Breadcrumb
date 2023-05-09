@@ -1,6 +1,6 @@
 package eu.kingconquest.framework.strategies;
 
-import eu.kingconquest.framework.observers.AudioObserver;
+import eu.kingconquest.framework.observers.GameAudioObserver;
 import eu.kingconquest.framework.observers.GameStateObserver;
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.observers.GameViewObserver;
@@ -34,7 +34,7 @@ public interface GameStrategy extends ActionListener, KeyListener{
      *
      * @param observer the AudioObserver to be added
      */
-    void addAudioObserver(AudioObserver observer);
+    void addAudioObserver(GameAudioObserver observer);
 
     /**
      * <p>
@@ -86,7 +86,7 @@ public interface GameStrategy extends ActionListener, KeyListener{
      */
     void notifyAudioObservers(Entity entity);
 
-    void removeStateObservers();
-    void removeAudioObservers();
-    void removeGameViewObservers();
+    void clearStateObservers();
+    void clearAudioObservers();
+    void clearViewObservers();
 }

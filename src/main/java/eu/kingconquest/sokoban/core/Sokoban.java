@@ -1,12 +1,11 @@
 package eu.kingconquest.sokoban.core;
 
-import eu.kingconquest.framework.controllers.GuiController;
+import eu.kingconquest.framework.controllers.KeyBoardController;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.io.DataReader;
 import eu.kingconquest.framework.io.DataWriter;
 import eu.kingconquest.framework.io.GameData;
-import eu.kingconquest.framework.observers.ConsoleViewObserver;
 import eu.kingconquest.framework.observers.StateObserver;
 import eu.kingconquest.framework.ui.GameFrame;
 import eu.kingconquest.framework.ui.Notification;
@@ -14,7 +13,7 @@ import eu.kingconquest.framework.ui.PauseMenu;
 import eu.kingconquest.framework.ui.StartMenu;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.views.GameGuiView;
-import eu.kingconquest.sokoban.audio.SokobanAudioObserver;
+import eu.kingconquest.sokoban.audio.SokobanGameAudioObserver;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
 import eu.kingconquest.sokoban.io.LevelReader;
@@ -34,17 +33,17 @@ public class Sokoban extends Game {
         setBoard(new SokobanBoard(this, null, null));
 
         // Set the desired controller
-        setDesiredController(new GuiController(getBoard())); // Change this line to switch between controllers
+        setDesiredController(new KeyBoardController(getBoard())); // Change this line to switch between controllers
 
         // Game View setup
         getGameFrame().addView(new StartMenu(this), 970, 640);
 
         // Game Audio setup
-        getController().addAudioObserver(new SokobanAudioObserver());
+        getController().addAudioObserver(new SokobanGameAudioObserver());
 
         // Game Observers Setup
         getController().addStateObserver(new StateObserver(this));
-        getController().addViewObserver(new ConsoleViewObserver(getBoard()));
+        //getController().addViewObserver(new ConsoleViewObserver(getBoard()));
 
 
         getBoard().setState(GameState.INITIATING);
@@ -69,13 +68,12 @@ public class Sokoban extends Game {
             getBoard().getEntities().clear();
             LevelReader.loadLevel("levels.txt", this, ++level);
         }
-        getGameFrame().setView(new GameGuiView(getBoard()));
-        getGameFrame().addView(getGameFrame().getView(),
+
+        GameGuiView view = new GameGuiView(getBoard());
+        getGameFrame().addView(view,
                 getBoard().COLS * Tile.getTileSize(),
                 getBoard().ROWS * Tile.getTileSize());
-        getGameFrame().revalidate();
-        getGameFrame().repaint();
-        getGameFrame().requestFocusInWindow();
+        getController().addViewObserver(view);
     }
 
 

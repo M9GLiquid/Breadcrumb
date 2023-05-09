@@ -1,10 +1,10 @@
 package eu.kingconquest.sokoban.audio;
 
 import eu.kingconquest.framework.entity.Entity;
-import eu.kingconquest.framework.observers.AudioObserver;
+import eu.kingconquest.framework.observers.GameAudioObserver;
 import eu.kingconquest.sokoban.core.SokobanEntityType;
 
-public class SokobanAudioObserver implements AudioObserver {
+public class SokobanGameAudioObserver implements GameAudioObserver {
     @Override
     public void update(Entity entity) {
         SokobanAudioType audioType = null;

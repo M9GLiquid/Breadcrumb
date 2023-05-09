@@ -10,7 +10,7 @@ import eu.kingconquest.framework.entity.Entity;
  * when the update method is called.
  * </p>
  */
-public interface AudioObserver {
+public interface GameAudioObserver {
 
     /**
      * Updates the audio component based on the provided entity.

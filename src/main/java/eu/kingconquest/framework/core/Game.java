@@ -30,12 +30,11 @@ public abstract class Game {
      * Initializes the game by setting up necessary objects and configurations.
      */
     public abstract void initiate();
-
-    public abstract void gameOver();
     /**
      * Starts the game, handling game logic and progression.
      */
     public abstract void start();
+    public abstract void gameOver();
 
     /**
      * Resets the game to its initial state.
@@ -44,6 +43,8 @@ public abstract class Game {
 
     public abstract void save();
     public abstract void load();
+
+    public abstract void pause();
 
     /**
      * Gets the GameBoard associated with the game.
@@ -90,8 +91,6 @@ public abstract class Game {
     public void setGameData(GameData gameData) {
         this.gameData = gameData;
     }
-
-    public abstract void pause();
 
     public void setBoard(GameBoard board) {
         this.board = board;

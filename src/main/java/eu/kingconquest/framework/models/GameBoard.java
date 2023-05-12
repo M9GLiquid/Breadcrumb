@@ -87,23 +87,24 @@ public abstract class GameBoard {
     public abstract void makeMove(Location direction);
 
     public String toString() {
-        StringBuilder string = new StringBuilder();
+        StringBuilder strGrid = new StringBuilder();
         for (int col = 0; col < COLS; col++) {
             for (int row = 0; row < ROWS; row++) {
-                string.append(grid[col][row]);
+                strGrid.append(grid[col][row]);
             }
-            string.append("\n");
+            strGrid.append("\n");
         }
 
-        // Replace the corresponding grid[][] with entity
+        // Replace the corresponding grid[][] location tile with entity
         entities.forEach(entity -> {
             int row = entity.getLocation().getY();
             int col = entity.getLocation().getX();
             int index = row * (COLS + 1) + col;
-            string.setCharAt(index, entity.getEntityType().toString().charAt(0));
+            // Put the Entity at the correct position in the string
+            strGrid.setCharAt(index, entity.getEntityType().toString().charAt(0));
         });
 
-        return string.toString();
+        return strGrid.toString();
     }
 }
 

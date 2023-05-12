@@ -23,39 +23,42 @@ public class PauseMenu extends Menu {
         gbc.insets = new Insets(10, 10, 10, 10);
 
 
+        //TEXT
         // Label to display text
         gbc.gridx = 0;
         gbc.gridy = 0;
         add(textComponent("Pause Menu", 48, false), gbc);
 
-        // Button to restart the game
-        gbc.gridy++;
-        add(buttonComponent("Restart Game",
-                new MenuListener(game, this, MenuItem.RESTART)), gbc);
-
+        // BUTTONS
         // Button to resume the game
         gbc.gridy++;
-        add(buttonComponent("Resume Game",
+        add(buttonComponent("Resume",
                 new MenuListener(game, this, MenuItem.RESUME)), gbc);
+
+        // Button to restart the game
+        gbc.gridy++;
+        add(buttonComponent("Restart",
+                new MenuListener(game, this, MenuItem.RESTART)), gbc);
 
         // Button for return to Main Menu
         gbc.gridy++;
         add(buttonComponent("Main Menu",
                 new MenuListener(game, this, MenuItem.MAIN_MENU)), gbc);
+
         // Button for save game
         gbc.gridy++;
-        add(buttonComponent("Save Game",
+        add(buttonComponent("Save",
                 new MenuListener(game, this, MenuItem.SAVE)), gbc);
 
         // Button for load game
         gbc.gridy++;
-        add(buttonComponent("Load Game",
+        add(buttonComponent("Load",
                 new MenuListener(game, this, MenuItem.LOAD)), gbc);
 
 
         // Button to exit the game
         gbc.gridy++;
-        add(buttonComponent("Exit Game",
+        add(buttonComponent("Exit",
                 new MenuListener(game, this, MenuItem.EXIT)), gbc);
 
     }

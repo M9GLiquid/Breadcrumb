@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public abstract class Menu extends JPanel {
+    public static short WIDTH = 970;
+    public static short HEIGHT = 640;
     protected abstract void createMenu();
 
     protected JComponent textComponent(String string, int fontSize, boolean isSubTitle){

@@ -10,7 +10,6 @@ import eu.kingconquest.framework.ui.StartMenu;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.views.GameGuiView;
-import eu.kingconquest.twozerofoureight.entities.Block;
 import eu.kingconquest.twozerofoureight.models.Board2048;
 
 public class Game2048 extends Game {
@@ -62,6 +61,9 @@ public class Game2048 extends Game {
     @Override
     public void restart() {
         getBoard().getEntities().clear();
+        Board2048 board = (Board2048) getBoard();
+        board.addNewTile();
+        board.addNewTile();
         start();
     }
 
@@ -87,20 +89,5 @@ public class Game2048 extends Game {
                 getBoard().COLS * Tile.getTileSize(),
                 getBoard().ROWS * Tile.getTileSize());
         getController().addViewObserver(view);
-        //Creating variables for random locations on the board.
-        int a, b, c, d;
-        do {
-            a = (int) (Math.random() * 4 + 1);
-            b = (int) (Math.random() * 4 + 1);
-            c = (int) (Math.random() * 4 + 1);
-            d = (int) (Math.random() * 4 + 1);
-        } while (new Location(a, b).equals(new Location(c, d)));
-        //Creating variables for the odds of being a value 4 for the two starting blocks.
-        int firstOdds = (int) (Math.random() * 100 + 1);
-        int secondOdds = (int) (Math.random() * 100 + 1);
-        EntityType2048 firstEntityType = (firstOdds > 90) ? EntityType2048.E4 : EntityType2048.E2;
-        EntityType2048 secondEntityType = (secondOdds > 90) ? EntityType2048.E4 : EntityType2048.E2;
-        getBoard().addEntity(new Block(new Location(a, b), firstEntityType));
-        getBoard().addEntity(new Block(new Location(c, d), secondEntityType));
     }
 }

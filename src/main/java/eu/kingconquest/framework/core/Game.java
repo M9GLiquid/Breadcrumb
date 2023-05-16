@@ -100,7 +100,7 @@ public abstract class Game {
         this.controller = controller;
     }
 
-    protected void setDesiredController(GameStrategy controller) {
+    public void setDesiredController(GameStrategy controller) {
         // Remove all listeners if there are any
         for (KeyListener keyListener : getGameFrame().getKeyListeners())
             getGameFrame().removeKeyListener(keyListener);

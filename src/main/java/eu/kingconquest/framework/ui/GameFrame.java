@@ -1,11 +1,14 @@
 package eu.kingconquest.framework.ui;
 
+import eu.kingconquest.framework.views.GameGuiView;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class GameFrame extends JFrame {
 
     private JPanel view;
+    GameGuiView gameGuiView;
     private JPanel previousView;
     public GameFrame() {
         setFocusable(true);
@@ -23,25 +26,31 @@ public class GameFrame extends JFrame {
      * @param panel the Component to be added
      */
     public void addView(JPanel panel, int width, int height) {
-        changeSize(width, height);
-        setLocationRelativeTo(null);
-        getContentPane().removeAll();
-        add(panel, BorderLayout.CENTER);
         previousView = view;
         view = panel;
+
+        getContentPane().removeAll();
+        if (panel != null) {
+            add(panel, BorderLayout.CENTER);
+            setSize(width, height);
+        }else{
+            setSize(0,0);
+        }
+        setLocationRelativeTo(null);
         revalidate();
         repaint();
         requestFocusInWindow();
     }
 
-    public void changeSize(int width, int height){
-        setSize(width, height);
-    }
-
-    public JPanel getView() {
-        return view;
-    }
     public JPanel getPreviousView() {
         return previousView;
+    }
+
+    public void setGameGuiView(GameGuiView gameGuiView){
+        this.gameGuiView = gameGuiView;
+    }
+
+    public GameGuiView getGameGuiView(){
+        return gameGuiView;
     }
 }

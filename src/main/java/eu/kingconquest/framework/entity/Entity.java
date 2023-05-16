@@ -72,6 +72,11 @@ public abstract class Entity implements Serializable {
         this.entityType = entityType;
     }
 
+    public boolean equals(Entity entity){
+        return location.equals(entity.getLocation())
+                && entityType.equals(entity.getEntityType());
+    }
+
     /**
      * Draws the entity on the screen using the specified Graphics context.
      *

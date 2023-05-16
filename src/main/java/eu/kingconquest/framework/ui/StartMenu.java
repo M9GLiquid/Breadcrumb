@@ -30,19 +30,19 @@ public class StartMenu extends Menu {
         gbc.gridy++;
         add(textComponent("may the odds be ever in your favor", 24, true), gbc);
 
-        // Button for load game
+        // Button for start game
         gbc.gridy++;
-        add(buttonComponent("Start Game",
+        add(buttonComponent("Start",
                 new MenuListener(game, this, MenuItem.START)),
                 gbc);
 
         // Button for load game
         gbc.gridy++;
-        add(buttonComponent("Load Game",
+        add(buttonComponent("Load",
                 new MenuListener(game, this, MenuItem.LOAD)),
                 gbc);
 
-        // Button for return to Game Selector
+        // Button for return to Game Selector (PlatformMenu)
         gbc.gridy++;
         add(buttonComponent("Game Selector",
                 new MenuListener(game, this, MenuItem.PLATFORM)),
@@ -50,7 +50,7 @@ public class StartMenu extends Menu {
 
         // Button to exit the game
         gbc.gridy++;
-        add(buttonComponent("Exit Game",
+        add(buttonComponent("Exit",
                 new MenuListener(game, this, MenuItem.EXIT)),
                 gbc);
     }

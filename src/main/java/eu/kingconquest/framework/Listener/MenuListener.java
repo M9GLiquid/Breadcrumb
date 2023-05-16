@@ -3,6 +3,7 @@ package eu.kingconquest.framework.Listener;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.ui.GameFrame;
+import eu.kingconquest.framework.ui.Menu;
 import eu.kingconquest.framework.ui.StartMenu;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.platform.PlatformMenu;
@@ -72,7 +73,7 @@ public class MenuListener extends PlatformListener implements ActionListener {
     private void back() {
         game.getBoard().setState(GameState.INITIATING);
         game.getGameFrame().remove(view);
-        game.getGameFrame().addView(new StartMenu(game), 970, 640);
+        game.getGameFrame().addView(new StartMenu(game), Menu.WIDTH, Menu.HEIGHT);
         game.getController().notifyStateObservers();
     }
 

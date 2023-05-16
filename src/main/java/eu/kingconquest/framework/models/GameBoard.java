@@ -49,6 +49,20 @@ public abstract class GameBoard {
         return entities;
     }
 
+    /**
+     * Get a entity from a location
+     * @param location location of the entity
+     * @return null if not found, entity if found
+     */
+    public Entity getEntity(Location location){
+        if (location == null)
+            return null;
+        for (Entity entity : entities)
+            if (entity.getLocation().equals(location))
+                return entity;
+        return null;
+    }
+
     public void setEntities(ArrayList<Entity> entities) {
         this.entities = entities;
     }
@@ -88,10 +102,10 @@ public abstract class GameBoard {
 
     public String toString() {
         StringBuilder strGrid = new StringBuilder();
-        for (int col = 0; col < COLS; col++) {
-            for (int row = 0; row < ROWS; row++) {
-                strGrid.append(grid[col][row]);
-            }
+        for (int row = 0; row < ROWS; row++) {
+            for (int col = 0; col < COLS; col++)
+                strGrid.append(grid[row][col]);
+
             strGrid.append("\n");
         }
 

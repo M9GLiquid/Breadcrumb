@@ -2,7 +2,7 @@ package eu.kingconquest.sokoban.audio;
 
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.observers.GameAudioObserver;
-import eu.kingconquest.sokoban.core.SokobanEntityType;
+import eu.kingconquest.sokoban.entities.SokobanEntityType;
 
 public class SokobanGameAudioObserver implements GameAudioObserver {
     @Override
@@ -17,5 +17,4 @@ public class SokobanGameAudioObserver implements GameAudioObserver {
         if (audioType != null)
             audioType.play();
     }
-
 }

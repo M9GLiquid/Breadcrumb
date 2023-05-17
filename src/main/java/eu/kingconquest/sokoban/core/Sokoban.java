@@ -7,21 +7,22 @@ import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.io.DataReader;
 import eu.kingconquest.framework.io.DataWriter;
 import eu.kingconquest.framework.io.GameData;
+import eu.kingconquest.framework.observers.ConsoleViewObserver;
 import eu.kingconquest.framework.observers.StateObserver;
-import eu.kingconquest.framework.ui.GameFrame;
-import eu.kingconquest.framework.ui.Notification;
-import eu.kingconquest.framework.ui.PauseMenu;
-import eu.kingconquest.framework.ui.StartMenu;
+import eu.kingconquest.framework.ui.*;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.views.FloatingButtonsView;
 import eu.kingconquest.framework.views.GameGuiView;
 import eu.kingconquest.sokoban.audio.SokobanGameAudioObserver;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
+import eu.kingconquest.sokoban.entities.SokobanEntityType;
 import eu.kingconquest.sokoban.io.LevelReader;
 import eu.kingconquest.sokoban.models.SokobanBoard;
 import eu.kingconquest.sokoban.ui.GameOverScreen;
+import eu.kingconquest.sokoban.ui.WinScreen;
 
+import javax.swing.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,37 +31,45 @@ public class Sokoban extends Game {
 
     public Sokoban(GameFrame gameFrame) {
         super(gameFrame,"Sokoban");
-
-        // Game Board setup
-        setBoard(new SokobanBoard(this, null, null));
-
-        // Set the desired controller
-        setDesiredController(new KeyBoardController(getBoard())); // Change this line to switch between controllers
-
-        // Game View setup
-        getGameFrame().addView(new StartMenu(this), 970, 640);
-
-        // Observers Setup
-        getController().addAudioObserver(new SokobanGameAudioObserver());
-        getController().addStateObserver(new StateObserver(this));
-        //getController().addViewObserver(new ConsoleViewObserver(getBoard()));
-
-
-        Tile.setTileSize(64);
-        getBoard().setState(GameState.INITIATING);
-        getController().notifyStateObservers();
     }
 
 
 
     @Override
     public void initiate() {
+        // Game Board setup
+        setBoard(new SokobanBoard(this, null, null));
+
+        // Set the desired controller
+        setDesiredController(new KeyBoardController(getBoard())); // Change this line to switch between controllers
+
+        GameFrame frame = getGameFrame();
+        frame.setGameGuiView(new GameGuiView(getBoard()));
+
+
+        // Game View setup
+        frame.addView(new StartMenu(this), Menu.WIDTH, Menu.HEIGHT);
+
+        // State Observers
+        getController().addStateObserver(new StateObserver(this));
+        // Audio Observers
+        getController().addAudioObserver(new SokobanGameAudioObserver());
+        // View Observers
+        getController().addViewObserver(frame.getGameGuiView());
+        getController().addViewObserver(new ConsoleViewObserver(getBoard()));
+
+        getBoard().setState(GameState.INITIATING);
+
+
+        Tile.setTileSize(64);
         level = -1;
     }
 
     @Override
     public void start() {
-        nextLevel();
+        if (nextLevel())
+            return;
+
         getBoard().setState(GameState.RUNNING);
 
         // Activate GUIControls if that is selected
@@ -68,20 +77,33 @@ public class Sokoban extends Game {
             new FloatingButtonsView(getGameFrame(), getController());
     }
 
-    public void nextLevel() {
-        if (getBoard().getState().equals(GameState.LEVEL_COMPLETE) ||
-                getBoard().getState().equals(GameState.INITIATING) ||
-                getBoard().getState().equals(GameState.RESETTING)) {
+    protected boolean nextLevel() {
+        GameState gameState = getBoard().getState();
+
+        if (gameState.equals(GameState.LEVEL_COMPLETE) ||
+                gameState.equals(GameState.INITIATING) ||
+                gameState.equals(GameState.RESETTING)) {
 
             getBoard().getEntities().clear();
-            LevelReader.loadLevel("levels.txt", this, ++level);
+            // Get next level, int: 0 error, 1 game won, 2 next level
+            int loaded = LevelReader.loadLevel("levels.txt", getBoard(), ++level);
+
+            // We have no more levels
+            if (loaded == 1) {
+                getBoard().setState(GameState.WIN);
+                gameOver();
+                return true;
+            }
         }
 
-        GameGuiView view = new GameGuiView(getBoard());
-        getGameFrame().addView(view,
+        setGameView();
+        return false;
+    }
+
+    protected void setGameView(){
+        getGameFrame().addView(getGameFrame().getGameGuiView(),
                 getBoard().COLS * Tile.getTileSize(),
                 getBoard().ROWS * Tile.getTileSize());
-        getController().addViewObserver(view);
     }
 
 
@@ -94,7 +116,10 @@ public class Sokoban extends Game {
 
     @Override
     public void save() {
+        // Upload game data
         setGameData(new GameData(getBoard().grid, getBoard().getEntities(), level));
+
+        // Try save
         String message = DataWriter.save(this);
 
         // Show notification
@@ -103,25 +128,21 @@ public class Sokoban extends Game {
 
     @Override
     public void load() {
-        String message;
-        boolean loaded = DataReader.load(this);
-        if (loaded) {
+        String message = DataReader.load(this);
+
+        if (message.equals("Game loaded successfully!")) {
             setData();
-            message = "Game has been loaded successfully!";
-        }else
-            message = "GameData not loaded!";
-
+            Timer timer = new Timer(1500, e -> {
+                getBoard().setState(GameState.RUNNING);
+                setGameView();
+            });
+            timer.setRepeats(false);
+            timer.start();
+        }
         Notification.showNotification(this, message); // Show notification
-        getBoard().setState(GameState.RUNNING);
-
-        GameGuiView view = new GameGuiView(getBoard());
-        getGameFrame().addView(view,
-                getBoard().COLS * Tile.getTileSize(),
-                getBoard().ROWS * Tile.getTileSize());
-        getController().addViewObserver(view);
     }
 
-    private void setData() {
+    protected void setData() {
         level = getGameData().level;
         getBoard().grid = getGameData().grid;
         getBoard().setEntities(getGameData().entities);
@@ -152,10 +173,14 @@ public class Sokoban extends Game {
 
     @Override
     public void pause() {
-        getGameFrame().addView(new PauseMenu(this), 970, 640);
+        getGameFrame().addView(new PauseMenu(this), Menu.WIDTH, Menu.HEIGHT);
     }
 
+    @Override
     public void gameOver() {
-        getGameFrame().addView(new GameOverScreen(this), 970, 640);
+        if (getBoard().getState().equals(GameState.GAME_OVER))
+            getGameFrame().addView(new GameOverScreen(this), Menu.WIDTH, Menu.HEIGHT);
+        else
+            getGameFrame().addView(new WinScreen(this), Menu.WIDTH, Menu.HEIGHT);
     }
 }

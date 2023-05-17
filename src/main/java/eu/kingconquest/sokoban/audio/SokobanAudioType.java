@@ -3,6 +3,8 @@ package eu.kingconquest.sokoban.audio;
 import eu.kingconquest.framework.audio.AudioType;
 
 public class SokobanAudioType extends AudioType {
+
+    //TODO: Bad Practise, need to refactor
     public static final SokobanAudioType CRATE_AUDIO = new SokobanAudioType("crate_move.wav", 0.5f);
     public static final SokobanAudioType PLAYER_AUDIO = new SokobanAudioType("player_move.wav", 0.7f);
 

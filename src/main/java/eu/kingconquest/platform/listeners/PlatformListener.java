@@ -1,5 +1,6 @@
 package eu.kingconquest.platform.listeners;
 
+import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.ui.GameFrame;
 import eu.kingconquest.framework.Listener.MenuItem;
 // The Different Games
@@ -34,12 +35,14 @@ public class PlatformListener implements ActionListener {
     }
 
     private void sokoban() {
-        new Sokoban(gameFrame);
+        Game game = new Sokoban(gameFrame);
+        game.initiate();
         gameFrame.remove(view);
     }
 
     private void game2048() {
-        new Game2048(gameFrame);
+        Game game = new Game2048(gameFrame);
+        game.initiate();
         gameFrame.remove(view);
     }
 

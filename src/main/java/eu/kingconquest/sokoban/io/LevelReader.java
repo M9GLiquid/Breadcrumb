@@ -1,10 +1,9 @@
 package eu.kingconquest.sokoban.io;
 
-import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.utils.Location;
-import eu.kingconquest.sokoban.core.SokobanEntityType;
+import eu.kingconquest.sokoban.entities.SokobanEntityType;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
 
@@ -14,7 +13,16 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class LevelReader {
-    public static void loadLevel(String fileName, Game game, int targetLevel) {
+
+    /**
+     * Loads a level if there is a file and if the level exists and return.
+     * @param fileName Name of file
+     * @param board GameBoard to set the grid
+     * @param targetLevel level to load
+     * @return int: 0 error, 1 game won, 2 next level
+     *
+     */
+    public static int loadLevel(String fileName, GameBoard board, int targetLevel) {
         File file = new File(Objects.requireNonNull(LevelReader.class.getClassLoader().getResource("io/levels.txt")).getFile());
         Scanner sc;
 
@@ -23,7 +31,7 @@ public class LevelReader {
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + fileName);
             System.exit(1);
-            return;
+            return 0;
         }
 
         int currentLevel;
@@ -50,10 +58,13 @@ public class LevelReader {
                 numCols = Math.max(numCols, line.length());
             }
         }
+        // no more levels
+        if (!readingLevel)
+            return 1;
 
-        game.getBoard().grid = new Tile[numRows][numCols];
-        game.getBoard().COLS = numCols;
-        game.getBoard().ROWS = numRows;
+        board.grid = new Tile[numRows][numCols];
+        board.COLS = numCols;
+        board.ROWS = numRows;
 
 
         // Reset the scanner
@@ -63,7 +74,7 @@ public class LevelReader {
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + fileName);
             System.exit(1);
-            return;
+            return 0;
         }
 
         readingLevel = false;
@@ -78,11 +89,12 @@ public class LevelReader {
                 if (line.isEmpty())
                     break;
 
-                processLine(game.getBoard(), line, row);
+                processLine(board, line, row);
                 row++;
             }
         }
         sc.close();
+        return 2;
     }
 
 

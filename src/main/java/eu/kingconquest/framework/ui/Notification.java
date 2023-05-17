@@ -33,7 +33,7 @@ public class Notification {
         saveWindow.add(label);
 
         // Set a timer for the window to disappear after 3 seconds
-        int delay = 3000; // 3 seconds
+        int delay = 1500; // 3 seconds
         Timer timer = new Timer(delay, e -> saveWindow.dispose());
         timer.setRepeats(false);
         timer.start();

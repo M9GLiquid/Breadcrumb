@@ -1,4 +1,4 @@
-package eu.kingconquest.sokoban.core;
+package eu.kingconquest.sokoban.entities;
 
 import eu.kingconquest.framework.entity.EntityType;
 

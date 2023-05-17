@@ -106,7 +106,7 @@ public class KeyBoardController implements GameStrategy {
             case KeyEvent.VK_ESCAPE -> gameBoard.setState(GameState.PAUSED);
         }
 
-        if (direction.getX() != 0 || direction.getY() != 0 && gameBoard.getState().equals(GameState.RUNNING))
+        if ((direction.getX() != 0 || direction.getY() != 0) && gameBoard.getState().equals(GameState.RUNNING))
             gameBoard.makeMove(direction);
 
         notifyStateObservers();

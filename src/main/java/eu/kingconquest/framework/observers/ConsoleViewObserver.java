@@ -11,10 +11,6 @@ public class ConsoleViewObserver implements GameViewObserver {
     }
     @Override
     public void update() {
-        render();
-    }
-
-    private void render() {
         System.out.println(board);
     }
 }

@@ -5,7 +5,7 @@ import eu.kingconquest.framework.entity.EntityType;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.sokoban.core.Sokoban;
-import eu.kingconquest.sokoban.core.SokobanEntityType;
+import eu.kingconquest.sokoban.entities.SokobanEntityType;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
 
@@ -57,7 +57,6 @@ public class SokobanBoard extends GameBoard {
     public void makeMove(Location direction) {
 
         Player player = game.getPlayer();
-        SokobanBoard board = (SokobanBoard) game.getBoard();
         Location newPlayerLocation = player.getLocation().add(direction);
         if (isMoveInvalid(newPlayerLocation)) return;
 
@@ -71,7 +70,7 @@ public class SokobanBoard extends GameBoard {
             crate.setLocation(newCrateLocation);
 
             // Check if crate is in position
-            updateCrateEntityType(board, crate);
+            updateCrateEntityType(crate);
 
             game.getController().notifyAudioObservers(crate);
         }
@@ -80,21 +79,20 @@ public class SokobanBoard extends GameBoard {
 
         // Level Win Condition
         if (isLevelComplete())
-            game.getBoard().setState(GameState.LEVEL_COMPLETE);
+            setState(GameState.LEVEL_COMPLETE);
 
         // Game Over Condition
         if (isGameOver())
-            game.getBoard().setState(GameState.GAME_OVER);
+            setState(GameState.GAME_OVER);
     }
 
     /**
      * Updates the EntityType of the crate based on its position on the board.
      *
-     * @param board The SokobanBoard instance.
      * @param crate The Crate to update.
      */
-    private void updateCrateEntityType(SokobanBoard board, Crate crate) {
-        EntityType entityType = board.grid[crate.getLocation().getY()][crate.getLocation().getX()].getEntityType();
+    private void updateCrateEntityType(Crate crate) {
+        EntityType entityType = grid[crate.getLocation().getY()][crate.getLocation().getX()].getEntityType();
 
         if (entityType.equals(SokobanEntityType.GROUND_MARKED)) {
             crate.setEntityType(SokobanEntityType.CRATE_MARKED);
@@ -113,7 +111,7 @@ public class SokobanBoard extends GameBoard {
     private boolean isGameOver() {
         for (Crate crate : game.getCrates()) {
             // Continue if crate is on its spot
-            EntityType entityType = game.getBoard().grid[crate.getLocation().getY()][crate.getLocation().getX()].getEntityType();
+            EntityType entityType = grid[crate.getLocation().getY()][crate.getLocation().getX()].getEntityType();
             if (entityType.equals(SokobanEntityType.GROUND_MARKED))
                 continue;
             // Check if crate is blocked

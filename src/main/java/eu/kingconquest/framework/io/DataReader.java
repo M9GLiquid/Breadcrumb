@@ -14,8 +14,10 @@ public class DataReader {
              ObjectInputStream in = new ObjectInputStream(fileIn)) {
 
             game.setGameData((GameData) in.readObject());
+            if (game.getGameData() == null)
+                return "Save file corrupted!";
 
-            return "Game has been loaded successfully!"; // Show notification
+            return "Game loaded successfully!"; // Show notification
 
         } catch (FileNotFoundException e) {
             return "File not found!"; // Show notification

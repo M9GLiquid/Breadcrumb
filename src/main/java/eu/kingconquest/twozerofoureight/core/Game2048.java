@@ -64,10 +64,6 @@ public class Game2048 extends Game {
 
     @Override
     public void restart() {
-        getBoard().getEntities().clear();
-        Board2048 board = (Board2048) getBoard();
-        board.addNewTile();
-        board.addNewTile();
         start();
     }
 

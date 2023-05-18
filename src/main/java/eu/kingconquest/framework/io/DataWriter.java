@@ -8,7 +8,7 @@ import java.io.ObjectOutputStream;
 
 public class DataWriter {
     public static String save(Game game) {
-        try (FileOutputStream fileOut = new FileOutputStream("save.dat");
+        try (FileOutputStream fileOut = new FileOutputStream(game.getTitle() + "_save.dat");
              ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
             out.writeObject(game.getGameData());
             return  "Game has been saved successfully!"; // Show notification
@@ -17,6 +17,4 @@ public class DataWriter {
             return  "Error saving game data!"; // Show notification
         }
     }
-
-
 }

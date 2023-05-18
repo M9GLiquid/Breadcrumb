@@ -10,7 +10,7 @@ import java.io.ObjectInputStream;
 public class DataReader {
 
     public static String load(Game game) {
-        try (FileInputStream fileIn = new FileInputStream("save.dat");
+        try (FileInputStream fileIn = new FileInputStream(game.getTitle() + "_save.dat");
              ObjectInputStream in = new ObjectInputStream(fileIn)) {
 
             game.setGameData((GameData) in.readObject());

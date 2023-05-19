@@ -1,19 +1,26 @@
 package eu.kingconquest.framework.observers;
 
 import eu.kingconquest.framework.core.Game;
-import eu.kingconquest.framework.models.GameBoard;
 
+/**
+ * The StateObserver class is responsible for observing the game state and performing
+ * actions based on state changes. It implements the GameStateObserver interface.
+ */
 public class StateObserver implements GameStateObserver {
     private final Game game;
 
+    /**
+     * Creates a new StateObserver for the specified Game.
+     *
+     * @param game the Game this observer will monitor
+     */
     public StateObserver(Game game){
         this.game = game;
     }
 
     @Override
     public void update() {
-        GameBoard board = game.getBoard();
-        switch (board.getState()) {
+        switch (game.getBoard().getState()) {
             case WIN, GAME_OVER -> game.gameOver();
             case INITIATING -> game.initiate();
             case LEVEL_COMPLETE -> game.start();

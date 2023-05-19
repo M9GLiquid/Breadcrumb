@@ -1,6 +1,5 @@
 package eu.kingconquest.framework.ui;
 
-import eu.kingconquest.framework.Listener.MenuItem;
 import eu.kingconquest.framework.Listener.MenuListener;
 import eu.kingconquest.framework.core.Game;
 
@@ -33,25 +32,25 @@ public class StartMenu extends Menu {
         // Button for start game
         gbc.gridy++;
         add(buttonComponent("Start",
-                new MenuListener(game, this, MenuItem.START)),
+                new MenuListener(game, this)),
                 gbc);
 
         // Button for load game
         gbc.gridy++;
         add(buttonComponent("Load",
-                new MenuListener(game, this, MenuItem.LOAD)),
+                new MenuListener(game, this)),
                 gbc);
 
         // Button for return to Game Selector (PlatformMenu)
         gbc.gridy++;
         add(buttonComponent("Game Selector",
-                new MenuListener(game, this, MenuItem.PLATFORM)),
+                new MenuListener(game, this)),
                 gbc);
 
         // Button to exit the game
         gbc.gridy++;
         add(buttonComponent("Exit",
-                new MenuListener(game, this, MenuItem.EXIT)),
+                new MenuListener(game, this)),
                 gbc);
     }
 }

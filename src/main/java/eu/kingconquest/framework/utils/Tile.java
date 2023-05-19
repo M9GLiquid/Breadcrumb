@@ -1,7 +1,7 @@
 package eu.kingconquest.framework.utils;
 
 import eu.kingconquest.framework.entity.Entity;
-import eu.kingconquest.framework.entity.EntityType;
+import eu.kingconquest.framework.entity.EntityIcon;
 
 /**
  * Represents a Tile on the game board, which is a subclass of Entity.
@@ -17,11 +17,11 @@ public class Tile extends Entity {
      * This constructor initializes the Tile instance with the provided parameters.
      *
      * @param location the location of the Tile on the game board
-     * @param entityType the EntityType of the Tile, which defines its appearance and behavior
+     * @param entityIcon the EntityType of the Tile, which defines its appearance and behavior
      * @param isWalkable a boolean indicating whether the Tile can be walked on by other entities
      */
-    public Tile(Location location, EntityType entityType, boolean isWalkable) {
-        super(location, entityType);
+    public Tile(Location location, EntityIcon entityIcon, boolean isWalkable) {
+        super(location, entityIcon);
         this.isWalkable = isWalkable;
     }
 

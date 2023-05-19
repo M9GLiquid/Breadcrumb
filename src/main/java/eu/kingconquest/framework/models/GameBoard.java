@@ -63,6 +63,11 @@ public abstract class GameBoard {
         return null;
     }
 
+    /**
+     * Sets the entities of the game board to the specified list of entities.
+     *
+     * @param entities the new list of entities
+     */
     public void setEntities(ArrayList<Entity> entities) {
         this.entities = entities;
     }
@@ -74,7 +79,6 @@ public abstract class GameBoard {
      * @return true if the move is valid, false otherwise
      */
     protected abstract boolean isMoveInvalid(Location location);
-
 
     /**
      * Gets the GameState of the game.
@@ -100,6 +104,11 @@ public abstract class GameBoard {
      */
     public abstract void makeMove(Location direction);
 
+    /**
+     * Returns a string representation of the game board, which includes the grid and the entities present on it.
+     *
+     * @return a string representation of the game board
+     */
     public String toString() {
         StringBuilder strGrid = new StringBuilder();
         for (int row = 0; row < ROWS; row++) {
@@ -121,7 +130,3 @@ public abstract class GameBoard {
         return strGrid.toString();
     }
 }
-
-
-
-

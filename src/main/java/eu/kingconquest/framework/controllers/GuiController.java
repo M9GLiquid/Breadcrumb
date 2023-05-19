@@ -14,16 +14,25 @@ import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * The GuiController class provides methods to manage and control the game user interface.
+ * It contains state, view, and audio observers that react to changes in the game.
+ * It implements the GameStrategy interface.
+ */
 public class GuiController implements GameStrategy {
     private final GameBoard gameBoard;
     private final Set<GameStateObserver> stateObservers = new HashSet<>();
     private final Set<GameViewObserver> viewObservers = new HashSet<>();
     private final Set<GameAudioObserver> audioObservers = new HashSet<>();
 
+    /**
+     * Instantiates a new GuiController.
+     *
+     * @param gameBoard the game board instance
+     */
     public GuiController(GameBoard gameBoard) {
         this.gameBoard = gameBoard;
     }
-
     @Override
     public void addAudioObserver(GameAudioObserver observer) {
         audioObservers.removeIf(obs -> obs.getClass().equals(observer.getClass()));
@@ -75,7 +84,9 @@ public class GuiController implements GameStrategy {
 
 
     /**
-     * Based on the event input sets the direction and updates the observers
+     * Handles user key input and updates the game accordingly.
+     * Based on the event input sets the direction and updates the state/view observers
+     * This method is automatically called when a key is pressed.
      *
      * @param event the event to be handled
      */
@@ -98,14 +109,23 @@ public class GuiController implements GameStrategy {
 
         notifyStateObservers();
         notifyViewObservers();
-
     }
 
+    /**
+     * Handles key typed events.
+     *
+     * @param event the key event
+     */
     @Override
-    public void keyTyped(KeyEvent e) {
+    public void keyTyped(KeyEvent event) {
 
     }
 
+    /**
+     * Handles key pressed events and updates the observers.
+     *
+     * @param event the key event
+     */
     @Override
     public void keyPressed(KeyEvent event) {
         if (event.getKeyCode() == KeyEvent.VK_ESCAPE)
@@ -114,8 +134,13 @@ public class GuiController implements GameStrategy {
         notifyStateObservers();
     }
 
+    /**
+     * Handles key released events.
+     *
+     * @param event the key event
+     */
     @Override
-    public void keyReleased(KeyEvent e) {
+    public void keyReleased(KeyEvent event) {
 
     }
 }

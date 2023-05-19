@@ -21,6 +21,12 @@ public abstract class Game {
 
     private GameData gameData;
 
+    /**
+     * Constructs a new Game instance with the specified GameFrame and title.
+     *
+     * @param gameFrame the GameFrame object representing the game's GUI
+     * @param title the title of the game
+     */
     protected Game(GameFrame gameFrame, String title) {
         this.gameFrame = gameFrame;
         this.title = title;
@@ -30,10 +36,16 @@ public abstract class Game {
      * Initializes the game by setting up necessary objects and configurations.
      */
     public abstract void initiate();
+
     /**
      * Starts the game, handling game logic and progression.
      */
     public abstract void start();
+
+    /**
+     * Defines the behavior of the game when it ends.
+     * This method must be implemented by any class that extends Game.
+     */
     public abstract void gameOver();
 
     /**
@@ -41,9 +53,22 @@ public abstract class Game {
      */
     public abstract void restart();
 
+    /**
+     * Saves the current state of the game.
+     * This method must be implemented by any class that extends Game.
+     */
     public abstract void save();
+
+    /**
+     * Loads a previously saved state of the game.
+     * This method must be implemented by any class that extends Game.
+     */
     public abstract void load();
 
+    /**
+     * Pauses the game.
+     * This method must be implemented by any class that extends Game.
+     */
     public abstract void pause();
 
     /**
@@ -54,8 +79,6 @@ public abstract class Game {
     public GameBoard getBoard() {
         return board;
     }
-
-
 
     /**
      * Gets the GameController of the game.
@@ -84,22 +107,48 @@ public abstract class Game {
         return gameFrame;
     }
 
+    /**
+     * Returns the GameData of this game.
+     *
+     * @return the GameData of the game
+     */
     public GameData getGameData() {
         return gameData;
     }
 
+    /**
+     * Sets the GameData of this game.
+     *
+     * @param gameData the GameData to set
+     */
     public void setGameData(GameData gameData) {
         this.gameData = gameData;
     }
 
+    /**
+     * Sets the GameBoard of this game.
+     *
+     * @param board the GameBoard to set
+     */
     public void setBoard(GameBoard board) {
         this.board = board;
     }
 
+    /**
+     * Sets the GameStrategy (controller) of this game.
+     *
+     * @param controller the GameStrategy to set
+     */
     public void setController(GameStrategy controller) {
         this.controller = controller;
     }
 
+    /**
+     * Sets the desired controller (GameStrategy) for the game, and adds it as a key listener to the game frame.
+     * All existing key listeners of the game frame are removed before the new controller is added.
+     *
+     * @param controller the new controller (GameStrategy) for the game
+     */
     public void setDesiredController(GameStrategy controller) {
         // Remove all listeners if there are any
         for (KeyListener keyListener : getGameFrame().getKeyListeners())

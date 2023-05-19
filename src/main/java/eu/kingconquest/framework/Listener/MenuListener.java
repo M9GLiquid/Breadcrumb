@@ -40,14 +40,14 @@ public class MenuListener extends PlatformListener implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent event) {
-        switch(event.getActionCommand()){
-            case "Save" -> save();
-            case "Load" -> load();
-            case "Start" -> start();
-            case "Main Menu" -> back();
-            case "Platform" -> platform();
-            case "Resume" -> resume();
-            case "Restart" -> restart();
+        switch(event.getActionCommand().toUpperCase()){
+            case "SAVE" -> save();
+            case "LOAD" -> load();
+            case "START" -> start();
+            case "MAIN MENU" -> back();
+            case "PLATFORM" -> platform();
+            case "RESUME" -> resume();
+            case "RESTART" -> restart();
             case "EXIT" -> exit();
         }
     }

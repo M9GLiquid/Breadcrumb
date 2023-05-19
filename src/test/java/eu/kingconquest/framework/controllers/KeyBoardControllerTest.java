@@ -34,7 +34,6 @@ class KeyBoardControllerTest {
         direction.setY(0);
         direction.setX(0);
 
-
     }
 
 

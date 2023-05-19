@@ -7,8 +7,20 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
+/**
+ * The DataReader class provides functionality for reading GameData objects from a file.
+ * The class contains a static method for loading game data from a save file,
+ * deserializing the data into a GameData object, and setting this object into the game instance.
+ */
 public class DataReader {
 
+    /**
+     * Loads game data from a specified file, deserializes it into a GameData object,
+     * and sets this object into the game instance.
+     *
+     * @param game the game instance for which game data is to be loaded
+     * @return a string message indicating the success or failure of the operation
+     */
     public static String load(Game game) {
         try (FileInputStream fileIn = new FileInputStream(game.getTitle() + "_save.dat");
              ObjectInputStream in = new ObjectInputStream(fileIn)) {

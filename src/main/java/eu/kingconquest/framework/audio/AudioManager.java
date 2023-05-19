@@ -19,8 +19,9 @@ import java.io.InputStream;
  *     float volume = myAudio.getAudioVolume();
  * </pre>
  */
-public class AudioType {
+public class AudioManager {
 
+    // TODO: Make iit be able to handle several clips at one time
     protected Clip audioClip;
 
     protected float audioVolume;
@@ -31,7 +32,7 @@ public class AudioType {
      * @param audioPath   The path to the audio file within the resources' folder.
      * @param audioVolume The volume at which the audio should be played, ranging from 0.0f (silent) to 1.0f (maximum volume).
      */
-    public AudioType(String audioPath, float audioVolume) {
+    public AudioManager(String audioPath, float audioVolume) {
         // Volume should not be greater than 100%
         if (audioVolume > 1)
             audioVolume = 1;
@@ -55,7 +56,7 @@ public class AudioType {
      * @return An AudioInputStream containing the loaded audio, or null if an error occurs.
      */
     private AudioInputStream loadAudio(String fileName){
-        InputStream inputStream = AudioType.class.getClassLoader().getResourceAsStream("audio/" + fileName);
+        InputStream inputStream = AudioManager.class.getClassLoader().getResourceAsStream(fileName);
         if (inputStream == null) {
             System.err.println("Audio not found: " + fileName);
             return null;
@@ -105,13 +106,5 @@ public class AudioType {
         float range = gainControl.getMaximum() - gainControl.getMinimum();
         float gain = (range * volume) + gainControl.getMinimum();
         gainControl.setValue(gain);
-    }
-
-    public Clip getAudioClip() {
-        return audioClip;
-    }
-
-    public float getAudioVolume() {
-        return audioVolume;
     }
 }

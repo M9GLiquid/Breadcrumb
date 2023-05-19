@@ -86,7 +86,24 @@ public interface GameStrategy extends ActionListener, KeyListener{
      */
     void notifyAudioObservers(Entity entity);
 
+    /**
+     * Removes all registered GameStateObservers.
+     * This method is typically called when the game is about to end or restart,
+     * and there's no need for the current GameStateObservers anymore.
+     */
     void clearStateObservers();
+
+    /**
+     * Removes all registered GameAudioObservers.
+     * This method is typically called when the game is about to end or restart,
+     * and there's no need for the current GameAudioObservers anymore.
+     */
     void clearAudioObservers();
+
+    /**
+     * Removes all registered GameViewObservers.
+     * This method is typically called when the game is about to end or restart,
+     * and there's no need for the current GameViewObservers anymore.
+     */
     void clearViewObservers();
 }

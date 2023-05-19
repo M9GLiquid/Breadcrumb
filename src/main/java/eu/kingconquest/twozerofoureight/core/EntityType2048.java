@@ -1,51 +1,47 @@
 package eu.kingconquest.twozerofoureight.core;
 
-import eu.kingconquest.framework.entity.EntityType;
 
-import javax.imageio.ImageIO;
+import eu.kingconquest.framework.entity.EntityIcon;
+
 import java.awt.*;
-import java.io.IOException;
-import java.io.InputStream;
 
-public enum EntityType2048 implements EntityType {
-    E2("tile_1.png"),
-    E4("tile_2.png"),
-    E8("tile_3.png"),
-    E16("tile_4.png"),
-    E32("tile_5.png"),
-    E64("tile_6.png"),
-    E128("tile_7.png"),
-    E256("tile_8.png"),
-    E512("tile_9.png"),
-    E1024("tile_10.png"),
-    E2048("tile_11.png"),
-    E4096("tile_12.png"),
-    E8192("tile_13.png"),
-    E16384("tile_14.png"),
-    WALL("wall.png"),
-    GROUND("ground.png");
+/**
+ * Enumeration of entity types in the 2048 game, implementing the EntityIcon interface.
+ */
+public enum EntityType2048 implements EntityIcon {
+    E2("game2048/images/tile_1.png"),
+    E4("game2048/images/tile_2.png"),
+    E8("game2048/images/tile_3.png"),
+    E16("game2048/images/tile_4.png"),
+    E32("game2048/images/tile_5.png"),
+    E64("game2048/images/tile_6.png"),
+    E128("game2048/images/tile_7.png"),
+    E256("game2048/images/tile_8.png"),
+    E512("game2048/images/tile_9.png"),
+    E1024("game2048/images/tile_10.png"),
+    E2048("game2048/images/tile_11.png"),
+    E4096("game2048/images/tile_12.png"),
+    E8192("game2048/images/tile_13.png"),
+    E16384("game2048/images/tile_14.png"),
+    WALL("game2048/images/wall.png"),
+    GROUND("game2048/images/ground.png");
     private final Image icon;
 
+    /**
+     * Constructs an EntityType2048 with the specified image path.
+     * @param imagePath imagePath The path to the icon image.
+     */
     EntityType2048(String imagePath) {
-        icon = loadImage("Game2048/" + imagePath);
+        icon = EntityIcon.loadImage(imagePath);
     }
 
+    /**
+     * Returns the icon image associated with this entity type.
+     * @return The icon image.
+     */
     @Override
     public Image getIcon() {
         return icon;
-    }
-
-    private static Image loadImage(String imageName) {
-        try (InputStream inputStream = EntityType.class.getClassLoader().getResourceAsStream("images/" + imageName)) {
-            if (inputStream == null) {
-                System.err.println("Image not found: " + imageName);
-                return null;
-            }
-            return ImageIO.read(inputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
     }
 }
 

@@ -2,7 +2,6 @@ package eu.kingconquest.platform;
 
 import eu.kingconquest.framework.ui.GameFrame;
 import eu.kingconquest.framework.ui.Menu;
-import eu.kingconquest.framework.Listener.MenuItem;
 import eu.kingconquest.platform.listeners.PlatformListener;
 
 import java.awt.*;
@@ -35,7 +34,7 @@ public class PlatformMenu extends Menu {
         gbc.gridx = 0;
         gbc.gridy = 1;
         add(buttonComponent("Sokoban",
-                        new PlatformListener(gameFrame, this, MenuItem.GAME_SOKOBAN)),
+                        new PlatformListener(gameFrame, this)),
                 gbc);
 
         gbc.weightx = 1; // Add this line
@@ -44,7 +43,7 @@ public class PlatformMenu extends Menu {
         gbc.gridx = 1;
         gbc.gridy = 1;
         add(buttonComponent("2048",
-                        new PlatformListener(gameFrame, this, MenuItem.GAME_2048)),
+                        new PlatformListener(gameFrame, this)),
                 gbc);
 
         gbc.weightx = 0; // Add this line
@@ -54,6 +53,6 @@ public class PlatformMenu extends Menu {
         gbc.gridx = 0;
         gbc.gridy = 2;
         add(buttonComponent("Exit Game",
-                new PlatformListener(gameFrame, this, MenuItem.EXIT)), gbc);
+                new PlatformListener(gameFrame, this)), gbc);
     }
 }

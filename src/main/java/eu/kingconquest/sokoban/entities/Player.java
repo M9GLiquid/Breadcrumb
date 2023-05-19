@@ -5,6 +5,6 @@ import eu.kingconquest.framework.utils.Location;
 
 public class Player extends Entity {
     public Player(Location location){
-        super(location, SokobanEntityType.PLAYER);
+        super(location, SokobanEntityIcon.PLAYER);
     }
 }

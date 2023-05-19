@@ -1,6 +1,5 @@
 package eu.kingconquest.sokoban.ui;
 
-import eu.kingconquest.framework.Listener.MenuItem;
 import eu.kingconquest.framework.Listener.MenuListener;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.ui.Menu;
@@ -27,22 +26,26 @@ public class WinScreen extends Menu {
         gbc.gridy = 0;
         add(textComponent("You Won", 48, false), gbc);
 
+        // Subtitle
+        gbc.gridy++;
+        add(textComponent("You completed the last level!", 24, false), gbc);
+
         // Button to return to the platform menu
         gbc.gridy++;
         add(buttonComponent("Main Menu",
-                        new MenuListener(game, this, MenuItem.MAIN_MENU)),
+                        new MenuListener(game, this)),
                 gbc);
 
         // Button to return to the platform menu
         gbc.gridy++;
         add(buttonComponent("Game Selector",
-                        new MenuListener(game, this, MenuItem.PLATFORM)),
+                        new MenuListener(game, this)),
                 gbc);
 
         // Button to exit the game
         gbc.gridy++;
         add(buttonComponent("Exit",
-                        new MenuListener(game, this, MenuItem.EXIT)),
+                        new MenuListener(game, this)),
                 gbc);
     }
 }

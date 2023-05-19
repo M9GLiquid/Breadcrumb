@@ -13,10 +13,11 @@ import eu.kingconquest.framework.ui.*;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.views.FloatingButtonsView;
 import eu.kingconquest.framework.views.GameGuiView;
+import eu.kingconquest.sokoban.audio.SokobanAudioManager;
 import eu.kingconquest.sokoban.audio.SokobanGameAudioObserver;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
-import eu.kingconquest.sokoban.entities.SokobanEntityType;
+import eu.kingconquest.sokoban.entities.SokobanEntityIcon;
 import eu.kingconquest.sokoban.io.LevelReader;
 import eu.kingconquest.sokoban.models.SokobanBoard;
 import eu.kingconquest.sokoban.ui.GameOverScreen;
@@ -33,8 +34,6 @@ public class Sokoban extends Game {
         super(gameFrame,"Sokoban");
     }
 
-
-
     @Override
     public void initiate() {
         // Game Board setup
@@ -44,7 +43,7 @@ public class Sokoban extends Game {
         setDesiredController(new KeyBoardController(getBoard())); // Change this line to switch between controllers
 
         GameFrame frame = getGameFrame();
-        frame.setGameGuiView(new GameGuiView(getBoard()));
+        frame.setGameView(new GameGuiView(getBoard()));
 
 
         // Game View setup
@@ -53,9 +52,12 @@ public class Sokoban extends Game {
         // State Observers
         getController().addStateObserver(new StateObserver(this));
         // Audio Observers
-        getController().addAudioObserver(new SokobanGameAudioObserver());
+        getController().addAudioObserver(new SokobanGameAudioObserver(
+                SokobanAudioManager.CRATE_AUDIO,
+                SokobanAudioManager.PLAYER_AUDIO)
+        );
         // View Observers
-        getController().addViewObserver(frame.getGameGuiView());
+        getController().addViewObserver(frame.getGameView());
         getController().addViewObserver(new ConsoleViewObserver(getBoard()));
 
         getBoard().setState(GameState.INITIATING);
@@ -101,7 +103,7 @@ public class Sokoban extends Game {
     }
 
     protected void setGameView(){
-        getGameFrame().addView(getGameFrame().getGameGuiView(),
+        getGameFrame().addView(getGameFrame().getGameView(),
                 getBoard().COLS * Tile.getTileSize(),
                 getBoard().ROWS * Tile.getTileSize());
     }
@@ -166,7 +168,7 @@ public class Sokoban extends Game {
 
     public List<Tile> getGoals() {
         return getBoard().getEntities().stream()
-                .filter(entity -> entity.getEntityType().equals(SokobanEntityType.GROUND_MARKED))
+                .filter(entity -> entity.getEntityType().equals(SokobanEntityIcon.GROUND_MARKED))
                 .map(entity -> (Tile) entity)
                 .collect(Collectors.toList());
     }

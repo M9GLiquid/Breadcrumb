@@ -3,7 +3,7 @@ package eu.kingconquest.sokoban.io;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.utils.Location;
-import eu.kingconquest.sokoban.entities.SokobanEntityType;
+import eu.kingconquest.sokoban.entities.SokobanEntityIcon;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
 
@@ -23,7 +23,7 @@ public class LevelReader {
      *
      */
     public static int loadLevel(String fileName, GameBoard board, int targetLevel) {
-        File file = new File(Objects.requireNonNull(LevelReader.class.getClassLoader().getResource("io/levels.txt")).getFile());
+        File file = new File(Objects.requireNonNull(LevelReader.class.getClassLoader().getResource("sokoban/io/levels.txt")).getFile());
         Scanner sc;
 
         try {
@@ -107,19 +107,19 @@ public class LevelReader {
             switch (c) {
                 case 'P' -> {
                     board.addEntity(new Player(location));
-                    board.grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);
+                    board.grid[row][col] = new Tile(location, SokobanEntityIcon.GROUND, true);
                 }
-                case '#' -> board.grid[row][col] = new Tile(location, SokobanEntityType.WALL, false);
+                case '#' -> board.grid[row][col] = new Tile(location, SokobanEntityIcon.WALL, false);
                 case 'X' -> {
-                    Tile tile = new Tile(location, SokobanEntityType.GROUND_MARKED, true);
+                    Tile tile = new Tile(location, SokobanEntityIcon.GROUND_MARKED, true);
                     board.grid[row][col] = tile;
                     board.addEntity(tile);
                 }
                 case 'C' -> {
                     board.addEntity(new Crate(location));
-                    board.grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);
+                    board.grid[row][col] = new Tile(location, SokobanEntityIcon.GROUND, true);
                 }
-                case '-' -> board.grid[row][col] = new Tile(location, SokobanEntityType.GROUND, true);
+                case '-' -> board.grid[row][col] = new Tile(location, SokobanEntityIcon.GROUND, true);
             }
         }
     }

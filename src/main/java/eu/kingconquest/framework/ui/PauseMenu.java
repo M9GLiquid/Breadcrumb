@@ -69,7 +69,7 @@ public class PauseMenu extends Menu {
 
         // Button to exit the game
         gbc.gridy++;
-        add(buttonComponent("EXIT",
+        add(buttonComponent("Exit",
                 new MenuListener(game, this)), gbc);
 
     }

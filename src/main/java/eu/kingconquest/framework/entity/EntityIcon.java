@@ -27,7 +27,7 @@ public interface EntityIcon {
      * @return the loaded image, or null if the image could not be found or read
      */
     static Image loadImage(String imageName) {
-        try (InputStream inputStream = EntityIcon.class.getClassLoader().getResourceAsStream("sokoban/images/" + imageName)) {
+        try (InputStream inputStream = EntityIcon.class.getClassLoader().getResourceAsStream(imageName)) {
             if (inputStream == null) {
                 System.err.println("Image not found: " + imageName);
                 return null;

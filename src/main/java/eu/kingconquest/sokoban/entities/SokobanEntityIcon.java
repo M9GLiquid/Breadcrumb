@@ -5,12 +5,12 @@ import eu.kingconquest.framework.entity.EntityIcon;
 import java.awt.*;
 
 public enum SokobanEntityIcon implements EntityIcon {
-    WALL("wall.png", "#"),
-    PLAYER("player.png", "P"),
-    GROUND("ground.png", "-"),
-    GROUND_MARKED("ground-marked.png", "X"),
-    CRATE("crate.png", "C"),
-    CRATE_MARKED("crate-marked.png", "M");
+    WALL("sokoban/images/wall.png", "#"),
+    PLAYER("sokoban/images/player.png", "P"),
+    GROUND("sokoban/images/ground.png", "-"),
+    GROUND_MARKED("sokoban/images/ground-marked.png", "X"),
+    CRATE("sokoban/images/crate.png", "C"),
+    CRATE_MARKED("sokoban/images/crate-marked.png", "M");
 
     private final Image icon;
     private final String symbol;

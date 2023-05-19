@@ -20,7 +20,6 @@ import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.times;
 
 class KeyBoardControllerTest {
-    private GameBoard gameBoard;
     private KeyBoardController underTest;
     private final Set<GameStateObserver> stateObserversTest = new HashSet<>();
     private final Set<GameViewObserver> viewObserversTest = new HashSet<>();
@@ -29,7 +28,7 @@ class KeyBoardControllerTest {
 
     @BeforeEach
     void setUp() {
-        gameBoard = mock(GameBoard.class);
+        GameBoard gameBoard = mock(GameBoard.class);
         underTest = spy(new KeyBoardController(gameBoard));
         direction = mock(Location.class);
         direction.setY(0);

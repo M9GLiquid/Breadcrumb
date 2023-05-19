@@ -21,7 +21,7 @@ import eu.kingconquest.framework.views.FloatingButtonsView;
 import eu.kingconquest.framework.views.GameGuiView;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
-import eu.kingconquest.sokoban.entities.SokobanEntityType;
+import eu.kingconquest.sokoban.entities.SokobanEntityIcon;
 import eu.kingconquest.sokoban.io.LevelReader;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -192,7 +192,7 @@ public class SokobanTest {
         /* When */
         doReturn(board).when(underTest).getBoard();
         doReturn(frame).when(underTest).getGameFrame();
-        doReturn(view).when(frame).getGameGuiView();
+        doReturn(view).when(frame).getGameView();
 
         /* Then */
         underTest.setGameView();
@@ -340,9 +340,9 @@ public class SokobanTest {
         doReturn(board).when(underTest).getBoard();
         doReturn(entities).when(board).getEntities();
 
-        doReturn(SokobanEntityType.GROUND_MARKED).when(tile1).getEntityType();
-        doReturn(SokobanEntityType.GROUND_MARKED).when(tile2).getEntityType();
-        doReturn(SokobanEntityType.GROUND).when(tile3).getEntityType();
+        doReturn(SokobanEntityIcon.GROUND_MARKED).when(tile1).getEntityType();
+        doReturn(SokobanEntityIcon.GROUND_MARKED).when(tile2).getEntityType();
+        doReturn(SokobanEntityIcon.GROUND).when(tile3).getEntityType();
         List<Tile> goals = underTest.getGoals();
 
         /* Then */

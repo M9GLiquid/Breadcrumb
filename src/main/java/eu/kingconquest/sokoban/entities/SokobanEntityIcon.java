@@ -1,10 +1,10 @@
 package eu.kingconquest.sokoban.entities;
 
-import eu.kingconquest.framework.entity.EntityType;
+import eu.kingconquest.framework.entity.EntityIcon;
 
 import java.awt.*;
 
-public enum SokobanEntityType implements EntityType {
+public enum SokobanEntityIcon implements EntityIcon {
     WALL("wall.png", "#"),
     PLAYER("player.png", "P"),
     GROUND("ground.png", "-"),
@@ -15,8 +15,8 @@ public enum SokobanEntityType implements EntityType {
     private final Image icon;
     private final String symbol;
 
-    SokobanEntityType(String imagePath, String symbol) {
-        icon = EntityType.loadImage(imagePath);
+    SokobanEntityIcon(String imagePath, String symbol) {
+        icon = EntityIcon.loadImage(imagePath);
         this.symbol = symbol;
     }
 

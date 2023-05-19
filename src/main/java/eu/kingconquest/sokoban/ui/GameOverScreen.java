@@ -1,10 +1,8 @@
 package eu.kingconquest.sokoban.ui;
 
 import eu.kingconquest.framework.Listener.MenuListener;
-import eu.kingconquest.framework.Listener.MenuItem;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.ui.Menu;
-
 
 import java.awt.*;
 
@@ -30,19 +28,19 @@ public class GameOverScreen extends Menu {
         // Button to restart the current level
         gbc.gridy++;
         add(buttonComponent("Restart",
-                        new MenuListener(game, this, MenuItem.RESTART)),
+                        new MenuListener(game, this)),
                 gbc);
 
         // Button to return to the platform menu
         gbc.gridy++;
         add(buttonComponent("Game Selector",
-                        new MenuListener(game, this, MenuItem.PLATFORM)),
+                        new MenuListener(game, this)),
                 gbc);
 
         // Button to exit the game
         gbc.gridy++;
         add(buttonComponent("Exit",
-                        new MenuListener(game, this, MenuItem.EXIT)),
+                        new MenuListener(game, this)),
                 gbc);
     }
 }

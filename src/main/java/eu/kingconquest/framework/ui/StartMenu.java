@@ -43,7 +43,7 @@ public class StartMenu extends Menu {
 
         // Button for return to Game Selector (PlatformMenu)
         gbc.gridy++;
-        add(buttonComponent("Game Selector",
+        add(buttonComponent("Game Menu",
                 new MenuListener(game, this)),
                 gbc);
 

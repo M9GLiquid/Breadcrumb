@@ -52,7 +52,7 @@ public class PlatformMenu extends Menu {
         gbc.gridwidth = 2;
         gbc.gridx = 0;
         gbc.gridy = 2;
-        add(buttonComponent("Exit Game",
+        add(buttonComponent("Exit",
                 new PlatformListener(gameFrame, this)), gbc);
     }
 }

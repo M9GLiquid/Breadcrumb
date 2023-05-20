@@ -45,7 +45,7 @@ public class MenuListener extends PlatformListener implements ActionListener {
             case "LOAD" -> load();
             case "START" -> start();
             case "MAIN MENU" -> back();
-            case "PLATFORM" -> platform();
+            case "GAME MENU" -> platform();
             case "RESUME" -> resume();
             case "RESTART" -> restart();
             case "EXIT" -> exit();

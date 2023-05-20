@@ -137,7 +137,7 @@ public class Game2048 extends Game {
     public void load() {
         String message = DataReader.load(this);
 
-        if (message.equals("Game loaded successfully!")) {
+        if (message.equals("Game loading!")) {
             setData();
             Timer timer = new Timer(1500, e -> {
                 getBoard().setState(GameState.RUNNING);

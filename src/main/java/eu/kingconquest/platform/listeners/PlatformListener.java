@@ -23,8 +23,8 @@ public class PlatformListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch (e.getActionCommand()) {
-            case "Sokoban" -> sokoban();
+        switch (e.getActionCommand().toUpperCase()) {
+            case "SOKOBAN" -> sokoban();
             case "2048" -> game2048();
             case "EXIT" -> exit();
         }

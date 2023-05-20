@@ -152,7 +152,4 @@ class KeyBoardControllerTest {
 
     }
 
-    @Test
-    void actionPerformed() {
-    }
 }

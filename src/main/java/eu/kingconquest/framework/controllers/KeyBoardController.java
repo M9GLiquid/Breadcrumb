@@ -1,7 +1,6 @@
 package eu.kingconquest.framework.controllers;
 
 import eu.kingconquest.framework.core.GameState;
-import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.observers.GameAudioObserver;
 import eu.kingconquest.framework.observers.GameStateObserver;
@@ -64,9 +63,9 @@ public class KeyBoardController implements GameStrategy {
     }
 
     @Override
-    public void notifyAudioObservers(Entity entity) {
+    public void notifyAudioObservers() {
         for (GameAudioObserver observer : audioObservers)
-            observer.update(entity);
+            observer.update();
     }
 
     @Override

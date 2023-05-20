@@ -1,26 +1,26 @@
 package eu.kingconquest.sokoban.audio;
 
-import eu.kingconquest.framework.entity.Entity;
+import eu.kingconquest.framework.core.Game;
+import eu.kingconquest.framework.entity.EntityIcon;
 import eu.kingconquest.framework.observers.GameAudioObserver;
 import eu.kingconquest.sokoban.entities.SokobanEntityIcon;
+import eu.kingconquest.sokoban.models.SokobanBoard;
 
 public class SokobanGameAudioObserver implements GameAudioObserver {
+    private final Game game;
 
-    private final SokobanAudioManager crateAudio;
-    private final SokobanAudioManager playerAudio;
-
-    public SokobanGameAudioObserver(SokobanAudioManager crateAudio, SokobanAudioManager playerAudio) {
-        this.crateAudio = crateAudio;
-        this.playerAudio = playerAudio;
+    public SokobanGameAudioObserver(Game game){
+        this.game = game;
     }
     @Override
-    public void update(Entity entity) {
+    public void update() {
+        EntityIcon entityIcon = ((SokobanBoard)game.getBoard()).lastEntityIconMoved;
         SokobanAudioManager audioType = null;
 
-        if (entity.getEntityType().equals(SokobanEntityIcon.CRATE))
-            audioType = crateAudio;
-        else if (entity.getEntityType().equals(SokobanEntityIcon.PLAYER))
-            audioType = playerAudio;
+        if (entityIcon.equals(SokobanEntityIcon.CRATE))
+            audioType = SokobanAudioManager.CRATE_AUDIO;
+        else if (entityIcon.equals(SokobanEntityIcon.PLAYER))
+            audioType = SokobanAudioManager.PLAYER_AUDIO;
 
         if (audioType != null)
             audioType.play();

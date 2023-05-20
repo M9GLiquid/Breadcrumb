@@ -1,7 +1,6 @@
 package eu.kingconquest.framework.controllers;
 
 import eu.kingconquest.framework.core.GameState;
-import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.observers.GameAudioObserver;
 import eu.kingconquest.framework.observers.GameStateObserver;
@@ -20,10 +19,10 @@ import java.util.Set;
  * It implements the GameStrategy interface.
  */
 public class GuiController implements GameStrategy {
-    private final GameBoard gameBoard;
-    private final Set<GameStateObserver> stateObservers = new HashSet<>();
-    private final Set<GameViewObserver> viewObservers = new HashSet<>();
-    private final Set<GameAudioObserver> audioObservers = new HashSet<>();
+    final GameBoard gameBoard;
+    final Set<GameStateObserver> stateObservers = new HashSet<>();
+    final Set<GameViewObserver> viewObservers = new HashSet<>();
+    final Set<GameAudioObserver> audioObservers = new HashSet<>();
 
     /**
      * Instantiates a new GuiController.
@@ -62,9 +61,9 @@ public class GuiController implements GameStrategy {
     }
 
     @Override
-    public void notifyAudioObservers(Entity entity) {
+    public void notifyAudioObservers() {
         for (GameAudioObserver observer : audioObservers)
-            observer.update(entity);
+            observer.update();
     }
 
     @Override

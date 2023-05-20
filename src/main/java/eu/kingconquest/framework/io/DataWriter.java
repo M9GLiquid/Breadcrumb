@@ -23,7 +23,7 @@ public class DataWriter {
         try (FileOutputStream fileOut = new FileOutputStream(game.getTitle() + "_save.dat");
              ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
             out.writeObject(game.getGameData());
-            return  "Game has been saved successfully!"; // Show notification
+            return  "Game saved!"; // Show notification
 
         } catch (IOException e) {
             return  "Error saving game data!"; // Show notification

@@ -5,15 +5,17 @@ import eu.kingconquest.framework.entity.EntityIcon;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.sokoban.core.Sokoban;
-import eu.kingconquest.sokoban.entities.SokobanEntityIcon;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
+import eu.kingconquest.sokoban.entities.SokobanEntityIcon;
 
 /**
  * Class representing a Sokoban game board.
  */
 public class SokobanBoard extends GameBoard {
     private final Sokoban game;
+
+    public EntityIcon lastEntityIconMoved = null;
 
     /**
      * Creates a new SokobanBoard.
@@ -72,9 +74,11 @@ public class SokobanBoard extends GameBoard {
             // Check if crate is in position
             updateCrateEntityType(crate);
 
-            game.getController().notifyAudioObservers(crate);
+            lastEntityIconMoved = crate.getEntityType();
+            game.getController().notifyAudioObservers();
         }
-        game.getController().notifyAudioObservers(game.getPlayer());
+        lastEntityIconMoved = player.getEntityType();
+        game.getController().notifyAudioObservers();
         player.setLocation(newPlayerLocation);
 
         // Level Win Condition

@@ -1,6 +1,5 @@
 package eu.kingconquest.twozerofoureight.models;
 
-
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.entity.EntityIcon;

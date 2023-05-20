@@ -6,17 +6,29 @@ import eu.kingconquest.framework.ui.Menu;
 
 import java.awt.*;
 
+/**
+ * The WinScreen class represents the screen displayed when the player wins the game.
+ * It extends the Menu class.
+ */
 public class WinScreen extends Menu {
 
     private final Game game;
     private final int score;
 
+    /**
+     * Constructs a new WinScreen object.
+     * @param game The game instance.
+     * @param score The player's score.
+     */
     public WinScreen(Game game, int score){
         this.game = game;
         this.score = score;
         createMenu();
     }
 
+    /**
+     * Creates the menu components and layout for the win screen.
+     */
     @Override
     protected void createMenu() {
         setLayout(new GridBagLayout());

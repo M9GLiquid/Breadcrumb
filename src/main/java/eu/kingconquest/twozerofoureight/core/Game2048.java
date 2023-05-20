@@ -11,15 +11,25 @@ import eu.kingconquest.framework.ui.*;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.views.GameGuiView;
+import eu.kingconquest.twozerofoureight.audio.AudioType2048;
+import eu.kingconquest.twozerofoureight.audio.GameAudioObserver2048;
 import eu.kingconquest.twozerofoureight.ui.GameOverScreen;
 import eu.kingconquest.twozerofoureight.ui.WinScreen;
 import eu.kingconquest.twozerofoureight.models.Board2048;
 
 import javax.swing.*;
 
+/**
+ * Represents the 2048 game and its conditions.
+ */
 public class Game2048 extends Game {
 
     public boolean hasWon = false;
+
+    /**
+     * Constructs a Game2048 object with the specified GameFrame.
+     * @param gameframe The GameFrame object for the game.
+     */
     public Game2048(GameFrame gameframe) {
         super(gameframe,"2048");
 
@@ -45,12 +55,21 @@ public class Game2048 extends Game {
         Tile.setTileSize(64);
     }
 
+    /**
+     * Initializes the game.
+     */
     @Override
     public void initiate() {
         buildBoard();
+        // Audio Observer
+        getController().addAudioObserver(new GameAudioObserver2048(
+                AudioType2048.CRATE_AUDIO));
         getBoard().setState(GameState.INITIATING);
     }
 
+    /**
+     * Builds the game board.
+     */
     public void buildBoard(){
         for(int col = 0; col < getBoard().COLS; col++){
             for(int row = 0; row < getBoard().ROWS; row++){
@@ -62,6 +81,9 @@ public class Game2048 extends Game {
         }
     }
 
+    /**
+     * Handles the game over condition.
+     */
     @Override
     public void gameOver() {
         Board2048 board = (Board2048) getBoard();
@@ -71,6 +93,9 @@ public class Game2048 extends Game {
             getGameFrame().addView(new WinScreen(this, board.getScore()), Menu.WIDTH, Menu.HEIGHT);
     }
 
+    /**
+     * Loading the board and creating tiles on the board to start the game.
+     */
     @Override
     public void start() {
         getBoard().getEntities().clear();
@@ -83,13 +108,18 @@ public class Game2048 extends Game {
         hasWon = false;
     }
 
+    /**
+     * Restarts the game.
+     */
     @Override
     public void restart() {
         getBoard().setState(GameState.RESETTING);
         start();
     }
 
-
+    /**
+     * Saves the game data.
+     */
     @Override
     public void save() {
         // Upload game data
@@ -102,6 +132,9 @@ public class Game2048 extends Game {
         Notification.showNotification(this, message);
     }
 
+    /**
+     * Loads the game data.
+     */
     @Override
     public void load() {
         String message = DataReader.load(this);
@@ -118,12 +151,18 @@ public class Game2048 extends Game {
         Notification.showNotification(this, message); // Show notification
     }
 
+    /**
+     * Sets the game view.
+     */
     protected void setGameView(){
         getGameFrame().addView(getGameFrame().getGameView(),
                 getBoard().COLS * Tile.getTileSize(),
                 getBoard().ROWS * Tile.getTileSize());
     }
 
+    /**
+     * Sets the game data.
+     */
     public void setData(){
         getBoard().grid = getGameData().grid;
         getBoard().setEntities(getGameData().entities);
@@ -131,11 +170,17 @@ public class Game2048 extends Game {
         getBoard().ROWS = getBoard().grid.length;
     }
 
+    /**
+     * Pauses the game.
+     */
     @Override
     public void pause() {
         getGameFrame().addView(new PauseMenu(this), 970, 640);
     }
 
+    /**
+     * Starts the game.
+     */
     public void startGame() {
         getGameFrame().addView(getGameFrame().getGameView(),
                 getBoard().COLS * Tile.getTileSize(),

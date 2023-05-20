@@ -1,6 +1,5 @@
 package eu.kingconquest.twozerofoureight.core;
 
-
 import eu.kingconquest.framework.entity.EntityIcon;
 
 import java.awt.*;

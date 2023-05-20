@@ -7,16 +7,28 @@ import eu.kingconquest.framework.ui.Menu;
 
 import java.awt.*;
 
+/**
+ * The GameOverScreen class represents the screen displayed when the player lose the game.
+ * It extends the Menu class.
+ */
 public class GameOverScreen extends Menu {
     private final Game game;
     private final int score;
 
+    /**
+     * Constructs a new WinScreen object.
+     * @param game The game instance.
+     * @param score The player's score.
+     */
     public GameOverScreen(Game game, int score) {
         this.game = game;
         this.score = score;
         createMenu();
     }
 
+    /**
+     * Creates the menu components and layout for the losing screen.
+     */
     @Override
     protected void createMenu() {
         setLayout(new GridBagLayout());

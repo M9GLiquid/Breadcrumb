@@ -12,9 +12,9 @@ import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.views.GameGuiView;
 import eu.kingconquest.twozerofoureight.audio.GameAudioObserver2048;
+import eu.kingconquest.twozerofoureight.models.Board2048;
 import eu.kingconquest.twozerofoureight.ui.GameOverScreen;
 import eu.kingconquest.twozerofoureight.ui.WinScreen;
-import eu.kingconquest.twozerofoureight.models.Board2048;
 
 import javax.swing.*;
 

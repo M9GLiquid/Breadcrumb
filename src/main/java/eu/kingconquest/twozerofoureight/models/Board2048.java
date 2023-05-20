@@ -183,6 +183,7 @@ public class Board2048 extends GameBoard {
         }
         if(isGameOver())
             game.getBoard().setState(GameState.GAME_OVER);
+        game.getController().notifyAudioObservers();
         addNewTile();
     }
 

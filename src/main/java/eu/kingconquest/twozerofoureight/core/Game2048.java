@@ -11,7 +11,6 @@ import eu.kingconquest.framework.ui.*;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.views.GameGuiView;
-import eu.kingconquest.twozerofoureight.audio.AudioType2048;
 import eu.kingconquest.twozerofoureight.audio.GameAudioObserver2048;
 import eu.kingconquest.twozerofoureight.ui.GameOverScreen;
 import eu.kingconquest.twozerofoureight.ui.WinScreen;
@@ -62,8 +61,7 @@ public class Game2048 extends Game {
     public void initiate() {
         buildBoard();
         // Audio Observer
-        getController().addAudioObserver(new GameAudioObserver2048(
-                AudioType2048.CRATE_AUDIO));
+        getController().addAudioObserver(new GameAudioObserver2048());
         getBoard().setState(GameState.INITIATING);
     }
 

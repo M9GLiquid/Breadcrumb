@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class Board2048 extends GameBoard {
     private final Game2048 game;
-    private int score;
+    protected int score;
 
     /**
      * Constructs a Board2048 object with the specified game, number of rows, and number of columns.

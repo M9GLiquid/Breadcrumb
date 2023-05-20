@@ -2,7 +2,7 @@ package eu.kingconquest.twozerofoureight.models;
 
 import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.utils.Location;
-import eu.kingconquest.twozerofoureight.core.EntityType2048;
+import eu.kingconquest.twozerofoureight.core.EntityIcon2048;
 import eu.kingconquest.twozerofoureight.core.Game2048;
 import eu.kingconquest.twozerofoureight.entities.Block;
 import org.junit.jupiter.api.AfterEach;
@@ -33,7 +33,7 @@ class Board2048Test {
     @Test
     void isMoveValidRight() {
         // Given
-        Entity block = new Block(new Location(4,1), EntityType2048.E2);
+        Entity block = new Block(new Location(4,1), EntityIcon2048.E2);
 
         ArrayList<Entity> entities = new ArrayList<>();
         entities.add(block);
@@ -52,7 +52,7 @@ class Board2048Test {
     @Test
     void isMoveValidLeft() {
         // Given
-        Entity block = new Block(new Location(1,1), EntityType2048.E2);
+        Entity block = new Block(new Location(1,1), EntityIcon2048.E2);
 
         ArrayList<Entity> entities = new ArrayList<>();
         entities.add(block);
@@ -71,7 +71,7 @@ class Board2048Test {
     @Test
     void isMoveValidUp() {
         // Given
-        Entity block = new Block(new Location(1,1), EntityType2048.E2);
+        Entity block = new Block(new Location(1,1), EntityIcon2048.E2);
 
         ArrayList<Entity> entities = new ArrayList<>();
         entities.add(block);
@@ -90,7 +90,7 @@ class Board2048Test {
     @Test
     void isMoveValidDown() {
         // Given
-        Entity block = new Block(new Location(1,4), EntityType2048.E2);
+        Entity block = new Block(new Location(1,4), EntityIcon2048.E2);
 
         ArrayList<Entity> entities = new ArrayList<>();
         entities.add(block);
@@ -111,8 +111,8 @@ class Board2048Test {
     @Test
     void isCombineValidRight() {
         // Given
-        Entity block1 = new Block(new Location(3,1), EntityType2048.E2);
-        Entity block2 = new Block(new Location(4,1), EntityType2048.E2);
+        Entity block1 = new Block(new Location(3,1), EntityIcon2048.E2);
+        Entity block2 = new Block(new Location(4,1), EntityIcon2048.E2);
 
         ArrayList<Entity> entities = new ArrayList<>();
         entities.add(block1);
@@ -132,8 +132,8 @@ class Board2048Test {
     @Test
     void isCombineValidLeft() {
         // Given
-        Entity block1 = new Block(new Location(1,1), EntityType2048.E2);
-        Entity block2 = new Block(new Location(2,1), EntityType2048.E2);
+        Entity block1 = new Block(new Location(1,1), EntityIcon2048.E2);
+        Entity block2 = new Block(new Location(2,1), EntityIcon2048.E2);
 
         ArrayList<Entity> entities = new ArrayList<>();
         entities.add(block1);
@@ -153,8 +153,8 @@ class Board2048Test {
     @Test
     void isCombineValidUp() {
         // Given
-        Entity block1 = new Block(new Location(4,1), EntityType2048.E2);
-        Entity block2 = new Block(new Location(4,2), EntityType2048.E2);
+        Entity block1 = new Block(new Location(4,1), EntityIcon2048.E2);
+        Entity block2 = new Block(new Location(4,2), EntityIcon2048.E2);
 
         ArrayList<Entity> entities = new ArrayList<>();
         entities.add(block1);
@@ -174,8 +174,8 @@ class Board2048Test {
     @Test
     void isCombineValidDown() {
         // Given
-        Entity block1 = new Block(new Location(4,3), EntityType2048.E2);
-        Entity block2 = new Block(new Location(4,4), EntityType2048.E2);
+        Entity block1 = new Block(new Location(4,3), EntityIcon2048.E2);
+        Entity block2 = new Block(new Location(4,4), EntityIcon2048.E2);
 
         ArrayList<Entity> entities = new ArrayList<>();
         entities.add(block1);
@@ -195,7 +195,7 @@ class Board2048Test {
     @Test
     void ifDirectionIsInvalid() {
         // Given
-        Entity block = new Block(new Location(4,3), EntityType2048.E2);
+        Entity block = new Block(new Location(4,3), EntityIcon2048.E2);
 
 
         ArrayList<Entity> entities = new ArrayList<>();

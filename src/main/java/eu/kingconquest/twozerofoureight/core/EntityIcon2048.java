@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * Enumeration of entity types in the 2048 game, implementing the EntityIcon interface.
  */
-public enum EntityType2048 implements EntityIcon {
+public enum EntityIcon2048 implements EntityIcon {
     E2("game2048/images/tile_1.png"),
     E4("game2048/images/tile_2.png"),
     E8("game2048/images/tile_3.png"),
@@ -30,7 +30,7 @@ public enum EntityType2048 implements EntityIcon {
      * Constructs an EntityType2048 with the specified image path.
      * @param imagePath imagePath The path to the icon image.
      */
-    EntityType2048(String imagePath) {
+    EntityIcon2048(String imagePath) {
         icon = EntityIcon.loadImage(imagePath);
     }
 

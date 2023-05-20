@@ -72,9 +72,9 @@ public class Game2048 extends Game {
         for(int col = 0; col < getBoard().COLS; col++){
             for(int row = 0; row < getBoard().ROWS; row++){
                 if(row < 1 || col < 1 || row == 5 || col == 5)
-                    getBoard().grid[col][row] = new Tile(new Location(col, row), EntityType2048.WALL, false);
+                    getBoard().grid[col][row] = new Tile(new Location(col, row), EntityIcon2048.WALL, false);
                 else
-                    getBoard().grid[col][row] = new Tile(new Location(col, row), EntityType2048.GROUND, true);
+                    getBoard().grid[col][row] = new Tile(new Location(col, row), EntityIcon2048.GROUND, true);
             }
         }
     }

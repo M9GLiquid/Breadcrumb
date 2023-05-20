@@ -5,7 +5,7 @@ import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.entity.EntityIcon;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.utils.Location;
-import eu.kingconquest.twozerofoureight.core.EntityType2048;
+import eu.kingconquest.twozerofoureight.core.EntityIcon2048;
 import eu.kingconquest.twozerofoureight.core.Game2048;
 import eu.kingconquest.twozerofoureight.entities.Block;
 
@@ -256,7 +256,7 @@ public class Board2048 extends GameBoard {
     public void isWin() {
         for (Entity entity : getEntities()) {
             //Checks if there is a tile with the value 64.
-            if (entity.getEntityType() == EntityType2048.E64) {
+            if (entity.getEntityType() == EntityIcon2048.E64) {
                 game.hasWon = true;
                 game.getBoard().setState(GameState.WIN);
                 return;
@@ -276,12 +276,12 @@ public class Board2048 extends GameBoard {
         do {
             randomCol = (int) (Math.random() * 4 + 1);
             randomRow = (int) (Math.random() * 4 + 1);
-            entity = new Block(new Location(randomCol, randomRow), EntityType2048.E2);
+            entity = new Block(new Location(randomCol, randomRow), EntityIcon2048.E2);
         } while (entityExist(entity));
 
         //Creating variables for the odds of being a value 4 for the two starting blocks.
         int Odds = (int) (Math.random() * 100 + 1);
-        EntityType2048 EntityType = (Odds > 90) ? EntityType2048.E4 : EntityType2048.E2;
+        EntityIcon2048 EntityType = (Odds > 90) ? EntityIcon2048.E4 : EntityIcon2048.E2;
         entity.setEntityType(EntityType);
         addEntity(entity);
     }
@@ -292,21 +292,21 @@ public class Board2048 extends GameBoard {
      * @param entity The value the method square up to.
      * @return the product of the value.
      */
-    public EntityIcon productEntity(EntityType2048 entity){
+    public EntityIcon productEntity(EntityIcon2048 entity){
         return switch (entity) {
-            case E2 -> EntityType2048.E4;
-            case E4 -> EntityType2048.E8;
-            case E8 -> EntityType2048.E16;
-            case E16 -> EntityType2048.E32;
-            case E32 -> EntityType2048.E64;
-            case E64 -> EntityType2048.E128;
-            case E128 -> EntityType2048.E256;
-            case E256 -> EntityType2048.E512;
-            case E512 -> EntityType2048.E1024;
-            case E1024 -> EntityType2048.E2048;
-            case E2048 -> EntityType2048.E4096;
-            case E4096 -> EntityType2048.E8192;
-            case E8192 -> EntityType2048.E16384;
+            case E2 -> EntityIcon2048.E4;
+            case E4 -> EntityIcon2048.E8;
+            case E8 -> EntityIcon2048.E16;
+            case E16 -> EntityIcon2048.E32;
+            case E32 -> EntityIcon2048.E64;
+            case E64 -> EntityIcon2048.E128;
+            case E128 -> EntityIcon2048.E256;
+            case E256 -> EntityIcon2048.E512;
+            case E512 -> EntityIcon2048.E1024;
+            case E1024 -> EntityIcon2048.E2048;
+            case E2048 -> EntityIcon2048.E4096;
+            case E4096 -> EntityIcon2048.E8192;
+            case E8192 -> EntityIcon2048.E16384;
             default -> null;
         };
     }
@@ -315,7 +315,7 @@ public class Board2048 extends GameBoard {
      * The method adds the sum to the score.
      * @param entity The value the method sum up.
      */
-    public void addScore(EntityType2048 entity){
+    public void addScore(EntityIcon2048 entity){
         switch (entity) {
             case E2 -> score += 4;
             case E4 -> score += 8;
@@ -352,7 +352,7 @@ public class Board2048 extends GameBoard {
                 // If the adjacent cells have the same values.
                 if(isMatch(entity, entity2)){
                     //Get the value from a specific entity.
-                    EntityType2048 entityType = (EntityType2048) entity.getEntityType();
+                    EntityIcon2048 entityType = (EntityIcon2048) entity.getEntityType();
                     //Create a new block on the same location as the specific entity with doubled value.
                     Block block = new Block(new Location(col, row), productEntity(entityType));
                     //Remove the entity from the specific colum and row.
@@ -361,7 +361,7 @@ public class Board2048 extends GameBoard {
                     getEntities().add(block);
                     //Remove the entity next to the entity with the specific column and row.
                     getEntities().remove(getEntity(new Location(col, row+1)));
-                    addScore((EntityType2048) entity.getEntityType());
+                    addScore((EntityIcon2048) entity.getEntityType());
                 }
             }
         }
@@ -378,7 +378,7 @@ public class Board2048 extends GameBoard {
         for(int col = 1; col < 5; col++){
             for(int row = 1; row < 5; row++){
                 Location location = new Location(col, 5-row);
-                Block block = new Block(location, EntityType2048.WALL);
+                Block block = new Block(location, EntityIcon2048.WALL);
 
                 //Get the value of the corresponding cell in the opposite column.
                 if(!entityExist(block))
@@ -403,7 +403,7 @@ public class Board2048 extends GameBoard {
         for(int col = 1; col < 5; col++){
             for(int row = 1; row < 5; row++){
                 //Create a new block on the current cell with the value from the transposed cell.
-                Block block = new Block(new Location(col, row), EntityType2048.E2);
+                Block block = new Block(new Location(col, row), EntityIcon2048.E2);
                 if(!entityExist(block))
                     continue;
                 //Get the value of the transpose cell.

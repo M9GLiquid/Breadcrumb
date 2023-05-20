@@ -13,7 +13,6 @@ import eu.kingconquest.framework.ui.*;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.views.FloatingButtonsView;
 import eu.kingconquest.framework.views.GameGuiView;
-import eu.kingconquest.sokoban.audio.SokobanAudioManager;
 import eu.kingconquest.sokoban.audio.SokobanGameAudioObserver;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
@@ -52,10 +51,7 @@ public class Sokoban extends Game {
         // State Observers
         getController().addStateObserver(new StateObserver(this));
         // Audio Observers
-        getController().addAudioObserver(new SokobanGameAudioObserver(
-                SokobanAudioManager.CRATE_AUDIO,
-                SokobanAudioManager.PLAYER_AUDIO)
-        );
+        getController().addAudioObserver(new SokobanGameAudioObserver(this));
         // View Observers
         getController().addViewObserver(frame.getGameView());
         getController().addViewObserver(new ConsoleViewObserver(getBoard()));
@@ -132,7 +128,7 @@ public class Sokoban extends Game {
     public void load() {
         String message = DataReader.load(this);
 
-        if (message.equals("Game loaded successfully!")) {
+        if (message.equals("Game loading!")) {
             setData();
             Timer timer = new Timer(1500, e -> {
                 getBoard().setState(GameState.RUNNING);

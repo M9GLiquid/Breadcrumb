@@ -2,7 +2,6 @@ package eu.kingconquest.framework.strategies;
 
 import eu.kingconquest.framework.observers.GameAudioObserver;
 import eu.kingconquest.framework.observers.GameStateObserver;
-import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.observers.GameViewObserver;
 
 import java.awt.event.ActionListener;
@@ -82,9 +81,8 @@ public interface GameStrategy extends ActionListener, KeyListener{
      * The registered AudioObservers will be responsible for playing the appropriate
      * audio based on the type of the given entity (e.g., player or crate).
      * </p>
-     * @param entity the Entity instance for which the update occurred, such as a moved player or crate
      */
-    void notifyAudioObservers(Entity entity);
+    void notifyAudioObservers();
 
     /**
      * Removes all registered GameStateObservers.

@@ -29,7 +29,7 @@ public class DataReader {
             if (game.getGameData() == null)
                 return "Save file corrupted!";
 
-            return "Game loaded successfully!"; // Show notification
+            return "Game loading!"; // Show notification
 
         } catch (FileNotFoundException e) {
             return "File not found!"; // Show notification

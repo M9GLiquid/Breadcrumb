@@ -1,7 +1,6 @@
 package eu.kingconquest.framework.controllers;
 
 import eu.kingconquest.framework.core.GameState;
-import eu.kingconquest.framework.entity.Entity;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.observers.GameAudioObserver;
 import eu.kingconquest.framework.observers.GameStateObserver;
@@ -15,7 +14,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * The GameController class handles user input and game updates for a specified game.
+ * The KeyBoardController class handles user key input and game updates for a specified game.
  * It also manages a list of observers to be notified of game changes and audio updates.
  */
 public class KeyBoardController implements GameStrategy {
@@ -25,7 +24,7 @@ public class KeyBoardController implements GameStrategy {
     private final Set<GameAudioObserver> audioObservers = new HashSet<>();
 
     /**
-     * Creates a GameController for the specified game.
+     * Creates a KeyBoardController for the specified game.
      *
      * @param gameBoard the game to be controlled
      */
@@ -64,9 +63,9 @@ public class KeyBoardController implements GameStrategy {
     }
 
     @Override
-    public void notifyAudioObservers(Entity entity) {
+    public void notifyAudioObservers() {
         for (GameAudioObserver observer : audioObservers)
-            observer.update(entity);
+            observer.update();
     }
 
     @Override
@@ -84,12 +83,18 @@ public class KeyBoardController implements GameStrategy {
         viewObservers.clear();
     }
 
+    /**
+     * Handles key typed events.
+     *
+     * @param event the key event
+     */
     @Override
-    public void keyTyped(KeyEvent e) {
+    public void keyTyped(KeyEvent event) {
     }
 
     /**
      * Handles user key input and updates the game accordingly.
+     * Based on the event input sets the direction and updates the state/view observers
      * This method is automatically called when a key is pressed.
      *
      * @param event the KeyEvent containing information about the key event
@@ -106,18 +111,23 @@ public class KeyBoardController implements GameStrategy {
             case KeyEvent.VK_ESCAPE -> gameBoard.setState(GameState.PAUSED);
         }
 
-        if (direction.getX() != 0 || direction.getY() != 0 && gameBoard.getState().equals(GameState.RUNNING))
+        if ((direction.getX() != 0 || direction.getY() != 0) && gameBoard.getState().equals(GameState.RUNNING))
             gameBoard.makeMove(direction);
 
         notifyStateObservers();
         notifyViewObservers();
     }
 
+    /**
+     * Handles key released events.
+     *
+     * @param event the key event
+     */
     @Override
-    public void keyReleased(KeyEvent e) {
+    public void keyReleased(KeyEvent event) {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent event) {
     }
 }

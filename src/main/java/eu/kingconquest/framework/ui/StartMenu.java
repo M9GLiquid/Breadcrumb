@@ -1,6 +1,5 @@
 package eu.kingconquest.framework.ui;
 
-import eu.kingconquest.framework.Listener.MenuItem;
 import eu.kingconquest.framework.Listener.MenuListener;
 import eu.kingconquest.framework.core.Game;
 
@@ -30,28 +29,28 @@ public class StartMenu extends Menu {
         gbc.gridy++;
         add(textComponent("may the odds be ever in your favor", 24, true), gbc);
 
-        // Button for load game
+        // Button for start game
         gbc.gridy++;
-        add(buttonComponent("Start Game",
-                new MenuListener(game, this, MenuItem.START)),
+        add(buttonComponent("Start",
+                new MenuListener(game, this)),
                 gbc);
 
         // Button for load game
         gbc.gridy++;
-        add(buttonComponent("Load Game",
-                new MenuListener(game, this, MenuItem.LOAD)),
+        add(buttonComponent("Load",
+                new MenuListener(game, this)),
                 gbc);
 
-        // Button for return to Game Selector
+        // Button for return to Game Selector (PlatformMenu)
         gbc.gridy++;
         add(buttonComponent("Game Selector",
-                new MenuListener(game, this, MenuItem.PLATFORM)),
+                new MenuListener(game, this)),
                 gbc);
 
         // Button to exit the game
         gbc.gridy++;
-        add(buttonComponent("Exit Game",
-                new MenuListener(game, this, MenuItem.EXIT)),
+        add(buttonComponent("Exit",
+                new MenuListener(game, this)),
                 gbc);
     }
 }

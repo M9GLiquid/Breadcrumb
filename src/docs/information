@@ -1,0 +1,9 @@
+// Mock Constructor call "try-with-resources"
+try (MockedConstruction<GameGuiView> mocked = mockConstruction(GameGuiView.class)) {
+    underTest.setGameView();
+
+    // check to see if the FloatingButtonsView instance was created.
+    assertEquals(1, mocked.constructed().size());
+}
+
+

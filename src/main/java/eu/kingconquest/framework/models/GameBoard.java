@@ -49,6 +49,25 @@ public abstract class GameBoard {
         return entities;
     }
 
+    /**
+     * Get a entity from a location
+     * @param location location of the entity
+     * @return null if not found, entity if found
+     */
+    public Entity getEntity(Location location){
+        if (location == null)
+            return null;
+        for (Entity entity : entities)
+            if (entity.getLocation().equals(location))
+                return entity;
+        return null;
+    }
+
+    /**
+     * Sets the entities of the game board to the specified list of entities.
+     *
+     * @param entities the new list of entities
+     */
     public void setEntities(ArrayList<Entity> entities) {
         this.entities = entities;
     }
@@ -60,7 +79,6 @@ public abstract class GameBoard {
      * @return true if the move is valid, false otherwise
      */
     protected abstract boolean isMoveInvalid(Location location);
-
 
     /**
      * Gets the GameState of the game.
@@ -86,27 +104,29 @@ public abstract class GameBoard {
      */
     public abstract void makeMove(Location direction);
 
+    /**
+     * Returns a string representation of the game board, which includes the grid and the entities present on it.
+     *
+     * @return a string representation of the game board
+     */
     public String toString() {
-        StringBuilder string = new StringBuilder();
-        for (int col = 0; col < COLS; col++) {
-            for (int row = 0; row < ROWS; row++) {
-                string.append(grid[col][row]);
-            }
-            string.append("\n");
+        StringBuilder strGrid = new StringBuilder();
+        for (int row = 0; row < ROWS; row++) {
+            for (int col = 0; col < COLS; col++)
+                strGrid.append(grid[row][col]);
+
+            strGrid.append("\n");
         }
 
-        // Replace the corresponding grid[][] with entity
+        // Replace the corresponding grid[][] location tile with entity
         entities.forEach(entity -> {
             int row = entity.getLocation().getY();
             int col = entity.getLocation().getX();
             int index = row * (COLS + 1) + col;
-            string.setCharAt(index, entity.getEntityType().toString().charAt(0));
+            // Put the Entity at the correct position in the string
+            strGrid.setCharAt(index, entity.getEntityType().toString().charAt(0));
         });
 
-        return string.toString();
+        return strGrid.toString();
     }
 }
-
-
-
-

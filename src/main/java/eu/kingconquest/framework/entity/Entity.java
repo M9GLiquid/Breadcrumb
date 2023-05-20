@@ -13,21 +13,19 @@ import java.io.Serializable;
  */
 public abstract class Entity implements Serializable {
     private Location location;
-    private EntityType entityType;
+    private EntityIcon entityIcon;
+
+    public Entity() {}
 
     /**
      * Creates an Entity with the specified location and EntityType.
      *
      * @param location   the initial location of the entity
-     * @param entityType the type of the entity
+     * @param entityIcon the type of the entity
      */
-    public Entity(Location location, EntityType entityType) {
+    public Entity(Location location, EntityIcon entityIcon) {
         setLocation(location);
-        setEntityType(entityType);
-    }
-
-    public Entity() {
-
+        setEntityType(entityIcon);
     }
 
     /**
@@ -56,20 +54,32 @@ public abstract class Entity implements Serializable {
      *
      * @return the EntityType of the entity
      */
-    public EntityType getEntityType() {
-        return entityType;
+    public EntityIcon getEntityType() {
+        return entityIcon;
     }
 
     /**
      * Sets the EntityType of the entity.
      *
-     * @param entityType the new EntityType of the entity
+     * @param entityIcon the new EntityType of the entity
      * @throws IllegalArgumentException if the entityType is null
      */
-    public void setEntityType(EntityType entityType) {
-        if (entityType == null)
+    public void setEntityType(EntityIcon entityIcon) {
+        if (entityIcon == null)
             throw new IllegalArgumentException("EntityType cannot be null");
-        this.entityType = entityType;
+        this.entityIcon = entityIcon;
+    }
+
+    /**
+     * Compares the specified Entity object with this Entity for equality.
+     * The comparison is based on the location and EntityType of the Entities.
+     *
+     * @param entity the Entity to be compared for equality with this Entity
+     * @return true if the specified Entity is equal to this Entity; false otherwise
+     */
+    public boolean equals(Entity entity){
+        return location.equals(entity.getLocation())
+                && entityIcon.equals(entity.getEntityType());
     }
 
     /**
@@ -78,7 +88,7 @@ public abstract class Entity implements Serializable {
      * @param g the Graphics context to draw the entity on
      */
     public void draw(Graphics g) {
-        g.drawImage(entityType.getIcon(),
+        g.drawImage(entityIcon.getIcon(),
                 location.getX() * Tile.getTileSize(),
                 location.getY() * Tile.getTileSize(),
                 Tile.getTileSize(),

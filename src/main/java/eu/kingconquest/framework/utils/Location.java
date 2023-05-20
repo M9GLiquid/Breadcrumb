@@ -80,16 +80,6 @@ public class Location implements Serializable {
 
 
     /**
-     * Calculates the Manhattan distance between this location and another location.
-     *
-     * @param location The other location to calculate the distance from.
-     * @return The Manhattan distance between this location and the specified location.
-     */
-    public int getDistance(Location location) {
-        return Math.abs(location.getX() - x) + Math.abs(location.getY() - y);
-    }
-
-    /**
      * Returns a string representation of the location.
      *
      * @return A string representation of the location in the format "Location{x=..., y=...}".

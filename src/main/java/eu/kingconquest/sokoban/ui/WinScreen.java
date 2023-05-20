@@ -6,10 +6,11 @@ import eu.kingconquest.framework.ui.Menu;
 
 import java.awt.*;
 
-public class GameOverScreen extends Menu {
+public class WinScreen extends Menu {
+
     private final Game game;
 
-    public GameOverScreen(Game game) {
+    public WinScreen(Game game){
         this.game = game;
         createMenu();
     }
@@ -23,11 +24,15 @@ public class GameOverScreen extends Menu {
 
         gbc.gridx = 0;
         gbc.gridy = 0;
-        add(textComponent("Game Over", 48, false), gbc);
+        add(textComponent("You Won", 48, false), gbc);
 
-        // Button to restart the current level
+        // Subtitle
         gbc.gridy++;
-        add(buttonComponent("Restart",
+        add(textComponent("You completed the last level!", 24, false), gbc);
+
+        // Button to return to the platform menu
+        gbc.gridy++;
+        add(buttonComponent("Main Menu",
                         new MenuListener(game, this)),
                 gbc);
 

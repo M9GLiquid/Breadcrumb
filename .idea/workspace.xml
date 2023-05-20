@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Bug Fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/GuiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/KeyBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/KeyBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/core/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/models/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/models/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/ui/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/ui/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/views/FloatingButtonsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/views/FloatingButtonsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/Sokoban.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/Sokoban.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Game2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Game2048.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/controllers/KeyBoardControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/controllers/KeyBoardControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,28 +111,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;eu.kingconquest.framework.entity.Entity&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;,
-      &quot;module&quot;
-    ]
-  }
-}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="eu.kingconquest.framework" />
@@ -161,7 +134,7 @@
       <recent name="eu.kingconquest.sokoban.core" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Default">
+  <component name="RunManager" selected="JUnit.KeyBoardControllerTest">
     <configuration name="Default" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Sokoban" />
@@ -179,6 +152,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="eu.kingconquest.sokoban.entities" />
       <option name="MAIN_CLASS_NAME" value="eu.kingconquest.sokoban.entities.CrateTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KeyBoardControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sokoban" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="eu.kingconquest.framework.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="eu.kingconquest.framework.controllers" />
+      <option name="MAIN_CLASS_NAME" value="eu.kingconquest.framework.controllers.KeyBoardControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -230,35 +218,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="eu.kingconquest.sokoban in Sokoban" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sokoban" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="eu.kingconquest.sokoban.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="eu.kingconquest.sokoban" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Default" />
-      <item itemvalue="JUnit.eu.kingconquest.sokoban in Sokoban" />
       <item itemvalue="JUnit.SokobanEntityIconTest" />
       <item itemvalue="JUnit.CrateTest" />
       <item itemvalue="JUnit.PlayerTest" />
       <item itemvalue="JUnit.SokobanBoardTest.test_Constructor" />
+      <item itemvalue="JUnit.KeyBoardControllerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.KeyBoardControllerTest" />
         <item itemvalue="JUnit.SokobanBoardTest.test_Constructor" />
         <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.CrateTest" />
         <item itemvalue="JUnit.SokobanEntityIconTest" />
-        <item itemvalue="JUnit.eu.kingconquest.sokoban in Sokoban" />
       </list>
     </recent_temporary>
   </component>
@@ -504,7 +478,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main/feature/junit-testing" />
+                        <option value="origin/feature/junit-testing" />
                       </list>
                     </value>
                   </entry>
@@ -563,6 +537,7 @@
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="eu.kingconquest.sokoban.entities.Wall" memberName="isWalkable" />
+        <PinnedItemInfo parentTag="eu.kingconquest.framework.models.GameBoard$MockitoMock$nkph8Jnn" memberName="state" />
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
@@ -576,87 +551,17 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_restart.ic" NAME="SokobanTest.test_restart Coverage Results" MODIFIED="1684239101408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanGameAudioObserverTest_testUpdate_whenEntityIsCrate.ic" NAME="SokobanGameAudioObserverTest.testUpdate_whenEntityIsCrate Coverage Results" MODIFIED="1684154377311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.audio.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_constructor_withNonExistingAudioPath_shouldThrowIllegalArgumentException.ic" NAME="AudioTypeTest.constructor_withNonExistingAudioPath_shouldThrowIllegalArgumentException Coverage Results" MODIFIED="1683192608989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.framework.audio.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_GetCrates.ic" NAME="SokobanTest.test_GetCrates Coverage Results" MODIFIED="1684272380514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_SetGameView.ic" NAME="SokobanTest.test_SetGameView Coverage Results" MODIFIED="1684269140289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_save.ic" NAME="SokobanTest.test_save Coverage Results" MODIFIED="1684242262326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testNextLevel_GameState_is_RESETTING_entitiesCleared_loadLevelReturns_0.ic" NAME="SokobanTest.testNextLevel_GameState_is_RESETTING_entitiesCleared_loadLevelReturns_0 Coverage Results" MODIFIED="1684267760505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_GetGoals.ic" NAME="SokobanTest.test_GetGoals Coverage Results" MODIFIED="1684272639979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$Default.ic" NAME="Default Coverage Results" MODIFIED="1684592434195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanBoardTest_test_Constructor.ic" NAME="SokobanBoardTest.test_Constructor Coverage Results" MODIFIED="1684316513481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.models.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$PlayerTest.ic" NAME="PlayerTest Coverage Results" MODIFIED="1684314264272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.entities.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_setClipVolume_withMaximumVolume_shouldSetVolumeToMaximum.ic" NAME="AudioTypeTest.setClipVolume_withMaximumVolume_shouldSetVolumeToMaximum Coverage Results" MODIFIED="1683191610417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.framework.audio.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testNextLevel_GameState_is_LEVEL_COMPLETE_entitiesCleared_loadLevelReturns_0.ic" NAME="SokobanTest.testNextLevel_GameState_is_LEVEL_COMPLETE_entitiesCleared_loadLevelReturns_0 Coverage Results" MODIFIED="1684267773220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_Start_NextLevel_ReturnFalse_ControllerNotInstanceOfGUIController.ic" NAME="SokobanTest.test_Start_NextLevel_ReturnFalse_ControllerNotInstanceOfGUIController Coverage Results" MODIFIED="1684269023908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_Save.ic" NAME="SokobanTest.test_Save Coverage Results" MODIFIED="1684269153077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanEntityTypeTest.ic" NAME="SokobanEntityTypeTest Coverage Results" MODIFIED="1684314456037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.entities.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testInitiate.ic" NAME="SokobanTest.testInitiate Coverage Results" MODIFIED="1684266570678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_NextLevel_GameState_is_RESETTING_entitiesCleared_loadLevelReturns_0.ic" NAME="SokobanTest.test_NextLevel_GameState_is_RESETTING_entitiesCleared_loadLevelReturns_0 Coverage Results" MODIFIED="1684269097646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_Load_GameHasLoadedSuccessfully.ic" NAME="SokobanTest.test_Load_GameHasLoadedSuccessfully Coverage Results" MODIFIED="1684270307008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_GameOver_State_GameOver.ic" NAME="SokobanTest.test_GameOver_State_GameOver Coverage Results" MODIFIED="1684311664267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_setClipVolume_whenClipIsOpen_shouldSetVolume.ic" NAME="AudioTypeTest.setClipVolume_whenClipIsOpen_shouldSetVolume Coverage Results" MODIFIED="1683190823640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.framework.audio.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_loadAudio_fileNotFound.ic" NAME="AudioTypeTest.loadAudio_fileNotFound Coverage Results" MODIFIED="1683147817378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.framework.audio.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testConstructor.ic" NAME="SokobanTest.testConstructor Coverage Results" MODIFIED="1684173495442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest.ic" NAME="AudioTypeTest Coverage Results" MODIFIED="1683191303133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.framework.audio.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_constructor_withNullAudioPath_shouldThrowIllegalArgumentException.ic" NAME="AudioTypeTest.constructor_withNullAudioPath_shouldThrowIllegalArgumentException Coverage Results" MODIFIED="1683191214074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.framework.audio.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$SokobanGameAudioObserverTest_test_update_EntityIsCrate.ic" NAME="SokobanGameAudioObserverTest.test_update_EntityIsCrate Coverage Results" MODIFIED="1684313551272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.audio.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testStart_NextLevel_ReturnFalse.ic" NAME="SokobanTest.testStart_NextLevel_ReturnFalse Coverage Results" MODIFIED="1684177431921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_NextLevel_GameState_is_LEVEL_COMPLETE_entitiesCleared_loadLevelReturns_0.ic" NAME="SokobanTest.test_NextLevel_GameState_is_LEVEL_COMPLETE_entitiesCleared_loadLevelReturns_0 Coverage Results" MODIFIED="1684269067473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_playAlreadyPlaying.ic" NAME="AudioTypeTest.playAlreadyPlaying Coverage Results" MODIFIED="1683147524254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.framework.audio.*</FILTER>
+    <SUITE FILE_PATH="coverage/Sokoban$GuiControllerTest_test_Observer.ic" NAME="GuiControllerTest.test_Observer Coverage Results" MODIFIED="1684401920481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.controllers.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_SetGameData.ic" NAME="SokobanTest.test_SetGameData Coverage Results" MODIFIED="1684271768986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
@@ -664,83 +569,168 @@
     <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_play_whenClipNotRunning_shouldPlay.ic" NAME="AudioTypeTest.play_whenClipNotRunning_shouldPlay Coverage Results" MODIFIED="1683191176640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.audio.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_Pause.ic" NAME="SokobanTest.test_Pause Coverage Results" MODIFIED="1684310165830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_setClipVolume_whenClipIsOpen_shouldSetVolume.ic" NAME="AudioTypeTest.setClipVolume_whenClipIsOpen_shouldSetVolume Coverage Results" MODIFIED="1683190823640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.audio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_loadAudio_throwsIOException.ic" NAME="AudioTypeTest.loadAudio_throwsIOException Coverage Results" MODIFIED="1683149156789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.audio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_NextLevel_GameState_is_RESETTING_entitiesCleared_loadLevelReturns_0.ic" NAME="SokobanTest.test_NextLevel_GameState_is_RESETTING_entitiesCleared_loadLevelReturns_0 Coverage Results" MODIFIED="1684269097646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_testLoadAudio_withValidFileName.ic" NAME="AudioTypeTest.testLoadAudio_withValidFileName Coverage Results" MODIFIED="1683188654364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.audio.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_GameOver_State_Win.ic" NAME="SokobanTest.test_GameOver_State_Win Coverage Results" MODIFIED="1684311673417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanBoardTest_test_Constructor.ic" NAME="SokobanBoardTest.test_Constructor Coverage Results" MODIFIED="1684316513481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.models.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanGameAudioObserverTest_test_update.ic" NAME="SokobanGameAudioObserverTest.test_update Coverage Results" MODIFIED="1684313148916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.audio.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$eu_kingconquest_sokoban_in_Sokoban.ic" NAME="eu.kingconquest.sokoban in Sokoban Coverage Results" MODIFIED="1684506121134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_Restart.ic" NAME="SokobanTest.test_Restart Coverage Results" MODIFIED="1684269148698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_SetGameView.ic" NAME="SokobanTest.test_SetGameView Coverage Results" MODIFIED="1684269140289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_GetPlayer.ic" NAME="SokobanTest.test_GetPlayer Coverage Results" MODIFIED="1684272376357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_constructor_withEmptyAudioPath_shouldThrowIllegalArgumentException.ic" NAME="AudioTypeTest.constructor_withEmptyAudioPath_shouldThrowIllegalArgumentException Coverage Results" MODIFIED="1683191248740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_constructor_withNullAudioPath_shouldThrowIllegalArgumentException.ic" NAME="AudioTypeTest.constructor_withNullAudioPath_shouldThrowIllegalArgumentException Coverage Results" MODIFIED="1683191214074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.audio.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_Load_GameHasLoadedSuccessfully.ic" NAME="SokobanTest.test_Load_GameHasLoadedSuccessfully Coverage Results" MODIFIED="1684270307008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_Save.ic" NAME="SokobanTest.test_Save Coverage Results" MODIFIED="1684269153077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_constructor_withInvalidVolumeLessThanZero_shouldThrowIllegalArgumentException.ic" NAME="AudioTypeTest.constructor_withInvalidVolumeLessThanZero_shouldThrowIllegalArgumentException Coverage Results" MODIFIED="1683192287623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanGameAudioObserverTest_testUpdate_whenEntityIsCrate.ic" NAME="SokobanGameAudioObserverTest.testUpdate_whenEntityIsCrate Coverage Results" MODIFIED="1684154377311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.audio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$PlayerTest.ic" NAME="PlayerTest Coverage Results" MODIFIED="1684314264272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.entities.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testInitiate.ic" NAME="SokobanTest.testInitiate Coverage Results" MODIFIED="1684266570678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_setClipVolume_withMaximumVolume_shouldSetVolumeToMaximum.ic" NAME="AudioTypeTest.setClipVolume_withMaximumVolume_shouldSetVolumeToMaximum Coverage Results" MODIFIED="1683191610417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.audio.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testStart_NextLevel_ReturnTrue.ic" NAME="SokobanTest.testStart_NextLevel_ReturnTrue Coverage Results" MODIFIED="1684242765887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanGameAudioObserverTest_test_update.ic" NAME="SokobanGameAudioObserverTest.test_update Coverage Results" MODIFIED="1684313148916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.audio.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testNextLevel_GameState_is_INITIATING_entitiesCleared_loadLevelReturns_1.ic" NAME="SokobanTest.testNextLevel_GameState_is_INITIATING_entitiesCleared_loadLevelReturns_1 Coverage Results" MODIFIED="1684267770053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest.ic" NAME="SokobanTest Coverage Results" MODIFIED="1684311837084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_Start_NextLevel_ReturnFalse_ControllerNotInstanceOfGUIController.ic" NAME="SokobanTest.test_Start_NextLevel_ReturnFalse_ControllerNotInstanceOfGUIController Coverage Results" MODIFIED="1684269023908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_testConstructor_withInvalidInput.ic" NAME="AudioTypeTest.testConstructor_withInvalidInput Coverage Results" MODIFIED="1683188052927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.audio.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testStart_NextLevel_ReturnFalse_ControllerNotInstanceOfGUIController.ic" NAME="SokobanTest.testStart_NextLevel_ReturnFalse_ControllerNotInstanceOfGUIController Coverage Results" MODIFIED="1684267776825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanGameAudioObserverTest_test_update_EntityIsPlayer.ic" NAME="SokobanGameAudioObserverTest.test_update_EntityIsPlayer Coverage Results" MODIFIED="1684313557297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.audio.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$CrateTest.ic" NAME="CrateTest Coverage Results" MODIFIED="1684314078593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.entities.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_Pause.ic" NAME="SokobanTest.test_Pause Coverage Results" MODIFIED="1684310165830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_loadAudio_throwsIOException.ic" NAME="AudioTypeTest.loadAudio_throwsIOException Coverage Results" MODIFIED="1683149156789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_playAlreadyPlaying.ic" NAME="AudioTypeTest.playAlreadyPlaying Coverage Results" MODIFIED="1683147524254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.audio.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_NextLevel_GameState_is_INITIATING_entitiesCleared_loadLevelReturns_1.ic" NAME="SokobanTest.test_NextLevel_GameState_is_INITIATING_entitiesCleared_loadLevelReturns_1 Coverage Results" MODIFIED="1684269093239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_setGameView.ic" NAME="SokobanTest.test_setGameView Coverage Results" MODIFIED="1684267732124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_constructor_withInvalidVolumeGreaterThanOne_shouldThrowIllegalArgumentException.ic" NAME="AudioTypeTest.constructor_withInvalidVolumeGreaterThanOne_shouldThrowIllegalArgumentException Coverage Results" MODIFIED="1683192235580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.audio.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testNextLevel_GameState_is_LevelComplete_entitiesCleared_loadLevelReturns_0.ic" NAME="SokobanTest.testNextLevel_GameState_is_LevelComplete_entitiesCleared_loadLevelReturns_0 Coverage Results" MODIFIED="1684231405832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sokoban$eu_kingconquest_sokoban_in_Sokoban.ic" NAME="eu.kingconquest.sokoban in Sokoban Coverage Results" MODIFIED="1684506121134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_NextLevel_GameState_is_LEVEL_COMPLETE_entitiesCleared_loadLevelReturns_0.ic" NAME="SokobanTest.test_NextLevel_GameState_is_LEVEL_COMPLETE_entitiesCleared_loadLevelReturns_0 Coverage Results" MODIFIED="1684269067473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_save.ic" NAME="SokobanTest.test_save Coverage Results" MODIFIED="1684242262326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testStart_NextLevel_ReturnFalse_ControllerNotInstanceOfGUIController.ic" NAME="SokobanTest.testStart_NextLevel_ReturnFalse_ControllerNotInstanceOfGUIController Coverage Results" MODIFIED="1684267776825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_constructor_throwsException.ic" NAME="AudioTypeTest.constructor_throwsException Coverage Results" MODIFIED="1683149604199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.audio.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest__1_.ic" NAME="AudioTypeTest (1) Coverage Results" MODIFIED="1683643500207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.audio.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_constructor_throwsException.ic" NAME="AudioTypeTest.constructor_throwsException Coverage Results" MODIFIED="1683149604199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_setGameView.ic" NAME="SokobanTest.test_setGameView Coverage Results" MODIFIED="1684267732124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$GuiControllerTest_constructorTest.ic" NAME="GuiControllerTest.constructorTest Coverage Results" MODIFIED="1684316191363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$CrateTest.ic" NAME="CrateTest Coverage Results" MODIFIED="1684314078593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.entities.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_NextLevel_GameState_is_INITIATING_entitiesCleared_loadLevelReturns_1.ic" NAME="SokobanTest.test_NextLevel_GameState_is_INITIATING_entitiesCleared_loadLevelReturns_1 Coverage Results" MODIFIED="1684269093239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_restart.ic" NAME="SokobanTest.test_restart Coverage Results" MODIFIED="1684239101408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_constructor_withEmptyAudioPath_shouldThrowIllegalArgumentException.ic" NAME="AudioTypeTest.constructor_withEmptyAudioPath_shouldThrowIllegalArgumentException Coverage Results" MODIFIED="1683191248740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.audio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_GetCrates.ic" NAME="SokobanTest.test_GetCrates Coverage Results" MODIFIED="1684272380514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testNextLevel_GameState_is_LEVEL_COMPLETE_entitiesCleared_loadLevelReturns_0.ic" NAME="SokobanTest.testNextLevel_GameState_is_LEVEL_COMPLETE_entitiesCleared_loadLevelReturns_0 Coverage Results" MODIFIED="1684267773220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_constructor_withNonExistingAudioPath_shouldThrowIllegalArgumentException.ic" NAME="AudioTypeTest.constructor_withNonExistingAudioPath_shouldThrowIllegalArgumentException Coverage Results" MODIFIED="1683192608989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.audio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_constructor_withInvalidVolumeLessThanZero_shouldThrowIllegalArgumentException.ic" NAME="AudioTypeTest.constructor_withInvalidVolumeLessThanZero_shouldThrowIllegalArgumentException Coverage Results" MODIFIED="1683192287623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.audio.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_Initiate.ic" NAME="SokobanTest.test_Initiate Coverage Results" MODIFIED="1684268997836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$SokobanGameAudioObserverTest_test_update_EntityIsPlayer.ic" NAME="SokobanGameAudioObserverTest.test_update_EntityIsPlayer Coverage Results" MODIFIED="1684313557297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.sokoban.audio.*</FILTER>
+    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_loadAudio_fileNotFound.ic" NAME="AudioTypeTest.loadAudio_fileNotFound Coverage Results" MODIFIED="1683147817378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.audio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testNextLevel_GameState_is_INITIATING_entitiesCleared_loadLevelReturns_1.ic" NAME="SokobanTest.testNextLevel_GameState_is_INITIATING_entitiesCleared_loadLevelReturns_1 Coverage Results" MODIFIED="1684267770053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$GuiControllerTest.ic" NAME="GuiControllerTest Coverage Results" MODIFIED="1684402449701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testNextLevel_GameState_is_LevelComplete_entitiesCleared_loadLevelReturns_0.ic" NAME="SokobanTest.testNextLevel_GameState_is_LevelComplete_entitiesCleared_loadLevelReturns_0 Coverage Results" MODIFIED="1684231405832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_play.ic" NAME="AudioTypeTest.play Coverage Results" MODIFIED="1683146554343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.audio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testStart_NextLevel_ReturnTrue.ic" NAME="SokobanTest.testStart_NextLevel_ReturnTrue Coverage Results" MODIFIED="1684242765887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanEntityTypeTest.ic" NAME="SokobanEntityTypeTest Coverage Results" MODIFIED="1684314456037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.entities.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testConstructor.ic" NAME="SokobanTest.testConstructor Coverage Results" MODIFIED="1684173495442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testStart_NextLevel_ReturnFalse.ic" NAME="SokobanTest.testStart_NextLevel_ReturnFalse Coverage Results" MODIFIED="1684177431921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$Default.ic" NAME="Default Coverage Results" MODIFIED="1684260404589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_GameOver_State_Win.ic" NAME="SokobanTest.test_GameOver_State_Win Coverage Results" MODIFIED="1684311673417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$GuiControllerTest_test_notify_observers.ic" NAME="GuiControllerTest.test_notify_observers Coverage Results" MODIFIED="1684401800438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$KeyBoardControllerTest.ic" NAME="KeyBoardControllerTest Coverage Results" MODIFIED="1684576663711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_Restart.ic" NAME="SokobanTest.test_Restart Coverage Results" MODIFIED="1684269148698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest.ic" NAME="SokobanTest Coverage Results" MODIFIED="1684311837084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest.ic" NAME="AudioTypeTest Coverage Results" MODIFIED="1683191303133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.audio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_testNextLevel_GameState_is_RESETTING_entitiesCleared_loadLevelReturns_0.ic" NAME="SokobanTest.testNextLevel_GameState_is_RESETTING_entitiesCleared_loadLevelReturns_0 Coverage Results" MODIFIED="1684267760505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_GetGoals.ic" NAME="SokobanTest.test_GetGoals Coverage Results" MODIFIED="1684272639979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
   </component>
 </project>

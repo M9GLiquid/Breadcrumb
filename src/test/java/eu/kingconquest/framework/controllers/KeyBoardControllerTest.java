@@ -24,15 +24,13 @@ class KeyBoardControllerTest {
     private final Set<GameStateObserver> stateObserversTest = new HashSet<>();
     private final Set<GameViewObserver> viewObserversTest = new HashSet<>();
     private final Set<GameAudioObserver> audioObserversTest = new HashSet<>();
-    private Location direction;
+    private GameBoard gameBoard;
 
     @BeforeEach
     void setUp() {
-        GameBoard gameBoard = mock(GameBoard.class);
+        gameBoard = mock(GameBoard.class);
         underTest = spy(new KeyBoardController(gameBoard));
-        direction = mock(Location.class);
-        direction.setY(0);
-        direction.setX(0);
+
 
     }
 
@@ -52,16 +50,21 @@ class KeyBoardControllerTest {
     void keyPressed_UP() {
         /* Given */
         KeyEvent event = mock(KeyEvent.class);
-        /* Skip */
-        doNothing().when(underTest).notifyStateObservers();
+
 
         /* When */
+        doNothing().when(underTest).notifyStateObservers();
+        doNothing().when(gameBoard).makeMove(any(Location.class));
+        doNothing().when(underTest).notifyViewObservers();
+
         doReturn(KeyEvent.VK_UP).when(event).getKeyCode();
+        doReturn(GameState.RUNNING).when(gameBoard).getState();
         underTest.keyPressed(event);
 
         /* Then */
-        verify(direction).setY(-1);
-        verify(direction.getY()).equals(-1);
+        verify(underTest).notifyStateObservers();
+        verify(underTest).notifyStateObservers();
+        verify(gameBoard).makeMove(any(Location.class));
 
     }
 

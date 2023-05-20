@@ -67,6 +67,90 @@ class KeyBoardControllerTest {
         verify(gameBoard).makeMove(any(Location.class));
 
     }
+    @Test
+    void keyPressed_DOWN() {
+        /* Given */
+        KeyEvent event = mock(KeyEvent.class);
+
+
+        /* When */
+        doNothing().when(underTest).notifyStateObservers();
+        doNothing().when(gameBoard).makeMove(any(Location.class));
+        doNothing().when(underTest).notifyViewObservers();
+
+        doReturn(KeyEvent.VK_DOWN).when(event).getKeyCode();
+        doReturn(GameState.RUNNING).when(gameBoard).getState();
+        underTest.keyPressed(event);
+
+        /* Then */
+        verify(underTest).notifyStateObservers();
+        verify(underTest).notifyStateObservers();
+        verify(gameBoard).makeMove(any(Location.class));
+
+    }
+    @Test
+    void keyPressed_LEFT() {
+        /* Given */
+        KeyEvent event = mock(KeyEvent.class);
+
+
+        /* When */
+        doNothing().when(underTest).notifyStateObservers();
+        doNothing().when(gameBoard).makeMove(any(Location.class));
+        doNothing().when(underTest).notifyViewObservers();
+
+        doReturn(KeyEvent.VK_LEFT).when(event).getKeyCode();
+        doReturn(GameState.RUNNING).when(gameBoard).getState();
+        underTest.keyPressed(event);
+
+        /* Then */
+        verify(underTest).notifyStateObservers();
+        verify(underTest).notifyStateObservers();
+        verify(gameBoard).makeMove(any(Location.class));
+
+    }
+    @Test
+    void keyPressed_RIGHT() {
+        /* Given */
+        KeyEvent event = mock(KeyEvent.class);
+
+
+        /* When */
+        doNothing().when(underTest).notifyStateObservers();
+        doNothing().when(gameBoard).makeMove(any(Location.class));
+        doNothing().when(underTest).notifyViewObservers();
+
+        doReturn(KeyEvent.VK_RIGHT).when(event).getKeyCode();
+        doReturn(GameState.RUNNING).when(gameBoard).getState();
+        underTest.keyPressed(event);
+
+        /* Then */
+        verify(underTest).notifyStateObservers();
+        verify(underTest).notifyStateObservers();
+        verify(gameBoard).makeMove(any(Location.class));
+
+    }
+    @Test
+    void keyPressed_ESC() {
+        /* Given */
+        KeyEvent event = mock(KeyEvent.class);
+
+
+        /* When */
+        doNothing().when(underTest).notifyStateObservers();
+        doNothing().when(gameBoard).setState(any(GameState.class));
+        doNothing().when(underTest).notifyViewObservers();
+
+        doReturn(KeyEvent.VK_ESCAPE).when(event).getKeyCode();
+        doReturn(GameState.RUNNING).when(gameBoard).getState();
+        underTest.keyPressed(event);
+
+        /* Then */
+        verify(underTest).notifyStateObservers();
+        verify(underTest).notifyStateObservers();
+        verify(gameBoard).setState(GameState.PAUSED);
+
+    }
 
     @Test
     void actionPerformed() {

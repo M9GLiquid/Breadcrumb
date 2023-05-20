@@ -4,43 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Add JUnit and Mockito test's">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/thoma.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/docs/information" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Bug Fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/TODO.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/GuiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/KeyBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/KeyBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/io/DataReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/io/DataReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/io/DataWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/io/DataWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/observers/GameAudioObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/observers/GameAudioObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/strategies/GameStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/strategies/GameStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/audio/SokobanGameAudioObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/audio/SokobanGameAudioObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/core/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/models/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/models/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/ui/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/ui/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/views/FloatingButtonsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/views/FloatingButtonsView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/Sokoban.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/Sokoban.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/models/SokobanBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/models/SokobanBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/EntityType2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/EntityType2048.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Game2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Game2048.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/tile_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/tile_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/tile_11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/tile_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/tile_13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/tile_14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/tile_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/tile_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/tile_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/tile_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/tile_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/tile_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/tile_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/tile_9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Game2048/wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sokoban/images/Game2048/ground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/controllers/GuiControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/controllers/GuiControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/sokoban/audio/SokobanGameAudioObserverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/sokoban/audio/SokobanGameAudioObserverTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +61,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
     <option name="SIGN_OFF_COMMIT" value="true" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
@@ -101,19 +74,23 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1684312902" />
+                    <option name="lastUsedInstant" value="1684590080" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feature/junit-testing" />
-                    <option name="lastUsedInstant" value="1684312625" />
+                    <option name="lastUsedInstant" value="1684590012" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/JavaDocs" />
+                    <option name="lastUsedInstant" value="1684589989" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="twozerofoureight" />
+                    <option name="lastUsedInstant" value="1684587728" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="framework" />
                     <option name="lastUsedInstant" value="1683554881" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1681462622" />
                   </RecentBranch>
                 </list>
               </option>
@@ -132,6 +109,7 @@
   </component>
   <component name="ProjectId" id="2ON6krevO8p7ERBOfjKnhpf6SCC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -276,11 +254,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.eu.kingconquest.sokoban in Sokoban" />
         <item itemvalue="JUnit.SokobanBoardTest.test_Constructor" />
-        <item itemvalue="JUnit.SokobanEntityIconTest" />
         <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.CrateTest" />
+        <item itemvalue="JUnit.SokobanEntityIconTest" />
+        <item itemvalue="JUnit.eu.kingconquest.sokoban in Sokoban" />
       </list>
     </recent_temporary>
   </component>
@@ -326,6 +304,8 @@
       <workItem from="1684503521363" duration="2677000" />
       <workItem from="1684506219084" duration="8000" />
       <workItem from="1684572404183" duration="2318000" />
+      <workItem from="1684587285083" duration="2317000" />
+      <workItem from="1684589618294" duration="2896000" />
     </task>
     <task id="LOCAL−00001" summary="Added the main Framework for Game Handling and Menu Handling">
       <created>1681461977142</created>
@@ -501,7 +481,13 @@
       <option name="presentableId" value="LOCAL−00029" />
       <updated>1684506191060</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL−00030" summary="Bug Fixes">
+      <created>1684589947325</created>
+      <option name="number" value="LOCAL−00030" />
+      <option name="presentableId" value="LOCAL−00030" />
+      <updated>1684589947325</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,7 +504,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main/twozerofoureight" />
+                        <option value="main/feature/junit-testing" />
                       </list>
                     </value>
                   </entry>
@@ -546,7 +532,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Version 0.1 Demo Working&#10;Added:&#10; * Character Movement and Crate movement&#10;Improvements:&#10; * Usage of Location&#10; * Readability of code&#10; * Re-structured the code packages" />
     <MESSAGE value="Version 0.2 Functionality&#10;&#10;Added:&#10; * EntityType.java to simplify&#10; * Game States functionality&#10; * GameStrategy.java for added functionality and untangled code&#10; * Start of Level's&#10; &#10;Improvements:&#10; * Entity.java&#10; &#10;Removed:&#10; * MenuActionHandler.java as it's purpose is no longer needed&#10; * MenuObserver.java as it's purpose is no longer needed&#10; * MenuStrategy.java as it's purpose is no longer needed" />
     <MESSAGE value="Refactor codebase into framework pattern&#10;&#10;For the purpose of with ease be able to add new features." />
     <MESSAGE value="Add audio handling and improve documentation&#10;&#10;In this commit, I've added audio handling to the game and implemented two new sounds. The sounds are triggered by specific events in the game, such as when the player completes a level or loses a life. This should make the game more engaging and immersive for players.&#10;&#10;I've also edited and added detailed JavaDocs to the framework. This will make it easier for other developers to understand the purpose and functionality of the code, and to extend and modify it in the future.&#10;&#10;Overall, these changes should improve the quality and usability of the codebase, and make it easier to maintain and build upon over time." />
@@ -571,7 +556,8 @@
     <MESSAGE value="Updated Platform to use the latest iteration of Framework" />
     <MESSAGE value="HotFix" />
     <MESSAGE value="Add JUnit and Mockito test's" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add JUnit and Mockito test's" />
+    <MESSAGE value="Bug Fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug Fixes" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -580,7 +566,7 @@
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/models/SokobanBoard.java" line="158">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/models/SokobanBoard.java" line="157">
         <watch expression="((Sokoban)((SokobanBoard)this).game).getGoals().size()" language="JAVA" custom="eu.kingconquest.sokoban.core.SokobanBoard,eu.kingconquest.sokoban.core.Sokoban" />
       </inline-watch>
     </watches-manager>
@@ -614,7 +600,7 @@
     <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_GetGoals.ic" NAME="SokobanTest.test_GetGoals Coverage Results" MODIFIED="1684272639979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$Default.ic" NAME="Default Coverage Results" MODIFIED="1684260404589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Sokoban$Default.ic" NAME="Default Coverage Results" MODIFIED="1684592434195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Sokoban$SokobanBoardTest_test_Constructor.ic" NAME="SokobanBoardTest.test_Constructor Coverage Results" MODIFIED="1684316513481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.models.*</FILTER>
     </SUITE>

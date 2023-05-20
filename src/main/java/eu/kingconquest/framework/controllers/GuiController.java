@@ -127,7 +127,9 @@ public class GuiController implements GameStrategy {
      */
     @Override
     public void keyPressed(KeyEvent event) {
-        if (event.getKeyCode() == KeyEvent.VK_ESCAPE)
+
+        if (gameBoard.getState() == GameState.RUNNING
+                && event.getKeyCode() == KeyEvent.VK_ESCAPE)
             gameBoard.setState(GameState.PAUSED);
 
         notifyStateObservers();

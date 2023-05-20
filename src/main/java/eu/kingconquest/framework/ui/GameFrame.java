@@ -24,6 +24,7 @@ public class GameFrame extends JFrame {
     public GameFrame() {
         setFocusable(true);
         setResizable(false);
+        setAutoRequestFocus(true);
         setUndecorated(true);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

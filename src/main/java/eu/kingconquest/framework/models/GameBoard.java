@@ -111,6 +111,9 @@ public abstract class GameBoard {
      */
     public String toString() {
         StringBuilder strGrid = new StringBuilder();
+        // Check to see that we actually have a grid to return.
+        if ((grid.length * grid[0].length) != (ROWS * COLS))
+            return "";
         for (int row = 0; row < ROWS; row++) {
             for (int col = 0; col < COLS; col++)
                 strGrid.append(grid[row][col]);

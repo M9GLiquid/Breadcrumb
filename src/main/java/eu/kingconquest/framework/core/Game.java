@@ -14,6 +14,7 @@ import java.awt.event.KeyListener;
  * as well as checking if the game is finished and accessing game components.
  */
 public abstract class Game {
+
     private final String title;
     private GameBoard board;
     private GameStrategy controller;

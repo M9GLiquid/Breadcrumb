@@ -13,6 +13,7 @@ public class FloatingButtonsView extends JDialog{
 
         setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 
         // Up button
         JButton upButton = new JButton("UP");

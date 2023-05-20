@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Sokoban extends Game {
+    public boolean guiController = false;
     public int level;
 
     public Sokoban(GameFrame gameFrame) {
@@ -44,7 +45,6 @@ public class Sokoban extends Game {
         GameFrame frame = getGameFrame();
         frame.setGameView(new GameGuiView(getBoard()));
 
-
         // Game View setup
         frame.addView(new StartMenu(this), Menu.WIDTH, Menu.HEIGHT);
 
@@ -58,7 +58,6 @@ public class Sokoban extends Game {
 
         getBoard().setState(GameState.INITIATING);
 
-
         Tile.setTileSize(64);
         level = -1;
     }
@@ -71,8 +70,10 @@ public class Sokoban extends Game {
         getBoard().setState(GameState.RUNNING);
 
         // Activate GUIControls if that is selected
-        if (getController() instanceof GuiController)
+        if (getController() instanceof GuiController && !guiController) {
             new FloatingButtonsView(getGameFrame(), getController());
+            guiController = true;
+        }
     }
 
     protected boolean nextLevel() {

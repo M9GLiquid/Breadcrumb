@@ -7,12 +7,12 @@ import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.io.DataReader;
 import eu.kingconquest.framework.io.DataWriter;
 import eu.kingconquest.framework.io.GameData;
-import eu.kingconquest.framework.observers.ConsoleViewObserver;
-import eu.kingconquest.framework.observers.StateObserver;
+import eu.kingconquest.framework.views.ConsoleView;
+import eu.kingconquest.framework.core.StateManager;
 import eu.kingconquest.framework.ui.*;
 import eu.kingconquest.framework.utils.Tile;
-import eu.kingconquest.framework.views.FloatingButtonsView;
-import eu.kingconquest.framework.views.GameGuiView;
+import eu.kingconquest.framework.ui.FloatingBtnsView;
+import eu.kingconquest.framework.views.GraphicalView;
 import eu.kingconquest.sokoban.audio.SokobanGameAudioObserver;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
@@ -43,18 +43,18 @@ public class Sokoban extends Game {
         setDesiredController(new KeyBoardController(getBoard())); // Change this line to switch between controllers
 
         GameFrame frame = getGameFrame();
-        frame.setGameView(new GameGuiView(getBoard()));
+        frame.setGameView(new GraphicalView(getBoard()));
 
         // Game View setup
         frame.addView(new StartMenu(this), Menu.WIDTH, Menu.HEIGHT);
 
         // State Observers
-        getController().addStateObserver(new StateObserver(this));
+        getController().addStateObserver(new StateManager(this));
         // Audio Observers
         getController().addAudioObserver(new SokobanGameAudioObserver(this));
         // View Observers
         getController().addViewObserver(frame.getGameView());
-        getController().addViewObserver(new ConsoleViewObserver(getBoard()));
+        getController().addViewObserver(new ConsoleView(getBoard()));
 
         getBoard().setState(GameState.INITIATING);
 
@@ -71,7 +71,7 @@ public class Sokoban extends Game {
 
         // Activate GUIControls if that is selected
         if (getController() instanceof GuiController && !guiController) {
-            new FloatingButtonsView(getGameFrame(), getController());
+            new FloatingBtnsView(getGameFrame(), getController());
             guiController = true;
         }
     }
@@ -90,7 +90,7 @@ public class Sokoban extends Game {
             // We have no more levels
             if (loaded == 1) {
                 getBoard().setState(GameState.WIN);
-                gameOver();
+                end();
                 return true;
             }
         }
@@ -176,7 +176,7 @@ public class Sokoban extends Game {
     }
 
     @Override
-    public void gameOver() {
+    public void end() {
         if (getBoard().getState().equals(GameState.GAME_OVER))
             getGameFrame().addView(new GameOverScreen(this), Menu.WIDTH, Menu.HEIGHT);
         else

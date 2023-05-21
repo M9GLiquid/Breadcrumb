@@ -1,7 +1,7 @@
 package eu.kingconquest.sokoban.audio;
 
 import eu.kingconquest.framework.core.Game;
-import eu.kingconquest.framework.entity.EntityIcon;
+import eu.kingconquest.framework.entities.EntityIcon;
 import eu.kingconquest.framework.observers.GameObserver;
 import eu.kingconquest.sokoban.entities.SokobanEntityIcon;
 import eu.kingconquest.sokoban.models.SokobanBoard;

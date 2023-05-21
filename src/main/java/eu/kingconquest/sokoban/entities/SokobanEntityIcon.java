@@ -1,6 +1,6 @@
 package eu.kingconquest.sokoban.entities;
 
-import eu.kingconquest.framework.entity.EntityIcon;
+import eu.kingconquest.framework.entities.EntityIcon;
 
 import java.awt.*;
 

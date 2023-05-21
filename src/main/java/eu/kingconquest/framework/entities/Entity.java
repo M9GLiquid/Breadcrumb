@@ -1,4 +1,4 @@
-package eu.kingconquest.framework.entity;
+package eu.kingconquest.framework.entities;
 
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.utils.Location;
@@ -8,8 +8,8 @@ import java.io.Serializable;
 
 /**
  * Represents an abstract Entity class that serves as a base for various game objects.
- * This class is responsible for managing the location and type of the entity, as well as
- * drawing the entity on the screen.
+ * This class is responsible for managing the location and type of the entities, as well as
+ * drawing the entities on the screen.
  */
 public abstract class Entity implements Serializable {
     private Location location;
@@ -20,8 +20,8 @@ public abstract class Entity implements Serializable {
     /**
      * Creates an Entity with the specified location and EntityType.
      *
-     * @param location   the initial location of the entity
-     * @param entityIcon the type of the entity
+     * @param location   the initial location of the entities
+     * @param entityIcon the type of the entities
      */
     public Entity(Location location, EntityIcon entityIcon) {
         setLocation(location);
@@ -29,18 +29,18 @@ public abstract class Entity implements Serializable {
     }
 
     /**
-     * Gets the current location of the entity.
+     * Gets the current location of the entities.
      *
-     * @return the current location of the entity
+     * @return the current location of the entities
      */
     public Location getLocation() {
         return location;
     }
 
     /**
-     * Sets the location of the entity.
+     * Sets the location of the entities.
      *
-     * @param location the new location of the entity
+     * @param location the new location of the entities
      * @throws IllegalArgumentException if the location is null
      */
     public void setLocation(Location location) {
@@ -50,18 +50,18 @@ public abstract class Entity implements Serializable {
     }
 
     /**
-     * Gets the EntityType of the entity.
+     * Gets the EntityType of the entities.
      *
-     * @return the EntityType of the entity
+     * @return the EntityType of the entities
      */
     public EntityIcon getEntityType() {
         return entityIcon;
     }
 
     /**
-     * Sets the EntityType of the entity.
+     * Sets the EntityType of the entities.
      *
-     * @param entityIcon the new EntityType of the entity
+     * @param entityIcon the new EntityType of the entities
      * @throws IllegalArgumentException if the entityType is null
      */
     public void setEntityType(EntityIcon entityIcon) {
@@ -83,9 +83,9 @@ public abstract class Entity implements Serializable {
     }
 
     /**
-     * Draws the entity on the screen using the specified Graphics context.
+     * Draws the entities on the screen using the specified Graphics context.
      *
-     * @param g the Graphics context to draw the entity on
+     * @param g the Graphics context to draw the entities on
      */
     public void draw(Graphics g) {
         g.drawImage(entityIcon.getIcon(),

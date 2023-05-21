@@ -1,8 +1,8 @@
 package eu.kingconquest.twozerofoureight.models;
 
 import eu.kingconquest.framework.core.GameState;
-import eu.kingconquest.framework.entity.Entity;
-import eu.kingconquest.framework.entity.EntityIcon;
+import eu.kingconquest.framework.entities.Entity;
+import eu.kingconquest.framework.entities.EntityIcon;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.twozerofoureight.core.EntityIcon2048;
@@ -198,9 +198,9 @@ public class Board2048 extends GameBoard {
     }
 
     /**
-     *Checks if any entity exists on the board.
-     * @param entity The entity we want to check if exists.
-     * @return true if the entity exists.
+     *Checks if any entities exists on the board.
+     * @param entity The entities we want to check if exists.
+     * @return true if the entities exists.
      */
     public boolean entityExist(Entity entity) {
         if(entity == null)
@@ -288,7 +288,7 @@ public class Board2048 extends GameBoard {
 
 
     /**
-     * The method returns the product of the value from the entity in the argument.
+     * The method returns the product of the value from the entities in the argument.
      * @param entity The value the method square up to.
      * @return the product of the value.
      */
@@ -351,15 +351,15 @@ public class Board2048 extends GameBoard {
 
                 // If the adjacent cells have the same values.
                 if(isMatch(entity, entity2)){
-                    //Get the value from a specific entity.
+                    //Get the value from a specific entities.
                     EntityIcon2048 entityType = (EntityIcon2048) entity.getEntityType();
-                    //Create a new block on the same location as the specific entity with doubled value.
+                    //Create a new block on the same location as the specific entities with doubled value.
                     Block block = new Block(new Location(col, row), productEntity(entityType));
-                    //Remove the entity from the specific colum and row.
+                    //Remove the entities from the specific colum and row.
                     getEntities().remove(entity);
-                    ////Add the new entity with doubled value on the specific colum and row.
+                    ////Add the new entities with doubled value on the specific colum and row.
                     getEntities().add(block);
-                    //Remove the entity next to the entity with the specific column and row.
+                    //Remove the entities next to the entities with the specific column and row.
                     getEntities().remove(getEntity(new Location(col, row+1)));
                     addScore((EntityIcon2048) entity.getEntityType());
                 }
@@ -386,7 +386,7 @@ public class Board2048 extends GameBoard {
                 EntityIcon entitytype = getEntity(location).getEntityType();
                 //Create a new block on the current cell with the value from the corresponding cell in the opposite column.
                 block.setEntityType(entitytype);
-                //Add the new block to the temporary entity list and set the correct location.
+                //Add the new block to the temporary entities list and set the correct location.
                 block.setLocation(new Location(col, row));
                 entities.add(block);
             }
@@ -410,7 +410,7 @@ public class Board2048 extends GameBoard {
                 EntityIcon entitytype = getEntity(new Location(col, row)).getEntityType();
                 block.setEntityType(entitytype);
                 block.setLocation(new Location(row,col));
-                //Add the new block to the temporary entity list.
+                //Add the new block to the temporary entities list.
                 entities.add(block);
             }
         }

@@ -1,6 +1,6 @@
 package eu.kingconquest.framework.views;
 
-import eu.kingconquest.framework.entity.Entity;
+import eu.kingconquest.framework.entities.Entity;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.observers.GameObserver;
 import eu.kingconquest.framework.utils.Tile;
@@ -11,7 +11,7 @@ import java.awt.*;
 /**
  * The GameView class is a JPanel by extension of the View class that displays the game's main graphics.
  */
-public class GameGuiView extends JPanel implements GameObserver {
+public class GraphicalView extends JPanel implements GameObserver {
     private final GameBoard board;
 
     /**
@@ -20,7 +20,7 @@ public class GameGuiView extends JPanel implements GameObserver {
      *
      * @param board       the game logic to create the GameView for
      */
-    public GameGuiView(GameBoard board) {
+    public GraphicalView(GameBoard board) {
         this.board = board;
     }
 

@@ -1,4 +1,4 @@
-package eu.kingconquest.framework.entity;
+package eu.kingconquest.framework.entities;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

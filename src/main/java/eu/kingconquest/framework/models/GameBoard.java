@@ -1,7 +1,7 @@
 package eu.kingconquest.framework.models;
 
 import eu.kingconquest.framework.core.GameState;
-import eu.kingconquest.framework.entity.Entity;
+import eu.kingconquest.framework.entities.Entity;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.framework.utils.Tile;
 
@@ -50,7 +50,7 @@ public abstract class GameBoard {
     }
 
     /**
-     * Get a entity from a location
+     * Get an entity from a location
      * @param location location of the entity
      * @return null if not found, entity if found
      */
@@ -121,7 +121,7 @@ public abstract class GameBoard {
             strGrid.append("\n");
         }
 
-        // Replace the corresponding grid[][] location tile with entity
+        // Replace the corresponding grid[][] location tile with entities of those locations
         entities.forEach(entity -> {
             int row = entity.getLocation().getY();
             int col = entity.getLocation().getX();

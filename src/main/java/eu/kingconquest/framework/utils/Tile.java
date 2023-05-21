@@ -1,7 +1,7 @@
 package eu.kingconquest.framework.utils;
 
-import eu.kingconquest.framework.entity.Entity;
-import eu.kingconquest.framework.entity.EntityIcon;
+import eu.kingconquest.framework.entities.Entity;
+import eu.kingconquest.framework.entities.EntityIcon;
 
 /**
  * Represents a Tile on the game board, which is a subclass of Entity.

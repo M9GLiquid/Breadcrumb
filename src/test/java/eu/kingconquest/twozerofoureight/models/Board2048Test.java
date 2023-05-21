@@ -1,6 +1,6 @@
 package eu.kingconquest.twozerofoureight.models;
 
-import eu.kingconquest.framework.entity.Entity;
+import eu.kingconquest.framework.entities.Entity;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.twozerofoureight.core.EntityIcon2048;
 import eu.kingconquest.twozerofoureight.core.Game2048;

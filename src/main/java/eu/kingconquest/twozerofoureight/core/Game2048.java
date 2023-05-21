@@ -6,11 +6,11 @@ import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.io.DataReader;
 import eu.kingconquest.framework.io.DataWriter;
 import eu.kingconquest.framework.io.GameData;
-import eu.kingconquest.framework.observers.StateObserver;
+import eu.kingconquest.framework.core.StateManager;
 import eu.kingconquest.framework.ui.*;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.framework.utils.Tile;
-import eu.kingconquest.framework.views.GameGuiView;
+import eu.kingconquest.framework.views.GraphicalView;
 import eu.kingconquest.twozerofoureight.audio.GameAudioObserver2048;
 import eu.kingconquest.twozerofoureight.models.Board2048;
 import eu.kingconquest.twozerofoureight.ui.GameOverScreen;
@@ -41,14 +41,14 @@ public class Game2048 extends Game {
 
 
         GameFrame frame = getGameFrame();
-        frame.setGameView(new GameGuiView(getBoard()));
+        frame.setGameView(new GraphicalView(getBoard()));
 
         // Game View setup
         frame.addView(new StartMenu(this), 970, 640);
         getController().addViewObserver(frame.getGameView());
 
         // Game Observers Setup
-        getController().addStateObserver(new StateObserver(this));
+        getController().addStateObserver(new StateManager(this));
         getController().notifyStateObservers();
 
         Tile.setTileSize(64);
@@ -83,7 +83,7 @@ public class Game2048 extends Game {
      * Handles the game over condition.
      */
     @Override
-    public void gameOver() {
+    public void end() {
         Board2048 board = (Board2048) getBoard();
         if (getBoard().getState().equals(GameState.GAME_OVER))
             getGameFrame().addView(new GameOverScreen(this, board.getScore()), Menu.WIDTH, Menu.HEIGHT);

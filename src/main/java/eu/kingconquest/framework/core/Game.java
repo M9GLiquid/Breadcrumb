@@ -44,33 +44,30 @@ public abstract class Game {
     public abstract void start();
 
     /**
-     * Defines the behavior of the game when it ends.
-     * This method must be implemented by any class that extends Game.
-     */
-    public abstract void gameOver();
-
-    /**
      * Resets the game to its initial state.
      */
     public abstract void restart();
 
     /**
+     * Handles the action that happens when you pause the game,
+     * pause is handled by the default controller by [esc] - buttons
+     */
+    public abstract void pause();
+
+    /**
      * Saves the current state of the game.
-     * This method must be implemented by any class that extends Game.
      */
     public abstract void save();
 
     /**
      * Loads a previously saved state of the game.
-     * This method must be implemented by any class that extends Game.
      */
     public abstract void load();
 
     /**
-     * Pauses the game.
-     * This method must be implemented by any class that extends Game.
+     * Defines the behavior of the game when you lose, win or otherwise ends the game.
      */
-    public abstract void pause();
+    public abstract void end();
 
     /**
      * Gets the GameBoard associated with the game.

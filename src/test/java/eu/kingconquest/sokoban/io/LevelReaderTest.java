@@ -1,6 +1,6 @@
 package eu.kingconquest.sokoban.io;
 
-import eu.kingconquest.framework.entity.Entity;
+import eu.kingconquest.framework.entities.Entity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

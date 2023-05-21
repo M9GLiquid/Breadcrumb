@@ -1,13 +1,11 @@
-package eu.kingconquest.framework.views;
-
-import eu.kingconquest.framework.ui.GameFrame;
+package eu.kingconquest.framework.ui;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class FloatingButtonsView extends JDialog{
-    public FloatingButtonsView(GameFrame frame, ActionListener listener) {
+public class FloatingBtnsView extends JDialog{
+    public FloatingBtnsView(GameFrame frame, ActionListener listener) {
         super(frame);
         setLocationRelativeTo(frame);
 

@@ -72,12 +72,10 @@ public interface GameStrategy extends ActionListener, KeyListener{
     /**
      * <p>
      * Notifies all registered AudioObservers of an update related to an Entity.
-     * This method is typically called when there is a significant event concerning
-     * the entity, such as a player or a crate being moved in the game.
      * </p>
      * <p>
      * The registered AudioObservers will be responsible for playing the appropriate
-     * audio based on the type of the given entity (e.g., player or crate).
+     * audio.
      * </p>
      */
     void notifyAudioObservers();

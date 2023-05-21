@@ -3,7 +3,7 @@ package eu.kingconquest.sokoban.core;
 import eu.kingconquest.framework.controllers.GuiController;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameState;
-import eu.kingconquest.framework.entity.Entity;
+import eu.kingconquest.framework.entities.Entity;
 import eu.kingconquest.framework.io.DataReader;
 import eu.kingconquest.framework.io.DataWriter;
 import eu.kingconquest.framework.io.GameData;
@@ -15,8 +15,8 @@ import eu.kingconquest.framework.ui.Menu;
 import eu.kingconquest.framework.ui.Notification;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.framework.utils.Tile;
-import eu.kingconquest.framework.views.FloatingButtonsView;
-import eu.kingconquest.framework.views.GameGuiView;
+import eu.kingconquest.framework.ui.FloatingBtnsView;
+import eu.kingconquest.framework.views.GraphicalView;
 import eu.kingconquest.sokoban.entities.Crate;
 import eu.kingconquest.sokoban.entities.Player;
 import eu.kingconquest.sokoban.entities.SokobanEntityIcon;
@@ -106,7 +106,7 @@ public class SokobanTest {
 
         /* Then */
         // Mock Constructor call "try-with-resources"
-        try (MockedConstruction<FloatingButtonsView> mocked = mockConstruction(FloatingButtonsView.class)) {
+        try (MockedConstruction<FloatingBtnsView> mocked = mockConstruction(FloatingBtnsView.class)) {
             underTest.start();
             verify(board, times(1)).setState(any(GameState.class));
 
@@ -147,7 +147,7 @@ public class SokobanTest {
         doReturn(board).when(underTest).getBoard();
         doReturn(entities).when(board).getEntities();
         doReturn(GameState.INITIATING).when(board).getState();
-        doNothing().when(underTest).gameOver();
+        doNothing().when(underTest).end();
 
         /* Then */
         try (MockedStatic<LevelReader> mocked = mockStatic(LevelReader.class)) {
@@ -157,7 +157,7 @@ public class SokobanTest {
 
         // entities list should be cleared
         assertEquals(0, entities.size());
-        verify(underTest).gameOver();
+        verify(underTest).end();
     }
 
     @Test
@@ -186,7 +186,7 @@ public class SokobanTest {
     void test_SetGameView() {
         /* Given */
         GameFrame frame = mock(GameFrame.class);
-        GameGuiView view = mock(GameGuiView.class);
+        GraphicalView view = mock(GraphicalView.class);
 
         /* When */
         doReturn(board).when(underTest).getBoard();
@@ -196,7 +196,7 @@ public class SokobanTest {
         /* Then */
         underTest.setGameView();
 
-        verify(frame).addView(any(GameGuiView.class), anyInt(), anyInt());
+        verify(frame).addView(any(GraphicalView.class), anyInt(), anyInt());
     }
 
     @Test
@@ -371,7 +371,7 @@ public class SokobanTest {
         doReturn(GameState.GAME_OVER).when(board).getState();
 
         doReturn(frame).when(underTest).getGameFrame();
-        underTest.gameOver();
+        underTest.end();
 
         /* Then */
         verify(frame).addView(any(Menu.class), anyInt(), anyInt());
@@ -387,7 +387,7 @@ public class SokobanTest {
         doReturn(GameState.WIN).when(board).getState();
 
         doReturn(frame).when(underTest).getGameFrame();
-        underTest.gameOver();
+        underTest.end();
 
         /* Then */
         verify(frame).addView(any(Menu.class), anyInt(), anyInt());

@@ -1,7 +1,7 @@
 package eu.kingconquest.sokoban.models;
 
 import eu.kingconquest.framework.core.GameState;
-import eu.kingconquest.framework.entity.EntityIcon;
+import eu.kingconquest.framework.entities.EntityIcon;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.sokoban.core.Sokoban;

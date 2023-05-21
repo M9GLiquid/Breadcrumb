@@ -1,6 +1,6 @@
 package eu.kingconquest.framework.ui;
 
-import eu.kingconquest.framework.views.GameGuiView;
+import eu.kingconquest.framework.views.GraphicalView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,7 @@ import java.awt.*;
  */
 public class GameFrame extends JFrame {
     private JPanel view;
-    GameGuiView gameView;
+    GraphicalView gameView;
     private JPanel previousView;
 
     /**
@@ -69,7 +69,7 @@ public class GameFrame extends JFrame {
      *
      * @param gameView the GameGuiView to be associated with this game frame
      */
-    public void setGameView(GameGuiView gameView){
+    public void setGameView(GraphicalView gameView){
         this.gameView = gameView;
     }
 
@@ -79,7 +79,7 @@ public class GameFrame extends JFrame {
      *
      * @return the GameGuiView associated with this game frame
      */
-    public GameGuiView getGameView(){
+    public GraphicalView getGameView(){
         return gameView;
     }
 }

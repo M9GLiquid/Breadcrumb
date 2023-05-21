@@ -1,11 +1,11 @@
 package eu.kingconquest.twozerofoureight.core;
 
-import eu.kingconquest.framework.entity.EntityIcon;
+import eu.kingconquest.framework.entities.EntityIcon;
 
 import java.awt.*;
 
 /**
- * Enumeration of entity types in the 2048 game, implementing the EntityIcon interface.
+ * Enumeration of entities types in the 2048 game, implementing the EntityIcon interface.
  */
 public enum EntityIcon2048 implements EntityIcon {
     E2("game2048/images/tile_1.png"),
@@ -35,7 +35,7 @@ public enum EntityIcon2048 implements EntityIcon {
     }
 
     /**
-     * Returns the icon image associated with this entity type.
+     * Returns the icon image associated with this entities type.
      * @return The icon image.
      */
     @Override

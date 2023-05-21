@@ -1,6 +1,6 @@
 package eu.kingconquest.framework.io;
 
-import eu.kingconquest.framework.entity.Entity;
+import eu.kingconquest.framework.entities.Entity;
 import eu.kingconquest.framework.utils.Tile;
 
 import java.io.Serializable;

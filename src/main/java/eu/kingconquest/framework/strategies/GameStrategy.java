@@ -1,8 +1,6 @@
 package eu.kingconquest.framework.strategies;
 
-import eu.kingconquest.framework.observers.GameAudioObserver;
-import eu.kingconquest.framework.observers.GameStateObserver;
-import eu.kingconquest.framework.observers.GameViewObserver;
+import eu.kingconquest.framework.observers.GameObserver;
 
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
@@ -19,21 +17,21 @@ public interface GameStrategy extends ActionListener, KeyListener{
      *
      * @param observer the GameObserver to be added
      */
-    void addStateObserver(GameStateObserver observer);
+    void addStateObserver(GameObserver observer);
 
     /**
      * Adds a GameViewObserver to the list of observers.
      *
      * @param observer the GameViewObserver to be added
      */
-    void addViewObserver(GameViewObserver observer);
+    void addViewObserver(GameObserver observer);
 
     /**
      * Adds an AudioObserver to the list of audio observers.
      *
      * @param observer the AudioObserver to be added
      */
-    void addAudioObserver(GameAudioObserver observer);
+    void addAudioObserver(GameObserver observer);
 
     /**
      * <p>

@@ -2,9 +2,7 @@ package eu.kingconquest.framework.controllers;
 
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.models.GameBoard;
-import eu.kingconquest.framework.observers.GameAudioObserver;
-import eu.kingconquest.framework.observers.GameStateObserver;
-import eu.kingconquest.framework.observers.GameViewObserver;
+import eu.kingconquest.framework.observers.GameObserver;
 import eu.kingconquest.framework.strategies.GameStrategy;
 import eu.kingconquest.framework.utils.Location;
 
@@ -20,9 +18,9 @@ import java.util.Set;
  */
 public class GuiController implements GameStrategy {
     final GameBoard gameBoard;
-    final Set<GameStateObserver> stateObservers = new HashSet<>();
-    final Set<GameViewObserver> viewObservers = new HashSet<>();
-    final Set<GameAudioObserver> audioObservers = new HashSet<>();
+    final Set<GameObserver> stateObservers = new HashSet<>();
+    final Set<GameObserver> viewObservers = new HashSet<>();
+    final Set<GameObserver> audioObservers = new HashSet<>();
 
     /**
      * Instantiates a new GuiController.
@@ -33,36 +31,36 @@ public class GuiController implements GameStrategy {
         this.gameBoard = gameBoard;
     }
     @Override
-    public void addAudioObserver(GameAudioObserver observer) {
+    public void addAudioObserver(GameObserver observer) {
         audioObservers.removeIf(obs -> obs.getClass().equals(observer.getClass()));
         audioObservers.add(observer);
     }
 
     @Override
-    public void addStateObserver(GameStateObserver observer) {
+    public void addStateObserver(GameObserver observer) {
         stateObservers.removeIf(obs -> obs.getClass().equals(observer.getClass()));
         stateObservers.add(observer);
     }
     @Override
-    public void addViewObserver(GameViewObserver observer) {
+    public void addViewObserver(GameObserver observer) {
         viewObservers.removeIf(obs -> obs.getClass().equals(observer.getClass()));
         viewObservers.add(observer);
     }
     @Override
     public void notifyStateObservers() {
-        for (GameStateObserver observer : stateObservers)
+        for (GameObserver observer : stateObservers)
             observer.update();
     }
 
     @Override
     public void notifyViewObservers() {
-        for (GameViewObserver observer : viewObservers)
+        for (GameObserver observer : viewObservers)
             observer.update();
     }
 
     @Override
     public void notifyAudioObservers() {
-        for (GameAudioObserver observer : audioObservers)
+        for (GameObserver observer : audioObservers)
             observer.update();
     }
 

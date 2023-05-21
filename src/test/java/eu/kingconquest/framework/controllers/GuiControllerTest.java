@@ -2,7 +2,7 @@ package eu.kingconquest.framework.controllers;
 
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.models.GameBoard;
-import eu.kingconquest.framework.observers.GameStateObserver;
+import eu.kingconquest.framework.observers.GameObserver;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -57,8 +57,8 @@ class GuiControllerTest {
     @Test
     void test_State_Observer(){
         /* Given */
-        GameStateObserver stateobserver1 = mock(GameStateObserver.class);
-        GameStateObserver stateobserver2 = mock(GameStateObserver.class);
+        GameObserver stateobserver1 = mock(GameObserver.class);
+        GameObserver stateobserver2 = mock(GameObserver.class);
         underTest.stateObservers.add(stateobserver1);
 
 
@@ -67,7 +67,7 @@ class GuiControllerTest {
 
 
         /* Then */
-        verify(underTest.stateObservers).add(any(GameStateObserver.class));
+        verify(underTest.stateObservers).add(any(GameObserver.class));
 
     }
 

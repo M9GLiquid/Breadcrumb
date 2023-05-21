@@ -5,7 +5,7 @@ package eu.kingconquest.framework.observers;
  * whenever changes occur to the game view. An observer is added to the game view by calling the game's
  * addViewObserver method.
  */
-public interface GameViewObserver {
+public interface GameObserver {
 
     /**
      * Invoked when a change to the game state occurs that needs to be reflected in the view.

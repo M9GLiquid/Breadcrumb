@@ -8,9 +8,7 @@ import eu.kingconquest.framework.io.DataReader;
 import eu.kingconquest.framework.io.DataWriter;
 import eu.kingconquest.framework.io.GameData;
 import eu.kingconquest.framework.models.GameBoard;
-import eu.kingconquest.framework.observers.GameAudioObserver;
-import eu.kingconquest.framework.observers.GameStateObserver;
-import eu.kingconquest.framework.observers.GameViewObserver;
+import eu.kingconquest.framework.observers.GameObserver;
 import eu.kingconquest.framework.strategies.GameStrategy;
 import eu.kingconquest.framework.ui.GameFrame;
 import eu.kingconquest.framework.ui.Menu;
@@ -36,7 +34,8 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -77,9 +76,9 @@ public class SokobanTest {
         underTest.initiate();
 
         /* Then */
-        verify(controller).addAudioObserver(any(GameAudioObserver.class));
-        verify(controller).addStateObserver(any(GameStateObserver.class));
-        verify(controller).addViewObserver(any(GameViewObserver.class));
+        verify(controller).addAudioObserver(any(GameObserver.class));
+        verify(controller).addStateObserver(any(GameObserver.class));
+        verify(controller).addViewObserver(any(GameObserver.class));
 
     }
 

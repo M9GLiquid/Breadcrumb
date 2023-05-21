@@ -27,7 +27,7 @@ public class PlatformListener implements ActionListener {
         switch (e.getActionCommand().toUpperCase()) {
             case "SOKOBAN" -> sokoban();
             case "2048" -> game2048();
-            case "maze" -> maze();
+            case "MAZE" -> maze();
             case "EXIT" -> exit();
         }
     }

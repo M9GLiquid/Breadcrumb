@@ -269,4 +269,17 @@ class Board2048Test {
         assertTrue(entityExist1);
         assertFalse(entityExist2);
     }
+
+    @Test
+    void test_isGameOver() {
+        //Given
+
+        //When
+        Mockito.doReturn(true).when(underTest).isFull();
+        Mockito.doReturn(false).when(underTest).isAnyMovePossible();
+
+        //Then
+        assertTrue(underTest.isGameOver());
+
+    }
 }

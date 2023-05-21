@@ -302,7 +302,7 @@ class Board2048Test {
     }
 
     @Test
-    void testReverse() {
+    void test_reverse() {
         //Given
         Entity block1 = new Block(new Location(1, 1), EntityIcon2048.WALL);
         Entity block2 = new Block(new Location(2, 2), EntityIcon2048.WALL);
@@ -343,6 +343,22 @@ class Board2048Test {
             assertEquals(expectedEntities.get(i).getLocation().getX(), reversedEntities.get(i).getLocation().getX());
             assertEquals(expectedEntities.get(i).getLocation().getY(), reversedEntities.get(i).getLocation().getY());
         }
-
+    }
+    @Test
+    void test_productEntity() {
+        assertEquals(EntityIcon2048.E4, underTest.productEntity(EntityIcon2048.E2));
+        assertEquals(EntityIcon2048.E8, underTest.productEntity(EntityIcon2048.E4));
+        assertEquals(EntityIcon2048.E16, underTest.productEntity(EntityIcon2048.E8));
+        assertEquals(EntityIcon2048.E32, underTest.productEntity(EntityIcon2048.E16));
+        assertEquals(EntityIcon2048.E64, underTest.productEntity(EntityIcon2048.E32));
+        assertEquals(EntityIcon2048.E128, underTest.productEntity(EntityIcon2048.E64));
+        assertEquals(EntityIcon2048.E256, underTest.productEntity(EntityIcon2048.E128));
+        assertEquals(EntityIcon2048.E512, underTest.productEntity(EntityIcon2048.E256));
+        assertEquals(EntityIcon2048.E1024, underTest.productEntity(EntityIcon2048.E512));
+        assertEquals(EntityIcon2048.E2048, underTest.productEntity(EntityIcon2048.E1024));
+        assertEquals(EntityIcon2048.E4096, underTest.productEntity(EntityIcon2048.E2048));
+        assertEquals(EntityIcon2048.E8192, underTest.productEntity(EntityIcon2048.E4096));
+        assertEquals(EntityIcon2048.E16384, underTest.productEntity(EntityIcon2048.E8192));
+        assertNull(underTest.productEntity(EntityIcon2048.WALL));
     }
 }

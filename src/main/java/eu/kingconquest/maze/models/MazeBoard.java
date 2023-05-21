@@ -17,7 +17,8 @@ public class MazeBoard extends GameBoard {
 
     @Override
     protected boolean isMoveInvalid(Location location) {
-        return false;
+        //Not able to walk through the wall
+        return !(grid[location.getY()][location.getX()].isWalkable());
     }
 
     @Override

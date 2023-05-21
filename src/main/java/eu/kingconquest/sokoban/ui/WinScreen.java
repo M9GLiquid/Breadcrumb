@@ -33,19 +33,19 @@ public class WinScreen extends Menu {
         // Button to return to the platform menu
         gbc.gridy++;
         add(buttonComponent("Main Menu",
-                        new MenuListener(game, this)),
+                        new MenuListener(game, this), "Main Menu"),
                 gbc);
 
         // Button to return to the platform menu
         gbc.gridy++;
-        add(buttonComponent("Game Selector",
-                        new MenuListener(game, this)),
+        add(buttonComponent("Game Menu",
+                        new MenuListener(game, this), "Game Menu"),
                 gbc);
 
         // Button to exit the game
         gbc.gridy++;
         add(buttonComponent("Exit",
-                        new MenuListener(game, this)),
+                        new MenuListener(game, this), "Exit"),
                 gbc);
     }
 }

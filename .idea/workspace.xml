@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Minor Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/docs/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/TODO.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/KeyBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/KeyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/Sokoban.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/Sokoban.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Game2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Game2048.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/controllers/KeyBoardControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/controllers/KeyControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/ui/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/ui/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/ui/PauseMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/ui/PauseMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/ui/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/ui/StartMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/platform/PlatformMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/platform/PlatformMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/ui/GameOverScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/ui/GameOverScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/ui/WinScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/ui/WinScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/ui/GameOverScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/ui/GameOverScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/ui/WinScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/ui/WinScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +295,7 @@
       <workItem from="1684587285083" duration="2317000" />
       <workItem from="1684589618294" duration="2896000" />
       <workItem from="1684671300456" duration="2090000" />
-      <workItem from="1684673827739" duration="10571000" />
+      <workItem from="1684673827739" duration="10959000" />
     </task>
     <task id="LOCAL−00001" summary="Added the main Framework for Game Handling and Menu Handling">
       <created>1681461977142</created>
@@ -551,7 +556,13 @@
       <option name="presentableId" value="LOCAL−00042" />
       <updated>1684696822093</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL−00043" summary="Minor Changes">
+      <created>1684697958208</created>
+      <option name="number" value="LOCAL−00043" />
+      <option name="presentableId" value="LOCAL−00043" />
+      <updated>1684697958208</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

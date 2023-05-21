@@ -32,25 +32,25 @@ public class StartMenu extends Menu {
         // Button for start game
         gbc.gridy++;
         add(buttonComponent("Start",
-                new MenuListener(game, this)),
+                new MenuListener(game, this), "Start"),
                 gbc);
 
         // Button for load game
         gbc.gridy++;
         add(buttonComponent("Load",
-                new MenuListener(game, this)),
+                new MenuListener(game, this), "Load"),
                 gbc);
 
         // Button for return to Game Selector (PlatformMenu)
         gbc.gridy++;
         add(buttonComponent("Game Menu",
-                new MenuListener(game, this)),
+                new MenuListener(game, this), "Game Menu"),
                 gbc);
 
         // Button to exit the game
         gbc.gridy++;
         add(buttonComponent("Exit",
-                new MenuListener(game, this)),
+                new MenuListener(game, this), "Exit"),
                 gbc);
     }
 }

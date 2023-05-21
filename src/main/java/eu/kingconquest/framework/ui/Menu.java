@@ -43,16 +43,16 @@ public abstract class Menu extends JPanel {
     }
 
     /**
-     * Creates a button component with the specified string. The button is registered with a
+     * Creates a button component with the specified title. The button is registered with a
      * provided ActionListener.
      *
-     * @param string the text to be displayed on the button
+     * @param title the text to be displayed on the button
      * @param menuListener the ActionListener to be registered with the button
      * @return a JComponent representing the created button component
      */
-    protected JComponent buttonComponent(String string, ActionListener menuListener){
-        JButton gameMenuButton = new JButton(string);
-        gameMenuButton.setActionCommand(string);
+    protected JComponent buttonComponent(String title, ActionListener menuListener, String command){
+        JButton gameMenuButton = new JButton(title);
+        gameMenuButton.setActionCommand(command);
         gameMenuButton.addActionListener(menuListener);
         return gameMenuButton;
     }

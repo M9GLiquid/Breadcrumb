@@ -47,19 +47,19 @@ public class GameOverScreen extends Menu {
         // Button to restart the current level
         gbc.gridy++;
         add(buttonComponent("Restart",
-                        new MenuListener(game, this)),
+                        new MenuListener(game, this), "Restart"),
                 gbc);
 
         // Button to return to the platform menu
         gbc.gridy++;
         add(buttonComponent("Game Menu",
-                        new MenuListener(game, this)),
+                        new MenuListener(game, this), "Game Menu"),
                 gbc);
 
         // Button to exit the game
         gbc.gridy++;
         add(buttonComponent("Exit",
-                        new MenuListener(game, this)),
+                        new MenuListener(game, this), "Exit"),
                 gbc);
     }
 }

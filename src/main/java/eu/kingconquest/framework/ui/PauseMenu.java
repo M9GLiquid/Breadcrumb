@@ -45,32 +45,32 @@ public class PauseMenu extends Menu {
         // Button to resume the game
         gbc.gridy++;
         add(buttonComponent("Resume",
-                new MenuListener(game, this)), gbc);
+                new MenuListener(game, this), "Resume"), gbc);
 
         // Button to restart the game
         gbc.gridy++;
         add(buttonComponent("Restart",
-                new MenuListener(game, this)), gbc);
+                new MenuListener(game, this), "Restart"), gbc);
 
         // Button for return to Main Menu
         gbc.gridy++;
         add(buttonComponent("Main Menu",
-                new MenuListener(game, this)), gbc);
+                new MenuListener(game, this), "Main Menu"), gbc);
 
         // Button for save game
         gbc.gridy++;
         add(buttonComponent("Save",
-                new MenuListener(game, this)), gbc);
+                new MenuListener(game, this), "Save"), gbc);
 
         // Button for load game
         gbc.gridy++;
         add(buttonComponent("Load",
-                new MenuListener(game, this)), gbc);
+                new MenuListener(game, this), "Load"), gbc);
 
         // Button to exit the game
         gbc.gridy++;
         add(buttonComponent("Exit",
-                new MenuListener(game, this)), gbc);
+                new MenuListener(game, this), "Exit"), gbc);
 
     }
 }

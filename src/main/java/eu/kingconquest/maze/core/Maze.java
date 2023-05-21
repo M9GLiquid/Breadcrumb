@@ -11,6 +11,7 @@ public class Maze extends Game {
     }
     @Override
     public void initiate() {
+        setBoard(new Maze);
 
     }
 

@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Bug Fixes">
+    <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Testrunning Entity.java">
+      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/maze/core/Maze.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/maze/entities/MazeEntityIcon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/maze/entities/MazeMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Game2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Game2048.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/controllers/KeyBoardControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/controllers/KeyBoardControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/platform/PlatformMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/platform/PlatformMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/platform/listeners/PlatformListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/platform/listeners/PlatformListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/entity/EntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/entity/EntityTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +32,8 @@
         <option value="Enum" />
         <option value="AnnotationType" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -50,7 +54,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/junit-testing" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -111,6 +115,10 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="eu.kingconquest.framework" />
@@ -123,15 +131,15 @@
       <recent name="C:\Users\thoma\IdeaProjects\Sokoban\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
-      <recent name="eu.kingconquest.framework.entity.Entity" />
       <recent name="" />
+      <recent name="eu.kingconquest.framework.entity.Entity" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="eu.kingconquest.framework.entity" />
       <recent name="eu.kingconquest.sokoban.models" />
       <recent name="eu.kingconquest.sokoban.io" />
       <recent name="eu.kingconquest.sokoban.entities" />
       <recent name="eu.kingconquest.sokoban.audio" />
-      <recent name="eu.kingconquest.sokoban.core" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.KeyBoardControllerTest">
@@ -461,7 +469,35 @@
       <option name="presentableId" value="LOCAL−00030" />
       <updated>1684589947325</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Tested the switch statements for KeyBoardController">
+      <created>1684609416935</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1684609416935</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Tested the switch statements for KeyBoardController">
+      <created>1684610291707</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1684610291707</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Added test to each switch statement. Also tested if setState(GameState.PAUSED) called when the gameboards state is RUNNING and ESC is pressed.">
+      <created>1684610533814</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1684610533814</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Testrunning Entity.java">
+      <created>1684656987811</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1684656987811</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,7 +514,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/feature/junit-testing" />
+                        <option value="feature/TicTacToe" />
                       </list>
                     </value>
                   </entry>
@@ -506,9 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Version 0.2 Functionality&#10;&#10;Added:&#10; * EntityType.java to simplify&#10; * Game States functionality&#10; * GameStrategy.java for added functionality and untangled code&#10; * Start of Level's&#10; &#10;Improvements:&#10; * Entity.java&#10; &#10;Removed:&#10; * MenuActionHandler.java as it's purpose is no longer needed&#10; * MenuObserver.java as it's purpose is no longer needed&#10; * MenuStrategy.java as it's purpose is no longer needed" />
-    <MESSAGE value="Refactor codebase into framework pattern&#10;&#10;For the purpose of with ease be able to add new features." />
-    <MESSAGE value="Add audio handling and improve documentation&#10;&#10;In this commit, I've added audio handling to the game and implemented two new sounds. The sounds are triggered by specific events in the game, such as when the player completes a level or loses a life. This should make the game more engaging and immersive for players.&#10;&#10;I've also edited and added detailed JavaDocs to the framework. This will make it easier for other developers to understand the purpose and functionality of the code, and to extend and modify it in the future.&#10;&#10;Overall, these changes should improve the quality and usability of the codebase, and make it easier to maintain and build upon over time." />
     <MESSAGE value="Modified Access modifiers" />
     <MESSAGE value=" Hotfix 6" />
     <MESSAGE value=" Improved Class security by updating access Modifiers" />
@@ -531,7 +564,10 @@
     <MESSAGE value="HotFix" />
     <MESSAGE value="Add JUnit and Mockito test's" />
     <MESSAGE value="Bug Fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug Fixes" />
+    <MESSAGE value="Tested the switch statements for KeyBoardController" />
+    <MESSAGE value="Added test to each switch statement. Also tested if setState(GameState.PAUSED) called when the gameboards state is RUNNING and ESC is pressed." />
+    <MESSAGE value="Testrunning Entity.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testrunning Entity.java" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -714,14 +750,14 @@
     <SUITE FILE_PATH="coverage/Sokoban$GuiControllerTest_test_notify_observers.ic" NAME="GuiControllerTest.test_notify_observers Coverage Results" MODIFIED="1684401800438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.controllers.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sokoban$KeyBoardControllerTest.ic" NAME="KeyBoardControllerTest Coverage Results" MODIFIED="1684576663711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>eu.kingconquest.framework.controllers.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_Restart.ic" NAME="SokobanTest.test_Restart Coverage Results" MODIFIED="1684269148698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$SokobanTest.ic" NAME="SokobanTest Coverage Results" MODIFIED="1684311837084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$KeyBoardControllerTest.ic" NAME="KeyBoardControllerTest Coverage Results" MODIFIED="1684610569755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.controllers.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest.ic" NAME="AudioTypeTest Coverage Results" MODIFIED="1683191303133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.audio.*</FILTER>

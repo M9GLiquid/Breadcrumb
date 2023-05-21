@@ -8,14 +8,14 @@ import eu.kingconquest.twozerofoureight.entities.Block;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.*;
 
 class Board2048Test {
     Board2048 underTest;
@@ -44,8 +44,8 @@ class Board2048Test {
         entities.add(block);
 
         // When
-        Mockito.doReturn(entities).when(underTest).getEntities();
-        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(4,1), new Location(4,1));
+        doReturn(entities).when(underTest).getEntities();
+        doReturn(true).when(underTest).isLocationMatch(new Location(4,1), new Location(4,1));
 
         // Then
         assertThat(underTest.isMoveValid(block, new Location(1,0))).isEqualTo(false);
@@ -63,8 +63,8 @@ class Board2048Test {
         entities.add(block);
 
         // When
-        Mockito.doReturn(entities).when(underTest).getEntities();
-        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        doReturn(entities).when(underTest).getEntities();
+        doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
         assertThat(underTest.isMoveValid(block, new Location(-1,0))).isEqualTo(false);
@@ -82,8 +82,8 @@ class Board2048Test {
         entities.add(block);
 
         // When
-        Mockito.doReturn(entities).when(underTest).getEntities();
-        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        doReturn(entities).when(underTest).getEntities();
+        doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
         assertThat(underTest.isMoveValid(block, new Location(0,-1))).isEqualTo(false);
@@ -101,8 +101,8 @@ class Board2048Test {
         entities.add(block);
 
         // When
-        Mockito.doReturn(entities).when(underTest).getEntities();
-        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        doReturn(entities).when(underTest).getEntities();
+        doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
         assertThat(underTest.isMoveValid(block, new Location(0,1))).isEqualTo(false);
@@ -124,8 +124,8 @@ class Board2048Test {
         entities.add(block2);
 
         // When
-        Mockito.doReturn(entities).when(underTest).getEntities();
-        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        doReturn(entities).when(underTest).getEntities();
+        doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
         assertThat(underTest.isMoveValid(block1, new Location(1,0))).isEqualTo(true);
@@ -145,8 +145,8 @@ class Board2048Test {
         entities.add(block2);
 
         // When
-        Mockito.doReturn(entities).when(underTest).getEntities();
-        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        doReturn(entities).when(underTest).getEntities();
+        doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
         assertThat(underTest.isMoveValid(block2, new Location(-1,0))).isEqualTo(true);
@@ -166,8 +166,8 @@ class Board2048Test {
         entities.add(block2);
 
         // When
-        Mockito.doReturn(entities).when(underTest).getEntities();
-        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        doReturn(entities).when(underTest).getEntities();
+        doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
         assertThat(underTest.isMoveValid(block2, new Location(0,-1))).isEqualTo(true);
@@ -187,8 +187,8 @@ class Board2048Test {
         entities.add(block2);
 
         // When
-        Mockito.doReturn(entities).when(underTest).getEntities();
-        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        doReturn(entities).when(underTest).getEntities();
+        doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
         assertThat(underTest.isMoveValid(block1, new Location(0,1))).isEqualTo(true);
@@ -207,8 +207,8 @@ class Board2048Test {
         entities.add(block);
 
         // When
-        Mockito.doReturn(entities).when(underTest).getEntities();
-        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        doReturn(entities).when(underTest).getEntities();
+        doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
         assertThat(underTest.isMoveValid(block, new Location(3,2))).isEqualTo(false);
@@ -275,11 +275,74 @@ class Board2048Test {
         //Given
 
         //When
-        Mockito.doReturn(true).when(underTest).isFull();
-        Mockito.doReturn(false).when(underTest).isAnyMovePossible();
+        doReturn(true).when(underTest).isFull();
+        doReturn(false).when(underTest).isAnyMovePossible();
 
         //Then
         assertTrue(underTest.isGameOver());
+
+    }
+
+    @Test
+    void test_isWin() {
+        //Given
+        ArrayList<Entity> entities = new ArrayList<>();
+        Location location = mock(Location.class);
+        Entity block1 = new Block(location, EntityIcon2048.E64);
+        entities.add(block1);
+
+        //When
+        doReturn(entities).when(underTest).getEntities();
+        doReturn(underTest).when(underTest.game).getBoard();
+
+        //Then
+        underTest.isWin();
+        assertTrue(underTest.game.hasWon);
+
+    }
+
+    @Test
+    void testReverse() {
+        //Given
+        Entity block1 = new Block(new Location(1, 1), EntityIcon2048.WALL);
+        Entity block2 = new Block(new Location(2, 2), EntityIcon2048.WALL);
+        ArrayList<Entity> initialEntities = new ArrayList<>();
+        initialEntities.add(block1);
+        initialEntities.add(block2);
+
+        // Prepare the expected list of entities after reverse
+        ArrayList<Entity> expectedEntities = new ArrayList<>();
+        Entity block3 = new Block(new Location(1, 4), EntityIcon2048.WALL);
+        Entity block4 = new Block(new Location(2, 3), EntityIcon2048.WALL);
+        expectedEntities.add(block3);
+        expectedEntities.add(block4);
+
+        //When
+        // Stub the dependencies
+        doAnswer(invocation -> {
+            Block block = invocation.getArgument(0);
+            return initialEntities.stream().anyMatch(e -> e.getLocation().equals(block.getLocation()));
+        }).when(underTest).entityExist(any());
+
+        doAnswer(invocation -> {
+            Location location = invocation.getArgument(0);
+            return initialEntities.stream().filter(e -> e.getLocation().equals(location)).findFirst().orElse(null);
+        }).when(underTest).getEntity(any());
+
+        // Call the method under test
+        underTest.reverse();
+
+        ArgumentCaptor<ArrayList<Entity>> captor = ArgumentCaptor.forClass(ArrayList.class);
+        verify(underTest).setEntities(captor.capture());
+        ArrayList<Entity> reversedEntities = captor.getValue();
+
+        // Compare the reversed entities with expected entities
+        assertEquals(expectedEntities.size(), reversedEntities.size());
+
+        for (int i = 0; i < expectedEntities.size(); i++) {
+            assertEquals(expectedEntities.get(i).getLocation().getX(), reversedEntities.get(i).getLocation().getX());
+            assertEquals(expectedEntities.get(i).getLocation().getY(), reversedEntities.get(i).getLocation().getY());
+        }
 
     }
 }

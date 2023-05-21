@@ -2,9 +2,7 @@ package eu.kingconquest.framework.controllers;
 
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.models.GameBoard;
-import eu.kingconquest.framework.observers.GameAudioObserver;
-import eu.kingconquest.framework.observers.GameStateObserver;
-import eu.kingconquest.framework.observers.GameViewObserver;
+import eu.kingconquest.framework.observers.GameObserver;
 import eu.kingconquest.framework.utils.Location;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,16 +12,15 @@ import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.times;
 
 class KeyBoardControllerTest {
     private KeyBoardController underTest;
-    private final Set<GameStateObserver> stateObserversTest = new HashSet<>();
-    private final Set<GameViewObserver> viewObserversTest = new HashSet<>();
-    private final Set<GameAudioObserver> audioObserversTest = new HashSet<>();
+    private final Set<GameObserver> stateObserversTest = new HashSet<>();
+    private final Set<GameObserver> viewObserversTest = new HashSet<>();
+    private final Set<GameObserver> audioObserversTest = new HashSet<>();
     private GameBoard gameBoard;
 
     @BeforeEach

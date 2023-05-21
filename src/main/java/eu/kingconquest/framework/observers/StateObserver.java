@@ -6,7 +6,7 @@ import eu.kingconquest.framework.core.Game;
  * The StateObserver class is responsible for observing the game state and performing
  * actions based on state changes. It implements the GameStateObserver interface.
  */
-public class StateObserver implements GameStateObserver {
+public class StateObserver implements GameObserver {
     private final Game game;
 
     /**

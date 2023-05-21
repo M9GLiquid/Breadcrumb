@@ -6,7 +6,7 @@ import eu.kingconquest.framework.models.GameBoard;
  * Represents an observer that prints the state of the game board to the console
  * every time the game state changes.
  */
-public class ConsoleViewObserver implements GameViewObserver {
+public class ConsoleViewObserver implements GameObserver {
 
     private final GameBoard board;
 

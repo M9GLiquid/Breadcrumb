@@ -4,14 +4,13 @@ import eu.kingconquest.framework.controllers.GuiController;
 import eu.kingconquest.framework.controllers.KeyBoardController;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameState;
+import eu.kingconquest.framework.core.StateManager;
 import eu.kingconquest.framework.io.DataReader;
 import eu.kingconquest.framework.io.DataWriter;
 import eu.kingconquest.framework.io.GameData;
-import eu.kingconquest.framework.views.ConsoleView;
-import eu.kingconquest.framework.core.StateManager;
 import eu.kingconquest.framework.ui.*;
 import eu.kingconquest.framework.utils.Tile;
-import eu.kingconquest.framework.ui.FloatingBtnsView;
+import eu.kingconquest.framework.views.ConsoleView;
 import eu.kingconquest.framework.views.GraphicalView;
 import eu.kingconquest.sokoban.audio.SokobanGameAudioObserver;
 import eu.kingconquest.sokoban.entities.Crate;
@@ -23,6 +22,7 @@ import eu.kingconquest.sokoban.ui.GameOverScreen;
 import eu.kingconquest.sokoban.ui.WinScreen;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -71,7 +71,7 @@ public class Sokoban extends Game {
 
         // Activate GUIControls if that is selected
         if (getController() instanceof GuiController && !guiController) {
-            new FloatingBtnsView(getGameFrame(), getController());
+            new FloatingBtnsView(getGameFrame(), (ActionListener) getController());
             guiController = true;
         }
     }

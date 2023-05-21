@@ -2,24 +2,18 @@ package eu.kingconquest.framework.controllers;
 
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.models.GameBoard;
-import eu.kingconquest.framework.observers.GameObserver;
 import eu.kingconquest.framework.strategies.GameStrategy;
 import eu.kingconquest.framework.utils.Location;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.util.HashSet;
-import java.util.Set;
+import java.awt.event.KeyListener;
 
 /**
  * The KeyBoardController class handles user key input and game updates for a specified game.
  * It also manages a list of observers to be notified of game changes and audio updates.
  */
-public class KeyBoardController implements GameStrategy {
+public class KeyBoardController extends GameStrategy implements KeyListener {
     private final GameBoard gameBoard;
-    private final Set<GameObserver> stateObservers = new HashSet<>();
-    private final Set<GameObserver> viewObservers = new HashSet<>();
-    private final Set<GameObserver> audioObservers = new HashSet<>();
 
     /**
      * Creates a KeyBoardController for the specified game.
@@ -28,57 +22,6 @@ public class KeyBoardController implements GameStrategy {
      */
     public KeyBoardController(GameBoard gameBoard) {
         this.gameBoard = gameBoard;
-    }
-
-    @Override
-    public void addAudioObserver(GameObserver observer) {
-        audioObservers.removeIf(obs -> obs.getClass().equals(observer.getClass()));
-        audioObservers.add(observer);
-    }
-
-    @Override
-    public void addStateObserver(GameObserver observer) {
-        stateObservers.removeIf(obs -> obs.getClass().equals(observer.getClass()));
-        stateObservers.add(observer);
-    }
-
-    @Override
-    public void addViewObserver(GameObserver observer) {
-        viewObservers.removeIf(obs -> obs.getClass().equals(observer.getClass()));
-        viewObservers.add(observer);
-    }
-
-
-    public void notifyStateObservers() {
-        for (GameObserver observer: stateObservers)
-            observer.update();
-    }
-
-    @Override
-    public void notifyViewObservers() {
-        for (GameObserver observer: viewObservers)
-            observer.update();
-    }
-
-    @Override
-    public void notifyAudioObservers() {
-        for (GameObserver observer : audioObservers)
-            observer.update();
-    }
-
-    @Override
-    public void clearStateObservers() {
-        stateObservers.clear();
-    }
-
-    @Override
-    public void clearAudioObservers() {
-        audioObservers.clear();
-    }
-
-    @Override
-    public void clearViewObservers() {
-        viewObservers.clear();
     }
 
     /**
@@ -126,9 +69,5 @@ public class KeyBoardController implements GameStrategy {
      */
     @Override
     public void keyReleased(KeyEvent event) {
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent event) {
     }
 }

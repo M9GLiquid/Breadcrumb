@@ -10,7 +10,7 @@ import java.io.InputStream;
  * It includes an audio clip and the volume at which the clip should be played.
  * <p>
  * This class is responsible for loading the audio file from the resources folder
- * and creating a Clip instance that can be played, stopped, or looped.
+ * and creating a Clip instance that can be played.
  * <p>
  * Example usage:
  * <pre>
@@ -20,8 +20,6 @@ import java.io.InputStream;
  * </pre>
  */
 public class AudioManager {
-
-    // TODO: Make iit be able to handle several clips at one time
     protected Clip audioClip;
 
     protected float audioVolume;

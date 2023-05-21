@@ -153,6 +153,7 @@ public abstract class Game {
             getGameFrame().removeKeyListener(keyListener);
 
         setController(controller);
-        getGameFrame().addKeyListener(getController());
+        if (controller instanceof KeyListener)
+            getGameFrame().addKeyListener((KeyListener) getController());
     }
 }

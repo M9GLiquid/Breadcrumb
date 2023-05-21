@@ -13,14 +13,15 @@ import org.mockito.Mockito;
 import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Board2048Test {
-    Board2048 toTest;
+    Board2048 underTest;
     @BeforeEach
     void setUp(){
         Game2048 game = Mockito.mock(Game2048.class);
         Board2048 board = new Board2048(game, 6, 6);
-        toTest = Mockito.spy(board);
+        underTest = Mockito.spy(board);
     }
 
     @AfterEach
@@ -31,7 +32,7 @@ class Board2048Test {
      * We test isMoveValid in the Board2048.java when direction is right and everything is working.
      */
     @Test
-    void isMoveValidRight() {
+    void test_isMoveValidRight() {
         // Given
         Entity block = new Block(new Location(4,1), EntityIcon2048.E2);
 
@@ -39,18 +40,18 @@ class Board2048Test {
         entities.add(block);
 
         // When
-        Mockito.doReturn(entities).when(toTest).getEntities();
-        Mockito.doReturn(true).when(toTest).isLocationMatch(new Location(4,1), new Location(4,1));
+        Mockito.doReturn(entities).when(underTest).getEntities();
+        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(4,1), new Location(4,1));
 
         // Then
-        assertThat(toTest.isMoveValid(block, new Location(1,0))).isEqualTo(false);
+        assertThat(underTest.isMoveValid(block, new Location(1,0))).isEqualTo(false);
     }
 
     /**
      * We test isMoveValid in the Board2048.java when direction is left and everything is working.
      */
     @Test
-    void isMoveValidLeft() {
+    void test_isMoveValidLeft() {
         // Given
         Entity block = new Block(new Location(1,1), EntityIcon2048.E2);
 
@@ -58,18 +59,18 @@ class Board2048Test {
         entities.add(block);
 
         // When
-        Mockito.doReturn(entities).when(toTest).getEntities();
-        Mockito.doReturn(true).when(toTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        Mockito.doReturn(entities).when(underTest).getEntities();
+        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
-        assertThat(toTest.isMoveValid(block, new Location(-1,0))).isEqualTo(false);
+        assertThat(underTest.isMoveValid(block, new Location(-1,0))).isEqualTo(false);
     }
 
     /**
      * We test isMoveValid in the Board2048.java when direction is up and everything is working.
      */
     @Test
-    void isMoveValidUp() {
+    void test_isMoveValidUp() {
         // Given
         Entity block = new Block(new Location(1,1), EntityIcon2048.E2);
 
@@ -77,18 +78,18 @@ class Board2048Test {
         entities.add(block);
 
         // When
-        Mockito.doReturn(entities).when(toTest).getEntities();
-        Mockito.doReturn(true).when(toTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        Mockito.doReturn(entities).when(underTest).getEntities();
+        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
-        assertThat(toTest.isMoveValid(block, new Location(0,-1))).isEqualTo(false);
+        assertThat(underTest.isMoveValid(block, new Location(0,-1))).isEqualTo(false);
     }
 
     /**
      * We test isMoveValid in the Board2048.java when direction is down and everything is working.
      */
     @Test
-    void isMoveValidDown() {
+    void test_isMoveValidDown() {
         // Given
         Entity block = new Block(new Location(1,4), EntityIcon2048.E2);
 
@@ -96,11 +97,11 @@ class Board2048Test {
         entities.add(block);
 
         // When
-        Mockito.doReturn(entities).when(toTest).getEntities();
-        Mockito.doReturn(true).when(toTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        Mockito.doReturn(entities).when(underTest).getEntities();
+        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
-        assertThat(toTest.isMoveValid(block, new Location(0,1))).isEqualTo(false);
+        assertThat(underTest.isMoveValid(block, new Location(0,1))).isEqualTo(false);
     }
 
 
@@ -109,7 +110,7 @@ class Board2048Test {
      * We test isMoveValid in the Board2048.java when direction is right, and you can combine two tiles.
      */
     @Test
-    void isCombineValidRight() {
+    void test_isCombineValidRight() {
         // Given
         Entity block1 = new Block(new Location(3,1), EntityIcon2048.E2);
         Entity block2 = new Block(new Location(4,1), EntityIcon2048.E2);
@@ -119,18 +120,18 @@ class Board2048Test {
         entities.add(block2);
 
         // When
-        Mockito.doReturn(entities).when(toTest).getEntities();
-        Mockito.doReturn(true).when(toTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        Mockito.doReturn(entities).when(underTest).getEntities();
+        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
-        assertThat(toTest.isMoveValid(block1, new Location(1,0))).isEqualTo(true);
+        assertThat(underTest.isMoveValid(block1, new Location(1,0))).isEqualTo(true);
     }
 
     /**
      * We test isMoveValid in the Board2048.java when direction is left, and you can combine two tiles.
      */
     @Test
-    void isCombineValidLeft() {
+    void test_isCombineValidLeft() {
         // Given
         Entity block1 = new Block(new Location(1,1), EntityIcon2048.E2);
         Entity block2 = new Block(new Location(2,1), EntityIcon2048.E2);
@@ -140,18 +141,18 @@ class Board2048Test {
         entities.add(block2);
 
         // When
-        Mockito.doReturn(entities).when(toTest).getEntities();
-        Mockito.doReturn(true).when(toTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        Mockito.doReturn(entities).when(underTest).getEntities();
+        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
-        assertThat(toTest.isMoveValid(block2, new Location(-1,0))).isEqualTo(true);
+        assertThat(underTest.isMoveValid(block2, new Location(-1,0))).isEqualTo(true);
     }
 
     /**
      * We test isMoveValid in the Board2048.java when direction is up, and you can combine two tiles.
      */
     @Test
-    void isCombineValidUp() {
+    void test_isCombineValidUp() {
         // Given
         Entity block1 = new Block(new Location(4,1), EntityIcon2048.E2);
         Entity block2 = new Block(new Location(4,2), EntityIcon2048.E2);
@@ -161,18 +162,18 @@ class Board2048Test {
         entities.add(block2);
 
         // When
-        Mockito.doReturn(entities).when(toTest).getEntities();
-        Mockito.doReturn(true).when(toTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        Mockito.doReturn(entities).when(underTest).getEntities();
+        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
-        assertThat(toTest.isMoveValid(block2, new Location(0,-1))).isEqualTo(true);
+        assertThat(underTest.isMoveValid(block2, new Location(0,-1))).isEqualTo(true);
     }
 
     /**
      * We test isMoveValid in the Board2048.java when direction is down, and you can combine two tiles.
      */
     @Test
-    void isCombineValidDown() {
+    void test_isCombineValidDown() {
         // Given
         Entity block1 = new Block(new Location(4,3), EntityIcon2048.E2);
         Entity block2 = new Block(new Location(4,4), EntityIcon2048.E2);
@@ -182,18 +183,18 @@ class Board2048Test {
         entities.add(block2);
 
         // When
-        Mockito.doReturn(entities).when(toTest).getEntities();
-        Mockito.doReturn(true).when(toTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        Mockito.doReturn(entities).when(underTest).getEntities();
+        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
-        assertThat(toTest.isMoveValid(block1, new Location(0,1))).isEqualTo(true);
+        assertThat(underTest.isMoveValid(block1, new Location(0,1))).isEqualTo(true);
     }
 
     /**
      * X and Y must be either 1 or 0 for the inserted direction in the argument of the method isMoveValid().
      */
     @Test
-    void ifDirectionIsInvalid() {
+    void test_ifDirectionIsInvalid() {
         // Given
         Entity block = new Block(new Location(4,3), EntityIcon2048.E2);
 
@@ -202,10 +203,22 @@ class Board2048Test {
         entities.add(block);
 
         // When
-        Mockito.doReturn(entities).when(toTest).getEntities();
-        Mockito.doReturn(true).when(toTest).isLocationMatch(new Location(1,1), new Location(1,1));
+        Mockito.doReturn(entities).when(underTest).getEntities();
+        Mockito.doReturn(true).when(underTest).isLocationMatch(new Location(1,1), new Location(1,1));
 
         // Then
-        assertThat(toTest.isMoveValid(block, new Location(3,2))).isEqualTo(false);
+        assertThat(underTest.isMoveValid(block, new Location(3,2))).isEqualTo(false);
+    }
+
+    @Test
+    void test_getScore() {
+        // Given
+        underTest.score = 10;
+
+        // When
+
+        // Then
+        assertEquals(10, underTest.getScore());
+
     }
 }

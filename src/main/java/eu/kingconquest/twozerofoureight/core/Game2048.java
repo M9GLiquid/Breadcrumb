@@ -1,6 +1,6 @@
 package eu.kingconquest.twozerofoureight.core;
 
-import eu.kingconquest.framework.controllers.KeyBoardController;
+import eu.kingconquest.framework.controllers.KeyController;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.io.DataReader;
@@ -37,7 +37,7 @@ public class Game2048 extends Game {
         getBoard().setState(GameState.INITIATING);
 
         // Set the desired controller
-        setDesiredController(new KeyBoardController(getBoard()));
+        setDesiredController(new KeyController(getBoard()));
 
 
         GameFrame frame = getGameFrame();

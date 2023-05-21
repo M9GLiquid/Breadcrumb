@@ -12,7 +12,7 @@ import java.awt.event.KeyListener;
  * The KeyBoardController class handles user key input and game updates for a specified game.
  * It also manages a list of observers to be notified of game changes and audio updates.
  */
-public class KeyBoardController extends GameStrategy implements KeyListener {
+public class KeyController extends GameStrategy implements KeyListener {
     private final GameBoard gameBoard;
 
     /**
@@ -20,7 +20,7 @@ public class KeyBoardController extends GameStrategy implements KeyListener {
      *
      * @param gameBoard the game to be controlled
      */
-    public KeyBoardController(GameBoard gameBoard) {
+    public KeyController(GameBoard gameBoard) {
         this.gameBoard = gameBoard;
     }
 

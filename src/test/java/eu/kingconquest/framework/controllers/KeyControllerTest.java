@@ -16,8 +16,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-class KeyBoardControllerTest {
-    private KeyBoardController underTest;
+class KeyControllerTest {
+    private KeyController underTest;
     private final Set<GameObserver> stateObserversTest = new HashSet<>();
     private final Set<GameObserver> viewObserversTest = new HashSet<>();
     private final Set<GameObserver> audioObserversTest = new HashSet<>();
@@ -26,7 +26,7 @@ class KeyBoardControllerTest {
     @BeforeEach
     void setUp() {
         gameBoard = mock(GameBoard.class);
-        underTest = spy(new KeyBoardController(gameBoard));
+        underTest = spy(new KeyController(gameBoard));
 
 
     }

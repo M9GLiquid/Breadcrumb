@@ -1,7 +1,7 @@
 package eu.kingconquest.sokoban.core;
 
 import eu.kingconquest.framework.controllers.GuiController;
-import eu.kingconquest.framework.controllers.KeyBoardController;
+import eu.kingconquest.framework.controllers.KeyController;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.core.StateManager;
@@ -40,7 +40,7 @@ public class Sokoban extends Game {
         setBoard(new SokobanBoard(this, null, null));
 
         // Set the desired controller
-        setDesiredController(new KeyBoardController(getBoard())); // Change this line to switch between controllers
+        setDesiredController(new KeyController(getBoard())); // Change this line to switch between controllers
 
         GameFrame frame = getGameFrame();
         frame.setGameView(new GraphicalView(getBoard()));

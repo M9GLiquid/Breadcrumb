@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Refactored GameStrategy and Controllers">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Minor Changes">
       <change beforePath="$PROJECT_DIR$/src/docs/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/docs/TODO.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/core/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/core/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/core/StateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/ui/GameOverScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/ui/GameOverScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/KeyBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/KeyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/Sokoban.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/Sokoban.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Game2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Game2048.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/controllers/KeyBoardControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/controllers/KeyControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +166,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KeyBoardControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KeyControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sokoban" />
       <extension name="coverage">
         <pattern>
@@ -175,7 +175,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="eu.kingconquest.framework.controllers" />
-      <option name="MAIN_CLASS_NAME" value="eu.kingconquest.framework.controllers.KeyBoardControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="eu.kingconquest.framework.controllers.KeyControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -229,15 +229,15 @@
     </configuration>
     <list>
       <item itemvalue="Application.Default" />
+      <item itemvalue="JUnit.KeyControllerTest" />
       <item itemvalue="JUnit.SokobanEntityIconTest" />
       <item itemvalue="JUnit.CrateTest" />
       <item itemvalue="JUnit.PlayerTest" />
       <item itemvalue="JUnit.SokobanBoardTest.test_Constructor" />
-      <item itemvalue="JUnit.KeyBoardControllerTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.KeyBoardControllerTest" />
+        <item itemvalue="JUnit.KeyControllerTest" />
         <item itemvalue="JUnit.SokobanBoardTest.test_Constructor" />
         <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.CrateTest" />
@@ -290,7 +290,7 @@
       <workItem from="1684587285083" duration="2317000" />
       <workItem from="1684589618294" duration="2896000" />
       <workItem from="1684671300456" duration="2090000" />
-      <workItem from="1684673827739" duration="9679000" />
+      <workItem from="1684673827739" duration="10571000" />
     </task>
     <task id="LOCAL−00001" summary="Added the main Framework for Game Handling and Menu Handling">
       <created>1681461977142</created>
@@ -545,7 +545,13 @@
       <option name="presentableId" value="LOCAL−00041" />
       <updated>1684685104859</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL−00042" summary="Minor Changes">
+      <created>1684696822093</created>
+      <option name="number" value="LOCAL−00042" />
+      <option name="presentableId" value="LOCAL−00042" />
+      <updated>1684696822093</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,9 +619,9 @@
     <MESSAGE value="Creating maze game" />
     <MESSAGE value="United the Observers under one common banner &quot;GameObserver&quot;" />
     <MESSAGE value="Minor Changes to names of classes" />
-    <MESSAGE value="Minor Changes" />
     <MESSAGE value="Refactored GameStrategy and Controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored GameStrategy and Controllers" />
+    <MESSAGE value="Minor Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor Changes" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

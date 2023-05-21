@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Testrunning Entity.java">
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/maze/core/Maze.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/maze/entities/MazeEntityIcon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/maze/entities/MazeMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Creating maze game">
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/maze/core/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/maze/core/Maze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/maze/entities/MazeEntityIcon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/maze/entities/MazeEntityIcon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/maze/entities/MazeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/maze/entities/MazeMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/platform/PlatformMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/platform/PlatformMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/platform/listeners/PlatformListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/platform/listeners/PlatformListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/entity/EntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/entity/EntityTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -497,7 +495,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684656987811</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Creating maze game">
+      <created>1684658925527</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1684658925527</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Creating maze game">
+      <created>1684659157943</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1684659157944</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,7 +554,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Modified Access modifiers" />
     <MESSAGE value=" Hotfix 6" />
     <MESSAGE value=" Improved Class security by updating access Modifiers" />
     <MESSAGE value="Add second game view and fixed bugs&#10;&#10;In this commit, I've added a second view to the game, which provides a text-based (console output) interface as an alternative to the JSwing output. This will make the game more accessible and versatile.&#10;&#10;I've also fixed several bugs in the codebase, including an issue with the Load feature, where it was working differently from the StartMenu and PauseMenu. Additionally, I fixed a bug where the level event was incrementing on load, even if no file was found." />
@@ -567,7 +578,8 @@
     <MESSAGE value="Tested the switch statements for KeyBoardController" />
     <MESSAGE value="Added test to each switch statement. Also tested if setState(GameState.PAUSED) called when the gameboards state is RUNNING and ESC is pressed." />
     <MESSAGE value="Testrunning Entity.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testrunning Entity.java" />
+    <MESSAGE value="Creating maze game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating maze game" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

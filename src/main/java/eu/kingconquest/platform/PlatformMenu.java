@@ -43,7 +43,7 @@ public class PlatformMenu extends Menu {
         gbc.gridx = 1;
         gbc.gridy = 1;
         add(buttonComponent("2048",
-                        new PlatformListener(gameFrame, this)),
+                        new PlatformListener(gameFrame, this)), gbc);
 
         gbc.weightx = 1; // Add this line
         gbc.insets = new Insets(50, 0, 10, 250);

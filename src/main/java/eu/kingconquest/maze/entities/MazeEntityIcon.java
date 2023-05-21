@@ -8,4 +8,9 @@ public enum MazeEntityIcon implements EntityIcon {
 
     MazeEntityIcon(String imagePath, String symbol) {
     }
+
+    @Override
+    public Image getIcon() {
+        return null;
+    }
 }

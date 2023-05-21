@@ -4,34 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="United the Observers under one common banner &quot;GameObserver&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/core/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/entity/EntityIcon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/entities/EntityIcon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/io/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/io/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/models/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/models/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/observers/ConsoleViewObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/views/ConsoleView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/observers/StateObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/core/StateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/strategies/GameStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/strategies/GameStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/utils/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/utils/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/views/FloatingButtonsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/ui/FloatingBtnsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/views/GameGuiView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/views/GameGuiView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/audio/SokobanGameAudioObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/audio/SokobanGameAudioObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/Sokoban.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/Sokoban.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/entities/Crate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/entities/Crate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/entities/SokobanEntityIcon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/entities/SokobanEntityIcon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/models/SokobanBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/models/SokobanBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/EntityIcon2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/EntityIcon2048.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Game2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/core/Game2048.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/entities/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/entities/Block.java" afterDir="false" />
+    <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Minor Changes to names of classes">
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/models/Board2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/twozerofoureight/models/Board2048.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/entity/EntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/framework/entities/EntityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/sokoban/core/SokobanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/sokoban/core/SokobanTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/sokoban/io/LevelReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/sokoban/io/LevelReaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/sokoban/models/SokobanBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/sokoban/models/SokobanBoardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/twozerofoureight/models/Board2048Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/twozerofoureight/models/Board2048Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +286,7 @@
       <workItem from="1684587285083" duration="2317000" />
       <workItem from="1684589618294" duration="2896000" />
       <workItem from="1684671300456" duration="2090000" />
-      <workItem from="1684673827739" duration="316000" />
+      <workItem from="1684673827739" duration="1297000" />
     </task>
     <task id="LOCAL−00001" summary="Added the main Framework for Game Handling and Menu Handling">
       <created>1681461977142</created>
@@ -549,7 +523,13 @@
       <option name="presentableId" value="LOCAL−00038" />
       <updated>1684671160223</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL−00039" summary="Minor Changes to names of classes">
+      <created>1684674943151</created>
+      <option name="number" value="LOCAL−00039" />
+      <option name="presentableId" value="LOCAL−00039" />
+      <updated>1684674943151</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +574,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Improved Class security by updating access Modifiers" />
     <MESSAGE value="Add second game view and fixed bugs&#10;&#10;In this commit, I've added a second view to the game, which provides a text-based (console output) interface as an alternative to the JSwing output. This will make the game more accessible and versatile.&#10;&#10;I've also fixed several bugs in the codebase, including an issue with the Load feature, where it was working differently from the StartMenu and PauseMenu. Additionally, I fixed a bug where the level event was incrementing on load, even if no file was found." />
     <MESSAGE value="Restructure code and fix bugs related to repainting with GameViewObservers&#10;&#10;In this commit, I've restructured the codebase to improve the performance and usability of the observers. This includes refactoring some code to use more modular and reusable components." />
     <MESSAGE value="Add Restart function to Framework and fix bugs in Sokoban game&#10;&#10;In this commit, I've added a Restart function to the Framework, which will allow players to restart the game without having to reload the entire game. This should improve the user experience and make the game more convenient to play.&#10;&#10;I've also fixed several bugs in the Sokoban game, including an issue with the Load/Save function, which was not working correctly, and a bug with the Resume Game function, which was causing a wierd GLITCH IN THE MATRIX." />
@@ -619,7 +598,8 @@
     <MESSAGE value="Testrunning Entity.java" />
     <MESSAGE value="Creating maze game" />
     <MESSAGE value="United the Observers under one common banner &quot;GameObserver&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="United the Observers under one common banner &quot;GameObserver&quot;" />
+    <MESSAGE value="Minor Changes to names of classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor Changes to names of classes" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

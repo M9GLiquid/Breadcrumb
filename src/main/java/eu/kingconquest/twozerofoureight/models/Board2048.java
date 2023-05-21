@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * merging cells, checking game over conditions, and adding new tiles.
  */
 public class Board2048 extends GameBoard {
-    private final Game2048 game;
+    protected final Game2048 game;
     protected int score;
 
     /**

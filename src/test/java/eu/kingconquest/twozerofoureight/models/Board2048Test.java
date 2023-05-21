@@ -14,12 +14,14 @@ import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
 
 class Board2048Test {
     Board2048 underTest;
     @BeforeEach
     void setUp(){
-        Game2048 game = Mockito.mock(Game2048.class);
+        Game2048 game = mock(Game2048.class);
         Board2048 board = new Board2048(game, 6, 6);
         underTest = Mockito.spy(board);
     }
@@ -220,5 +222,31 @@ class Board2048Test {
         // Then
         assertEquals(10, underTest.getScore());
 
+    }
+
+    @Test
+    void test_resetScore() {
+        // Given
+        underTest.score = 10;
+
+        // When
+        underTest.resetScore();
+
+        // Then
+        assertEquals(0, underTest.score);
+    }
+
+    @Test
+    void test_isMatch() {
+        // Given
+        Location location = mock(Location.class);
+        Entity block1 = new Block(location, EntityIcon2048.E2);
+        Entity block2 = new Block(location, EntityIcon2048.E2);
+
+        // When
+        boolean underTest = this.underTest.isMatch(block1, block2);
+
+        // Then
+        assertTrue(underTest);
     }
 }

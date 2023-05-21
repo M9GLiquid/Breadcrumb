@@ -13,8 +13,8 @@ import org.mockito.Mockito;
 import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
 
 class Board2048Test {
@@ -24,6 +24,8 @@ class Board2048Test {
         Game2048 game = mock(Game2048.class);
         Board2048 board = new Board2048(game, 6, 6);
         underTest = Mockito.spy(board);
+        doNothing().when(underTest).addNewTile();
+        doNothing().when(underTest).addNewTile();
     }
 
     @AfterEach
@@ -248,5 +250,23 @@ class Board2048Test {
 
         // Then
         assertTrue(underTest);
+    }
+
+    @Test
+    void test_entityExist() {
+        // Given
+        underTest.getEntities().clear();
+        Location location = mock(Location.class);
+        Entity block1 = new Block(location, EntityIcon2048.E2);
+        //Entity block2 = new Block(location, EntityIcon2048.E2);
+        underTest.getEntities().add(block1);
+
+        // When
+        boolean entityExist1 = underTest.entityExist(block1);
+        boolean entityExist2 = underTest.entityExist(null);
+
+        // Then
+        assertTrue(entityExist1);
+        assertFalse(entityExist2);
     }
 }

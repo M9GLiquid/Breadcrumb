@@ -52,7 +52,7 @@ public class GameOverScreen extends Menu {
 
         // Button to return to the platform menu
         gbc.gridy++;
-        add(buttonComponent("Game Selector",
+        add(buttonComponent("Game Menu",
                         new MenuListener(game, this)),
                 gbc);
 

@@ -9,6 +9,7 @@ import eu.kingconquest.sokoban.entities.Player;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -23,12 +24,13 @@ public class LevelReader {
      *
      */
     public static int loadLevel(String fileName, GameBoard board, int targetLevel) {
-        File file = new File(Objects.requireNonNull(LevelReader.class.getClassLoader().getResource("sokoban/io/levels.txt")).getFile());
+        InputStream in = LevelReader.class.getClassLoader().getResourceAsStream("sokoban/io/" + fileName);
         Scanner sc;
 
         try {
-            sc = new Scanner(file);
-        } catch (FileNotFoundException e) {
+            assert in != null;
+            sc = new Scanner(in);
+        } catch (NullPointerException  e) {
             System.out.println("File not found: " + fileName);
             System.exit(1);
             return 0;
@@ -69,9 +71,12 @@ public class LevelReader {
 
         // Reset the scanner
         sc.close();
+
+        in = LevelReader.class.getClassLoader().getResourceAsStream("sokoban/io/" + fileName);
         try {
-            sc = new Scanner(file);
-        } catch (FileNotFoundException e) {
+            assert in != null;
+            sc = new Scanner(in);
+        } catch (NullPointerException e) {
             System.out.println("File not found: " + fileName);
             System.exit(1);
             return 0;

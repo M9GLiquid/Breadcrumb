@@ -361,4 +361,33 @@ class Board2048Test {
         assertEquals(EntityIcon2048.E16384, underTest.productEntity(EntityIcon2048.E8192));
         assertNull(underTest.productEntity(EntityIcon2048.WALL));
     }
+
+    @Test
+    void test_addScore() {
+        //Given
+
+        //When
+        underTest.addScore(EntityIcon2048.E2);
+        underTest.addScore(EntityIcon2048.E4);
+        underTest.addScore(EntityIcon2048.E8);
+        underTest.addScore(EntityIcon2048.E16);
+        underTest.addScore(EntityIcon2048.E32);
+        underTest.addScore(EntityIcon2048.E64);
+        underTest.addScore(EntityIcon2048.E128);
+        underTest.addScore(EntityIcon2048.E256);
+        underTest.addScore(EntityIcon2048.E512);
+        underTest.addScore(EntityIcon2048.E1024);
+        underTest.addScore(EntityIcon2048.E2048);
+        underTest.addScore(EntityIcon2048.E4096);
+        underTest.addScore(EntityIcon2048.E8192);
+        underTest.addScore(EntityIcon2048.E16384);
+
+        //Then
+        assertEquals(32764, underTest.score);
+    }
+
+    @Test
+    void test_compress() {
+
+    }
 }

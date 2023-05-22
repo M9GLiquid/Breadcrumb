@@ -388,6 +388,28 @@ class Board2048Test {
 
     @Test
     void test_compress() {
+        Entity block1 = new Block(new Location(1, 1), EntityIcon2048.E2);
+        Entity block2 = new Block(new Location(2, 1), EntityIcon2048.E2);
+        Entity block3 = new Block(new Location(3, 1), EntityIcon2048.E4);
+        Entity block4 = new Block(new Location(4, 1), EntityIcon2048.E4);
 
+        ArrayList<Entity> entities = new ArrayList<>();
+        entities.add(block1);
+        entities.add(block2);
+        entities.add(block3);
+        entities.add(block4);
+
+        // When
+        doReturn(entities).when(underTest).getEntities();
+
+        // Call the method under test
+        underTest.compress();
+
+        // Then
+        assertEquals(4, entities.size());
+        assertEquals(new Location(1, 1), entities.get(0).getLocation());
+        assertEquals(EntityIcon2048.E2, entities.get(0).getEntityType());
+        assertEquals(new Location(2, 1), entities.get(1).getLocation());
+        assertEquals(EntityIcon2048.E2, entities.get(1).getEntityType());
     }
 }

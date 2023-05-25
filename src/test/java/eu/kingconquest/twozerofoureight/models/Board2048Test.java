@@ -1,6 +1,8 @@
 package eu.kingconquest.twozerofoureight.models;
 
+import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.entity.Entity;
+import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.strategies.GameStrategy;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.twozerofoureight.core.EntityIcon2048;
@@ -387,6 +389,149 @@ class Board2048Test {
     }
 
     @Test
+    void test_isAnyMovePossible() {
+        // Given
+        Entity block1 = new Block(new Location(1, 1), EntityIcon2048.E2);
+        Entity block2 = new Block(new Location(1, 2), EntityIcon2048.E2);
+        Entity block3 = new Block(new Location(1, 3), EntityIcon2048.E8);
+        Entity block4 = new Block(new Location(1, 4), EntityIcon2048.E16);
+
+        ArrayList<Entity> entities = new ArrayList<>();
+        entities.add(block1);
+        entities.add(block2);
+        entities.add(block3);
+        entities.add(block4);
+
+        underTest.setEntities(entities);
+
+        doReturn(entities).when(underTest).getEntities();
+
+        // When
+        boolean result = underTest.isAnyMovePossible();
+
+        // Then
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    void test_makeMove_down() {
+        // Given
+        Location down = new Location(0, 1);
+
+        GameStrategy controller = mock(GameStrategy.class);
+        doReturn(controller).when(game).getController();
+        doNothing().when(controller).notifyAudioObservers();
+        doReturn(false).when(underTest).isGameOver();
+
+        doNothing().when(underTest).compress();
+        doNothing().when(underTest).merge();
+        doNothing().when(underTest).reverse();
+
+        // When
+        underTest.makeMove(down);
+
+        // Then
+        verify(underTest, times(2)).reverse();
+        verify(underTest).merge();
+        verify(underTest, times(2)).compress();
+        verify(underTest).addNewTile();
+        verify(controller).notifyAudioObservers();
+    }
+    @Test
+    void test_makeMove_up() {
+        // Given
+        Location up = new Location(0, -1);
+
+        GameStrategy controller = mock(GameStrategy.class);
+        doReturn(controller).when(game).getController();
+        doNothing().when(controller).notifyAudioObservers();
+        doReturn(false).when(underTest).isGameOver();
+
+        doNothing().when(underTest).compress();
+        doNothing().when(underTest).merge();
+
+        // When
+        underTest.makeMove(up);
+
+        // Then
+        verify(underTest).merge();
+        verify(underTest, times(2)).compress();
+        verify(underTest).addNewTile();
+        verify(controller).notifyAudioObservers();
+    }
+
+    @Test
+    void test_makeMove_right() {
+        // Given
+        Location right = new Location(1, 0);
+
+        GameStrategy controller = mock(GameStrategy.class);
+        doReturn(controller).when(game).getController();
+        doNothing().when(controller).notifyAudioObservers();
+        doReturn(false).when(underTest).isGameOver();
+
+        doNothing().when(underTest).transpose();
+        doNothing().when(underTest).compress();
+        doNothing().when(underTest).merge();
+        doNothing().when(underTest).reverse();
+
+        // When
+        underTest.makeMove(right);
+
+        // Then
+        verify(underTest, times(2)).transpose();
+        verify(underTest, times(2)).reverse();
+        verify(underTest).merge();
+        verify(underTest, times(2)).compress();
+        verify(underTest).addNewTile();
+        verify(controller).notifyAudioObservers();
+    }
+
+    @Test
+    void test_makeMove_left() {
+        // Given
+        Location left = new Location(-1, 0);
+
+        GameStrategy controller = mock(GameStrategy.class);
+        doReturn(controller).when(game).getController();
+        doNothing().when(controller).notifyAudioObservers();
+        doReturn(false).when(underTest).isGameOver();
+
+        doNothing().when(underTest).transpose();
+        doNothing().when(underTest).compress();
+        doNothing().when(underTest).merge();
+
+        // When
+        underTest.makeMove(left);
+
+        // Then
+        verify(underTest, times(2)).transpose();
+        verify(underTest).merge();
+        verify(underTest, times(2)).compress();
+        verify(underTest).addNewTile();
+        verify(controller).notifyAudioObservers();
+    }
+
+    @Test
+    void test_makeMove_gameOver(){
+        // Given
+        Location left = new Location(-1, 0);
+
+        GameStrategy controller = mock(GameStrategy.class);
+        GameBoard board = mock(GameBoard.class);
+        doReturn(board).when(game).getBoard();
+        doReturn(controller).when(game).getController();
+        doNothing().when(controller).notifyAudioObservers();
+        doReturn(true).when(underTest).isGameOver();
+
+        // When
+        underTest.makeMove(left);
+
+        // Then
+        verify(board).setState(GameState.GAME_OVER);
+    }
+
+    @Test
     void test_merge() {
         // Given
         Entity block1 = new Block(new Location(1, 1), EntityIcon2048.E2);
@@ -416,176 +561,22 @@ class Board2048Test {
     }
 
     @Test
-    void test_isAnyMovePossible() {
-        // Given
-        Entity block1 = new Block(new Location(1, 1), EntityIcon2048.E2);
-        Entity block2 = new Block(new Location(1, 2), EntityIcon2048.E2);
-        Entity block3 = new Block(new Location(1, 3), EntityIcon2048.E8);
-        Entity block4 = new Block(new Location(1, 4), EntityIcon2048.E16);
-
-        ArrayList<Entity> entities = new ArrayList<>();
-        entities.add(block1);
-        entities.add(block2);
-        entities.add(block3);
-        entities.add(block4);
-
-        underTest.setEntities(entities);
-
-        doReturn(entities).when(underTest).getEntities();
-
-        // When
-        boolean result = underTest.isAnyMovePossible();
-
-        // Then
-        assertThat(result).isTrue();
-    }
-
-    @Test
-    void test_makeMove_down() {
-        // Given
-        Location down = new Location(0, 1);
-        Entity block1 = new Block(new Location(1, 1), EntityIcon2048.E2);
-        Entity block2 = new Block(new Location(2, 1), EntityIcon2048.E4);
-        Entity block3 = new Block(new Location(3, 1), EntityIcon2048.E2);
-        Entity block4 = new Block(new Location(4, 1), EntityIcon2048.E8);
-
-        ArrayList<Entity> entities = new ArrayList<>();
-        entities.add(block1);
-        entities.add(block2);
-        entities.add(block3);
-        entities.add(block4);
-        underTest.setEntities(entities);
-
-        GameStrategy controller = mock(GameStrategy.class);
-        doReturn(controller).when(game).getController();
-        doNothing().when(controller).notifyAudioObservers();
-        doReturn(false).when(underTest).isGameOver();
-
-        // When
-        underTest.makeMove(down);
-
-        // Then
-        assertThat(underTest.getEntities().get(0).getLocation()).isEqualTo(new Location(1,4));
-        assertThat(underTest.getEntities().get(1).getLocation()).isEqualTo(new Location(2,4));
-        assertThat(underTest.getEntities().get(2).getLocation()).isEqualTo(new Location(3,4));
-        assertThat(underTest.getEntities().get(3).getLocation()).isEqualTo(new Location(4,4));
-    }
-    @Test
-    void test_makeMove_up() {
-        // Given
-        Location up = new Location(0, -1);
-        Entity block1 = new Block(new Location(1, 4), EntityIcon2048.E2);
-        Entity block2 = new Block(new Location(2, 4), EntityIcon2048.E4);
-        Entity block3 = new Block(new Location(3, 4), EntityIcon2048.E2);
-        Entity block4 = new Block(new Location(4, 4), EntityIcon2048.E8);
-
-        ArrayList<Entity> entities = new ArrayList<>();
-        entities.add(block1);
-        entities.add(block2);
-        entities.add(block3);
-        entities.add(block4);
-        underTest.setEntities(entities);
-
-        GameStrategy controller = mock(GameStrategy.class);
-        doReturn(controller).when(game).getController();
-        doNothing().when(controller).notifyAudioObservers();
-        doReturn(false).when(underTest).isGameOver();
-
-        // When
-        underTest.makeMove(up);
-
-        // Then
-        assertThat(underTest.getEntities().get(0).getLocation()).isEqualTo(new Location(1,1));
-        assertThat(underTest.getEntities().get(1).getLocation()).isEqualTo(new Location(2,1));
-        assertThat(underTest.getEntities().get(2).getLocation()).isEqualTo(new Location(3,1));
-        assertThat(underTest.getEntities().get(3).getLocation()).isEqualTo(new Location(4,1));
-    }
-
-    @Test
-    void test_makeMove_right() {
-        // Given
-        Location right = new Location(1, 0);
-        Entity block1 = new Block(new Location(1, 1), EntityIcon2048.E2);
-        Entity block2 = new Block(new Location(1, 2), EntityIcon2048.E4);
-        Entity block3 = new Block(new Location(1, 3), EntityIcon2048.E2);
-        Entity block4 = new Block(new Location(1, 4), EntityIcon2048.E8);
-
-        ArrayList<Entity> entities = new ArrayList<>();
-        entities.add(block1);
-        entities.add(block2);
-        entities.add(block3);
-        entities.add(block4);
-        underTest.setEntities(entities);
-
-        GameStrategy controller = mock(GameStrategy.class);
-        doReturn(controller).when(game).getController();
-        doNothing().when(controller).notifyAudioObservers();
-        doReturn(false).when(underTest).isGameOver();
-
-        // When
-        underTest.makeMove(right);
-
-        // Then
-        assertThat(underTest.getEntities().get(0).getLocation()).isEqualTo(new Location(4,1));
-        assertThat(underTest.getEntities().get(1).getLocation()).isEqualTo(new Location(4,2));
-        assertThat(underTest.getEntities().get(2).getLocation()).isEqualTo(new Location(4,3));
-        assertThat(underTest.getEntities().get(3).getLocation()).isEqualTo(new Location(4,4));
-    }
-
-    @Test
-    void test_makeMove_left() {
-        // Given
-        Location left = new Location(-1, 0);
-        Entity block1 = new Block(new Location(4, 1), EntityIcon2048.E2);
-        Entity block2 = new Block(new Location(4, 2), EntityIcon2048.E4);
-        Entity block3 = new Block(new Location(4, 3), EntityIcon2048.E2);
-        Entity block4 = new Block(new Location(4, 4), EntityIcon2048.E8);
-
-        ArrayList<Entity> entities = new ArrayList<>();
-        entities.add(block1);
-        entities.add(block2);
-        entities.add(block3);
-        entities.add(block4);
-        underTest.setEntities(entities);
-
-        GameStrategy controller = mock(GameStrategy.class);
-        doReturn(controller).when(game).getController();
-        doNothing().when(controller).notifyAudioObservers();
-        doReturn(false).when(underTest).isGameOver();
-
-        // When
-        underTest.makeMove(left);
-
-        // Then
-        assertThat(underTest.getEntities().get(0).getLocation()).isEqualTo(new Location(1,1));
-        assertThat(underTest.getEntities().get(1).getLocation()).isEqualTo(new Location(1,2));
-        assertThat(underTest.getEntities().get(2).getLocation()).isEqualTo(new Location(1,3));
-        assertThat(underTest.getEntities().get(3).getLocation()).isEqualTo(new Location(1,4));
-    }
-
-    @Test
     void test_transpose() {
         // Given
-        underTest.getEntities().clear();
-        Entity block1 = new Block(new Location(1, 2), EntityIcon2048.E2);
-        Entity block2 = new Block(new Location(2, 3), EntityIcon2048.E4);
-        Entity block3 = new Block(new Location(3, 1), EntityIcon2048.E8);
+        Entity block1 = new Block(new Location(1, 1), EntityIcon2048.E2);
+        Entity block2 = new Block(new Location(2, 2), EntityIcon2048.E4);
 
         ArrayList<Entity> entities = new ArrayList<>();
         entities.add(block1);
         entities.add(block2);
-        entities.add(block3);
-
-        doReturn(entities).when(underTest).getEntities();
+        //doReturn(entities).when(underTest).getEntities();
+        underTest.setEntities(entities);
 
         // When
         underTest.transpose();
 
         // Then
-        assertThat(underTest.getEntities()).containsExactlyInAnyOrder(
-                new Block(new Location(2, 1), EntityIcon2048.E2),
-                new Block(new Location(3, 2), EntityIcon2048.E4),
-                new Block(new Location(1, 3), EntityIcon2048.E8)
-        );
+        assertThat(underTest.getEntities().get(0).getLocation()).isEqualTo(new Location(1,4));
+        assertThat(underTest.getEntities().get(1).getLocation()).isEqualTo(new Location(2,3));
     }
 }

@@ -285,7 +285,6 @@ public class Board2048 extends GameBoard {
         addEntity(entity);
     }
 
-
     /**
      * The method returns the product of the value from the entity in the argument.
      * @param entity The value the method square up to.

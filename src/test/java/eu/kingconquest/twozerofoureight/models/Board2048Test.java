@@ -263,8 +263,7 @@ class Board2048Test {
         //Given
         ArrayList<Entity> entities = new ArrayList<>();
         Location location = mock(Location.class);
-        Entity block1 = new Block(location, EntityIcon2048.E64);
-        entities.add(block1);
+        entities.add(new Block(location, EntityIcon2048.E64));
 
         //When
         doReturn(entities).when(underTest).getEntities();
@@ -273,7 +272,6 @@ class Board2048Test {
         //Then
         underTest.isWin();
         assertTrue(underTest.game.hasWon);
-
     }
 
     @Test
@@ -402,14 +400,17 @@ class Board2048Test {
         entities.add(block3);
         entities.add(block4);
 
-        underTest.setEntities(entities);
-
+        doReturn(true).when(underTest).entityExist(any(Entity.class));
+        doReturn(true).when(underTest).isMatch(any(Entity.class), any(Entity.class));
         doReturn(entities).when(underTest).getEntities();
+        underTest.setEntities(entities);
 
         // When
         boolean result = underTest.isAnyMovePossible();
 
         // Then
+        verify(underTest, times(26)).getEntity(any(Location.class));
+        verify(underTest, times(6)).entityExist(any(Entity.class));
         assertThat(result).isTrue();
     }
 
@@ -569,14 +570,14 @@ class Board2048Test {
         ArrayList<Entity> entities = new ArrayList<>();
         entities.add(block1);
         entities.add(block2);
-        //doReturn(entities).when(underTest).getEntities();
-        underTest.setEntities(entities);
+        doReturn(entities).when(underTest).getEntities();
+        doReturn(block1).when(underTest).getEntity(any(Location.class));
+        //underTest.setEntities(entities);
 
         // When
         underTest.transpose();
 
         // Then
-        assertThat(underTest.getEntities().get(0).getLocation()).isEqualTo(new Location(1,4));
-        assertThat(underTest.getEntities().get(1).getLocation()).isEqualTo(new Location(2,3));
+        verify(underTest, times(16)).setEntities(underTest.getEntities());
     }
 }

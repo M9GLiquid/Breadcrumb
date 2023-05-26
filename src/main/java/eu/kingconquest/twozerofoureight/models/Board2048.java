@@ -216,7 +216,7 @@ public class Board2048 extends GameBoard {
      * Check to see if any move is possible on the board.
      * @return true if adjacent matching tiles horizontally or vertically.
      */
-    private boolean isAnyMovePossible() {
+    public boolean isAnyMovePossible() {
         // Check if there are any adjacent matching tiles horizontally
         for (int col = 1; col < 4; col++) {
             for (int row = 1; row <= 4; row++) {
@@ -259,7 +259,6 @@ public class Board2048 extends GameBoard {
             if (entity.getEntityType() == EntityIcon2048.E64) {
                 game.hasWon = true;
                 game.getBoard().setState(GameState.WIN);
-                return;
             }
         }
     }
@@ -285,7 +284,6 @@ public class Board2048 extends GameBoard {
         entity.setEntityType(EntityType);
         addEntity(entity);
     }
-
 
     /**
      * The method returns the product of the value from the entities in the argument.

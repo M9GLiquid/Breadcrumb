@@ -5,6 +5,7 @@ import eu.kingconquest.framework.controllers.KeyController;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.core.StateManager;
+import eu.kingconquest.framework.entities.Entity;
 import eu.kingconquest.framework.io.DataReader;
 import eu.kingconquest.framework.io.DataWriter;
 import eu.kingconquest.framework.io.GameData;
@@ -12,16 +13,15 @@ import eu.kingconquest.framework.ui.*;
 import eu.kingconquest.framework.utils.Tile;
 import eu.kingconquest.framework.views.ConsoleView;
 import eu.kingconquest.framework.views.GraphicalView;
+import eu.kingconquest.maze.audio.MazeAudioObserver;
 import eu.kingconquest.maze.entities.MazeEntityIcon;
 import eu.kingconquest.maze.entities.MazePlayer;
+import eu.kingconquest.maze.io.MazeLevelReader;
 import eu.kingconquest.maze.models.MazeBoard;
 import eu.kingconquest.maze.ui.MazeGameOver;
 import eu.kingconquest.maze.ui.MazeWinScreen;
-import eu.kingconquest.maze.io.MazeLevelReader;
 
 import javax.swing.*;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Maze extends Game {
 
@@ -46,7 +46,7 @@ public class Maze extends Game {
         // State Observers
         getController().addStateObserver(new StateManager(this));
         // Audio Observers
-        //getController().addAudioObserver(new (this));
+        getController().addAudioObserver(new MazeAudioObserver());
         // View Observers
         getController().addViewObserver(frame.getGameView());
         getController().addViewObserver(new ConsoleView(getBoard()));
@@ -57,7 +57,6 @@ public class Maze extends Game {
         Tile.setTileSize(64);
 
         level = -1;
-
     }
 
 
@@ -71,7 +70,6 @@ public class Maze extends Game {
             new FloatingBtnsView(getGameFrame(), (GuiController) getController());
             guiController = true;
         }
-
     }
 
 
@@ -108,8 +106,6 @@ public class Maze extends Game {
         else{
             getGameFrame().addView(new MazeWinScreen(this), Menu.WIDTH, Menu.HEIGHT);
         }
-
-
     }
 
 
@@ -118,7 +114,6 @@ public class Maze extends Game {
         getBoard().setState(GameState.RESET);
         level--;
         start();
-
     }
 
     @Override
@@ -130,7 +125,6 @@ public class Maze extends Game {
 
         // Send notification
         Notification.showNotification(this, message);
-
     }
 
     @Override
@@ -139,12 +133,12 @@ public class Maze extends Game {
 
         if(message.equals("Game Loading!")){
             setData();
-            Timer mazetimer = new Timer(1500, e -> {
+            Timer timer = new Timer(1500, e -> {
                 getBoard().setState(GameState.RUN);
                 setGameView();
             });
-            mazetimer.setRepeats(false);
-            mazetimer.start();
+            timer.setRepeats(false);
+            timer.start();
 
         }
         //Showing message on screen
@@ -154,7 +148,6 @@ public class Maze extends Game {
     @Override
     public void pause() {
         getGameFrame().addView(new PauseMenu(this), Menu.WIDTH, Menu.HEIGHT);
-
     }
 
     protected void setData(){
@@ -179,10 +172,10 @@ public class Maze extends Game {
                 .orElse(null);
     }
 
-    public List<Tile> getGoals() {
+    public Entity getGoal() {
         return getBoard().getEntities().stream()
                 .filter(entity -> entity.getEntityType().equals(MazeEntityIcon.MAZE_GROUND_MARKED))
-                .map(entity -> (Tile) entity)
-                .collect(Collectors.toList());
+                .findFirst()
+                .orElse(null);
     }
 }

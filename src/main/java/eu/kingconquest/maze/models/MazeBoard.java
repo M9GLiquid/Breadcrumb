@@ -1,5 +1,6 @@
 package eu.kingconquest.maze.models;
 
+import eu.kingconquest.framework.core.GameState;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.maze.core.Maze;
@@ -22,17 +23,24 @@ public class MazeBoard extends GameBoard {
 
     @Override
     public void makeMove(Location direction) {
+        Location newPlayerLocation = game.getPlayer().getLocation();
+        newPlayerLocation.add(direction);
+
+        if (!isMoveInvalid(newPlayerLocation))
+            return;
+
+        if (isMazeLevelComplete())
+            setState(GameState.WIN);
+
+        // set the new location for the player
+        game.getPlayer().setLocation(newPlayerLocation);
+        game.getController().clearAudioObservers();
     }
 
 
 
-    protected boolean MazeIsLevelComplete() {
-        long count = game.getGoals().stream()
-                .filter(goal -> game.getGoals().stream()
-                        .anyMatch(marker -> marker.getLocation().equals(goal.getLocation())))
-                .count();
-
-        return count == game.getGoals().size();
+    protected boolean isMazeLevelComplete() {
+        return (game.getPlayer().getLocation().equals(game.getGoal().getLocation()));
     }
 
 }

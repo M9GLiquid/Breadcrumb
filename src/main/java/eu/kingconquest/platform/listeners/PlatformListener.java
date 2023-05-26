@@ -2,6 +2,7 @@ package eu.kingconquest.platform.listeners;
 
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.ui.GameFrame;
+import eu.kingconquest.maze.core.Maze;
 import eu.kingconquest.sokoban.core.Sokoban;
 import eu.kingconquest.twozerofoureight.core.Game2048;
 
@@ -26,6 +27,7 @@ public class PlatformListener implements ActionListener {
         switch (e.getActionCommand().toUpperCase()) {
             case "SOKOBAN" -> sokoban();
             case "2048" -> game2048();
+            case "MAZE" -> maze();
             case "EXIT" -> exit();
         }
     }
@@ -38,6 +40,12 @@ public class PlatformListener implements ActionListener {
 
     private void game2048() {
         Game game = new Game2048(gameFrame);
+        game.initiate();
+        gameFrame.remove(view);
+    }
+
+    private void maze() {
+        Game game = new Maze(gameFrame);
         game.initiate();
         gameFrame.remove(view);
     }

@@ -32,7 +32,7 @@ public class MazeBoard extends GameBoard {
         game.getPlayer().setLocation(newPlayerLocation);
 
         if (isMazeLevelComplete())
-            setState(GameState.WIN);
+            setState(GameState.LEVEL_COMPLETE);
 
         // set the new location for the player
         game.getController().clearAudioObservers();

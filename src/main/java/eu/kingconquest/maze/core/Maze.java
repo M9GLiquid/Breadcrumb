@@ -1,18 +1,19 @@
 package eu.kingconquest.maze.core;
 
 import eu.kingconquest.framework.controllers.GuiController;
-import eu.kingconquest.framework.controllers.KeyBoardController;
+import eu.kingconquest.framework.controllers.KeyController;
 import eu.kingconquest.framework.core.Game;
 import eu.kingconquest.framework.core.GameState;
+import eu.kingconquest.framework.core.StateManager;
 import eu.kingconquest.framework.io.DataReader;
 import eu.kingconquest.framework.io.DataWriter;
 import eu.kingconquest.framework.io.GameData;
-import eu.kingconquest.framework.observers.ConsoleViewObserver;
-import eu.kingconquest.framework.observers.StateObserver;
 import eu.kingconquest.framework.ui.*;
 import eu.kingconquest.framework.utils.Tile;
-import eu.kingconquest.framework.views.FloatingButtonsView;
-import eu.kingconquest.framework.views.GameGuiView;
+import eu.kingconquest.framework.views.ConsoleView;
+import eu.kingconquest.framework.views.GraphicalView;
+import eu.kingconquest.maze.entities.MazeEntityIcon;
+import eu.kingconquest.maze.entities.MazePlayer;
 import eu.kingconquest.maze.models.MazeBoard;
 import eu.kingconquest.maze.ui.MazeGameOver;
 import eu.kingconquest.maze.ui.MazeWinScreen;
@@ -35,22 +36,22 @@ public class Maze extends Game {
     public void initiate() {
       setBoard(new MazeBoard(this, null, null));
 
-      setDesiredController(new KeyBoardController(getBoard()));
+      setDesiredController(new KeyController(getBoard()));
       GameFrame frame = getGameFrame();
-      frame.setGameView((new GameGuiView(getBoard())));
+      frame.setGameView((new GraphicalView(getBoard())));
 
         //Setup of the GameView
         frame.addView(new StartMenu(this), Menu.WIDTH, Menu.HEIGHT);
 
         // State Observers
-        getController().addStateObserver(new StateObserver(this));
+        getController().addStateObserver(new StateManager(this));
         // Audio Observers
         //getController().addAudioObserver(new (this));
         // View Observers
         getController().addViewObserver(frame.getGameView());
-        getController().addViewObserver(new ConsoleViewObserver(getBoard()));
+        getController().addViewObserver(new ConsoleView(getBoard()));
 
-        getBoard().setState(GameState.INITIATING);
+        getBoard().setState(GameState.INITIATE);
 
         //32 for smaller walls
         Tile.setTileSize(64);
@@ -64,10 +65,10 @@ public class Maze extends Game {
     public void start() {
         if(nextLevel())
             return;
-        getBoard().setState(GameState.RUNNING);
+        getBoard().setState(GameState.RUN);
 
         if(getController() instanceof GuiController && !guiController){
-            new FloatingButtonsView(getGameFrame(), getController());
+            new FloatingBtnsView(getGameFrame(), (GuiController) getController());
             guiController = true;
         }
 
@@ -78,8 +79,8 @@ public class Maze extends Game {
         //Get state of the game
         GameState gameState = getBoard().getState();
 
-        if(gameState.equals(GameState.LEVEL_COMPLETE) || gameState.equals(GameState.INITIATING)||
-        gameState.equals(GameState.RESETTING)){
+        if(gameState.equals(GameState.LEVEL_COMPLETE) || gameState.equals(GameState.INITIATE)||
+        gameState.equals(GameState.RESET)){
 
             // Clear entities for the different statements
             getBoard().getEntities().clear();
@@ -90,7 +91,7 @@ public class Maze extends Game {
             // If max level reached
             if(load == 1){
                 getBoard().setState(GameState.WIN);
-                gameOver();
+                end();
                 return true;
             }
         }
@@ -100,7 +101,7 @@ public class Maze extends Game {
     }
 
     @Override
-    public void gameOver() {
+    public void end() {
         if(getBoard().getState().equals(GameState.GAME_OVER)) {
               getGameFrame().addView(new MazeGameOver(this), Menu.WIDTH, Menu.HEIGHT);
         }
@@ -114,7 +115,7 @@ public class Maze extends Game {
 
     @Override
     public void restart() {
-        getBoard().setState(GameState.RESETTING);
+        getBoard().setState(GameState.RESET);
         level--;
         start();
 
@@ -139,7 +140,7 @@ public class Maze extends Game {
         if(message.equals("Game Loading!")){
             setData();
             Timer mazetimer = new Timer(1500, e -> {
-                getBoard().setState(GameState.RUNNING);
+                getBoard().setState(GameState.RUN);
                 setGameView();
             });
             mazetimer.setRepeats(false);

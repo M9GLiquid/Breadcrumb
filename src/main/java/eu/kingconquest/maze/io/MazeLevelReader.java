@@ -3,14 +3,10 @@ package eu.kingconquest.maze.io;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.utils.Location;
 import eu.kingconquest.framework.utils.Tile;
-import eu.kingconquest.maze.entities.MazePlayer;
 import eu.kingconquest.maze.entities.MazeEntityIcon;
+import eu.kingconquest.maze.entities.MazePlayer;
 
-
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class MazeLevelReader {
@@ -104,7 +100,7 @@ public class MazeLevelReader {
                     board.addEntity(new MazePlayer(location));
                     board.grid[row][col] = new Tile(location, MazeEntityIcon.MAZE_GROUND, true);
                 }
-                case '#' -> board.grid[row][col] = new Tile(location, MazeEntityIcon.MAZE_CRATE, false);
+                case '#' -> board.grid[row][col] = new Tile(location, MazeEntityIcon.MAZE_WALL, false);
                 case 'X' -> {
                     Tile tile = new Tile(location, MazeEntityIcon.MAZE_GROUND_MARKED, true);
                     board.grid[row][col] = tile;

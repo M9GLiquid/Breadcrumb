@@ -28,19 +28,19 @@ public class MazeGameOver extends Menu {
         // Button to restart the current level
         gbc.gridy++;
         add(buttonComponent("Restart",
-                        new MenuListener(game, this)),
+                        new MenuListener(game, this), "Restart"),
                 gbc);
 
         // Button to return to the platform menu
         gbc.gridy++;
         add(buttonComponent("Game Selector",
-                        new MenuListener(game, this)),
+                        new MenuListener(game, this), "GAME MENU"),
                 gbc);
 
         // Button to exit the game
         gbc.gridy++;
         add(buttonComponent("Exit",
-                        new MenuListener(game, this)),
+                        new MenuListener(game, this), "Exit"),
                 gbc);
     }
 }

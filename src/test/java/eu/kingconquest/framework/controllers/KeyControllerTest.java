@@ -55,7 +55,7 @@ class KeyControllerTest {
         doNothing().when(underTest).notifyViewObservers();
 
         doReturn(KeyEvent.VK_UP).when(event).getKeyCode();
-        doReturn(GameState.RUNNING).when(gameBoard).getState();
+        doReturn(GameState.RUN).when(gameBoard).getState();
         underTest.keyPressed(event);
 
         /* Then */
@@ -76,7 +76,7 @@ class KeyControllerTest {
         doNothing().when(underTest).notifyViewObservers();
 
         doReturn(KeyEvent.VK_DOWN).when(event).getKeyCode();
-        doReturn(GameState.RUNNING).when(gameBoard).getState();
+        doReturn(GameState.RUN).when(gameBoard).getState();
         underTest.keyPressed(event);
 
         /* Then */
@@ -97,7 +97,7 @@ class KeyControllerTest {
         doNothing().when(underTest).notifyViewObservers();
 
         doReturn(KeyEvent.VK_LEFT).when(event).getKeyCode();
-        doReturn(GameState.RUNNING).when(gameBoard).getState();
+        doReturn(GameState.RUN).when(gameBoard).getState();
         underTest.keyPressed(event);
 
         /* Then */
@@ -118,7 +118,7 @@ class KeyControllerTest {
         doNothing().when(underTest).notifyViewObservers();
 
         doReturn(KeyEvent.VK_RIGHT).when(event).getKeyCode();
-        doReturn(GameState.RUNNING).when(gameBoard).getState();
+        doReturn(GameState.RUN).when(gameBoard).getState();
         underTest.keyPressed(event);
 
         /* Then */
@@ -139,13 +139,13 @@ class KeyControllerTest {
         doNothing().when(underTest).notifyViewObservers();
 
         doReturn(KeyEvent.VK_ESCAPE).when(event).getKeyCode();
-        doReturn(GameState.RUNNING).when(gameBoard).getState();
+        doReturn(GameState.RUN).when(gameBoard).getState();
         underTest.keyPressed(event);
 
         /* Then */
         verify(underTest).notifyStateObservers();
         verify(underTest).notifyStateObservers();
-        verify(gameBoard).setState(GameState.PAUSED);
+        verify(gameBoard).setState(GameState.PAUSE);
 
     }
 

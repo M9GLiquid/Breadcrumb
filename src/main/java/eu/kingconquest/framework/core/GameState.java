@@ -6,11 +6,11 @@ package eu.kingconquest.framework.core;
  * has been won, is resetting, etc.
  */
 public enum GameState {
-    INITIATING,
+    INITIATE,
     WIN,
     GAME_OVER,
     LEVEL_COMPLETE,
-    RESETTING,
-    PAUSED,
-    RUNNING
+    RESET,
+    PAUSE,
+    RUN
 }

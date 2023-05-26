@@ -56,7 +56,7 @@ public class Sokoban extends Game {
         getController().addViewObserver(frame.getGameView());
         getController().addViewObserver(new ConsoleView(getBoard()));
 
-        getBoard().setState(GameState.INITIATING);
+        getBoard().setState(GameState.INITIATE);
 
         Tile.setTileSize(64);
         level = -1;
@@ -67,7 +67,7 @@ public class Sokoban extends Game {
         if (nextLevel())
             return;
 
-        getBoard().setState(GameState.RUNNING);
+        getBoard().setState(GameState.RUN);
 
         // Activate GUIControls if that is selected
         if (getController() instanceof GuiController && !guiController) {
@@ -80,8 +80,8 @@ public class Sokoban extends Game {
         GameState gameState = getBoard().getState();
 
         if (gameState.equals(GameState.LEVEL_COMPLETE) ||
-                gameState.equals(GameState.INITIATING) ||
-                gameState.equals(GameState.RESETTING)) {
+                gameState.equals(GameState.INITIATE) ||
+                gameState.equals(GameState.RESET)) {
 
             getBoard().getEntities().clear();
             // Get next level, int: 0 error, 1 game won, 2 next level
@@ -108,7 +108,7 @@ public class Sokoban extends Game {
 
     @Override
     public void restart() {
-        getBoard().setState(GameState.RESETTING);
+        getBoard().setState(GameState.RESET);
         level--;
         start();
     }
@@ -132,7 +132,7 @@ public class Sokoban extends Game {
         if (message.equals("Game loading!")) {
             setData();
             Timer timer = new Timer(1500, e -> {
-                getBoard().setState(GameState.RUNNING);
+                getBoard().setState(GameState.RUN);
                 setGameView();
             });
             timer.setRepeats(false);

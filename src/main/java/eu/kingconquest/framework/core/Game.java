@@ -9,9 +9,10 @@ import java.awt.event.KeyListener;
 
 /**
  * The Game class is an abstract base class for various game implementations.
- * Each Game contains a GameBoard, GameController, GameState, GamePanel, and a list of entities.
- * It provides methods for initiating, starting, resetting, and generating levels for the game,
- * as well as checking if the game is finished and accessing game components.
+ * <p>
+ * Each Game contains a GameBoard, GameStrategy, GameFrame.
+ * <p>
+ * It provides methods for initiation, start, reset, save, load, pause and end.
  */
 public abstract class Game {
 
@@ -34,37 +35,42 @@ public abstract class Game {
     }
 
     /**
+     * Defines the behavior when game state is set to GameState.INITIATE.
      * Initializes the game by setting up necessary objects and configurations.
      */
     public abstract void initiate();
 
     /**
-     * Starts the game, handling game logic and progression.
+     * Defines the behavior when game state is set to GameState.START.
      */
     public abstract void start();
 
     /**
+     * Defines the behavior when game state is set to GameState.RESTART.
      * Resets the game to its initial state.
      */
     public abstract void restart();
 
     /**
-     * Handles the action that happens when you pause the game,
+     * Defines the behavior when game state is set to GameState.PAUSE.
      * pause is handled by the default controller by [esc] - buttons
      */
     public abstract void pause();
 
     /**
+     * Defines the behavior when game state is set to GameState.SAVE.
      * Saves the current state of the game.
      */
     public abstract void save();
 
     /**
+     * Defines the behavior when game state is set to GameState.LOAD.
      * Loads a previously saved state of the game.
      */
     public abstract void load();
 
     /**
+     * Defines the behavior when game state is set to GameState.END.
      * Defines the behavior of the game when you lose, win or otherwise ends the game.
      */
     public abstract void end();
@@ -90,7 +96,7 @@ public abstract class Game {
     /**
      * Gets the Title of the game.
      *
-     * @return A String with the title
+     * @return A String with the title of the application
      */
     public String getTitle() {
         return title;

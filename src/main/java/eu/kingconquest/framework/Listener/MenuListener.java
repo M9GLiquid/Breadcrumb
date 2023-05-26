@@ -97,7 +97,7 @@ public class MenuListener extends PlatformListener implements ActionListener {
      * Takes the user back to the game initiation state and shows the start menu.
      */
     private void back() {
-        game.getBoard().setState(GameState.INITIATING);
+        game.getBoard().setState(GameState.INITIATE);
         game.getGameFrame().remove(view);
         game.getGameFrame().addView(new StartMenu(game), Menu.WIDTH, Menu.HEIGHT);
         game.getController().notifyStateObservers();
@@ -109,7 +109,7 @@ public class MenuListener extends PlatformListener implements ActionListener {
     private void resume(){
         GameFrame gameFrame = game.getGameFrame();
         gameFrame.remove(view);
-        game.getBoard().setState(GameState.RUNNING);
+        game.getBoard().setState(GameState.RUN);
         gameFrame.addView(gameFrame.getPreviousView(),
                 game.getBoard().COLS * Tile.getTileSize(),
                 game.getBoard().ROWS * Tile.getTileSize());

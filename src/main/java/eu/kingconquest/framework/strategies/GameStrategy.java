@@ -6,9 +6,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public abstract class GameStrategy {
-    private final Set<GameObserver> stateObservers = new HashSet<>();
-    private final Set<GameObserver> viewObservers = new HashSet<>();
-    private final Set<GameObserver> audioObservers = new HashSet<>();
+    public final Set<GameObserver> stateObservers = new HashSet<>();
+    public final Set<GameObserver> viewObservers = new HashSet<>();
+    public final Set<GameObserver> audioObservers = new HashSet<>();
 
     public void addAudioObserver(GameObserver observer) {
         audioObservers.removeIf(obs -> obs.getClass().equals(observer.getClass()));

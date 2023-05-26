@@ -34,7 +34,7 @@ public class Game2048 extends Game {
 
         // Game Board setup
         setBoard(new Board2048(this, 6, 6));
-        getBoard().setState(GameState.INITIATING);
+        getBoard().setState(GameState.INITIATE);
 
         // Set the desired controller
         setDesiredController(new KeyController(getBoard()));
@@ -62,7 +62,7 @@ public class Game2048 extends Game {
         buildBoard();
         // Audio Observer
         getController().addAudioObserver(new GameAudioObserver2048());
-        getBoard().setState(GameState.INITIATING);
+        getBoard().setState(GameState.INITIATE);
     }
 
     /**
@@ -101,7 +101,7 @@ public class Game2048 extends Game {
         board.addNewTile();
         board.addNewTile();
         startGame();
-        getBoard().setState(GameState.RUNNING);
+        getBoard().setState(GameState.RUN);
         ((Board2048) getBoard()).resetScore();
         hasWon = false;
     }
@@ -111,7 +111,7 @@ public class Game2048 extends Game {
      */
     @Override
     public void restart() {
-        getBoard().setState(GameState.RESETTING);
+        getBoard().setState(GameState.RESET);
         start();
     }
 
@@ -140,7 +140,7 @@ public class Game2048 extends Game {
         if (message.equals("Game loading!")) {
             setData();
             Timer timer = new Timer(1500, e -> {
-                getBoard().setState(GameState.RUNNING);
+                getBoard().setState(GameState.RUN);
                 setGameView();
             });
             timer.setRepeats(false);

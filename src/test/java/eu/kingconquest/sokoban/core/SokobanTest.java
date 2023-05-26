@@ -146,7 +146,7 @@ public class SokobanTest {
         /* When */
         doReturn(board).when(underTest).getBoard();
         doReturn(entities).when(board).getEntities();
-        doReturn(GameState.INITIATING).when(board).getState();
+        doReturn(GameState.INITIATE).when(board).getState();
         doNothing().when(underTest).end();
 
         /* Then */
@@ -169,7 +169,7 @@ public class SokobanTest {
         /* When */
         doReturn(board).when(underTest).getBoard();
         doReturn(entities).when(board).getEntities();
-        doReturn(GameState.RESETTING).when(board).getState();
+        doReturn(GameState.RESET).when(board).getState();
         doNothing().when(underTest).setGameView();
 
         /* Then */

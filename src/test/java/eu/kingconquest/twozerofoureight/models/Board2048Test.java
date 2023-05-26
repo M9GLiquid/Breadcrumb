@@ -1,7 +1,7 @@
 package eu.kingconquest.twozerofoureight.models;
 
 import eu.kingconquest.framework.core.GameState;
-import eu.kingconquest.framework.entity.Entity;
+import eu.kingconquest.framework.entities.Entity;
 import eu.kingconquest.framework.models.GameBoard;
 import eu.kingconquest.framework.strategies.GameStrategy;
 import eu.kingconquest.framework.utils.Location;

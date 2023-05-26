@@ -22,11 +22,11 @@ public class StateManager implements GameObserver {
     public void update() {
         switch (game.getBoard().getState()) {
             case WIN, GAME_OVER -> game.end();
-            case INITIATING -> game.initiate();
+            case INITIATE -> game.initiate();
             case LEVEL_COMPLETE -> game.start();
-            case RUNNING -> {}
-            case RESETTING -> game.restart();
-            case PAUSED -> game.pause();
+            case RUN -> {}
+            case RESET -> game.restart();
+            case PAUSE -> game.pause();
         }
     }
 }

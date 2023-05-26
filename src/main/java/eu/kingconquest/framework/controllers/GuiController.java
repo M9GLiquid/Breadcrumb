@@ -11,9 +11,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 /**
- * The GuiController class provides methods to manage and control the game user interface.
- * It contains state, view, and audio observers that react to changes in the game.
- * It implements the GameStrategy interface.
+ * The GuiController class provides methods to manage key and action events.
  */
 public class GuiController extends GameStrategy implements ActionListener, KeyListener {
     final GameBoard gameBoard;
@@ -29,9 +27,9 @@ public class GuiController extends GameStrategy implements ActionListener, KeyLi
 
 
     /**
-     * Handles user key input and updates the game accordingly.
+     * Handles user input and updates the game accordingly.
      * Based on the event input sets the direction and updates the state/view observers
-     * This method is automatically called when a key is pressed.
+     * This method is automatically called when a action is performed.
      *
      * @param event the event to be handled
      */
@@ -49,7 +47,7 @@ public class GuiController extends GameStrategy implements ActionListener, KeyLi
             case "LEFT" -> direction.setX(-1);
         }
 
-        if (direction.getX() != 0 || direction.getY() != 0 && gameBoard.getState().equals(GameState.RUNNING))
+        if (direction.getX() != 0 || direction.getY() != 0 && gameBoard.getState().equals(GameState.RUN))
             gameBoard.makeMove(direction);
 
         notifyStateObservers();
@@ -57,7 +55,7 @@ public class GuiController extends GameStrategy implements ActionListener, KeyLi
     }
 
     /**
-     * Handles key typed events.
+     * Empty method
      *
      * @param event the key event
      */
@@ -67,22 +65,22 @@ public class GuiController extends GameStrategy implements ActionListener, KeyLi
     }
 
     /**
-     * Handles key pressed events and updates the observers.
+     * Handles [ESC] key pressed events and updates the observers.
      *
      * @param event the key event
      */
     @Override
     public void keyPressed(KeyEvent event) {
 
-        if (gameBoard.getState() == GameState.RUNNING
+        if (gameBoard.getState() == GameState.RUN
                 && event.getKeyCode() == KeyEvent.VK_ESCAPE)
-            gameBoard.setState(GameState.PAUSED);
+            gameBoard.setState(GameState.PAUSE);
 
         notifyStateObservers();
     }
 
     /**
-     * Handles key released events.
+     * Empty Method
      *
      * @param event the key event
      */

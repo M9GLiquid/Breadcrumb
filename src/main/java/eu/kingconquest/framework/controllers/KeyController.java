@@ -50,12 +50,12 @@ public class KeyController extends GameStrategy implements KeyListener {
             case KeyEvent.VK_LEFT, KeyEvent.VK_A -> direction.setX(-1);
             case KeyEvent.VK_RIGHT, KeyEvent.VK_D -> direction.setX(1);
             case KeyEvent.VK_ESCAPE -> {
-                if (gameBoard.getState() == GameState.RUNNING)
-                    gameBoard.setState(GameState.PAUSED);
+                if (gameBoard.getState() == GameState.RUN)
+                    gameBoard.setState(GameState.PAUSE);
             }
         }
 
-        if ((direction.getX() != 0 || direction.getY() != 0) && gameBoard.getState().equals(GameState.RUNNING))
+        if ((direction.getX() != 0 || direction.getY() != 0) && gameBoard.getState().equals(GameState.RUN))
             gameBoard.makeMove(direction);
 
         notifyStateObservers();

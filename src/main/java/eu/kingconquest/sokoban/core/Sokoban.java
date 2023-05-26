@@ -22,7 +22,6 @@ import eu.kingconquest.sokoban.ui.GameOverScreen;
 import eu.kingconquest.sokoban.ui.WinScreen;
 
 import javax.swing.*;
-import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -71,7 +70,7 @@ public class Sokoban extends Game {
 
         // Activate GUIControls if that is selected
         if (getController() instanceof GuiController && !guiController) {
-            new FloatingBtnsView(getGameFrame(), (ActionListener) getController());
+            new FloatingBtnsView(getGameFrame(), (GuiController) getController());
             guiController = true;
         }
     }

@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Bug Fixes">
+    <list default="true" id="a7856e32-1af5-4893-bd23-a641decd872d" name="Changes" comment="Minor Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/GuiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/KeyBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/controllers/KeyBoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/core/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/models/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/models/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/ui/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/ui/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/views/FloatingButtonsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/framework/views/FloatingButtonsView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/Sokoban.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/kingconquest/sokoban/core/Sokoban.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/sokoban/core/SokobanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/sokoban/core/SokobanTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/eu/kingconquest/twozerofoureight/models/Board2048Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/kingconquest/twozerofoureight/models/Board2048Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +30,8 @@
         <option value="Enum" />
         <option value="AnnotationType" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,7 +52,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/junit-testing" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -306,6 +303,7 @@
       <workItem from="1684572404183" duration="2318000" />
       <workItem from="1684587285083" duration="2317000" />
       <workItem from="1684589618294" duration="2896000" />
+      <workItem from="1685134752938" duration="265000" />
     </task>
     <task id="LOCAL−00001" summary="Added the main Framework for Game Handling and Menu Handling">
       <created>1681461977142</created>
@@ -563,6 +561,7 @@
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="eu.kingconquest.sokoban.entities.Wall" memberName="isWalkable" />
+        <PinnedItemInfo parentTag="eu.kingconquest.framework.models.GameBoard$MockitoMock$nkph8Jnn" memberName="state" />
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
@@ -628,6 +627,9 @@
     <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_NextLevel_GameState_is_RESETTING_entitiesCleared_loadLevelReturns_0.ic" NAME="SokobanTest.test_NextLevel_GameState_is_RESETTING_entitiesCleared_loadLevelReturns_0 Coverage Results" MODIFIED="1684269097646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$GuiControllerTest_test_notify_observers.ic" NAME="GuiControllerTest.test_notify_observers Coverage Results" MODIFIED="1684401800438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.controllers.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_GameOver_State_GameOver.ic" NAME="SokobanTest.test_GameOver_State_GameOver Coverage Results" MODIFIED="1684311664267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
@@ -670,11 +672,17 @@
     <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_GameOver_State_Win.ic" NAME="SokobanTest.test_GameOver_State_Win Coverage Results" MODIFIED="1684311673417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$GuiControllerTest.ic" NAME="GuiControllerTest Coverage Results" MODIFIED="1684402449701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.controllers.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$SokobanGameAudioObserverTest_test_update.ic" NAME="SokobanGameAudioObserverTest.test_update Coverage Results" MODIFIED="1684313148916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.audio.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$eu_kingconquest_sokoban_in_Sokoban.ic" NAME="eu.kingconquest.sokoban in Sokoban Coverage Results" MODIFIED="1684506121134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$GuiControllerTest_test_Observer.ic" NAME="GuiControllerTest.test_Observer Coverage Results" MODIFIED="1684401920481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.controllers.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_Restart.ic" NAME="SokobanTest.test_Restart Coverage Results" MODIFIED="1684269148698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
@@ -687,6 +695,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$SokobanTest_test_Load_GameHasLoadedSuccessfully.ic" NAME="SokobanTest.test_Load_GameHasLoadedSuccessfully Coverage Results" MODIFIED="1684270307008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.sokoban.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$GuiControllerTest_constructorTest.ic" NAME="GuiControllerTest.constructorTest Coverage Results" MODIFIED="1684316191363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.controllers.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_constructor_withInvalidVolumeLessThanZero_shouldThrowIllegalArgumentException.ic" NAME="AudioTypeTest.constructor_withInvalidVolumeLessThanZero_shouldThrowIllegalArgumentException Coverage Results" MODIFIED="1683192287623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.audio.*</FILTER>
@@ -729,6 +740,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest__1_.ic" NAME="AudioTypeTest (1) Coverage Results" MODIFIED="1683643500207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.audio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sokoban$KeyBoardControllerTest.ic" NAME="KeyBoardControllerTest Coverage Results" MODIFIED="1684576663711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kingconquest.framework.controllers.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sokoban$AudioTypeTest_constructor_throwsException.ic" NAME="AudioTypeTest.constructor_throwsException Coverage Results" MODIFIED="1683149604199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eu.kingconquest.framework.audio.*</FILTER>

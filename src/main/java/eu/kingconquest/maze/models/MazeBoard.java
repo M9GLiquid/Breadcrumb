@@ -24,16 +24,17 @@ public class MazeBoard extends GameBoard {
     @Override
     public void makeMove(Location direction) {
         Location newPlayerLocation = game.getPlayer().getLocation();
-        newPlayerLocation.add(direction);
+        newPlayerLocation = newPlayerLocation.add(direction);
 
-        if (!isMoveInvalid(newPlayerLocation))
+        if (isMoveInvalid(newPlayerLocation))
             return;
+
+        game.getPlayer().setLocation(newPlayerLocation);
 
         if (isMazeLevelComplete())
             setState(GameState.WIN);
 
         // set the new location for the player
-        game.getPlayer().setLocation(newPlayerLocation);
         game.getController().clearAudioObservers();
     }
 

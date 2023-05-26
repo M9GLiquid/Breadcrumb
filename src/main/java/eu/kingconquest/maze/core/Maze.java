@@ -40,7 +40,7 @@ public class Maze extends Game {
       GameFrame frame = getGameFrame();
       frame.setGameView((new GraphicalView(getBoard())));
 
-        //Setup of the GameView
+        // Setup of the GameView
         frame.addView(new StartMenu(this), Menu.WIDTH, Menu.HEIGHT);
 
         // State Observers
@@ -53,7 +53,7 @@ public class Maze extends Game {
 
         getBoard().setState(GameState.INITIATE);
 
-        //32 for smaller walls
+        // 64 for smaller walls
         Tile.setTileSize(64);
 
         level = -1;
@@ -64,7 +64,6 @@ public class Maze extends Game {
     public void start() {
         if(nextLevel())
             return;
-        getBoard().setState(GameState.RUN);
 
         if(getController() instanceof GuiController && !guiController){
             new FloatingBtnsView(getGameFrame(), (GuiController) getController());
@@ -95,6 +94,7 @@ public class Maze extends Game {
             }
         }
         setGameView();
+        getBoard().setState(GameState.RUN);
 
         return true;
     }

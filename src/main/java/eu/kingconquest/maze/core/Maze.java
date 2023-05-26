@@ -77,8 +77,9 @@ public class Maze extends Game {
         //Get state of the game
         GameState gameState = getBoard().getState();
 
-        if(gameState.equals(GameState.LEVEL_COMPLETE) || gameState.equals(GameState.INITIATE)||
-        gameState.equals(GameState.RESET)){
+        if(gameState.equals(GameState.LEVEL_COMPLETE) ||
+                gameState.equals(GameState.INITIATE) ||
+                gameState.equals(GameState.RESET)){
 
             // Clear entities for the different statements
             getBoard().getEntities().clear();

@@ -4,9 +4,9 @@ import eu.kingconquest.framework.entities.EntityIcon;
 import java.awt.*;
 
 public enum MazeEntityIcon implements EntityIcon {
-    MAZE_WALL("maze/images/maze-wall.png", "#"),
+    MAZE_WALL("maze/images/wall.png", "#"),
     MAZE_PLAYER("maze/images/maze-player.png", "P"),
-    MAZE_GROUND("maze/images/maze-ground.png", "-"),
+    MAZE_GROUND("maze/images/ground.png", "-"),
     MAZE_GROUND_MARKED("maze/images/marker.png", "X");
 
     private final Image icon;

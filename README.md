@@ -2,7 +2,7 @@
 
 ![Date](https://img.shields.io/badge/Date-2023--05--26-green)  
 
-**Authors:** Hieu Tran, Thomas Lundqvist, Rim Abdennour  
+**Authors:** Thomas Lundqvist
 **Supervisor:** Wojciech Mostowski, Nesma Rezk.  
 **Course:** Advanced Object Oriented Programming (DT4014)  
 **Institution:** Halmstad University  
